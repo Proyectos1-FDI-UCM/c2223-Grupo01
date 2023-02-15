@@ -36,10 +36,17 @@ public class CharacterController : MonoBehaviour
 
     public void Move(float XAxismove)
     {
-
         // Muevo al personaje
         Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Escalera"))
+        {
+            //en este caso al usar W S podemos subir bajar por gameobjects con tag escaleras y trigger
+        }
     }
 
     public void Jump()
