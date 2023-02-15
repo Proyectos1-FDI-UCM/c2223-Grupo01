@@ -7,6 +7,7 @@ public class CharacterController : MonoBehaviour
     #region Parameters
     // esta variable puede ser leída desde otros scripts pero no cambiada, por el private set.
     public bool _isgrounded { get; private set; }
+    public bool _isOnStairs;
     public bool _doublejump { get; private set; }
     [SerializeField] private float _MovementSmoothing;
     private Vector3 _velocity = Vector3.zero;
@@ -34,19 +35,17 @@ public class CharacterController : MonoBehaviour
         return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .1f, _groundLayer);
     }
 
-    public void Move(float XAxismove)
+    public void MoveXAxis(float XAxismove)
     {
         // Muevo al personaje
         Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void MoveYAxis(float YAxismove)
     {
-        if (collision.gameObject.CompareTag("Escalera"))
-        {
-            //en este caso al usar W S podemos subir bajar por gameobjects con tag escaleras y trigger
-        }
+        // Muevo al personaje
+        Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * 10f);
+        _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
     }
 
     public void Jump()
@@ -69,6 +68,7 @@ public class CharacterController : MonoBehaviour
         //inicializo el Rigid Body y el collider
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _myCollider2D = GetComponent<Collider2D>();
+        _isOnStairs = false;
     }
 
     private void Update()

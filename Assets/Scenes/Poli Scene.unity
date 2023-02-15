@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 989400450}
   - component: {fileID: 989400451}
   - component: {fileID: 989400452}
+  - component: {fileID: 989400453}
   m_Layer: 0
   m_Name: Mighty
   m_TagString: Untagged
@@ -403,7 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf7d69fca2e3e43a6e0f3c793d26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MovementSmoothing: 0.1
+  _isonstairs: 0
+  _MovementSmoothing: 1
   _jumpForce: 100
   _groundLayer:
     serializedVersion: 2
@@ -418,6 +420,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02f913a26ff8e6442b2335a17be952f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &989400453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989400446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee149ad59658a144bd994115d01973f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1093904461

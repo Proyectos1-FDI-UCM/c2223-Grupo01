@@ -22,8 +22,10 @@ public class ImputComponent : MonoBehaviour
         {
             _myCharacterController.Jump();
         }
-
-        _myCharacterController.Move(Input.GetAxis("Horizontal"));
-
+        else if (_myCharacterController._isonstairs)
+        {
+            _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
+        }
+        _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal")); 
     }
 }

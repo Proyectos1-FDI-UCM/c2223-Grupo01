@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
+    #region References
+    private CharacterController _myCharacterController;
+    #endregion
+
     #region Movement Methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
+            _myCharacterController._isOnStairs = true;
             Debug.Log("Toco escaleras");
-            //en este caso al usar WS podemos subir bajar por gameobjects con tag escaleras y trigger
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Escalera"))
+        {
+            _myCharacterController._isOnStairs = false;
+            Debug.Log("salgo de escaleras");
         }
     }
     #endregion
@@ -18,12 +30,12 @@ public class CollisionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _myCharacterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(_myCharacterController._isOnStairs);
     }
 }
