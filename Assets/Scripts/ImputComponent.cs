@@ -22,7 +22,7 @@ public class ImputComponent : MonoBehaviour
         {
             _myCharacterController.Jump();
         }
-        else if (_myCharacterController._isonstairs)
+        else if (_myCharacterController._isOnStairs)
         {
             _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
         }
