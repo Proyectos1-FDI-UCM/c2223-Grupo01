@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ImputComponent : MonoBehaviour
+public class InputComponent : MonoBehaviour
 {
     #region References
     private CharacterController _myCharacterController;
