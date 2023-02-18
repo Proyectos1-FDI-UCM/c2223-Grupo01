@@ -16,5 +16,10 @@ public class EnemyMovement : MonoBehaviour
     {
         rigidbody.velocity = (transform.right * EnemySpeed);//El Enemigo se moverá a la derecha con determinada velocidad
     }
-
+    private void OnTriggerEnter2D(Collider2D Other)
+    {
+        transform.Rotate(0f, 180f, 0f); // Cada vez que colisione con un collider, el enemigo dará la vuelta. 
+    }
+        
+    
 }
