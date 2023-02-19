@@ -12,6 +12,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _MovementSmoothing;
     private Vector3 _velocity = Vector3.zero;
     [SerializeField] private float _jumpForce;
+    private Vector3 _scale;
+    private bool _facingRight = true;
+    [SerializeField] private float _dashForce;
+    private bool _dash = false;
     #endregion
 
     #region References
@@ -21,6 +25,7 @@ public class CharacterController : MonoBehaviour
     private Collider2D _myCollider2D;
     //el número debe coincide con el layer de Ground
     [SerializeField] private LayerMask _groundLayer;
+    private InputComponent _myInputComponent;
     #endregion
 
     #region Methods
@@ -40,12 +45,29 @@ public class CharacterController : MonoBehaviour
         // Muevo al personaje
         Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
+        if (XAxismove > 0 && !_facingRight)
+        {
+            Flip();
+        }
+        else if (XAxismove < 0 && _facingRight)
+        {
+            Flip();
+        }
     }
     public void MoveYAxis(float YAxismove)
     {
         // Muevo al personaje
         Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * 10f);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
+    }
+
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        _facingRight = !_facingRight;
+
+        // Multiply the player's x local scale by -1.
+        transform.Rotate(0f, 180f, 0f);
     }
 
     public void Jump()
@@ -61,6 +83,14 @@ public class CharacterController : MonoBehaviour
 
         _myRigidBody2D.AddForce(new Vector2(0f, _jumpForce));
     }
+
+    public void Dash()
+    {
+        transform.Rotate(new Vector3(0, 0, 90));
+        _myRigidBody2D.AddForce(_dashForce * Vector2.right*transform.localScale.x);//Impulsa al jugador si está agachado
+        _myInputComponent.enabled = false;
+        _dash = true;
+    }
     #endregion
 
     private void Start()
@@ -68,6 +98,7 @@ public class CharacterController : MonoBehaviour
         //inicializo el Rigid Body y el collider
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _myCollider2D = GetComponent<Collider2D>();
+        _myInputComponent = GetComponent<InputComponent>();
         _isOnStairs = false;
     }
 
@@ -75,6 +106,12 @@ public class CharacterController : MonoBehaviour
     {
         //detecta que estemos tocando tierra (no seais informáticos y tocad césped)
         _isgrounded = IsGrounded();
-    }
 
+        if (_dash && _myRigidBody2D.velocity.x == 0)
+        {
+            transform.Rotate(new Vector3(0, 0, 270));
+            _myInputComponent.enabled = true;
+            _dash = false;
+        }
+    }
 }
