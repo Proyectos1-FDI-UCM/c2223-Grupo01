@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
     #region Parameters
     // esta variable puede ser leída desde otros scripts pero no cambiada, por el private set.
     public bool _isgrounded { get; private set; }
-    public bool _isOnStairs;
+    public bool _isOnStairs = false;
     public bool _doublejump { get; private set; }
     [SerializeField] private float _MovementSmoothing;
     private Vector3 _velocity = Vector3.zero;
@@ -45,6 +45,8 @@ public class CharacterController : MonoBehaviour
         // Muevo al personaje
         Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
+
+        // estas líneas sirven para que mighty mire a la dirección correcta
         if (XAxismove > 0 && !_facingRight)
         {
             Flip();
@@ -56,7 +58,7 @@ public class CharacterController : MonoBehaviour
     }
     public void MoveYAxis(float YAxismove)
     {
-        // Muevo al personaje
+        // Muevo al personaje en las escaleras
         Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * 10f);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
     }
@@ -72,11 +74,12 @@ public class CharacterController : MonoBehaviour
 
     public void Jump()
     {
+        // miro si hemos saltado para desactivar el doble salto en el segundo salto
         if (!_isgrounded)
         {
             _doublejump = false;
         }
-        else
+        else // si no hemos saltado no queremos desactivar el doble salto pero sí el isgrounded (hemos saltado)
         {
             _isgrounded = false;
         }
@@ -86,9 +89,9 @@ public class CharacterController : MonoBehaviour
 
     public void Dash()
     {
-        transform.Rotate(new Vector3(0, 0, 90));
-        _myRigidBody2D.AddForce(_dashForce * Vector2.right*transform.localScale.x);//Impulsa al jugador si está agachado
-        _myInputComponent.enabled = false;
+        transform.Rotate(new Vector3(0, 0, 90)); // tumbo al jugador
+        _myRigidBody2D.AddForce(_dashForce * Vector2.right * transform.localScale.x);//Impulsa al jugador si está agachado
+        _myInputComponent.enabled = false; //desactivo el input
         _dash = true;
     }
     #endregion
@@ -97,9 +100,10 @@ public class CharacterController : MonoBehaviour
     {
         //inicializo el Rigid Body y el collider
         _myRigidBody2D = GetComponent<Rigidbody2D>();
+        // inicializo el Collider
         _myCollider2D = GetComponent<Collider2D>();
+        // inicializo el Input
         _myInputComponent = GetComponent<InputComponent>();
-        _isOnStairs = false;
     }
 
     private void Update()
@@ -107,6 +111,7 @@ public class CharacterController : MonoBehaviour
         //detecta que estemos tocando tierra (no seais informáticos y tocad césped)
         _isgrounded = IsGrounded();
 
+        //comprobador de finalizado de dash
         if (_dash && _myRigidBody2D.velocity.x == 0)
         {
             transform.Rotate(new Vector3(0, 0, 270));
