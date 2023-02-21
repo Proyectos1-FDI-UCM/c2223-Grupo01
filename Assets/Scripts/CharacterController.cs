@@ -7,7 +7,7 @@ public class CharacterController : MonoBehaviour
     #region Parameters
     // esta variable puede ser leída desde otros scripts pero no cambiada, por el private set.
     public bool _isgrounded { get; private set; }
-    public bool _isOnStairs = false;
+    public bool isClimbing;
     public bool _doublejump { get; private set; }
     [SerializeField] private float _MovementSmoothing;
     private Vector3 _velocity = Vector3.zero;
@@ -16,6 +16,10 @@ public class CharacterController : MonoBehaviour
     private bool _facingRight = true;
     [SerializeField] private float _dashForce;
     private bool _dash = false;
+    //Para las escaleras:
+    //Referencia a velocidad de escalada, rb, box collider
+    [SerializeField] private float climbVelocity;
+    private float initialGravity;
     #endregion
 
     #region References
@@ -56,7 +60,7 @@ public class CharacterController : MonoBehaviour
             Flip();
         }
     }
-    public void MoveYAxis(float YAxismove)
+    public void MoveYAxis(float YAxismove) //hay que cambiarlo
     {
         // Muevo al personaje en las escaleras
         Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * 10f);
@@ -94,6 +98,26 @@ public class CharacterController : MonoBehaviour
         _myInputComponent.enabled = false; //desactivo el input
         _dash = true;
     }
+
+    public void Climb() //metodo en progreso asi que no lo mireis mucho
+    {
+        if(isClimbing && _myCollider2D.IsTouchingLayers(LayerMask.GetMask("Escalable"))) //si estamos climbing y en layer escalable
+        {
+            Vector2 velocidadSubida = new Vector2(_myRigidBody2D.velocity.x, climbVelocity); //velocidad
+            _myRigidBody2D.velocity = velocidadSubida;
+            _myRigidBody2D.gravityScale = 0;
+            isClimbing = true;
+        }
+        else
+        {
+            _myRigidBody2D.gravityScale = initialGravity; //si no, nos quedamos con gravedad inicial
+            isClimbing = false;
+        }
+        if (_isgrounded)
+        {
+            isClimbing = false;
+        }
+    }
     #endregion
 
     private void Start()
@@ -104,6 +128,8 @@ public class CharacterController : MonoBehaviour
         _myCollider2D = GetComponent<Collider2D>();
         // inicializo el Input
         _myInputComponent = GetComponent<InputComponent>();
+        //Escaleras:
+        initialGravity = _myRigidBody2D.gravityScale;
     }
 
     private void Update()

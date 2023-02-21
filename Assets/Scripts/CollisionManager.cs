@@ -13,7 +13,7 @@ public class CollisionManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
-            _myCharacterController._isOnStairs = true;
+            _myCharacterController.isClimbing = true;
             Debug.Log("Toco escaleras");
         }
     }
@@ -21,7 +21,7 @@ public class CollisionManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
-            _myCharacterController._isOnStairs = false;
+            _myCharacterController.isClimbing = false;
             Debug.Log("salgo de escaleras");
         }
     }
@@ -36,6 +36,6 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_myCharacterController._isOnStairs);
+        Debug.Log(_myCharacterController.isClimbing);
     }
 }

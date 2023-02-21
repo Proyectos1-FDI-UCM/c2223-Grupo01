@@ -30,7 +30,7 @@ public class InputComponent : MonoBehaviour
             _myCharacterController.Dash();
         }
         //comprobamos si estamos en unas escaleras
-        if (_myCharacterController._isOnStairs)
+        if (_myCharacterController.isClimbing)
         {
             _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
         }
