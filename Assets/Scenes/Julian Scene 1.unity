@@ -397,7 +397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _dashForce
-      value: 20
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
@@ -447,5 +447,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mighty
       objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111649, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: fcd9128fe699bed4fbee38c886c44eaa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}

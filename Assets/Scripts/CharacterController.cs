@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
             _doublejump = true;
         }
         // detecto si estoy en el suelo
-        return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .1f, _groundLayer);
+        return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .05f, _groundLayer);
     }
 
     public void MoveXAxis(float XAxismove)
@@ -88,13 +88,23 @@ public class CharacterController : MonoBehaviour
             _isgrounded = false;
         }
 
+        _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
         _myRigidBody2D.AddForce(new Vector2(0f, _jumpForce));
     }
 
     public void Dash()
     {
         transform.Rotate(new Vector3(0, 0, 90)); // tumbo al jugador
-        _myRigidBody2D.AddForce(_dashForce * Vector2.right * transform.localScale.x);//Impulsa al jugador si está agachado
+        _myRigidBody2D.velocity = Vector2.zero;
+        if (_facingRight)
+        {
+            _myRigidBody2D.AddForce(_dashForce * Vector2.right);//Impulsa al jugador hacia la derecha
+
+        }
+        else
+        {
+            _myRigidBody2D.AddForce(_dashForce * Vector2.left);//Impulsa al jugador hacia la izquierda
+        }
         _myInputComponent.enabled = false; //desactivo el input
         _dash = true;
     }
