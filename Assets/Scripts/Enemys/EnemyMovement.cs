@@ -1,6 +1,4 @@
 //Parte del código fue obtenido del siguiente video https://www.youtube.com/watch?v=lV47ED8h61k
-
-
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -9,11 +7,22 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Rigidbody2D _rigidbody;
+    #region parameters
     [SerializeField] private float _enemySpeed = 5f;
+    #endregion
+
+    #region references
     private GameObject _player; //El jugador
     private EnemyFOV _myEnemyFOV;
+    private Rigidbody2D _rigidbody;
+    #endregion
 
+    private void OnTriggerEnter2D(Collider2D Other)
+    {
+
+        transform.Rotate(0f, 180f, 0f); // Cada vez que colisione con un collider, el enemigo dará la vuelta. 
+
+    }
 
     void Start()
     {        
@@ -38,13 +47,4 @@ public class EnemyMovement : MonoBehaviour
             _rigidbody.velocity = velocity;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D Other)
-    {
-       
-        transform.Rotate(0f, 180f, 0f); // Cada vez que colisione con un collider, el enemigo dará la vuelta. 
-  
-    }
-
-
 }

@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemyComponent : MonoBehaviour
 {
+    #region parameters
     public int maxHealth = 100; //Vida máxima del enemigo.
     int currentHealth;  //Vida actual del enemigo.
+    #endregion
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = maxHealth;  //Al comienzo, el enemigo comienza con máxima vida.
-    }
-
+    #region methods
     public void TakeDamage(int damage)  //Método para que el enemigo reciba daño.
     {
         currentHealth = currentHealth - damage; //Cada hostia le va bajando la vida.
@@ -34,5 +31,12 @@ public class EnemyComponent : MonoBehaviour
         //Quitar al enemigo.
         GetComponent<Collider2D>().enabled = false; //Desactiva el collider del enemigo al morir.
         this.enabled = false;   //Desactiva el EnemyComponent.
+    }
+    #endregion
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentHealth = maxHealth;  //Al comienzo, el enemigo comienza con máxima vida.
     }
 }

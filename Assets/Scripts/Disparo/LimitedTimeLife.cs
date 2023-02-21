@@ -1,4 +1,4 @@
-// Reutilizado  
+// Reutilizado de la práctica 1 de Motores
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
