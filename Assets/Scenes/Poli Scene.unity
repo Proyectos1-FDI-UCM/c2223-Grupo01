@@ -249,8 +249,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253880071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.66, y: -0.2719, z: 0}
-  m_LocalScale: {x: 1, y: 3.31158, z: 1}
+  m_LocalPosition: {x: 0.7705, y: 0.5902, z: 0}
+  m_LocalScale: {x: 1.221, y: 5.0355883, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -404,9 +404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf7d69fca2e3e43a6e0f3c793d26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isOnStairs: 0
-  _MovementSmoothing: 1
-  _jumpForce: 100
+  _isClimbing: 0
+  _isJumping: 0
+  _MovementSmoothing: 0.1
+  _jumpForce: 500
+  _dashFriction: 0
+  _dashForce: 0
+  climbVelocity: 10
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
