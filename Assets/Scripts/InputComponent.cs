@@ -7,6 +7,7 @@ public class InputComponent : MonoBehaviour
     #region References
     private CharacterController _myCharacterController; // referencia a otro script inicializado en el Start
     private ShootingComponent _myShootingComponent; // referencia a otro script inicializado en el Start
+    private MeleeComponent _myMeleeComponent; // referencia a otro script inicializado en el Start
     #endregion
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class InputComponent : MonoBehaviour
     {
         _myCharacterController = GetComponent<CharacterController>();
         _myShootingComponent = GetComponent<ShootingComponent>();
+        _myMeleeComponent= GetComponent<MeleeComponent>();
     }
 
     //1º llamo al salto (no va)
@@ -38,6 +40,11 @@ public class InputComponent : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             _myShootingComponent.Shoot();
+        }
+        // Ataca cuerpo a cuerpo
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            _myMeleeComponent.Attack();
         }
         //nos movemos
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal")); 
