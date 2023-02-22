@@ -33,7 +33,7 @@ public class InputComponent : MonoBehaviour
         }
         //comprobamos si estamos en unas escaleras
         if (_myCharacterController._isClimbing)
-        {
+        { //entonces activamos controles en eje Y (WS)
             _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
         }
         //disparamos

@@ -17,7 +17,7 @@ public class CharacterController : MonoBehaviour
     private bool _facingRight = true;
     [SerializeField] private float _dashForce;
     private bool _dash = false;
-    [SerializeField] private float climbVelocity = 10f; //velocidad de subida de escaleras
+    [SerializeField] public float _climbVelocity = 10f; //velocidad de subida de escaleras
     #endregion
 
     #region References
@@ -61,8 +61,8 @@ public class CharacterController : MonoBehaviour
     }
     public void MoveYAxis(float YAxismove) //Movimiento en eje Y
     {
-        // Muevo al personaje en las escaleras
-        Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * climbVelocity); //velocidad
+        // Muevo al personaje en objetos con tag "Escaleras"
+        Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity); //velocidad
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
     }
     private void Flip()
