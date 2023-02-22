@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
@@ -59,12 +60,32 @@ public class CharacterController : MonoBehaviour
             Flip();
         }
     }
-    public void MoveYAxis(float YAxismove) //Movimiento en eje Y
+    public void Climb()
+    {
+        if(_myInputComponent._input.y != 0 || _isClimbing)
+        {
+            Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, _myInputComponent._input.y * _climbVelocity); //velocidad de subida
+            _myRigidBody2D.velocity = targetVelocity;
+            _myRigidBody2D.gravityScale = 0;
+            _isClimbing = true;
+        }
+        else
+        {
+            _myRigidBody2D.gravityScale = 1;
+            _isClimbing = false;
+        }
+        if (_isgrounded)
+        {
+            _isClimbing = false;
+        }
+       
+    }
+    /*public void MoveYAxis(float YAxismove) //Movimiento en eje Y
     {
         // Muevo al personaje en objetos con tag "Escaleras"
         Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity); //velocidad
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
-    }
+    }*/
     private void Flip()
     {
         // Switch the way the player is labelled as facing.

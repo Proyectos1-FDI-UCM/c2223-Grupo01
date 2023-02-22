@@ -9,7 +9,9 @@ public class InputComponent : MonoBehaviour
     private ShootingComponent _myShootingComponent; // referencia a otro script inicializado en el Start
     private MeleeComponent _myMeleeComponent; // referencia a otro script inicializado en el Start
     #endregion
-
+    #region parameters
+    public Vector2 _input;
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,20 @@ public class InputComponent : MonoBehaviour
         {
             _myCharacterController.Dash();
         }
-        //comprobamos si estamos en unas escaleras
+        //llamamos a climb
         if (_myCharacterController._isClimbing)
+        {
+            _input.y = Input.GetAxisRaw("Vertical");
+            _myCharacterController.Climb();
+        }
+        /*if (_myCharacterController._isClimbing)
         { //entonces activamos controles en eje Y (WS)
             _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
-        }
+            if (_myCharacterController._isgrounded)
+            {
+                _myCharacterController._isClimbing = false;
+            }
+        }*/
         //disparamos
         if (Input.GetKeyDown(KeyCode.X))
         {
