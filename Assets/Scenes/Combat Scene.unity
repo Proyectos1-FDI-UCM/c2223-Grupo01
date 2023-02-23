@@ -493,6 +493,7 @@ MonoBehaviour:
   attackRange: 1.99
   attackDamage: 40
   attackRate: 2
+  enemyMovement: {fileID: 1967761572}
 --- !u!114 &1394549113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,11 +506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5baf7d69fca2e3e43a6e0f3c793d26da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isClimbing: 0
+  _isClimbing: 0
+  _isJumping: 0
   _MovementSmoothing: 0
   _jumpForce: 600
+  _dashFriction: 0
   _dashForce: 0
-  climbVelocity: 0
+  _climbVelocity: 10
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -525,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f913a26ff8e6442b2335a17be952f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _input: {x: 0, y: 0}
 --- !u!1 &1694869819
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +653,7 @@ GameObject:
   - component: {fileID: 1967761571}
   - component: {fileID: 1967761570}
   - component: {fileID: 1967761569}
+  - component: {fileID: 1967761572}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -736,6 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  enemyMovement: {fileID: 0}
 --- !u!61 &1967761570
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -783,3 +789,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1967761572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967761566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemySpeed: 5
+  KnockbackForce: 6
+  KnockbackCounter: 0
+  KnockbackTotalTime: 0.2
+  KnockFromRight: 0

@@ -15,6 +15,8 @@ public class MeleeComponent : MonoBehaviour
     public float attackRate = 2f; //Indica cuántas veces se va a atacar por segundo.
     float nextAttackTime = 0f;  //Cooldown del ataque.
 
+    public EnemyMovement enemyMovement; //Sirve para comunicarse con el script de "EnemyMovement".
+
     public void Attack()   //WIP: Falta hacer que al darle a la tecla de atacar, haga aleatoriamente (una u otra) las animaciones "Attack 1" y "Attack 2". Por el momento sólo he puesto "Attack 1".
     {
         if (Time.time >= nextAttackTime) //"Time.time" es el tiempo al empezar cada frame, y si es mayor que el cooldown, podrá atacar.
@@ -32,7 +34,19 @@ public class MeleeComponent : MonoBehaviour
             //Daño hacia los enemigos.
             foreach (Collider2D enemy in hitEnemies) //Para cada (foreach) enemigo (Collider2D enemy) en (in) el grupo de enemigos (hitEnemies).
             {
-                enemy.GetComponent<EnemyComponent>().TakeDamage(attackDamage);
+                enemyMovement.KnockbackCounter = enemyMovement.KnockbackTotalTime; //El contador comienza cada vez que le pegas un cate al enemigo.
+
+                if(enemy.transform.position.x <= transform.position.x) //Si el jugador está a la izquierda...
+                { 
+                    enemyMovement.KnockFromRight = true;
+                }
+
+                if (enemy.transform.position.x >= transform.position.x) //Si el jugador está a la derecha...
+                {
+                    enemyMovement.KnockFromRight = false;
+                }
+
+                enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
             }
         }
     }

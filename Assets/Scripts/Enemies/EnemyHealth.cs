@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyComponent : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     #region parameters
     public int maxHealth = 100; //Vida máxima del enemigo.
     int currentHealth;  //Vida actual del enemigo.
     #endregion
+
+    public EnemyMovement enemyMovement; //Sirve para comunicarse con el script de "EnemyMovement".
 
     #region methods
     public void TakeDamage(int damage)  //Método para que el enemigo reciba daño.
