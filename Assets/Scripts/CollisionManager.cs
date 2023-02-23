@@ -9,19 +9,23 @@ public class CollisionManager : MonoBehaviour
     private Rigidbody2D _myRigidbody2D;
     #endregion
 
+    #region Parameters
+    public bool _touchingLadder;
+    #endregion
+
     #region Movement Methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
-            _myCharacterController._isClimbing = true; //estamos tocando escaleras
+            _touchingLadder = true; //estamos tocando escaleras
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
-            _myCharacterController._isClimbing = false; //salgo de escaleras
+            _touchingLadder = false; //salgo de escaleras
         }
     }
     #endregion

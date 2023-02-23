@@ -34,11 +34,8 @@ public class InputComponent : MonoBehaviour
             _myCharacterController.Dash();
         }
         //llamamos a climb
-        if (_myCharacterController._isClimbing)
-        {
-            _input.y = Input.GetAxisRaw("Vertical");
-            _myCharacterController.Climb();
-        }
+        _input.y = Input.GetAxisRaw("Vertical");
+        _myCharacterController.Climb();
         /*if (_myCharacterController._isClimbing)
         { //entonces activamos controles en eje Y (WS)
             _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
