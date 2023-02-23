@@ -33,17 +33,10 @@ public class InputComponent : MonoBehaviour
         {
             _myCharacterController.Dash();
         }
-        //llamamos a climb
+        //llamamos a Climb() y cojo info del axisY
         _input.y = Input.GetAxisRaw("Vertical");
         _myCharacterController.Climb();
-        /*if (_myCharacterController._isClimbing)
-        { //entonces activamos controles en eje Y (WS)
-            _myCharacterController.MoveYAxis(Input.GetAxis("Vertical"));
-            if (_myCharacterController._isgrounded)
-            {
-                _myCharacterController._isClimbing = false;
-            }
-        }*/
+        
         //disparamos
         if (Input.GetKeyDown(KeyCode.X))
         {

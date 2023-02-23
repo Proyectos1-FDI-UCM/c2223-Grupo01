@@ -22,7 +22,7 @@ public class CharacterController : MonoBehaviour
     [Header ("Escaleras")]
     [SerializeField] public float _climbVelocity = 10f; //velocidad de subida
     public bool _climbing;
-    private float _initialGravity;                //de escaleras
+    private float _initialGravity;                //para escaleras
     #endregion
 
     #region References
@@ -84,12 +84,7 @@ public class CharacterController : MonoBehaviour
             _climbing = false;
         }
     }
-    /*public void MoveYAxis(float YAxismove) //Movimiento en eje Y
-    {
-        // Muevo al personaje en objetos con tag "Escaleras"
-        Vector3 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity); //velocidad
-        _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
-    }*/
+
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
