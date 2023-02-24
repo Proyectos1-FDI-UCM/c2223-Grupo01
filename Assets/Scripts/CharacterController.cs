@@ -56,11 +56,7 @@ public class CharacterController : MonoBehaviour
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
 
         // estas líneas sirven para que mighty mire a la dirección correcta
-        if (XAxismove > 0 && !_facingRight)
-        {
-            Flip();
-        }
-        else if (XAxismove < 0 && _facingRight)
+        if (XAxismove > 0 && !_facingRight || XAxismove < 0 && _facingRight)
         {
             Flip();
         }
@@ -78,6 +74,7 @@ public class CharacterController : MonoBehaviour
         {
             _myRigidBody2D.gravityScale = _initialGravity;
             _climbing = false;
+            //_myRigidBody2D.velocity = new Vector2(0, 0);
         }
         if (_isgrounded)
         {

@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 45
-  _visionDistance: 10
+  _visionDistance: 2
 --- !u!1 &989400446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1389,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: EnemySpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: _enemySpeed
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}

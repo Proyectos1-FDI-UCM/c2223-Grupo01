@@ -26,6 +26,6 @@ public class LimitedTimeLife : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SelfDestroy", _maxLifetime * Time.deltaTime);
+        Invoke("SelfDestroy", _maxLifetime);
     }
 }
