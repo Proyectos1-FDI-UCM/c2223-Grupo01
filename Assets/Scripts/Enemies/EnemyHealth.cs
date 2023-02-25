@@ -26,8 +26,6 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()  //Método para que muera el enemigo.
     {
-        Debug.Log("Samuerto");
-
         //Animación de morir.
 
         //Quitar al enemigo.
