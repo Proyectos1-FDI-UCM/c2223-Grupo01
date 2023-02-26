@@ -6,14 +6,14 @@ public class MeleeComponent : MonoBehaviour
 {
     public Animator animator;
 
-    public Transform attackPoint; //El punto que checkea si le ha dao a un enemigo.
-    public LayerMask enemyLayers; //Para referirse a dónde están los enemigos (para pegarles). WIP: Recuerda hacer la layer de los enemigos.
+    [SerializeField] private Transform attackPoint; //El punto que checkea si le ha dao a un enemigo.
+    [SerializeField] private LayerMask enemyLayers; //Para referirse a dónde están los enemigos (para pegarles). WIP: Recuerda hacer la layer de los enemigos.
 
-    public float attackRange = 0.5f; //El rango con el que ataca (radio).
-    public int attackDamage = 40; //Daño por golpe.
+    [SerializeField] private float attackRange = 0.5f; //El rango con el que ataca (radio).
+    [SerializeField] private int attackDamage = 40; //Daño por golpe.
 
-    public float attackRate = 2f; //Indica cuántas veces se va a atacar por segundo.
-    float nextAttackTime = 0f;  //Cooldown del ataque.
+    [SerializeField] private float attackRate = 2f; //Indica cuántas veces se va a atacar por segundo.
+    private float nextAttackTime = 0f;  //Cooldown del ataque.
 
     public EnemyMovement enemyMovement; //Sirve para comunicarse con el script de "EnemyMovement".
 
@@ -53,9 +53,9 @@ public class MeleeComponent : MonoBehaviour
 
     private void OnDrawGizmosSelected() //Esto dibuja una esfera que indica el radio del ataque. Estos dibuos se llaman "Gizmos".
     {
-        if (attackPoint == null)    //Esto es por si el "attackPoint" no está asignado (para que no haya errores en la consola).
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);   //Esto hace que se dibuje.
+        if (attackPoint != null)    //Esto es por si el "attackPoint" no está asignado (para que no haya errores en la consola).
+        {
+            Gizmos.DrawWireSphere(attackPoint.position, attackRange);   //Esto hace que se dibuje.
+        }
     }
 }

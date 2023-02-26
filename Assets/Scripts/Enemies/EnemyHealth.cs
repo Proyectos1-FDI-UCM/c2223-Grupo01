@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     #region parameters
-    public int maxHealth = 100; //Vida máxima del enemigo.
-    int currentHealth;  //Vida actual del enemigo.
+    [SerializeField] private int _maxHealth = 100; //Vida máxima del enemigo.
+    private int _currentHealth;  //Vida actual del enemigo.
     #endregion
 
     public EnemyMovement enemyMovement; //Sirve para comunicarse con el script de "EnemyMovement".
@@ -14,11 +14,11 @@ public class EnemyHealth : MonoBehaviour
     #region methods
     public void TakeDamage(int damage)  //Método para que el enemigo reciba daño.
     {
-        currentHealth = currentHealth - damage; //Cada hostia le va bajando la vida.
+        _currentHealth -= damage; //Cada hostia le va bajando la vida.
 
         //Animación de recibir daño.
 
-        if (currentHealth <= 0) //Cuando la vida quede a 0 o menos, el enemigo muere.
+        if (_currentHealth <= 0) //Cuando la vida quede a 0 o menos, el enemigo muere.
         {
             Die();
         }
@@ -37,6 +37,6 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;  //Al comienzo, el enemigo comienza con máxima vida.
+        _currentHealth = _maxHealth;  //Al comienzo, el enemigo comienza con máxima vida.
     }
 }

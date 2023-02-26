@@ -5,10 +5,9 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     #region parameters
-    [SerializeField]
-    private float _speed; // velociadad de la bala
+    [SerializeField] private float _speed; // velociadad de la bala
     private GameObject _player; // referencia al player
-    private Vector2 direccion; //COmprueba la dirección hacia donde debe ir la bala
+    private Vector2 _direccion; //COmprueba la dirección hacia donde debe ir la bala
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -17,16 +16,16 @@ public class BulletMovement : MonoBehaviour
         //Comprobación de cual será la dirección de la bala
         if (_player.transform.localScale.x > 0)
         {
-            direccion = Vector2.right;       //derecha
+            _direccion = Vector2.right;       //derecha
         }
         else if (_player.transform.localScale.x < 0)
         {
-            direccion = Vector2.left;      //izquierda
+            _direccion = Vector2.left;      //izquierda
         }
     }
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(_speed * direccion * Time.deltaTime);//desplazamiento de la bala
+        gameObject.transform.Translate(_speed * _direccion * Time.deltaTime);//desplazamiento de la bala
     }
 }
