@@ -7,10 +7,15 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text _timetext;
+    [SerializeField] private Image _regular; //La imagen del arma de fuego regular.
+    [SerializeField] private Image _fire;
+    [SerializeField] private Image _ice;
+
     float _currentTime;
     float _health; //La cantidad de vida del jugador.
-    float _maxHealth;
-    public Slider _slider;
+    float _maxHealth; //La vida máxima que puede tener el jugador.
+    public Slider _slider; //La Barra de vida
+    int _currentWeapon; //Un int que determina qué arma estamos usando ahora.
     
    void UpdateTimer ( float Currenttime)
     {
@@ -30,17 +35,41 @@ public class UIManager : MonoBehaviour
     {
         _slider.value = health;
     }
+
+    private void currentWeaponState( int weapon) //Método que determina cuál es la arma actual que muestra en la UI
+    {
+        switch (weapon)
+        {
+            case 0:
+                _regular.gameObject.SetActive(true);
+                _ice.gameObject.SetActive(false);
+                _fire.gameObject.SetActive(false);
+                break;
+            case 1:
+                _regular.gameObject.SetActive(false);
+                _ice.gameObject.SetActive(true);
+                _fire.gameObject.SetActive(false);
+                break;
+            case 2:
+                _regular.gameObject.SetActive(false);
+                _ice.gameObject.SetActive(false);
+                _fire.gameObject.SetActive(true);
+                break;
+        }
+    }
     void Start()
     {
-        _maxHealth = GameManager.instance._MaxHealth;
+        _maxHealth = GameManager.instance._MaxHealth;  
         SetMaxHealth(_maxHealth);
     }
     void Update()
     {
         _health = GameManager.instance._PlayerHealth; //En cada frame se comprobará la vida del jugador.
         _currentTime = GameManager.instance._currentTime;
+        _currentWeapon = GameManager.instance._currentWeapon; 
         UpdateTimer(_currentTime);
         SetHealth(_health);
+        currentWeaponState(_currentWeapon);
         
        
     }
