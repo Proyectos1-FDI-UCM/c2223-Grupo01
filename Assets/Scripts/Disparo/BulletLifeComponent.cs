@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class BulletLifeComponent : MonoBehaviour
 {
-    #region references
-    /// <summary>
-    /// Reference to Game Manager object
-    /// </summary>
-    //[SerializeField]
-    //private GameObject _gameManager;
+    #region Parameters
+    [SerializeField] private int _bulletDamage;
     #endregion
+
     #region methods
-    /// <summary>
-    /// Executed on collision. The component informs GameManger of its death before destroying itself.
-    /// </summary> 
-    /// <param name="collision">Colliding element collision</param>
+    // Colisiones de la bala  
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+        if(collision.gameObject.GetComponent<EnemyHealth>() != null)
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
+        }
     }
     #endregion
 }

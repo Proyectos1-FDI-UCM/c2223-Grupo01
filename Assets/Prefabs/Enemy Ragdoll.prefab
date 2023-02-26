@@ -127,6 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 5
+  KnockbackForce: 0
+  KnockbackCounter: 0
+  KnockbackTotalTime: 0
+  KnockFromRight: 0
 --- !u!50 &9140318663064654158
 Rigidbody2D:
   serializedVersion: 4
@@ -160,4 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0280e2ac4494544b98058e76b2926fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  _maxHealth: 100
+  enemyMovement: {fileID: 6326382012256657893}
