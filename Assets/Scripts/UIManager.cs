@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
 
     private void currentWeaponState( int weapon) //Método que determina cuál es la arma actual que muestra en la UI
     {
-        switch (weapon)
+        switch (weapon)   //Se comprueba cuál es nuestro estado actual (nuestra arma actual) a través de un switch.
         {
             case 0:
                 _regular.gameObject.SetActive(true);
