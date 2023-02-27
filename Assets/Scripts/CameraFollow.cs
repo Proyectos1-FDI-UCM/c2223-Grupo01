@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private Vector3 Offset = new Vector3(0f, 0f, -10f);
+    private Vector3 Offset = new Vector3(0f, -0f, -13f);
     [SerializeField] private Transform target; //El transform de nuestro jugador.
     [SerializeField] private float smoothTime = 0.01f;
     private Vector3 Currentvelocity = Vector3.zero;
