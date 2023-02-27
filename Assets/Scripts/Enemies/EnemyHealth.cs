@@ -9,8 +9,6 @@ public class EnemyHealth : MonoBehaviour
     private int _currentHealth;  //Vida actual del enemigo.
     #endregion
 
-    public EnemyMovement enemyMovement; //Sirve para comunicarse con el script de "EnemyMovement".
-
     #region methods
     public void TakeDamage(int damage)  //Método para que el enemigo reciba daño.
     {

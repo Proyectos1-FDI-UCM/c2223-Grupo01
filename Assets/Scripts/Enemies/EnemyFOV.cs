@@ -50,15 +50,18 @@ public class EnemyFOV : MonoBehaviour
     void Update()
     {
         Debug.Log(_detected);
-        Vector2 PlayerVector = _player.transform.position - transform.position; //El vector que indica la distancia del jugador al enemigo.
-
-        if (Vector3.Angle(PlayerVector.normalized, transform.right) < _visionAngle * 0.5f)  //Comprueba si el jugador está dentro del ángulo de visión del enemigo
+        if(_player!= null)
         {
-            if (PlayerVector.magnitude < _visionDistance) //Comprueba si estamos a una distancia que es detectable para el enemigo.
+            Vector2 PlayerVector = _player.transform.position - transform.position; //El vector que indica la distancia del jugador al enemigo.
+
+            if (Vector3.Angle(PlayerVector.normalized, transform.right) < _visionAngle * 0.5f)  //Comprueba si el jugador está dentro del ángulo de visión del enemigo
             {
-                _detected = true;
+                if (PlayerVector.magnitude < _visionDistance) //Comprueba si estamos a una distancia que es detectable para el enemigo.
+                {
+                    _detected = true;
+                }
+                else _detected = false;  //Si nos salimos del cono de visión entonces el detecta volverá a ser falso.
             }
-            else _detected = false;  //Si nos salimos del cono de visión entonces el detecta volverá a ser falso.
-        }
+        }    
     }
 }
