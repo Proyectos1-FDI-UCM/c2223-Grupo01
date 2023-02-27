@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 5
-  KnockbackForce: 6
+  KnockbackForce: 4.5
   KnockbackCounter: 0
   KnockbackTotalTime: 0.2
   KnockFromRight: 0

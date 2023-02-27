@@ -10,23 +10,28 @@ public class EnemyMovement : MonoBehaviour
     #region parameters
     [SerializeField] private float _enemySpeed = 5f;
 
-    public float KnockbackForce; //Cuánta fuerza tendrá el knockback.
-    public float KnockbackCounter; //Cooldown del knockback.
-    public float KnockbackTotalTime; //Cuánto durará el knockback.
+    //Cuánta fuerza tendrá el knockback.
+    public float KnockbackForce;
+    //Cooldown del knockback.
+    public float KnockbackCounter;
+    //Cuánto durará el knockback.
+    public float KnockbackTotalTime;
 
-    public bool KnockFromRight; //Determina desde que posición ha sido golpeado el enemigo (derecha/izquierda).
+    //Determina desde que posición ha sido golpeado el enemigo (derecha/izquierda).
+    public bool KnockFromRight;
     #endregion
 
     #region references
-    private GameObject _player; //El jugador
+    //El jugador
+    private GameObject _player; 
     private EnemyFOV _myEnemyFOV;
     private Rigidbody2D _rigidbody;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D Other)
     {
-
-        transform.Rotate(0f, 180f, 0f); // Cada vez que colisione con un collider, el enemigo dará la vuelta. 
+        // Cada vez que colisione con un collider, el enemigo dará la vuelta.
+        transform.Rotate(0f, 180f, 0f);  
 
     }
 
@@ -40,34 +45,42 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (KnockbackCounter <= 0) //Solo se puede mover el enemigo si no está en modo knockback.
+        //Solo se puede mover el enemigo si no está en modo knockback.
+        if (KnockbackCounter <= 0) 
         {
-            if (!_myEnemyFOV._detected) //Si el enemigo no ha detectado al jugador, este seguirá su patrón normal
+            //Si el enemigo no ha detectado al jugador, este seguirá su patrón normal
+            if (!_myEnemyFOV._detected) 
             {
-
-                _rigidbody.velocity = (transform.right * _enemySpeed);//El Enemigo se moverá a la derecha con determinada velocidad
+                //El Enemigo se moverá a la derecha con determinada velocidad
+                _rigidbody.velocity = (transform.right * _enemySpeed);
             }
-            else if (_myEnemyFOV._detected) //Si el enemigo nos detecta. 
+            //Si el enemigo nos detecta. 
+            else if (_myEnemyFOV._detected) 
             {
-                Vector2 Distfromplayer = new Vector2(_player.transform.position.x - transform.position.x, 0f); //la dirección a la que nuestro enemigo se moverá.
+                //la dirección a la que nuestro enemigo se moverá.
+                Vector2 Distfromplayer = new Vector2(_player.transform.position.x - transform.position.x, 0f); 
                 Vector2 velocity = Distfromplayer * _enemySpeed;
                 _rigidbody.velocity = velocity;
             }
         }
-        else //Si está en modo knockback
+        //Si está en modo knockback
+        else
         {
-            if (KnockFromRight) //Si golpea por la derecha...
+            //Si golpea por la derecha...
+            if (KnockFromRight) 
             {
-                _rigidbody.velocity = new Vector2(-KnockbackForce, KnockbackForce); //"-KnockbackForce" mueve al enemigo para atrás.
-                                                                                    //Es el vector de la fuerza que pega el knockback.
+                //"-KnockbackForce" mueve al enemigo para atrás.
+                //Es el vector de la fuerza que pega el knockback.
+                _rigidbody.velocity = new Vector2(-KnockbackForce, 0); 
             }
-
-            if(!KnockFromRight) //Si golpea por la izquierda...
+            //Si golpea por la izquierda...
+            if (!KnockFromRight) 
             {
-                _rigidbody.velocity = new Vector2(KnockbackForce, KnockbackForce); //Esta vuelta manda al enemigo a la derecha.
+                //Esta vuelta manda al enemigo a la derecha.
+                _rigidbody.velocity = new Vector2(KnockbackForce, 0); 
             }
-
-            KnockbackCounter = KnockbackCounter - Time.deltaTime; //Hace que el contador baje.
+            //Hace que el contador baje.
+            KnockbackCounter = KnockbackCounter - Time.deltaTime; 
         }
 
         

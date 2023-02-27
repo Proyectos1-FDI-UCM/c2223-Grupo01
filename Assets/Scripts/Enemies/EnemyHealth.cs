@@ -5,36 +5,46 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private int _maxHealth = 100; //Vida máxima del enemigo.
-    private int _currentHealth;  //Vida actual del enemigo.
+    //Vida máxima del enemigo.
+    [SerializeField] private int _maxHealth = 100;
+    //Vida actual del enemigo.
+    private int _currentHealth;
     #endregion
 
     #region methods
-    public void TakeDamage(int damage)  //Método para que el enemigo reciba daño.
+    //Método para que el enemigo reciba daño.
+    public void TakeDamage(int damage) 
     {
-        _currentHealth -= damage; //Cada hostia le va bajando la vida.
+        //Cada hostia le va bajando la vida.
+        _currentHealth -= damage;
 
         //Animación de recibir daño.
 
-        if (_currentHealth <= 0) //Cuando la vida quede a 0 o menos, el enemigo muere.
+        //Cuando la vida quede a 0 o menos, el enemigo muere.
+        if (_currentHealth <= 0) 
         {
             Die();
         }
     }
 
-    void Die()  //Método para que muera el enemigo.
+    //Método para que muera el enemigo.
+    void Die()  
     {
         //Animación de morir.
 
         //Quitar al enemigo.
-        GetComponent<Collider2D>().enabled = false; //Desactiva el collider del enemigo al morir.
-        this.enabled = false;   //Desactiva el EnemyComponent.
+
+        //Desactiva el collider del enemigo al morir.
+        GetComponent<Collider2D>().enabled = false;
+        //Desactiva el EnemyComponent.
+        this.enabled = false;   
     }
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        _currentHealth = _maxHealth;  //Al comienzo, el enemigo comienza con máxima vida.
+        //Al comienzo, el enemigo comienza con máxima vida.
+        _currentHealth = _maxHealth;  
     }
 }
