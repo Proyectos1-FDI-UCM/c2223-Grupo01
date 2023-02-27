@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 989400446}
+  _MaxHealth: 10
 --- !u!4 &69379902
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +300,7 @@ Animator:
   m_GameObject: {fileID: 989400446}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb0cf3eabc9016746bc3af908666267e, type: 2}
+  m_Controller: {fileID: 9100000, guid: fd3e3336c8b71af4a87dc6a44290414a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -528,7 +529,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _dashForce
-      value: 20
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _dashFriction
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
@@ -585,6 +590,10 @@ PrefabInstance:
     - target: {fileID: 3307213394960240520, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307213394960240520, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}

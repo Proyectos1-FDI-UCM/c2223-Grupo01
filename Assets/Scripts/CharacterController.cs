@@ -34,6 +34,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     private InputComponent _myInputComponent;
     private CollisionManager _myCollisionManager;
+
+    private Animator _animator;
     #endregion
 
     #region Methods
@@ -104,6 +106,11 @@ public class CharacterController : MonoBehaviour
         }
         _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
         _myRigidBody2D.AddForce(new Vector2(0f, _jumpForce));
+
+        if (!_doublejump)
+        {
+            _animator.SetTrigger("_doubleJump");
+        }
     }
 
     public void Dash()
@@ -137,12 +144,18 @@ public class CharacterController : MonoBehaviour
         _myCollisionManager = GetComponent<CollisionManager>();
         // guardo gravedad inicial
         _initialGravity = _myRigidBody2D.gravityScale;
+
+        _animator= GetComponent<Animator>();
     }
 
     private void Update()
     {
         //detecta que estemos tocando tierra (no seais informáticos y tocad césped)
         _isgrounded = IsGrounded();
+
+        _animator.SetBool("_dash", _dash);
+
+        _animator.SetBool("_isGrounded", _isgrounded);
 
         //comprobador de finalizado de dash
         if (_dash && _myRigidBody2D.velocity.x == 0)
