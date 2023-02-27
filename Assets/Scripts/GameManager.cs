@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   _currentWeapon = 1;
+    {   _currentWeapon = 0;
         _currentTime = 300f;
         _PlayerHealth = 10;
     }
