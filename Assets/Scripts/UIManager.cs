@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(Currenttime / 60); //Redondea el número para sacar los minutos.
         float seconds = Mathf.FloorToInt(Currenttime % 60); //Redondea el número para sacar los segundos.
 
-        _timetext.text = string.Format("{0:00}:{1:00}", minutes, seconds); //Coge el archivo de texto del timer para camiarlo.
+        _timetext.text = string.Format("{0:0}:{1:00}", minutes, seconds); //Coge el archivo de texto del timer para camiarlo.
     }
 
     public void SetMaxHealth (float health) //La máxima cantdad de vida que tendremos
