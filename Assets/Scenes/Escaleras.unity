@@ -179,6 +179,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
   m_PrefabInstance: {fileID: 3307213394496225502}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &989400454 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3307213394870111580, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+  m_PrefabInstance: {fileID: 3307213394496225502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093904461
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,8 +498,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852274692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.97, y: -0.74, z: 0}
-  m_LocalScale: {x: 1.2455, y: 3.2584, z: 1}
+  m_LocalPosition: {x: 1.9138, y: -1.1174, z: 0}
+  m_LocalScale: {x: 1.1330312, y: 4.0130453, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -515,6 +520,10 @@ PrefabInstance:
       propertyPath: _dashFriction
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _myRigidBody2D
+      value: 
+      objectReference: {fileID: 989400454}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -26,7 +26,7 @@ public class CharacterController : MonoBehaviour
     [Header("Climb")]
     private float _initialGravity;
     private float _vertical;
-    private float _climbSpeed;
+    private float _climbSpeed = 10f;
     private bool _isTouchingLadder;
     private bool _isClimbing;
     #endregion
@@ -63,7 +63,6 @@ public class CharacterController : MonoBehaviour
             Flip();
         }
     }
-
 
     private void Flip()
     // Gira el sprite del player hacia donde esté mirando
@@ -162,8 +161,10 @@ public class CharacterController : MonoBehaviour
             _myCollider2D.sharedMaterial.friction = 0;
         }
 
+        // Actualizo input de eje Y
+        // y compruebo si puedo escalar
         _vertical = Input.GetAxis("Vertical");
-        if(_isTouchingLadder && Mathf.Abs(_vertical) > 0f)
+        if(_isTouchingLadder && Mathf.Abs(_vertical) > 0)
         {
             _isClimbing = true;
         }
@@ -172,10 +173,10 @@ public class CharacterController : MonoBehaviour
     {
         if (_isClimbing)
         {
-            _myRigidBody2D.gravityScale = 0f;
+            _myRigidBody2D.gravityScale = 0;
             _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, _vertical * _climbSpeed);
         }
-        else
+        if(!_isClimbing || !_isTouchingLadder)
         {
             _myRigidBody2D.gravityScale = _initialGravity;
         }
