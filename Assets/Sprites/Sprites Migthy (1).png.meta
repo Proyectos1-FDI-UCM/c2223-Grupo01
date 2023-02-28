@@ -109,7 +109,7 @@ TextureImporter:
         serializedVersion: 2
         x: 8
         y: 126
-        width: 26
+        width: 31
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -128,9 +128,9 @@ TextureImporter:
       name: Sprites Migthy (1)_1
       rect:
         serializedVersion: 2
-        x: 41
+        x: 42
         y: 126
-        width: 32
+        width: 31
         height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

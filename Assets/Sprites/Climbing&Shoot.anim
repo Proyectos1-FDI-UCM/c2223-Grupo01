@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Melee Attack 1
+  m_Name: Climbing&Shoot
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1278887172, guid: f5cf0bc69589c954c8c5db10faf698b8, type: 3}
-    - time: 0.083333336
-      value: {fileID: 45745782, guid: f5cf0bc69589c954c8c5db10faf698b8, type: 3}
-    - time: 0.16666667
-      value: {fileID: 2086552661, guid: f5cf0bc69589c954c8c5db10faf698b8, type: 3}
+      value: {fileID: -613186740, guid: 1f8708037c5921948b5963683abbe461, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1278887172, guid: f5cf0bc69589c954c8c5db10faf698b8, type: 3}
-    - {fileID: 45745782, guid: f5cf0bc69589c954c8c5db10faf698b8, type: 3}
-    - {fileID: 2086552661, guid: f5cf0bc69589c954c8c5db10faf698b8, type: 3}
+    - {fileID: -613186740, guid: 1f8708037c5921948b5963683abbe461, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
