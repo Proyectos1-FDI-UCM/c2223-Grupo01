@@ -6,7 +6,8 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     #region Parameters
-    //private set: esta variable puede ser leída desde otros scripts pero no cambiada
+    // private set: esta variable puede ser leída desde otros scripts
+    // pero no cambiada
     public bool _isgrounded { get; private set; }
     public bool _doublejump { get; private set; }
     [SerializeField] private float _MovementSmoothing;
@@ -21,18 +22,20 @@ public class CharacterController : MonoBehaviour
     private bool _facingRight = true;
     [SerializeField] private float _dashForce;
     private bool _dash = false;
+
+    [Header("Climb")]
+    private float _initialGravity;
+    private float _vertical;
+    private float _climbSpeed;
+    private bool _isTouchingLadder;
+    private bool _isClimbing;
     #endregion
 
     #region References
-    //Referencia al Rigid Body
-    private Rigidbody2D _myRigidBody2D;
-    // referencia al colider
+    [SerializeField]private Rigidbody2D _myRigidBody2D;
     private Collider2D _myCollider2D;
-    //el número debe coincide con el layer de Ground
     [SerializeField] private LayerMask _groundLayer;
     private InputComponent _myInputComponent;
-    private CollisionManager _myCollisionManager;
-
     private Animator _animator;
     #endregion
 
@@ -111,14 +114,34 @@ public class CharacterController : MonoBehaviour
     }
     #endregion
 
-    private void Start()
-    // Inicializo componentes.
+    #region Collision Methods
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Escalera"))
+        {
+            _isTouchingLadder = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Escalera"))
+        {
+            _isTouchingLadder = false;
+            _isClimbing = false;
+        }
+    }
+    #endregion
+
+    private void Start()
+    {
+        // Inicializo componentes.
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _myCollider2D = GetComponent<Collider2D>();
         _myInputComponent = GetComponent<InputComponent>();
-        _myCollisionManager = GetComponent<CollisionManager>();
         _animator = GetComponent<Animator>();
+
+        // Guardo gravedad inicial.
+        _myRigidBody2D.gravityScale = _initialGravity;
     }
 
     private void Update()
@@ -137,6 +160,24 @@ public class CharacterController : MonoBehaviour
             _myInputComponent.enabled = true;
             _dash = false;
             _myCollider2D.sharedMaterial.friction = 0;
+        }
+
+        _vertical = Input.GetAxis("Vertical");
+        if(_isTouchingLadder && Mathf.Abs(_vertical) > 0f)
+        {
+            _isClimbing = true;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (_isClimbing)
+        {
+            _myRigidBody2D.gravityScale = 0f;
+            _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, _vertical * _climbSpeed);
+        }
+        else
+        {
+            _myRigidBody2D.gravityScale = _initialGravity;
         }
     }
 }

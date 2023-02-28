@@ -37,16 +37,18 @@ public class InputComponent : MonoBehaviour
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
         }
+
         // Ataca cuerpo a cuerpo
         if (Input.GetKeyDown(KeyCode.Z))
         {
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
         }
+
         // Movimiento horizontal
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
 
-        //-Animaciones
+        // Animaciones
         _animator.SetBool("_isRunning", Input.GetAxis("Horizontal") != 0);
         _animator.SetBool("_isLookUp", Input.GetKey(KeyCode.E));//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
 

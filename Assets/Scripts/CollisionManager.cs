@@ -13,19 +13,19 @@ public class CollisionManager : MonoBehaviour
     public bool _touchingLadder;
     #endregion
 
-    #region Movement Methods
+    #region Ladder Methods
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
-            _touchingLadder = true; //estamos tocando escaleras
+            _touchingLadder = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Escalera"))
         {
-            _touchingLadder = false; //salgo de escaleras
+            _touchingLadder = false;
         }
     }
     #endregion
