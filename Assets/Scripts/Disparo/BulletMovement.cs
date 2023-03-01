@@ -36,7 +36,8 @@ public class BulletMovement : MonoBehaviour
         }*/
         if (_myInputComponent._lookUP)
         {
-            _direccion = Vector2.up;
+            _direccion = Vector2.right;
+            gameObject.transform.Rotate(new Vector3(0, 0, 90));
         }
     }
     // Update is called once per frame
