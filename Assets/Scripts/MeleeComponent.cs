@@ -40,6 +40,7 @@ public class MeleeComponent : MonoBehaviour
             //El contador comienza cada vez que le pegas un cate al enemigo.
             //Comprobamos si el jugador esta a la izda o dcha
             {
+                _enemyMovement = enemy.GetComponent<EnemyMovement>();
                 _enemyMovement.KnockbackCounter = _enemyMovement.KnockbackTotalTime;
                 
                 if (enemy.transform.position.x <= transform.position.x)
@@ -65,10 +66,4 @@ public class MeleeComponent : MonoBehaviour
         }
     }
     #endregion
-
-    void Start()
-    //Inicializo referencias
-    {
-        _enemyMovement = enemy.GetComponent<EnemyMovement>();
-    } 
 }

@@ -257,7 +257,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548b3e7c1aac504a984ca11c4340051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0, z: 13}
   target: {fileID: 1049526867}
   smoothTime: 0.01
 --- !u!1001 &670765422
@@ -360,6 +361,10 @@ PrefabInstance:
     - target: {fileID: 6326382012256657892, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_Name
       value: Enemy Ragdoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: _enemySpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}

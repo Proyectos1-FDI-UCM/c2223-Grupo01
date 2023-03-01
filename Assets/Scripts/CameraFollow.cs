@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 //Seguimiento de la cámara al player.
 {
-    [SerializeField] private Vector3 Offset = new Vector3(0f, 3f, -13f);
+    [SerializeField] private Vector3 Offset = new Vector3(0f, 0f, 13f);
     [SerializeField] private Transform target;
     [SerializeField] private float smoothTime = 0.01f;
     private Vector3 Currentvelocity = Vector3.zero;
