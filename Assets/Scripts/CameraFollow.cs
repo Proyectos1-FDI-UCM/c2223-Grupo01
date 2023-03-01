@@ -5,10 +5,13 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private Vector3 Offset = new Vector3(0f, 3f, -13f);
-    [SerializeField] private Transform target; //El transform de nuestro jugador.
+    private Transform target; //El transform de nuestro jugador.
     [SerializeField] private float smoothTime = 0.01f;
     private Vector3 Currentvelocity = Vector3.zero;
-
+    private void Start()
+    {
+        target = GameManager.instance._player.transform;   
+    }
     void FixedUpdate()
     {
         Vector3 TargetPosition = target.position + Offset;
