@@ -12,11 +12,13 @@ public class ShootingComponent : MonoBehaviour
 
     #region References
     private InputComponent _myInputComponent;
+    [SerializeField] private AudioClip _disparoNormal;
     #endregion
 
     #region methods
     public void Shoot()
     {
+            GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
             // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
             Instantiate(_bullet, _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
     }

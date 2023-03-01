@@ -13,6 +13,8 @@ public class InputComponent : MonoBehaviour
     private ShootingComponent _myShootingComponent;
     private MeleeComponent _myMeleeComponent;
     private Animator _animator;
+
+    [SerializeField] private AudioClip _melee;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class InputComponent : MonoBehaviour
         // Ataca cuerpo a cuerpo
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            GetComponent<AudioSource>().PlayOneShot(_melee);
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
         }

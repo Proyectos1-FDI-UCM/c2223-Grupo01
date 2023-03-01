@@ -34,7 +34,7 @@ public class MeleeComponent : MonoBehaviour
             nextAttackTime = Time.time + 1f / attackRate;    
 
             //Animación de ataque.
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
 
             //Detectar a los enemigos en el rango de ataque (el radio del golpe).
 

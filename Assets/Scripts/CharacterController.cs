@@ -15,6 +15,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _MovementSmoothing;
     private Vector3 _velocity = Vector3.zero;
 
+    private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
+
     [Header("Jump")]
     [SerializeField] private float _jumpForce;
     public bool _isJumping;
@@ -38,6 +40,10 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LayerMask _ladderLayer;
     private InputComponent _myInputComponent;
     private Animator _animator;
+
+    [SerializeField] private AudioClip _aterrizaje;
+    [SerializeField] private AudioClip _dobleSalto;
+    [SerializeField] private AudioClip _normalJump;
     #endregion
 
     #region Methods
@@ -45,11 +51,14 @@ public class CharacterController : MonoBehaviour
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
+        
         if (!_doublejump && _isgrounded)
         {
             _doublejump = true;
         }
+
         return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .05f, _groundLayer);
+
     }
 
     public void MoveXAxis(float XAxismove)
@@ -77,21 +86,28 @@ public class CharacterController : MonoBehaviour
     // para desactivar la posibilidad de doble salto.
     // Si no hemos saltado se desactiva el isgrounded.
     {
+        GetComponent<AudioSource>().PlayOneShot(_normalJump);
         if (!_isgrounded)
         {
+            
             _doublejump = false;
         }
         else
         {
+            
             _isgrounded = false;
         }
         _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
         _myRigidBody2D.AddForce(new Vector2(0f, _jumpForce));
 
+        
+
         if (!_doublejump)
         {
+            GetComponent<AudioSource>().PlayOneShot(_dobleSalto);
             _animator.SetTrigger("_doubleJump");
         }
+        
     }
 
     public void Dash()
@@ -158,6 +174,19 @@ public class CharacterController : MonoBehaviour
     {
         //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
+
+        if (!_aterrizado && _isgrounded)
+        {
+            //Cuando aterrice en el suelo, reproducirá el sonido y se volverá true aterrizado
+            GetComponent<AudioSource>().PlayOneShot(_aterrizaje);
+            _aterrizado = true;
+        }
+
+        if (!_isgrounded)
+        {
+            _aterrizado = false;
+        }
+
 
         //Actualiza Animator
         _animator.SetBool("_dash", _dash);
