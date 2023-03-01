@@ -21,6 +21,7 @@ public class AtravesarPlataforma : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    // Inicializo referencias y guardo parametros.
     {
         _player = GameManager.instance._player;
         _ccPlayer = _player.GetComponent<BoxCollider2D>();
@@ -32,6 +33,8 @@ public class AtravesarPlataforma : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    // Cuando se detecte que los pies del player estén por debajo de la cima de
+    // la plataforma atravesable, se podrá atravesar por debajo.
     {
         _piePlayer = _player.transform.position.y - _ccPlayerSize.y / 2;
         if(_piePlayer > _topPlataforma)

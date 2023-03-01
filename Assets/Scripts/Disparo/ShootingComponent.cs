@@ -5,8 +5,8 @@ using UnityEngine;
 public class ShootingComponent : MonoBehaviour
 {
     #region Parameters
-    [SerializeField] private GameObject _bullet; //prefab de la bala
-    [SerializeField] private Transform _bulletSpawnTransform; //Spawn de la bala
+    [SerializeField] private GameObject _bullet;                //prefab de la bala
+    [SerializeField] private Transform _bulletSpawnTransform;   //Spawn de la bala
     //private Vector2 _oldposition;
     #endregion
 
@@ -15,14 +15,15 @@ public class ShootingComponent : MonoBehaviour
     [SerializeField] private AudioClip _disparoNormal;
     #endregion
 
-    #region methods
+    #region Methods
     public void Shoot()
+    // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
-            GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
-            // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
-            Instantiate(_bullet, _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
+        GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
+        Instantiate(_bullet, _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
     }
     #endregion
+
     private void Start()
     {
         _myInputComponent= GetComponent<InputComponent>();

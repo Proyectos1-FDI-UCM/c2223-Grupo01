@@ -5,39 +5,37 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region References
-    public static GameManager instance; // Singleton inicializado en el Awake
-    public GameObject _player; // referencia al player que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
-    public GameObject _blaster; // referencia al arma de disparo que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
-    public float _currentTime { get; private set; } //variable que controla nuestro tiempo actual.
-    public float _PlayerHealth { get; private set; } //Variable que controla nuestra vida de jugador
-    public float _MaxHealth = 10f; //Variable que controla nuestra vida máxima de jugador.
-    public int _currentWeapon { get; private set; } //Variable que controla cuál es nuestra arma actual.
+    public static GameManager instance;                 // Singleton inicializado en el Awake
+    public GameObject _player;                          // Para usarlo en otros scripts
+    public GameObject _blaster;                         // referencia al arma de disparo que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
+    public float _currentTime { get; private set; }     //variable que controla nuestro tiempo actual.
+    public float _PlayerHealth { get; private set; }    //Variable que controla nuestra vida de jugador
+    public float _MaxHealth = 10f;                      //Variable que controla nuestra vida máxima de jugador.
+    public int _currentWeapon { get; private set; }     //Variable que controla cuál es nuestra arma actual.
     #endregion
 
-    public void OnPlayerHit ()
+    public void OnPlayerHit()
+    //Cuando se haga hit, daña al player
     {
         _PlayerHealth--;
     }
 
-
     private void Awake()
+    //Inicializo el Singleton
     {
-        instance = this; // esto inicializa el Singleton
+        instance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {   _currentWeapon = 2;
         _currentTime = 300f;
         _PlayerHealth = 10;
     }
 
-    // Update is called once per frame
     void Update()
     {    
-        
         _currentTime -= Time.deltaTime;
-        _PlayerHealth -= Time.deltaTime; // Placeholder para comprobar el funcionamiento de la barra de vida.
-       
+        // Placeholder para comprobar el funcionamiento de la barra de vida.
+        _PlayerHealth -= Time.deltaTime;
     }
 }

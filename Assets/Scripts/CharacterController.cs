@@ -176,7 +176,6 @@ public class CharacterController : MonoBehaviour
             _aterrizado = false;
         }
 
-
         //Actualiza Animator
         _animator.SetBool("_dash", _dash);
         _animator.SetBool("_isGrounded", _isgrounded);
