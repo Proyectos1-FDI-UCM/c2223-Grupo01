@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 989400446}
+  _blaster: {fileID: 0}
   _MaxHealth: 10
 --- !u!4 &69379902
 Transform:
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 0
+  _enemySpeed: 1
   KnockbackForce: 0
   KnockbackCounter: 0
   KnockbackTotalTime: 0
@@ -221,7 +222,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
-  enemyMovement: {fileID: 0}
 --- !u!114 &80621191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -12,7 +12,7 @@ public class BulletMovement : MonoBehaviour
     #endregion
 
     #region References
-    public InputComponent _myInputComponent; //referencia al input
+    private InputComponent _myInputComponent; //referencia al input
     #endregion
 
     // Start is called before the first frame update
