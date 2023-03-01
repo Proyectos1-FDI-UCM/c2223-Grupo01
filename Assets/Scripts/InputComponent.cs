@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InputComponent : MonoBehaviour
 {
+    #region Parameters
+    public bool _lookUP { get; private set; }  
+    #endregion
+
     #region References
     private CharacterController _myCharacterController;
     private ShootingComponent _myShootingComponent;
@@ -45,12 +49,14 @@ public class InputComponent : MonoBehaviour
             _myMeleeComponent.Attack();
         }
 
+        _lookUP = Input.GetAxis("Vertical") > 0;
+
         // Movimiento horizontal
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
 
         // Animaciones
         _animator.SetBool("_isRunning", Input.GetAxis("Horizontal") != 0);
-        _animator.SetBool("_isLookUp", Input.GetKey(KeyCode.E));//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
+        _animator.SetBool("_isLookUp", _lookUP);//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
 
     }
 }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     #region References
     public static GameManager instance; // Singleton inicializado en el Awake
     public GameObject _player; // referencia al player que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
+    public GameObject _blaster; // referencia al arma de disparo que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
     public float _currentTime { get; private set; } //variable que controla nuestro tiempo actual.
     public float _PlayerHealth { get; private set; } //Variable que controla nuestra vida de jugador
     public float _MaxHealth = 10f; //Variable que controla nuestra vida máxima de jugador.

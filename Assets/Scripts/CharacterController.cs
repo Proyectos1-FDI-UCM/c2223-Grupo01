@@ -140,7 +140,7 @@ public class CharacterController : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         // Guardo gravedad inicial.
-        _myRigidBody2D.gravityScale = _initialGravity;
+        //_myRigidBody2D.gravityScale = _initialGravity;
     }
 
     private void Update()
@@ -169,6 +169,15 @@ public class CharacterController : MonoBehaviour
             _isClimbing = true;
         }*/
     }
+
+    private void LateUpdate()
+    {
+        if (_dash)
+        {
+            _myCollider2D.bounds.Equals(gameObject.GetComponent<SpriteRenderer>().localBounds);
+        }
+    }
+
     /*private void FixedUpdate()
     {
         if (_isClimbing)
