@@ -15,20 +15,20 @@ public class BulletCollisionComponent : MonoBehaviour
     // Colisiones de la bala  
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*Destroy(gameObject);
+        Destroy(gameObject);
         if(collision.gameObject.GetComponent<EnemyHealth>() != null)
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
-        }*/
+        }
 
-        switch (_actualDamage)
+        /*switch (_actualDamage)
         {
             case typeOfDamage.Normal:
                 {
                     collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
                     break;
                 }
-        }
+        }*/
 
     }
     #endregion

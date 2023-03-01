@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class CharacterController : MonoBehaviour
 {
@@ -25,25 +27,24 @@ public class CharacterController : MonoBehaviour
 
     [Header("Climb")]
     private float _initialGravity;
-    private float _vertical;
-    private float _climbSpeed = 10f;
-    private bool _isTouchingLadder = false;
-    private bool _isClimbing;
+    private float _climbVelocity = 10f;
+    public bool _isClimbing { get; private set; }
     #endregion
 
     #region References
     [SerializeField]private Rigidbody2D _myRigidBody2D;
     private Collider2D _myCollider2D;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private LayerMask _ladderLayer;
     private InputComponent _myInputComponent;
     private Animator _animator;
     #endregion
 
     #region Methods
     private bool IsGrounded()
+    // cada vez que tocamos el suelo reactivamos el doble salto
+    // y detecto si estoy en el suelo
     {
-        // cada vez que tocamos el suelo reactivamos el doble salto
-        // y detecto si estoy en el suelo
         if (!_doublejump && _isgrounded)
         {
             _doublejump = true;
@@ -111,25 +112,32 @@ public class CharacterController : MonoBehaviour
         _dash = true;
         _myCollider2D.sharedMaterial.friction = _dashFriction;
     }
-    #endregion
 
-    #region Collision Methods
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Climb(float YAxismove)
     {
-        if (collision.CompareTag("Escalera"))
+        if ((YAxismove != 0 || _isClimbing) && _myRigidBody2D.IsTouchingLayers(_ladderLayer))
         {
-            _isTouchingLadder = true;
+            Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
+            _myRigidBody2D.velocity = targetVelocity;
+            _myRigidBody2D.gravityScale = 0;
+            _isClimbing = true;
         }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Escalera"))
+        else
         {
-            _isTouchingLadder = false;
+            _myRigidBody2D.gravityScale = _initialGravity;
+            if (_isClimbing)
+            {
+                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
+            }
+            _isClimbing = false;
+        }
+
+        if (_isgrounded)
+        {
             _isClimbing = false;
         }
     }
-    #endregion
+        #endregion
 
     private void Start()
     {
@@ -140,7 +148,7 @@ public class CharacterController : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         // Guardo gravedad inicial.
-        //_myRigidBody2D.gravityScale = _initialGravity;
+        _initialGravity = _myRigidBody2D.gravityScale;
     }
 
     private void Update()
@@ -160,14 +168,6 @@ public class CharacterController : MonoBehaviour
             _dash = false;
             _myCollider2D.sharedMaterial.friction = 0;
         }
-
-        // Actualizo input de eje Y
-        // y compruebo si puedo escalar
-       /* _vertical = Input.GetAxis("Vertical");
-        if(_isTouchingLadder && Mathf.Abs(_vertical) > 0)
-        {
-            _isClimbing = true;
-        }*/
     }
 
     private void LateUpdate()
@@ -177,17 +177,4 @@ public class CharacterController : MonoBehaviour
             _myCollider2D.bounds.Equals(gameObject.GetComponent<SpriteRenderer>().localBounds);
         }
     }
-
-    /*private void FixedUpdate()
-    {
-        if (_isClimbing)
-        {
-            _myRigidBody2D.gravityScale = 0;
-            _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, _vertical * _climbSpeed);
-        }
-        if(!_isClimbing || !_isTouchingLadder)
-        {
-            _myRigidBody2D.gravityScale = _initialGravity;
-        }
-    }*/
 }

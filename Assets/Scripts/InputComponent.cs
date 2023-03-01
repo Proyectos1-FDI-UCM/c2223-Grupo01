@@ -51,8 +51,10 @@ public class InputComponent : MonoBehaviour
 
         _lookUP = Input.GetAxis("Vertical") > 0;
 
-        // Movimiento horizontal
+        // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
+        _myCharacterController.Climb(Input.GetAxis("Vertical"));
+       
 
         // Animaciones
         _animator.SetBool("_isRunning", Input.GetAxis("Horizontal") != 0);
