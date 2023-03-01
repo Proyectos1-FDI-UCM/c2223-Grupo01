@@ -179,6 +179,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693122433}
+  - component: {fileID: 693122435}
+  - component: {fileID: 693122434}
   m_Layer: 8
   m_Name: topEscalera
   m_TagString: Untagged
@@ -201,6 +203,44 @@ Transform:
   m_Father: {fileID: 1852274695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693122434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693122432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d5eccda8fa657469320291441b555a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &693122435
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693122432}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.451666}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.096667975}
+  m_EdgeRadius: 0
 --- !u!1 &989400446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3307213394870111648, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
@@ -470,7 +510,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3140052}
+  m_Offset: {x: 0, y: 0.4275711}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -481,7 +521,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.37198958}
+  m_Size: {x: 1, y: 0.14485782}
   m_EdgeRadius: 0
 --- !u!1 &1698619018
 GameObject:
@@ -537,7 +577,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -580,6 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548b3e7c1aac504a984ca11c4340051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: 0, y: -1, z: 13}
   target: {fileID: 989400449}
   smoothTime: 0.1
 --- !u!1 &1852274692

@@ -51,14 +51,11 @@ public class CharacterController : MonoBehaviour
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
-        
         if (!_doublejump && _isgrounded)
         {
             _doublejump = true;
         }
-
         return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .05f, _groundLayer);
-
     }
 
     public void MoveXAxis(float XAxismove)
@@ -68,10 +65,7 @@ public class CharacterController : MonoBehaviour
         Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
 
-        if (XAxismove > 0 && !_facingRight || XAxismove < 0 && _facingRight)
-        {
-            Flip();
-        }
+        if (XAxismove > 0 && !_facingRight || XAxismove < 0 && _facingRight) Flip();
     }
 
     private void Flip()
@@ -89,25 +83,20 @@ public class CharacterController : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(_normalJump);
         if (!_isgrounded)
         {
-            
             _doublejump = false;
         }
         else
         {
-            
             _isgrounded = false;
         }
         _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
         _myRigidBody2D.AddForce(new Vector2(0f, _jumpForce));
-
-        
 
         if (!_doublejump)
         {
             GetComponent<AudioSource>().PlayOneShot(_dobleSalto);
             _animator.SetTrigger("_doubleJump");
         }
-        
     }
 
     public void Dash()

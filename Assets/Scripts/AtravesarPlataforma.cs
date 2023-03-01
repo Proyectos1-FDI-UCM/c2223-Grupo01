@@ -15,13 +15,14 @@ public class AtravesarPlataforma : MonoBehaviour
     private BoxCollider2D _ccPlataforma;
     private Bounds _ccPlataformaBounds;
     private Vector2 _ccPlayerSize;
+
     private float _topPlataforma, _piePlayer;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameManager.instance._player;
         _ccPlayer = _player.GetComponent<BoxCollider2D>();
         _ccPlataforma = GetComponent<BoxCollider2D>();
         _ccPlataformaBounds = _ccPlataforma.bounds;
@@ -33,13 +34,13 @@ public class AtravesarPlataforma : MonoBehaviour
     void Update()
     {
         _piePlayer = _player.transform.position.y - _ccPlayerSize.y / 2;
-        if(_piePlayer >= _topPlataforma)
+        if(_piePlayer > _topPlataforma)
         {
             _ccPlataforma.isTrigger = false;
             gameObject.tag = "Atravesable";
             gameObject.layer = LayerMask.NameToLayer("Ground");
         }
-        if(!_ccPlataforma.isTrigger && (_piePlayer < _topPlataforma - 0.1f))
+        if(!_ccPlataforma.isTrigger && (_piePlayer < _topPlataforma + 0.1f))
         {
             _ccPlataforma.isTrigger = true;
             gameObject.tag = "Untagged";
