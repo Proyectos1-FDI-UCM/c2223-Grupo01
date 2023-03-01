@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Escalera
   - Hielo
+  - Atravesable
   layers:
   - Default
   - TransparentFX
