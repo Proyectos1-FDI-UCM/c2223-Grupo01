@@ -140,7 +140,7 @@ public class CharacterController : MonoBehaviour
         _animator = GetComponent<Animator>();
 
         // Guardo gravedad inicial.
-        _myRigidBody2D.gravityScale = _initialGravity;
+       /* _myRigidBody2D.gravityScale = _initialGravity;*/
     }
 
     private void Update()
