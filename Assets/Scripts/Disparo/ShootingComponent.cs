@@ -17,14 +17,24 @@ public class ShootingComponent : MonoBehaviour
     #region methods
     public void Shoot()
     {
-        // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
-        Instantiate(_bullet, _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
+        if (!GetComponent<InputComponent>()._lookUP)
+        {
+            // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
+            Instantiate(_bullet, _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
+        }
+        else
+        {
+            Vector3 rotacionArriba = _bulletSpawnTransform.rotation + new Vector3(0,0,90);
+            Instantiate(_bullet, _bulletSpawnTransform.transform.position, );
+        }
+
     }
     #endregion
     private void Start()
     {
         _myInputComponent= GetComponent<InputComponent>();
         //_oldposition = _bulletSpawnTransform.position;
+        
     }
 
     private void Update()
