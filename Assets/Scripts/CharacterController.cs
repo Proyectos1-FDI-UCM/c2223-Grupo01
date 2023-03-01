@@ -117,15 +117,18 @@ public class CharacterController : MonoBehaviour
     {
         if ((YAxismove != 0 || _isClimbing) && _myRigidBody2D.IsTouchingLayers(_ladderLayer))
         {
-            Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
-            _myRigidBody2D.velocity = targetVelocity;
-            _myRigidBody2D.gravityScale = 0;
-            _isClimbing = true;
+            if (_doublejump)
+            {
+                Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
+                _myRigidBody2D.velocity = targetVelocity;
+                _myRigidBody2D.gravityScale = 0;
+                _isClimbing = true;
+            }
         }
         else
         {
             _myRigidBody2D.gravityScale = _initialGravity;
-            if (_isClimbing)
+            if (_isClimbing && _doublejump)
             {
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
             }
