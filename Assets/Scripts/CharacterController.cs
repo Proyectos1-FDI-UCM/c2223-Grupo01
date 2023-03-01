@@ -27,7 +27,7 @@ public class CharacterController : MonoBehaviour
     private float _initialGravity;
     private float _vertical;
     private float _climbSpeed = 10f;
-    private bool _isTouchingLadder;
+    private bool _isTouchingLadder = false;
     private bool _isClimbing;
     #endregion
 
@@ -163,13 +163,13 @@ public class CharacterController : MonoBehaviour
 
         // Actualizo input de eje Y
         // y compruebo si puedo escalar
-        _vertical = Input.GetAxis("Vertical");
+       /* _vertical = Input.GetAxis("Vertical");
         if(_isTouchingLadder && Mathf.Abs(_vertical) > 0)
         {
             _isClimbing = true;
-        }
+        }*/
     }
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         if (_isClimbing)
         {
@@ -180,5 +180,5 @@ public class CharacterController : MonoBehaviour
         {
             _myRigidBody2D.gravityScale = _initialGravity;
         }
-    }
+    }*/
 }
