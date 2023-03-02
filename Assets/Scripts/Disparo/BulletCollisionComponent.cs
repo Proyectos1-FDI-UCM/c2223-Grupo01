@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletLifeComponent : MonoBehaviour
+public class BulletCollisionComponent : MonoBehaviour
 {
     #region Parameters
     [SerializeField] private int _bulletDamage;
+
+    public enum typeOfDamage { Normal, Ice, Fire };
+    [SerializeField]private typeOfDamage _actualDamage;
     #endregion
 
     #region methods
@@ -17,6 +20,16 @@ public class BulletLifeComponent : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
         }
+
+        /*switch (_actualDamage)
+        {
+            case typeOfDamage.Normal:
+                {
+                    collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
+                    break;
+                }
+        }*/
+
     }
     #endregion
 }
