@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AtravesarPlataforma : MonoBehaviour
-    //Este componente está creado para añadirlo al hijo de una plataforma
+    //Este componente estï¿½ creado para aï¿½adirlo al hijo de una plataforma
     //que pueda ser atravesables desde abajo.
     //La plataforma madre: Collider con trigger y Tag de "Atravesable"
     //La plataforma hija: Lo mismo con el collider en el tope, este script y layer "Ground"
@@ -33,10 +33,10 @@ public class AtravesarPlataforma : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    // Cuando se detecte que los pies del player estén por debajo de la cima de
-    // la plataforma atravesable, se podrá atravesar por debajo.
+    // Cuando se detecte que los pies del player estï¿½n por debajo de la cima de
+    // la plataforma atravesable, se podrï¿½ atravesar por debajo.
     {
-        _piePlayer = _player.transform.position.y - _ccPlayerSize.y / 2;
+        _piePlayer = _player.transform.position.y - _ccPlayerSize.y/4;
         if(_piePlayer > _topPlataforma)
         {
             _ccPlataforma.isTrigger = false;

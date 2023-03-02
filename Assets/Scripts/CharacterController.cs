@@ -8,7 +8,7 @@ using UnityEngine.Windows;
 public class CharacterController : MonoBehaviour
 {
     #region Parameters
-    // private set: esta variable puede ser leída desde otros scripts
+    // private set: esta variable puede ser leï¿½da desde otros scripts
     // pero no cambiada
     public bool _isgrounded { get; private set; }
     public bool _doublejump { get; private set; }
@@ -34,8 +34,9 @@ public class CharacterController : MonoBehaviour
     #endregion
 
     #region References
+    private GameObject _player;
     [SerializeField]private Rigidbody2D _myRigidBody2D;
-    private Collider2D _myCollider2D;
+    private BoxCollider2D _myCollider2D;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private LayerMask _ladderLayer;
     private InputComponent _myInputComponent;
@@ -69,7 +70,7 @@ public class CharacterController : MonoBehaviour
     }
 
     private void Flip()
-    // Gira el sprite del player hacia donde esté mirando
+    // Gira el sprite del player hacia donde estï¿½ mirando
     {
         _facingRight = !_facingRight;
         transform.Rotate(0f, 180f, 0f);
@@ -140,6 +141,12 @@ public class CharacterController : MonoBehaviour
             _isClimbing = false;
         }
 
+        if(YAxismove < 0){ //creo rayo para detectar si debajo hay escaleras
+            Vector2 posRayo = new Vector2(transform.position.x - (_myCollider2D.size.x/2), transform.position.y - (_myCollider2D.size.y / 2) - 0.1f);
+            RaycastHit2D hitRayo = Physics2D.Raycast(posRayo, Vector2.right, _myCollider2D.size.x, _ladderLayer);
+            Debug.DrawRay(posRayo, Vector2.right * _myCollider2D.size.x, Color.red);
+        }
+
         if (_isgrounded)
         {
             _isClimbing = false;
@@ -151,7 +158,7 @@ public class CharacterController : MonoBehaviour
     {
         // Inicializo componentes.
         _myRigidBody2D = GetComponent<Rigidbody2D>();
-        _myCollider2D = GetComponent<Collider2D>();
+        _myCollider2D = GetComponent<BoxCollider2D>();
         _myInputComponent = GetComponent<InputComponent>();
         _animator = GetComponent<Animator>();
 
@@ -166,7 +173,7 @@ public class CharacterController : MonoBehaviour
 
         if (!_aterrizado && _isgrounded)
         {
-            //Cuando aterrice en el suelo, reproducirá el sonido y se volverá true aterrizado
+            //Cuando aterrice en el suelo, reproducirï¿½ el sonido y se volverï¿½ true aterrizado
             GetComponent<AudioSource>().PlayOneShot(_aterrizaje);
             _aterrizado = true;
         }
