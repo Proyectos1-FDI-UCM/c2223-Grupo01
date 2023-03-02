@@ -13,9 +13,12 @@ public class InputComponent : MonoBehaviour
     private ShootingComponent _myShootingComponent;
     private MeleeComponent _myMeleeComponent;
     private Animator _animator;
+
+    [SerializeField] private AudioClip _melee;
     #endregion
-    // Start is called before the first frame update
+ 
     void Start()
+    //Inicializo referencias
     {
         _myCharacterController = GetComponent<CharacterController>();
         _myShootingComponent = GetComponent<ShootingComponent>();
@@ -45,20 +48,18 @@ public class InputComponent : MonoBehaviour
         // Ataca cuerpo a cuerpo
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            GetComponent<AudioSource>().PlayOneShot(_melee);
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
         }
-
-        _lookUP = Input.GetAxis("Vertical") > 0;
 
         // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
         _myCharacterController.Climb(Input.GetAxis("Vertical"));
        
-
         // Animaciones
         _animator.SetBool("_isRunning", Input.GetAxis("Horizontal") != 0);
+        _lookUP = Input.GetAxis("Vertical") > 0;
         _animator.SetBool("_isLookUp", _lookUP);//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
-
     }
 }

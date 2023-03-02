@@ -537,25 +537,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &938447894 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6326382012256657892, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
-  m_PrefabInstance: {fileID: 6326382011716869304}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &938447901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938447894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af312661e9daad40a4595d6bc6c9822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _visionAngle: 45
-  _visionDistance: 5
 --- !u!1 &1093904461
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548b3e7c1aac504a984ca11c4340051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0, z: 13}
+  target: {fileID: 0}
   smoothTime: 0.01
 --- !u!1 &2005594031
 GameObject:
@@ -1022,6 +1005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 415827670}
+  _blaster: {fileID: 0}
   _MaxHealth: 10
 --- !u!4 &2005594033
 Transform:

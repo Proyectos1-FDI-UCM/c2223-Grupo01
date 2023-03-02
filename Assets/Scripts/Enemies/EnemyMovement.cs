@@ -9,31 +9,25 @@ public class EnemyMovement : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float _enemySpeed = 5f;
-
-    //Cuánta fuerza tendrá el knockback.
-    public float KnockbackForce;
-    //Cooldown del knockback.
-    public float KnockbackCounter;
-    //Cuánto durará el knockback.
-    public float KnockbackTotalTime;
-
-    //Determina desde que posición ha sido golpeado el enemigo (derecha/izquierda).
-    public bool KnockFromRight;
+    public float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
+    public float KnockbackCounter;                      //Cooldown del knockback.
+    public float KnockbackTotalTime;                    //Cuánto durará el knockback.
+    public bool KnockFromRight;                         //Determina desde que posición ha sido golpeado el enemigo (derecha/izquierda).
     #endregion
 
     #region references
-    //El jugador
     private GameObject _player; 
     private EnemyFOV _myEnemyFOV;
     private Rigidbody2D _rigidbody;
     #endregion
 
+    #region Methods
     private void OnTriggerEnter2D(Collider2D Other)
+    // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {
-        // Cada vez que colisione con un collider, el enemigo dará la vuelta.
         transform.Rotate(0f, 180f, 0f);  
-
     }
+    #endregion
 
     void Start()
     {        
@@ -42,7 +36,6 @@ public class EnemyMovement : MonoBehaviour
         _myEnemyFOV = GetComponent<EnemyFOV>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //Solo se puede mover el enemigo si no está en modo knockback.
@@ -82,7 +75,5 @@ public class EnemyMovement : MonoBehaviour
             //Hace que el contador baje.
             KnockbackCounter = KnockbackCounter - Time.deltaTime; 
         }
-
-        
     }
 }
