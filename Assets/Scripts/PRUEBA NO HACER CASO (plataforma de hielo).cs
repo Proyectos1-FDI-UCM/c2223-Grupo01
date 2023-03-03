@@ -1,3 +1,4 @@
+//https://www.youtube.com/watch?v=om1-psUMp_Q&t=2s
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -5,37 +6,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows;
 
-public class CharacterController : MonoBehaviour
+public class PRUEBANOHACERCASO : MonoBehaviour
 {
-    #region Parameters
-    // private set: esta variable puede ser le�da desde otros scripts
+    /*#region Parameters
+    // private set: esta variable puede ser le?da desde otros scripts
     // pero no cambiada
     public bool _isgrounded { get; private set; }
-    public bool _doublejump { get; private set; }
+
     [SerializeField] private float _MovementSmoothing;
     private Vector3 _velocity = Vector3.zero;
 
-    private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
-
-    [Header("Jump")]
-    [SerializeField] private float _jumpForce;
-    public bool _isJumping;
-
-    [Header("Dash")]
-    [SerializeField] private float _dashFriction;
-    private bool _facingRight = true;
-    [SerializeField] private float _dashForce;
-    private bool _dash = false;
-
-    [Header("Climb")]
-    private float _initialGravity;
-    private float _climbVelocity = 10f;
-    public bool _isClimbing { get; private set; }
-    #endregion
 
     #region References
     private GameObject _player;
-    [SerializeField]private Rigidbody2D _myRigidBody2D;
+    [SerializeField] private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _myCollider2D;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private LayerMask _ladderLayer;
@@ -64,13 +48,13 @@ public class CharacterController : MonoBehaviour
     // hago Flip() para girar el sprite en la direccion a la que mire el Player
     {
         Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
-        _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
+        _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity, ref _velocity, _MovementSmoothing);
 
         if (XAxismove > 0 && !_facingRight || XAxismove < 0 && _facingRight) Flip();
     }
 
     private void Flip()
-    // Gira el sprite del player hacia donde est� mirando
+    // Gira el sprite del player hacia donde est? mirando
     {
         _facingRight = !_facingRight;
         transform.Rotate(0f, 180f, 0f);
@@ -141,8 +125,9 @@ public class CharacterController : MonoBehaviour
             _isClimbing = false;
         }
 
-        if(YAxismove < 0){ //creo rayo para detectar si debajo hay escaleras
-            Vector2 posRayo = new Vector2(transform.position.x - (_myCollider2D.size.x/2), transform.position.y - (_myCollider2D.size.y / 2) - 0.1f);
+        if (YAxismove < 0)
+        { //creo rayo para detectar si debajo hay escaleras
+            Vector2 posRayo = new Vector2(transform.position.x - (_myCollider2D.size.x / 2), transform.position.y - (_myCollider2D.size.y / 2) - 0.1f);
             RaycastHit2D hitRayo = Physics2D.Raycast(posRayo, Vector2.right, _myCollider2D.size.x, _ladderLayer);
             Debug.DrawRay(posRayo, Vector2.right * _myCollider2D.size.x, Color.red);
         }
@@ -152,7 +137,7 @@ public class CharacterController : MonoBehaviour
             _isClimbing = false;
         }
     }
-        #endregion
+    #endregion
 
     private void Start()
     {
@@ -170,10 +155,10 @@ public class CharacterController : MonoBehaviour
     {
         //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
-        Debug.Log(_isgrounded);
+
         if (!_aterrizado && _isgrounded)
         {
-            //Cuando aterrice en el suelo, reproducir� el sonido y se volver� true aterrizado
+            //Cuando aterrice en el suelo, reproducir? el sonido y se volver? true aterrizado
             GetComponent<AudioSource>().PlayOneShot(_aterrizaje);
             _aterrizado = true;
         }
@@ -203,5 +188,5 @@ public class CharacterController : MonoBehaviour
         {
             _myCollider2D.bounds.Equals(gameObject.GetComponent<SpriteRenderer>().localBounds);
         }
-    }
+    }*/
 }
