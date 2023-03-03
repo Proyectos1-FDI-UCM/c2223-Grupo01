@@ -22,7 +22,6 @@ public class CharacterController : MonoBehaviour
     public bool _isJumping;
 
     [Header("Dash")]
-    [SerializeField] private float _dashFriction;
     private bool _facingRight = true;
     [SerializeField] private float _dashForce;
     private bool _dash = false;
@@ -45,6 +44,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private AudioClip _aterrizaje;
     [SerializeField] private AudioClip _dobleSalto;
     [SerializeField] private AudioClip _normalJump;
+
+    [SerializeField] private BoxCollider2D _boxColiderNormal;
+    [SerializeField] private BoxCollider2D _boxColiderSlide;
     #endregion
 
     #region Methods
@@ -104,7 +106,9 @@ public class CharacterController : MonoBehaviour
     // Deslizamiento sobre el suelo. Se tumba al jugador y se le impulsa
     // hacia la derecha o izquierda. Se desactiva input si estamos dasheando.
     {
-        transform.Rotate(new Vector3(0, 0, 90));
+        _myCollider2D.isTrigger = true;
+        _boxColiderSlide.enabled = true;
+        _myInputComponent.enabled = false;
         _myRigidBody2D.velocity = Vector2.zero;
         if (_facingRight)
         {
@@ -114,9 +118,7 @@ public class CharacterController : MonoBehaviour
         {
             _myRigidBody2D.AddForce(_dashForce * Vector2.left);
         }
-        _myInputComponent.enabled = false;
         _dash = true;
-        _myCollider2D.sharedMaterial.friction = _dashFriction;
     }
 
     public void Climb(float YAxismove)
@@ -164,6 +166,8 @@ public class CharacterController : MonoBehaviour
 
         // Guardo gravedad inicial.
         _initialGravity = _myRigidBody2D.gravityScale;
+        //desactivamos el colider del dash al principio
+        _boxColiderSlide.enabled= false;
     }
 
     private void Update()
@@ -177,7 +181,7 @@ public class CharacterController : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(_aterrizaje);
             _aterrizado = true;
         }
-
+        
         if (!_isgrounded)
         {
             _aterrizado = false;
@@ -188,20 +192,12 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_isGrounded", _isgrounded);
 
         //Comprueba si el dash ha acabado
-        if (_dash && _myRigidBody2D.velocity.x == 0)
+        if (_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0)
         {
-            transform.Rotate(new Vector3(0, 0, 270));
             _myInputComponent.enabled = true;
+            _myCollider2D.isTrigger= false;
+            _boxColiderSlide.enabled = false;
             _dash = false;
-            _myCollider2D.sharedMaterial.friction = 0;
-        }
-    }
-
-    private void LateUpdate()
-    {
-        if (_dash)
-        {
-            _myCollider2D.bounds.Equals(gameObject.GetComponent<SpriteRenderer>().localBounds);
         }
     }
 }
