@@ -765,7 +765,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprites Migthy_27: -149734991
       Sprites Migthy_25: 957350907
       Sprites Migthy_17: 1308280166
       Sprites Migthy_1: 1006942206
@@ -785,16 +784,17 @@ TextureImporter:
       Sprites Migthy_23: 1926883876
       Sprites Migthy_30: -1746376387
       Sprites Migthy_7: 1000622601
+      Sprites Migthy_27: -149734991
       Sprites Migthy_0: -350248088
-      Sprites Migthy_14: -1151013532
       Sprites Migthy_8: -2067909863
+      Sprites Migthy_14: -1151013532
       Sprites Migthy_3: 384329708
       Sprites Migthy_13: 1446366286
       Sprites Migthy_9: -215401062
       Sprites Migthy_15: -1481432824
-      Sprites Migthy_20: 1798947250
       Sprites Migthy_28: 1333014187
       Sprites Migthy_2: 953782072
+      Sprites Migthy_20: 1798947250
       Sprites Migthy_16: 2057197501
   spritePackingTag: 
   pSDRemoveMatte: 0
