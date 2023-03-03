@@ -8,7 +8,7 @@ using UnityEngine.Windows;
 
 public class PRUEBANOHACERCASO : MonoBehaviour
 {
-    #region Parameters
+    /*#region Parameters
     // private set: esta variable puede ser le?da desde otros scripts
     // pero no cambiada
     public bool _isgrounded { get; private set; }
@@ -188,5 +188,5 @@ public class PRUEBANOHACERCASO : MonoBehaviour
         {
             _myCollider2D.bounds.Equals(gameObject.GetComponent<SpriteRenderer>().localBounds);
         }
-    }
+    }*/
 }
