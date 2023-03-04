@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     float _currentTime;
     [SerializeField] private float _health;                                  //La cantidad de vida del jugador.
     //float _maxHealth;                               //La vida máxima que puede tener el jugador.
-    public Image _slider;                          //La Barra de vida
+   // public Image _slider;                          //La Barra de vida
     int _currentWeapon;                             //Un int que determina qué arma estamos usando ahora.
     #endregion
 
@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
 
     void ActualizarInterfaz()
     {
-        _slider.fillAmount = _health / 100;
+       // _slider.fillAmount = _health / 100;
     }
 
     private void currentWeaponState( int weapon)
