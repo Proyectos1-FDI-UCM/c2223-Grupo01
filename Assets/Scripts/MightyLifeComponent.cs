@@ -38,7 +38,6 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(_canAttack);
         if (!_canAttack)
         {
             _coolDown -= Time.deltaTime;

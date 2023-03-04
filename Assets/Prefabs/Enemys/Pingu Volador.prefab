@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -2575931876522273343}
   - component: {fileID: -727916230240251004}
   - component: {fileID: 5020723013684745517}
+  - component: {fileID: 8738630133945712333}
   m_Layer: 0
   m_Name: Pingu Volador
   m_TagString: Untagged
@@ -113,3 +114,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 45
   _visionDistance: 10
+--- !u!61 &8738630133945712333
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897470401433983102}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.23, y: 0.15}
+    newSize: {x: 0.23, y: 0.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.23, y: 0.15}
+  m_EdgeRadius: 0
