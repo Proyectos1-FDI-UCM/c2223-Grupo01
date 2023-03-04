@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
     [Header("Dash")]
     private bool _facingRight = true;
     [SerializeField] private float _dashForce;
-    private bool _dash = false;
+    private bool _dash;
 
     [Header("Climb")]
     private float _initialGravity;
@@ -46,7 +46,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private AudioClip _normalJump;
 
     [SerializeField] private BoxCollider2D _boxColiderNormal;
-    [SerializeField] private BoxCollider2D _boxColiderSlide;
+    [SerializeField] private GameObject _slideObject;
     #endregion
 
     #region Methods
@@ -107,7 +107,7 @@ public class CharacterController : MonoBehaviour
     // hacia la derecha o izquierda. Se desactiva input si estamos dasheando.
     {
         _myCollider2D.isTrigger = true;
-        _boxColiderSlide.enabled = true;
+        _slideObject.SetActive(true);
         _myInputComponent.enabled = false;
         _myRigidBody2D.velocity = Vector2.zero;
         if (_facingRight)
@@ -167,14 +167,15 @@ public class CharacterController : MonoBehaviour
         // Guardo gravedad inicial.
         _initialGravity = _myRigidBody2D.gravityScale;
         //desactivamos el colider del dash al principio
-        _boxColiderSlide.enabled= false;
+        _slideObject.SetActive(false);
+        _dash = false;
     }
 
     private void Update()
     {
         //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
-        Debug.Log(_isgrounded);
+
         if (!_aterrizado && _isgrounded)
         {
             //Cuando aterrice en el suelo, reproducir� el sonido y se volver� true aterrizado
@@ -192,11 +193,16 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_isGrounded", _isgrounded);
 
         //Comprueba si el dash ha acabado
-        if (_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0)
+        if (_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space))
         {
+            if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+            }
             _myInputComponent.enabled = true;
             _myCollider2D.isTrigger= false;
-            _boxColiderSlide.enabled = false;
+            _slideObject.SetActive(true);
+
             _dash = false;
         }
     }
