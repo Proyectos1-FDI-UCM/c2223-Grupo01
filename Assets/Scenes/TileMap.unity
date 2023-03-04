@@ -4480,6 +4480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ping\xFCino Terrestre"
       objectReference: {fileID: 0}
+    - target: {fileID: 6326382012256657892, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _enemySpeed
       value: 10
