@@ -152,9 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186aaabd91c64ed43ae85c6fcca65874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 100
   _player: {fileID: 1850376248}
   _blaster: {fileID: 1143130610}
-  _health: 100
 --- !u!4 &331139022
 Transform:
   m_ObjectHideFlags: 0

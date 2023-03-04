@@ -64,26 +64,19 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
-    private void Awake()
-    //Inicializo el Singleton
+    private void Start()
     {
-        instance = this;
-    }
-
-    void Start()
-    {
-        _playerLife = GetComponent<MightyLifeComponent>();
+        GameManager.instance.RegisterUIMManager(this);
+        _playerLife = GameManager.instance._mightyLifeComponent;
         /*_maxHealth = GameManager.instance._MaxHealth;  
         SetMaxHealth(_maxHealth);*/
         //_health = GameManager.instance._MaxHealth;
     }
-    void Update()
+    private void Update()
     {
         _health = _playerLife._health;
         _currentTime = GameManager.instance._currentTime;
         _currentWeapon = GameManager.instance._currentWeapon;
         UpdateTimer(_currentTime);
-        ActualizarInterfaz(_health);
-        currentWeaponState(_currentWeapon);
     }
 }

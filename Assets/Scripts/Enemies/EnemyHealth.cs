@@ -10,7 +10,6 @@ public class EnemyHealth : MonoBehaviour
     #endregion
 
     #region methods
-
     public void TakeDamage(int damage)
     //Método para que el enemigo reciba daño.
     //Cuando la vida quede a 0 o menos, el enemigo muere.

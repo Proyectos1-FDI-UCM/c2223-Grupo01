@@ -13,23 +13,13 @@ public class MightyLifeComponent : MonoBehaviour
     public bool _canAttack { get; private set; }
     #endregion
 
-    #region References
-    //private UIManager _myUIManager; //Referencia al UI Manager
-    #endregion
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _initialCoolDown = _coolDown;
-    }
-
 
     public void OnPlayerHit(float damage)
     //Cuando se haga hit, daña al player
     {
         _canAttack = false;
         _health -= damage;
-        UIManager.instance.ActualizarInterfaz(_health);
+        GameManager.instance._UImanager.ActualizarInterfaz(_health);
         
         if (_health <= 0)
         {
@@ -37,8 +27,16 @@ public class MightyLifeComponent : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update
+    private void Start()
+    {
+        GameManager.instance.RegisterMightyComponent(this);
+        _initialCoolDown = _coolDown;
+        _canAttack = true;
+    }
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Debug.Log(_canAttack);
         if (!_canAttack)
