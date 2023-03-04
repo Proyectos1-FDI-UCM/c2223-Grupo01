@@ -49,7 +49,7 @@ public class EnemyFOV : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(_detected);
+        //Debug.Log(_detected);
         if(_player!= null)
         {
             // El vector que indica la distancia del jugador al enemigo.

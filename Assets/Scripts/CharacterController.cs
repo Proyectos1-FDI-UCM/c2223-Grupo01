@@ -174,7 +174,7 @@ public class CharacterController : MonoBehaviour
     {
         //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
-        Debug.Log(_isgrounded);
+        //Debug.Log(_isgrounded);
         if (!_aterrizado && _isgrounded)
         {
             //Cuando aterrice en el suelo, reproducir� el sonido y se volver� true aterrizado

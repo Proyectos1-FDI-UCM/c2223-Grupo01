@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5106214237236784140}
   - component: {fileID: 989400450}
   - component: {fileID: 989400458}
+  - component: {fileID: 1850376258}
   m_Layer: 0
   m_Name: Mighty
   m_TagString: Player
@@ -34,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 3307213394870111648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.66, y: -1.75, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3307213394960240520}
@@ -157,7 +158,6 @@ MonoBehaviour:
   _MovementSmoothing: 0.1
   _jumpForce: 600
   _isJumping: 0
-  _dashFriction: 1000
   _dashForce: 800
   _myRigidBody2D: {fileID: 0}
   _groundLayer:
@@ -215,7 +215,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackRange: 0.5
+  attackRange: 1
   attackDamage: 40
   attackRate: 2
   animator: {fileID: 0}
@@ -335,6 +335,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1850376258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307213394870111648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6aac20b828df4a4aab8d5787931dca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _damage: 20
+  _coolDown: 0
 --- !u!1 &3307213394960240523
 GameObject:
   m_ObjectHideFlags: 0

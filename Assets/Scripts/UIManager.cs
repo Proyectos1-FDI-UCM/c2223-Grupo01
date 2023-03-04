@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     #region References
     public static UIManager instance;
+    private MightyLifeComponent _playerLife;
     #endregion
 
     #region Methods
@@ -71,14 +72,14 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        
+        _playerLife = GetComponent<MightyLifeComponent>();
         /*_maxHealth = GameManager.instance._MaxHealth;  
         SetMaxHealth(_maxHealth);*/
         //_health = GameManager.instance._MaxHealth;
     }
     void Update()
     {
-        _health = MightyLifeComponent.instance._health;
+        _health = _playerLife._health;
         _currentTime = GameManager.instance._currentTime;
         _currentWeapon = GameManager.instance._currentWeapon;
         UpdateTimer(_currentTime);
