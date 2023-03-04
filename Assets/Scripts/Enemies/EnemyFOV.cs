@@ -14,6 +14,7 @@ public class EnemyFOV : MonoBehaviour
 
     #region references
     private GameObject _player;
+    [SerializeField] private Animator _animator;
     #endregion
 
     #region methods
@@ -43,12 +44,14 @@ public class EnemyFOV : MonoBehaviour
 
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _player = GameManager.instance._player;
         _detected = false;
     }
 
     void Update()
     {
+        _animator.SetBool("_run", _detected);
         //Debug.Log(_detected);
         if(_player!= null)
         {

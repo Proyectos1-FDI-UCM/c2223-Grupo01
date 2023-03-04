@@ -294,8 +294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af312661e9daad40a4595d6bc6c9822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionAngle: 360
+  _visionAngle: 120
   _visionDistance: 10
+  _animator: {fileID: 0}
 --- !u!114 &667257405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,9 +1034,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186aaabd91c64ed43ae85c6fcca65874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 100
   _player: {fileID: 415827670}
   _blaster: {fileID: 0}
-  _MaxHealth: 10
 --- !u!4 &2005594033
 Transform:
   m_ObjectHideFlags: 0

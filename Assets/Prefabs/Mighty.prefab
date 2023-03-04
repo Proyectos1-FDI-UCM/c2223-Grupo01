@@ -158,11 +158,11 @@ MonoBehaviour:
   _MovementSmoothing: 0.1
   _jumpForce: 600
   _isJumping: 0
-  _dashForce: 800
+  _dashForce: 1000
   _myRigidBody2D: {fileID: 0}
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   _ladderLayer:
     serializedVersion: 2
     m_Bits: 0
