@@ -16,7 +16,7 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     #region Methods
 
-    private void FlyingPatrol()
+    private void FlyingPatrol() //Método que provoca que el enemigo se mueva de izquierda a derecha
     {
         transform.Translate(Vector3.right * Time.deltaTime * _enemySpeed);
     }
@@ -34,12 +34,12 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
-    {
+    {   
         transform.Rotate(0f, 180f, 0f);
 
         Debug.Log("Trigger");
     }
-    private void ChangeEnemyState ( int estado)
+    private void ChangeEnemyState ( int estado) //Método que cambia los distintos estados del enemigo
     {
         switch (estado)
         {
