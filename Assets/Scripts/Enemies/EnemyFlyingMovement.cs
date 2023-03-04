@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyFlyingMovement : MonoBehaviour
@@ -15,9 +16,9 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     #region Methods
 
-    private void FlyingPatrol()
+    private void FlyingPatrol() //Método que provoca que el enemigo se mueva de izquierda a derecha
     {
-        _rigidbody.velocity = (transform.right * _enemySpeed);
+        transform.Translate(Vector3.right * Time.deltaTime * _enemySpeed);
     }
     private void FlyingChase()
     //Provoca que el enemigo empieze a perseguir al jugador.
@@ -33,11 +34,12 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
-    {
-       if (_enemystate == 0)
+    {   
         transform.Rotate(0f, 180f, 0f);
+
+        Debug.Log("Trigger");
     }
-    private void ChangeEnemyState ( int estado)
+    private void ChangeEnemyState ( int estado) //Método que cambia los distintos estados del enemigo
     {
         switch (estado)
         {
@@ -56,6 +58,9 @@ public class EnemyFlyingMovement : MonoBehaviour
                
                 if (_myEnemyFOV._detected)
                     _enemystate = 1;
+
+                if (new Vector2(transform.position.x, transform.position.y) == _initialPosition)
+                    _enemystate = 0;
                 break;
         }    
     }
