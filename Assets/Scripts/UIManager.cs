@@ -12,10 +12,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _fire;
     [SerializeField] private Image _ice;
     float _currentTime;
-    [SerializeField] private float _health;                                  //La cantidad de vida del jugador.
-    //float _maxHealth;                               //La vida máxima que puede tener el jugador.
-   // public Image _slider;                          //La Barra de vida
+    //[SerializeField]                                  //La cantidad de vida del jugador.
+    private float _health;                               //La vida máxima que puede tener el jugador.
+    public Image _slider;                          //La Barra de vida
     int _currentWeapon;                             //Un int que determina qué arma estamos usando ahora.
+    #endregion
+
+    #region References
+    public static UIManager instance;
     #endregion
 
     #region Methods
@@ -28,23 +32,10 @@ public class UIManager : MonoBehaviour
         _timetext.text = string.Format("{0:0}:{1:00}", minutes, seconds);   
     }
 
-    //public void SetMaxHealth (float health)
-    //La máxima cantdad de vida que tendremos
-    //{
-    //    _slider.fillAmount = health;
-        /*_slider.maxValue = health; 
-        _slider.value = health;*/
-    //}
 
-    //public void SetHealth(float health)
-    //El valor actual de nuestra vida
-    //{
-    //    _slider.fillAmount = health;
-    //}
-
-    void ActualizarInterfaz()
+    public void ActualizarInterfaz(float health)
     {
-       // _slider.fillAmount = _health / 100;
+       _slider.fillAmount = health / 100;
     }
 
     private void currentWeaponState( int weapon)
@@ -72,22 +63,26 @@ public class UIManager : MonoBehaviour
     }
     #endregion
 
+    private void Awake()
+    //Inicializo el Singleton
+    {
+        instance = this;
+    }
+
     void Start()
     {
+        
         /*_maxHealth = GameManager.instance._MaxHealth;  
         SetMaxHealth(_maxHealth);*/
         //_health = GameManager.instance._MaxHealth;
     }
     void Update()
     {
-        _health = _health - 0.01f;
-
-        //_health = GameManager.instance._PlayerHealth;
+        _health = MightyLifeComponent.instance._health;
         _currentTime = GameManager.instance._currentTime;
         _currentWeapon = GameManager.instance._currentWeapon;
         UpdateTimer(_currentTime);
-        ActualizarInterfaz();
-        //SetHealth(_health);
+        ActualizarInterfaz(_health);
         currentWeaponState(_currentWeapon);
     }
 }
