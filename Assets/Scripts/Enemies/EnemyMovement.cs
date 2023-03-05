@@ -9,14 +9,19 @@ public class EnemyMovement : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float _enemySpeed = 5f;
-    [SerializeField] private float _enemydetectionSpeed = 3;
+    [SerializeField] private float _enemydetectionSpeed = 3f;
+    [SerializeField] private LayerMask _ground;
     private float _initialSpeed;
     public float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
     public float KnockbackCounter;                      //Cooldown del knockback.
     public float KnockbackTotalTime;                    //Cuánto durará el knockback.
     public bool KnockFromRight;
-    private bool _running;//Determina desde que posición ha sido golpeado el enemigo (derecha/izquierda).
-    #endregion
+    
+    private bool _isflipped;
+    private bool _isgrounded ()
+    {
+        return Physics2D.Raycast(transform.position, -Vector2.up, 0.5f, _ground);
+    }
 
     #region references
     private GameObject _player; 
@@ -28,42 +33,62 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {
-        transform.Rotate(0f, 180f, 0f);  
+        Flip();
     }
+   private void Flip ()
+    {
+        transform.Rotate(0f, 180f, 0f);
+        _isflipped = !_isflipped;
+    }
+       
     #endregion
 
+ 
     void Start()
     {        
         _rigidbody = GetComponent<Rigidbody2D>();
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialSpeed = _enemySpeed;
+        _isflipped=false;
+      
     }
 
     void Update()
     {
+      
+        Debug.Log(_isgrounded());
         //Solo se puede mover el enemigo si no está en modo knockback.
         if (KnockbackCounter <= 0) 
-        {
-            //Si el enemigo no ha detectado al jugador, este seguirá su patrón normal
-            if (!_myEnemyFOV._detected) 
+        {   
+            if (_isgrounded())
             {
-                // la velocidad de patrullaje es la inicial
-                _enemySpeed = _initialSpeed;
-                _running = false;
+                //Si el enemigo no ha detectado al jugador, este seguirá su patrón normal
+                if (!_myEnemyFOV._detected)
+                {
+                    // la velocidad de patrullaje es la inicial
+
+                    _enemySpeed = _initialSpeed;
+
+                 _rigidbody.velocity = (transform.right * _enemySpeed);
+                }
+                //Si el enemigo nos detecta. 
+                else if (_myEnemyFOV._detected)
+                {
+                    //la dirección a la que nuestro enemigo se moverá.
+
+                    if (_player.transform.position.x > transform.position.x && _isflipped)
+                        Flip();
+                    else if (_player.transform.position.x < transform.position.x && !_isflipped)
+                        Flip();
+                    
+                    _rigidbody.velocity = (transform.right * _enemydetectionSpeed);
+
+                }
+                //El Enemigo se moverá a la derecha con determinada velocidad
+
+               
             }
-            //Si el enemigo nos detecta. 
-            else if (_myEnemyFOV._detected && !_running) 
-            {
-                //la dirección a la que nuestro enemigo se moverá.
-                /* Distfromplayer = new Vector2(_player.transform.position.x - transform.position.x, 0f); 
-                Vector2 velocity = Distfromplayer * _enemySpeed;
-                _rigidbody.velocity = velocity;*/ //esto es lo que hizo jiale, aumenta la velocidad con la distancia al player (mal)
-                _enemySpeed += _enemydetectionSpeed;
-                _running = true;
-            }
-            //El Enemigo se moverá a la derecha con determinada velocidad
-            _rigidbody.velocity = (transform.right * _enemySpeed);
         }
         else //Si está en modo knockback
         {
@@ -85,3 +110,4 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 }
+#endregion
