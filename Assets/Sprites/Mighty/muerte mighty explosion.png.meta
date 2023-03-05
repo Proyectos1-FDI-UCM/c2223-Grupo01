@@ -1,0 +1,456 @@
+fileFormatVersion: 2
+guid: a1bdd445612c4de438f233a8660f2f58
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: muerte mighty explosion_0
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 262
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8abe20d9e5780c74eb5df9d6731e3152
+      internalID: -1885263913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 271
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0f7be17dbb00c45b9fe916c195268f
+      internalID: -264146037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_5
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 250
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e23d9866ffc2c00409bf63f4a9509b69
+      internalID: -1368352549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 265
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d2b3e35cda03464d99c69a1b746d8cd
+      internalID: -1063618842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_32
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 188
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78690f0962292c143b94a0fcfce2c8b3
+      internalID: 2025289133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_34
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 182
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 712a48eaab3db36438bb3958e6830f68
+      internalID: -1833631960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_37
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 175
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d25a96bc41fe87479d56432424c9e53
+      internalID: -906904410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_40
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 169
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0937ee68d98304a8d840950d6a90bd
+      internalID: -2139794475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_57
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 87
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1307f92bc2a7b045953cbe9203d2666
+      internalID: -2038269941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_59
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 82
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6234c3ae3396d3c4894451c3a58f37de
+      internalID: -1687986825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_62
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 76
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e24c0c08123c76c4ba20832a3226b4e4
+      internalID: 726153603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: muerte mighty explosion_65
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 72
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a761317b4f7d647a78778406a3e79a
+      internalID: -1670334545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      muerte mighty explosion_67: -1668583163
+      muerte mighty explosion_53: -298208752
+      muerte mighty explosion_56: -1571489496
+      muerte mighty explosion_31: 220161181
+      muerte mighty explosion_27: 126850335
+      muerte mighty explosion_2: -1063618842
+      muerte mighty explosion_28: 1297228072
+      muerte mighty explosion_39: -1565553114
+      muerte mighty explosion_9: 193613997
+      muerte mighty explosion_35: -871073522
+      muerte mighty explosion_14: 2031367451
+      muerte mighty explosion_21: -1004571793
+      muerte mighty explosion_17: 1968916918
+      muerte mighty explosion_19: -1735602289
+      muerte mighty explosion_43: -101812333
+      muerte mighty explosion_46: 586123068
+      muerte mighty explosion_73: 243801407
+      muerte mighty explosion_80: 1582059337
+      muerte mighty explosion_76: -556512458
+      muerte mighty explosion_10: -1592496101
+      muerte mighty explosion_36: 1399211092
+      muerte mighty explosion_69: -1920795716
+      muerte mighty explosion_60: 1653648312
+      muerte mighty explosion_74: 1305689028
+      muerte mighty explosion_11: -720032863
+      muerte mighty explosion_40: -2139794475
+      muerte mighty explosion_78: 2088690569
+      muerte mighty explosion_47: 2008772016
+      muerte mighty explosion_20: -329524782
+      muerte mighty explosion_6: 1462741425
+      muerte mighty explosion_16: 92872191
+      muerte mighty explosion_22: -760336884
+      muerte mighty explosion_38: -549757853
+      muerte mighty explosion_12: -460296335
+      muerte mighty explosion_50: -1681894574
+      muerte mighty explosion_66: -1889968159
+      muerte mighty explosion_0: -1885263913
+      muerte mighty explosion_63: -1634182543
+      muerte mighty explosion_25: -745686801
+      muerte mighty explosion_7: -70204989
+      muerte mighty explosion_34: -1833631960
+      muerte mighty explosion_57: -2038269941
+      muerte mighty explosion_1: -264146037
+      muerte mighty explosion_68: -518993626
+      muerte mighty explosion_81: -1807178599
+      muerte mighty explosion_42: -1357876453
+      muerte mighty explosion_45: -515492420
+      muerte mighty explosion_48: -1004067561
+      muerte mighty explosion_29: -1710097294
+      muerte mighty explosion_52: -1036609895
+      muerte mighty explosion_41: 657682911
+      muerte mighty explosion_55: 437048435
+      muerte mighty explosion_13: -1712810665
+      muerte mighty explosion_5: -1368352549
+      muerte mighty explosion_72: -1700805796
+      muerte mighty explosion_44: 1854993432
+      muerte mighty explosion_4: 1133403933
+      muerte mighty explosion_59: -1687986825
+      muerte mighty explosion_71: -2136886743
+      muerte mighty explosion_62: 726153603
+      muerte mighty explosion_32: 2025289133
+      muerte mighty explosion_37: -906904410
+      muerte mighty explosion_70: -782406417
+      muerte mighty explosion_26: -788686932
+      muerte mighty explosion_79: 1721426814
+      muerte mighty explosion_49: 1426311673
+      muerte mighty explosion_64: -1730286719
+      muerte mighty explosion_51: 485313317
+      muerte mighty explosion_18: 2135298162
+      muerte mighty explosion_8: -566236340
+      muerte mighty explosion_30: -127088005
+      muerte mighty explosion_24: -133726487
+      muerte mighty explosion_15: 556295233
+      muerte mighty explosion_65: -1670334545
+      muerte mighty explosion_54: -1106389478
+      muerte mighty explosion_61: -960222901
+      muerte mighty explosion_58: 2103217246
+      muerte mighty explosion_33: -998259806
+      muerte mighty explosion_75: 632027870
+      muerte mighty explosion_3: 1585081759
+      muerte mighty explosion_23: 2000051505
+      muerte mighty explosion_77: 860598713
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

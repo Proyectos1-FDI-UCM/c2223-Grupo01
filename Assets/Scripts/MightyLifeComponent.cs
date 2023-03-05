@@ -13,6 +13,8 @@ public class MightyLifeComponent : MonoBehaviour
     public float _initialCoolDown { get; private set; }
     public bool _canBeDamaged { get; private set; }
 
+    private bool _death;
+
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioSource _timeOut;
 
@@ -20,12 +22,14 @@ public class MightyLifeComponent : MonoBehaviour
 
     #region References
     private Animator _animator;
+    private InputComponent _myInputComponent;
     #endregion
 
     public void OnPlayerHit(float damage)
     //Cuando se haga hit, daña al player
     {
         _animator.SetTrigger("_damaged");
+        
         GetComponent<AudioSource>().PlayOneShot(_hurt);
 
 
@@ -35,7 +39,8 @@ public class MightyLifeComponent : MonoBehaviour
         
         if (_health <= 0)
         {
-            Destroy(gameObject);
+            _death = true;
+            //Destroy(gameObject);
         }
     }
 
@@ -46,15 +51,18 @@ public class MightyLifeComponent : MonoBehaviour
         GameManager.instance._UImanager.ActualizarInterfaz(_health);
         if (_health <= 0)
         {
-            Destroy(gameObject);
+            _death = true;
+            //Destroy(gameObject);
         }
     }
 
     // Start is called before the first frame update
     private void Start()
     {
+        _death = false;
         _timeOut = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
+        _myInputComponent = GetComponent<InputComponent>();
         GameManager.instance.RegisterMightyComponent(this);
         _initialCoolDown = _coolDown;
         _canBeDamaged = true;
@@ -75,6 +83,12 @@ public class MightyLifeComponent : MonoBehaviour
         if (GameManager.instance._currentTime == 0)
         {
             _timeOut.Play();
+        }
+        _animator.SetBool("_isDead", _death);
+
+        if (_death)
+        {
+            _myInputComponent.enabled = false;
         }
     }
 }
