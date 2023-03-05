@@ -5,9 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region parameters 
-    public float _currentTime { get; private set; }     //variable que controla nuestro tiempo actual.
+    [SerializeField] public float _currentTime;    //variable que controla nuestro tiempo actual.
     [SerializeField] public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
     public int _currentWeapon { get; private set; }     //Variable que controla cuál es nuestra arma actual.
+
+    [SerializeField] private float _deathTimeDamage;
     #endregion
 
     #region References
@@ -38,15 +40,20 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    
+
     void Start()
-    {   _currentWeapon = 2;
-        _currentTime = 300f;
+    {   
+        _currentWeapon = 2;
     }
 
     void Update()
     {    
         _currentTime -= Time.deltaTime;
-        // Placeholder para comprobar el funcionamiento de la barra de vida.
-        //_health -= Time.deltaTime;
+        if (_currentTime <= 0)
+        {
+            _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el daño por segundo para no tener que usar valores tan pequeños
+
+        }
     }
 }

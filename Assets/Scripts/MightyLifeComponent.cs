@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
@@ -13,6 +14,8 @@ public class MightyLifeComponent : MonoBehaviour
     public bool _canBeDamaged { get; private set; }
 
     [SerializeField] private AudioClip _hurt;
+    [SerializeField] private AudioSource _timeOut;
+
     #endregion
 
     #region References
@@ -25,6 +28,7 @@ public class MightyLifeComponent : MonoBehaviour
         _animator.SetTrigger("_damaged");
         GetComponent<AudioSource>().PlayOneShot(_hurt);
 
+
         _canBeDamaged = false;
         _health -= damage;
         GameManager.instance._UImanager.ActualizarInterfaz(_health);
@@ -35,9 +39,21 @@ public class MightyLifeComponent : MonoBehaviour
         }
     }
 
+    public void DeathTime(float damage)
+    //Cuando se acabe el tiempo, daña al player
+    {
+        _health -= damage;
+        GameManager.instance._UImanager.ActualizarInterfaz(_health);
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
+        _timeOut = GetComponent<AudioSource>();
         _animator = GetComponent<Animator>();
         GameManager.instance.RegisterMightyComponent(this);
         _initialCoolDown = _coolDown;
@@ -55,5 +71,10 @@ public class MightyLifeComponent : MonoBehaviour
                 _canBeDamaged = true;
         }
         else _coolDown = _initialCoolDown;
+
+        if (GameManager.instance._currentTime == 0)
+        {
+            _timeOut.Play();
+        }
     }
 }

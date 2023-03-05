@@ -20,15 +20,6 @@ public class BulletCollisionComponent : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
         }
-
-        /*switch (_actualDamage)
-        {
-            case typeOfDamage.Normal:
-                {
-                    collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
-                    break;
-                }
-        }*/
     }
     #endregion
 }

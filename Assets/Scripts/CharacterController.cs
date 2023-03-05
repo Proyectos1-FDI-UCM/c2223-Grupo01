@@ -12,7 +12,8 @@ public class CharacterController : MonoBehaviour
     // pero no cambiada
     public bool _isgrounded { get; private set; }
     public bool _doublejump { get; private set; }
-    [SerializeField] private float _MovementSmoothing;
+    [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
+    [SerializeField] private float _movementSpeedX; // velocidad con la que se moverá mighty en el eje x
     private Vector3 _velocity = Vector3.zero;
 
     private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
@@ -66,7 +67,7 @@ public class CharacterController : MonoBehaviour
     // Muevo al personaje en el eje X
     // hago Flip() para girar el sprite en la direccion a la que mire el Player
     {
-        Vector3 targetVelocity = new Vector2(XAxismove * 10f, _myRigidBody2D.velocity.y);
+        Vector3 targetVelocity = new Vector2(XAxismove * _movementSpeedX, _myRigidBody2D.velocity.y);
         _myRigidBody2D.velocity = Vector3.SmoothDamp(_myRigidBody2D.velocity, targetVelocity,ref _velocity, _MovementSmoothing);
 
         if (XAxismove > 0 && !_facingRight || XAxismove < 0 && _facingRight) Flip();
