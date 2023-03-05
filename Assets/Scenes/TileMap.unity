@@ -4480,14 +4480,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Ping\xFCino Terrestre"
       objectReference: {fileID: 0}
-    - target: {fileID: 6326382012256657892, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
-      propertyPath: _enemySpeed
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
 --- !u!1 &920930245
@@ -4542,6 +4534,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 0699925c73f4b02459e3c68c0fcdb860, type: 3}
+    - target: {fileID: 3307213394870111578, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _melee
+      value: 
+      objectReference: {fileID: 8300000, guid: de8031e0770d14a4b9fc726ee26e9836, type: 3}
+    - target: {fileID: 3307213394870111578, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _coolDown
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111578, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _coolDownMelee
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _slide
+      value: 
+      objectReference: {fileID: 8300000, guid: c4c5f382c5856bb439210d9f14af6ce8, type: 3}
+    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _aterrizaje
+      value: 
+      objectReference: {fileID: 8300000, guid: 139e85cbd28b35c41a326451613fb151, type: 3}
+    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _normalJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 15d5e5ea4e536f34d9306969ab95eaf8, type: 3}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4589,6 +4609,14 @@ PrefabInstance:
     - target: {fileID: 3307213394870111648, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_Name
       value: Mighty
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: attackRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: attackRange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}

@@ -44,6 +44,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private AudioClip _aterrizaje;
     [SerializeField] private AudioClip _dobleSalto;
     [SerializeField] private AudioClip _normalJump;
+    [SerializeField] private AudioClip _slide;
 
     [SerializeField] private BoxCollider2D _boxColiderNormal;
     [SerializeField] private GameObject _slideObject;
@@ -83,7 +84,9 @@ public class CharacterController : MonoBehaviour
     // para desactivar la posibilidad de doble salto.
     // Si no hemos saltado se desactiva el isgrounded.
     {
+        if (_doublejump && _isgrounded)
         GetComponent<AudioSource>().PlayOneShot(_normalJump);
+
         if (!_isgrounded)
         {
             _doublejump = false;
@@ -110,6 +113,7 @@ public class CharacterController : MonoBehaviour
         _slideObject.SetActive(true);
         _myInputComponent.enabled = false;
         _myRigidBody2D.velocity = Vector2.zero;
+        GetComponent<AudioSource>().PlayOneShot(_slide);
         if (_facingRight)
         {
             _myRigidBody2D.AddForce(_dashForce * Vector2.right);

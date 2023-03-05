@@ -13,7 +13,6 @@ public class MeleeComponent : MonoBehaviour
     private float nextAttackTime = 0f;                  //Cooldown del ataque.
 
     private EnemyMovement _enemyMovement = null;        //Sirve para comunicarse con el script de "EnemyMovement".
-    public Animator animator;
     #endregion
 
     #region Methods
@@ -24,8 +23,6 @@ public class MeleeComponent : MonoBehaviour
         {
             nextAttackTime = Time.time + 1f / attackRate;    
 
-            //Animación de ataque.
-            //animator.SetTrigger("Attack");
 
             //Detectar a los enemigos en el rango de ataque (el radio del golpe).
 

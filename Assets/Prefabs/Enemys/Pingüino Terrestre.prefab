@@ -129,8 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 15
-  KnockbackForce: 4.5
+  _enemySpeed: 10
+  _enemydetectionSpeed: 3
+  KnockbackForce: 20
   KnockbackCounter: 0
   KnockbackTotalTime: 0.2
   KnockFromRight: 0

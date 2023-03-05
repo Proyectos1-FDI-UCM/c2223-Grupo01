@@ -12,7 +12,7 @@ public class EnemyPowerDamage : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     // Colisiones del jugador con los enemigos
     {
-        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canAttack)
+        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
         {
             collision.gameObject.GetComponent<MightyLifeComponent>().OnPlayerHit(_damage);
             
