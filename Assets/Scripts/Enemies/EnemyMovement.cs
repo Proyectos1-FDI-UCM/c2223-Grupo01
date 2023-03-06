@@ -62,7 +62,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _distfromplayer = _player.transform.position.x - transform.position.x; 
-        Debug.Log(_isgrounded());
         //Solo se puede mover el enemigo si no está en modo knockback.
 
         if (KnockbackCounter <= 0) 

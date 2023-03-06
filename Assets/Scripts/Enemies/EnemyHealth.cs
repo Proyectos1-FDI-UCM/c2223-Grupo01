@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    #region parameters
+    #region parameters && references
     [SerializeField] private int _maxHealth = 100;     //Vida máxima del enemigo.
     private int _currentHealth;                        //Vida actual del enemigo.
     [SerializeField] private float _damage;            //daño al jugador
+    private EnemyMovement _enemyMovement;
+    private EnemyFlyingMovement _enemyFlyingMovement;
     #endregion
 
     #region methods
@@ -36,6 +38,16 @@ public class EnemyHealth : MonoBehaviour
 
         GetComponent<Collider2D>().isTrigger = true;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
+        // si no va a pie vuela, no hace falta comprobar ambos
+        if(_enemyMovement != null)
+        {
+            _enemyMovement.enabled = false;
+        }
+        else
+        {
+            _enemyFlyingMovement.enabled = false;
+        }
     }
     #endregion
 
@@ -54,5 +66,7 @@ public class EnemyHealth : MonoBehaviour
     {
         //Al comienzo, el enemigo comienza con máxima vida.
         _currentHealth = _maxHealth;  
+        _enemyMovement = GetComponent<EnemyMovement>();
+        _enemyFlyingMovement = GetComponent <EnemyFlyingMovement>();
     }
 }

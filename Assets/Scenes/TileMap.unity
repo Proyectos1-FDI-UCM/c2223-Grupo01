@@ -237,9 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186aaabd91c64ed43ae85c6fcca65874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTime: 0
+  _currentTime: 120
   _health: 100
   _deathTimeDamage: 10
+  _player: {fileID: 554501027}
   _timeOut: {fileID: 8300000, guid: eac42f7d57e44ca4f82c22010e600802, type: 3}
 --- !u!4 &69379902
 Transform:
@@ -5402,6 +5403,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &554501027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3307213394870111648, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+  m_PrefabInstance: {fileID: 1288372558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &577004671
 GameObject:
   m_ObjectHideFlags: 0
@@ -5755,7 +5761,8 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 160949012, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
 --- !u!50 &1651152206 stripped
 Rigidbody2D:

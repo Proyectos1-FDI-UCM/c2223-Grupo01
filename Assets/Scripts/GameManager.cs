@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region parameters 
-    [SerializeField] public float _currentTime;    //variable que controla nuestro tiempo actual.
-    [SerializeField] public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
+    public float _currentTime;    //variable que controla nuestro tiempo actual.
+    public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
     public int _currentWeapon { get; private set; }     //Variable que controla cuál es nuestra arma actual.
 
     private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte está activa o no
