@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputComponent : MonoBehaviour
 {
@@ -55,6 +56,9 @@ public class InputComponent : MonoBehaviour
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
         }
+
+        // Reinicia el nivel tutorial. El numero es en relación con el orden de escenas al hacer la build
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(2);
 
         // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
