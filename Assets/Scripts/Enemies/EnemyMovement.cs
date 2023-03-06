@@ -16,9 +16,9 @@ public class EnemyMovement : MonoBehaviour
     public float KnockbackCounter;                      //Cooldown del knockback.
     public float KnockbackTotalTime;                    //Cuánto durará el knockback.
     public bool KnockFromRight;
-    
-    private bool _isflipped;
-    private bool _isgrounded ()
+    private float _distfromplayer; //La distancia entre enemigo y jugadoe
+    private bool _isflipped; //Si el enemigo ha dado la vuelta
+    private bool _isgrounded () //Si el enemigo está en el suelo
     {
         return Physics2D.Raycast(transform.position, -Vector2.up, 0.5f, _ground);
     }
@@ -56,9 +56,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-      
+        _distfromplayer = _player.transform.position.x - transform.position.x; 
         Debug.Log(_isgrounded());
         //Solo se puede mover el enemigo si no está en modo knockback.
+
         if (KnockbackCounter <= 0) 
         {   
             if (_isgrounded())
@@ -76,12 +77,13 @@ public class EnemyMovement : MonoBehaviour
                 else if (_myEnemyFOV._detected)
                 {
                     //la dirección a la que nuestro enemigo se moverá.
-
-                    if (_player.transform.position.x > transform.position.x && _isflipped)
-                        Flip();
-                    else if (_player.transform.position.x < transform.position.x && !_isflipped)
-                        Flip();
-                    
+                    if(Mathf.Abs(_distfromplayer)>2f)
+                      {
+                        if (_distfromplayer > 0 && _isflipped)
+                            Flip();
+                        else if (_distfromplayer < 0 && !_isflipped)
+                            Flip();
+                       }
                     _rigidbody.velocity = (transform.right * _enemydetectionSpeed);
 
                 }
