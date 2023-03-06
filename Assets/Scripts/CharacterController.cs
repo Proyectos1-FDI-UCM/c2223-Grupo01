@@ -182,10 +182,7 @@ public class CharacterController : MonoBehaviour
         {
             _MovementSmoothing = 3;
         }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Hielo"))
+        else
         {
             _MovementSmoothing = 0;
         }
@@ -201,7 +198,7 @@ public class CharacterController : MonoBehaviour
 
         // Guardo gravedad inicial.
         _initialGravity = _myRigidBody2D.gravityScale;
-        //desactivamos el colider del dash al principio
+        //desactivamos el collider del dash al principio
         _slideObject.SetActive(false);
     }
 
