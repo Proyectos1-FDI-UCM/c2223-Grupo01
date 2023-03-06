@@ -19,35 +19,33 @@ public class CharacterController : MonoBehaviour
     private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
 
     [Header("Jump")]
-    [SerializeField] private float _jumpForce;
-    public bool _isJumping;
+    [SerializeField] private float _jumpForce; // fuerza del salto
 
     [Header("Dash")]
     private bool _facingRight = true;
-    [SerializeField] private float _dashForce;
-    private bool _dash = false;
+    [SerializeField] private float _dashForce; // Fuerza para el dash
+    private bool _dash = false; // Booleano que detecta si estamos en medio de un dash
 
     [Header("Climb")]
-    private float _initialGravity;
-    private float _climbVelocity = 10f;
-    public bool _isClimbing { get; private set; }
+    private float _initialGravity; // gravedad inicial
+    private float _climbVelocity = 10f; // velocidad de escalada
+    public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     #endregion
 
     #region References
-    private GameObject _player;
-    [SerializeField]private Rigidbody2D _myRigidBody2D;
-    private BoxCollider2D _myCollider2D;
-    [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private LayerMask _ladderLayer;
-    private InputComponent _myInputComponent;
-    private Animator _animator;
+    [SerializeField]private Rigidbody2D _myRigidBody2D; // Referencia al Rigid Body del player
+    private BoxCollider2D _myCollider2D; // Referencia al Colider del player
+    [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
+    [SerializeField] private LayerMask _ladderLayer; // Layers que tomamos como escalabes
+    private InputComponent _myInputComponent; // Referencia al input
+    private Animator _animator; // Referencia al animator
 
+    // Sonidos varios
     [SerializeField] private AudioClip _aterrizaje;
     [SerializeField] private AudioClip _dobleSalto;
     [SerializeField] private AudioClip _normalJump;
     [SerializeField] private AudioClip _slide;
 
-    [SerializeField] private BoxCollider2D _boxColiderNormal;
     [SerializeField] private GameObject _slideObject;
     #endregion
 
@@ -107,8 +105,8 @@ public class CharacterController : MonoBehaviour
     }
 
     public void Dash()
-    // Deslizamiento sobre el suelo. Se tumba al jugador y se le impulsa
-    // hacia la derecha o izquierda. Se desactiva input si estamos dasheando.
+    // Deslizamiento sobre el suelo impulsando al jugador.
+    // Hacia la derecha o izquierda. Se desactiva input si estamos dasheando.
     {
         _myCollider2D.isTrigger = true;
         _slideObject.SetActive(true);
@@ -126,6 +124,7 @@ public class CharacterController : MonoBehaviour
         _dash = true;
     }
 
+    //metodo de escalada
     public void Climb(float YAxismove)
     {
         if ((YAxismove != 0 || _isClimbing) && _myRigidBody2D.IsTouchingLayers(_ladderLayer))
@@ -179,15 +178,14 @@ public class CharacterController : MonoBehaviour
     {
         //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
-        //Debug.Log(_isgrounded);
-        if (!_aterrizado && _isgrounded)
+
+        if (!_aterrizado && _isgrounded) // si estamos atterizando en el suelo se produce un sonido, si no está en el suelo aterrizado es false
         {
             //Cuando aterrice en el suelo, reproducir� el sonido y se volver� true aterrizado
             GetComponent<AudioSource>().PlayOneShot(_aterrizaje);
             _aterrizado = true;
         }
-        
-        if (!_isgrounded)
+        else if (!_isgrounded)
         {
             _aterrizado = false;
         }
@@ -196,7 +194,7 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_dash", _dash);
         _animator.SetBool("_isGrounded", _isgrounded);
 
-        //Comprueba si el dash ha acabado
+        //Comprueba si el dash ha acabado y devuelve al player a la normalidad
         if (_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space))
         {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Space))

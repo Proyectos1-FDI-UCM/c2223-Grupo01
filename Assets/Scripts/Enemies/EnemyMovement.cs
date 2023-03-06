@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     #region parameters
     [SerializeField] private float _enemySpeed = 5f;
     [SerializeField] private float _enemydetectionSpeed = 3f;
-    [SerializeField] private LayerMask _ground;
+    [SerializeField] private float _maxDistanceDetection = 2f;
     private float _initialSpeed;
     public float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
     public float KnockbackCounter;                      //Cooldown del knockback.
@@ -18,22 +18,27 @@ public class EnemyMovement : MonoBehaviour
     public bool KnockFromRight;
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
     private bool _isflipped; //Si el enemigo ha dado la vuelta
-    private bool _isgrounded () //Si el enemigo está en el suelo
-    {
-        return Physics2D.Raycast(transform.position, -Vector2.up, 0.5f, _ground);
-    }
+    #endregion
 
     #region references
+    [SerializeField] private LayerMask _ground;
     private GameObject _player; 
     private EnemyFOV _myEnemyFOV;
     private Rigidbody2D _rigidbody;
     #endregion
 
     #region Methods
+    private bool _isgrounded() //Si el enemigo está en el suelo
+    {
+        return Physics2D.Raycast(transform.position, -Vector2.up, 0.5f, _ground);
+    }
     private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {
-        Flip();
+        if(Other != GameManager.instance._player)
+        {
+            Flip();
+        }
     }
    private void Flip ()
     {
@@ -77,7 +82,7 @@ public class EnemyMovement : MonoBehaviour
                 else if (_myEnemyFOV._detected)
                 {
                     //la dirección a la que nuestro enemigo se moverá.
-                    if(Mathf.Abs(_distfromplayer)>2f)
+                    if(Mathf.Abs(_distfromplayer)> _maxDistanceDetection)
                       {
                         if (_distfromplayer > 0 && _isflipped)
                             Flip();
@@ -112,4 +117,3 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 }
-#endregion

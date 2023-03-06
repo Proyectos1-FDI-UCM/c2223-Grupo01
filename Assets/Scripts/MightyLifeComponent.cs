@@ -36,26 +36,21 @@ public class MightyLifeComponent : MonoBehaviour
 
 
         _canBeDamaged = false;
-        _health -= damage;
-        GameManager.instance._UImanager.ActualizarInterfaz(_health);
-        
-        if (_health <= 0)
-        {
-            GetComponent<AudioSource>().PlayOneShot(_deathSFX);
-            _death = true;
-            _myInputComponent.enabled = false;
-            _boxColiderNormal.isTrigger = true;
-            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
-            //Destroy(gameObject);
-        }
+        TakeDanage(damage);
     }
 
     public void DeathTime(float damage)
     //Cuando se acabe el tiempo, daña al player
     {
         _animator.SetTrigger("_timeOut");
+        TakeDanage(damage);
+    }
+
+    private void TakeDanage(float damage)
+    {
         _health -= damage;
         GameManager.instance._UImanager.ActualizarInterfaz(_health);
+
         if (_health <= 0)
         {
             GetComponent<AudioSource>().PlayOneShot(_deathSFX);

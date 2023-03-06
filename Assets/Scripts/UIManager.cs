@@ -22,7 +22,6 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     private MightyLifeComponent _playerLife;
     #endregion
-
     #region Methods
     void UpdateTimer(float Currenttime)
     //Redondea el número para sacar los minutos y segundos

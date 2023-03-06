@@ -11,8 +11,10 @@ public class MeleeComponent : MonoBehaviour
     [SerializeField] private int attackDamage = 40;     //Daño por golpe.
     [SerializeField] private float attackRate = 2f;     //Indica cuántas veces se va a atacar por segundo.
     private float nextAttackTime = 0f;                  //Cooldown del ataque.
-
     private EnemyMovement _enemyMovement = null;        //Sirve para comunicarse con el script de "EnemyMovement".
+    [SerializeField] private float _coolDownMelee; //tiempo en el que se permitirá usar el arma a melee
+    private float _initialCoolDownMelee;
+    public bool _canAttackMelee { get; private set; }//condición en la que se permitirá usar el arma a melee
     #endregion
 
     #region Methods
@@ -50,6 +52,7 @@ public class MeleeComponent : MonoBehaviour
                 }
                 enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
             }
+            _canAttackMelee = false;
         }
     }
 
@@ -63,4 +66,23 @@ public class MeleeComponent : MonoBehaviour
         }
     }
     #endregion
+
+    private void Start()
+    {
+        _initialCoolDownMelee = _coolDownMelee;
+        _canAttackMelee = true;
+    }
+
+    private void Update()
+    {
+        //Cooldown programado para poder usar el arma a melee o no
+        if (!_canAttackMelee)
+        {
+            _coolDownMelee -= Time.deltaTime;
+
+            if (_coolDownMelee <= 0)
+                _canAttackMelee = true;
+        }
+        else _coolDownMelee = _initialCoolDownMelee;
+    }
 }

@@ -1478,6 +1478,7 @@ MonoBehaviour:
   _deathTimeDamage: 0
   _player: {fileID: 1758346016}
   _blaster: {fileID: 1758346016}
+  _timeOut: {fileID: 0}
 --- !u!4 &2005594033
 Transform:
   m_ObjectHideFlags: 0
@@ -1500,6 +1501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6249533309063329142, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: _visionAngle
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6249533309063329142, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _visionDistance
       value: 10
@@ -1562,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _enemySpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: VisionDistance
@@ -1578,15 +1583,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140318663064654158, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_LinearDrag
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9140318663064654158, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_AngularDrag
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9140318663064654158, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_GravityScale
-      value: 25
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}

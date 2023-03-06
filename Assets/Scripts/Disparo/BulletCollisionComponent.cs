@@ -12,8 +12,7 @@ public class BulletCollisionComponent : MonoBehaviour
     #endregion
 
     #region methods
-    private void OnCollisionEnter2D(Collision2D collision)
-    // Colisiones de la bala
+    private void OnCollisionEnter2D(Collision2D collision) // Colisiones de la bala
     {
         Destroy(gameObject);
         if(collision.gameObject.GetComponent<EnemyHealth>() != null)

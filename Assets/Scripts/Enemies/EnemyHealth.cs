@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     #region parameters
     [SerializeField] private int _maxHealth = 100;     //Vida máxima del enemigo.
     private int _currentHealth;                        //Vida actual del enemigo.
+    [SerializeField] private float _damage;            //daño al jugador
     #endregion
 
     #region methods
@@ -24,7 +25,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     //Método para que muera el enemigo.
     //Desactiva el collider del enemigo al morir.
     //Desactiva el EnemyComponent.
@@ -33,12 +34,23 @@ public class EnemyHealth : MonoBehaviour
 
         //Quitar al enemigo.
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;   
+        GetComponent<Collider2D>().isTrigger = true;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
     #endregion
 
-    void Start()
+    #region collisions methods
+    private void OnCollisionStay2D(Collision2D collision)
+    // Colisiones del jugador con los enemigos
+    {
+        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
+        {
+            collision.gameObject.GetComponent<MightyLifeComponent>().OnPlayerHit(_damage);
+        }
+    }
+    #endregion
+
+    private void Start()
     {
         //Al comienzo, el enemigo comienza con máxima vida.
         _currentHealth = _maxHealth;  

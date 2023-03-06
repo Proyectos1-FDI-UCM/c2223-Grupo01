@@ -6,12 +6,11 @@ using UnityEngine;
 public class EnemyFlyingMovement : MonoBehaviour
 {
     #region Parameters & References
-    private GameObject _player;
-    private EnemyFOV _myEnemyFOV;
+    private GameObject _player; 
+    private EnemyFOV _myEnemyFOV; 
     [SerializeField] private float _enemySpeed = 5f;
     private Vector2 _initialPosition;
     private int _enemystate;
-    private Rigidbody2D _rigidbody;
     #endregion
 
     #region Methods
@@ -36,8 +35,6 @@ public class EnemyFlyingMovement : MonoBehaviour
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {   
         transform.Rotate(0f, 180f, 0f);
-
-        Debug.Log("Trigger");
     }
     private void ChangeEnemyState ( int estado) //Método que cambia los distintos estados del enemigo
     {
@@ -72,7 +69,6 @@ public class EnemyFlyingMovement : MonoBehaviour
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialPosition = transform.position;
-        _rigidbody = GetComponent<Rigidbody2D>();
         _enemystate = 0;
     }
 

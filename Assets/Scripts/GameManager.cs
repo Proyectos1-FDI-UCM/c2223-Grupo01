@@ -16,21 +16,22 @@ public class GameManager : MonoBehaviour
 
     #region References
     public static GameManager instance; // Singleton inicializado en el Awake
-    public GameObject _player;  // Para usarlo en otros scripts
-    public GameObject _blaster; // referencia al arma de disparo que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
-    public MightyLifeComponent _mightyLifeComponent { get; private set; }
-    public UIManager _UImanager { get; private set; }
+    [SerializeField] public GameObject _player { get; private set; }  // Para usarlo en otros scripts
+    public MightyLifeComponent _mightyLifeComponent { get; private set;}
+    public UIManager _UImanager { get; private set;}
 
     [SerializeField] private AudioClip _timeOut;
     #endregion
 
     #region methods
+    // Registramos la clase de Mighty Component.
     public MightyLifeComponent RegisterMightyComponent(MightyLifeComponent mightyLifeComponent)
     {
         _mightyLifeComponent = mightyLifeComponent;
         return _mightyLifeComponent;
     }
 
+    // Registramos la clase del UI Manager
     public UIManager RegisterUIMManager ( UIManager UIManager)
     {
         _UImanager = UIManager;
@@ -38,13 +39,11 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    private void Awake()
-    //Inicializo el Singleton
+    // awake para la instancia de la clase
+    private void Awake()     //Inicializo el Singleton
     {
         instance = this;
     }
-
-    
 
     void Start()
     {
