@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     #region References
     public static GameManager instance; // Singleton inicializado en el Awake
-    [SerializeField] public GameObject _player { get; private set; }  // Para usarlo en otros scripts
+    public GameObject _player;// Para usarlo en otros scripts
     public MightyLifeComponent _mightyLifeComponent { get; private set;}
     public UIManager _UImanager { get; private set;}
 
