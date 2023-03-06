@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentTime: 2
   _health: 100
-  _deathTimeDamage: 2
+  _deathTimeDamage: 5
   _player: {fileID: 1651152198}
   _blaster: {fileID: 1563385774}
 --- !u!4 &69379902

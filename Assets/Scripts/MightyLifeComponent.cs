@@ -28,7 +28,6 @@ public class MightyLifeComponent : MonoBehaviour
     public void OnPlayerHit(float damage)
     //Cuando se haga hit, daña al player
     {
-        _animator.SetTrigger("_damaged");
         
         GetComponent<AudioSource>().PlayOneShot(_hurt);
 
@@ -40,7 +39,12 @@ public class MightyLifeComponent : MonoBehaviour
         if (_health <= 0)
         {
             _death = true;
+            _myInputComponent.enabled = false;
             //Destroy(gameObject);
+        }
+        else
+        {
+            _animator.SetTrigger("_damaged");
         }
     }
 
@@ -86,9 +90,6 @@ public class MightyLifeComponent : MonoBehaviour
         }
         _animator.SetBool("_isDead", _death);
 
-        if (_death)
-        {
-            _myInputComponent.enabled = false;
         }
     }
 }
