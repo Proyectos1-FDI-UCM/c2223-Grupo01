@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
     public int _currentWeapon { get; private set; }     //Variable que controla cuál es nuestra arma actual.
 
-    [SerializeField] private float _deathTimeDamage;
+    private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte está activa o no
+
+    [SerializeField] private float _deathTimeDamage; //Daño que quita cada ciclo
     #endregion
 
     #region References
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     public GameObject _blaster; // referencia al arma de disparo que se puede usar desde otros Scrpts sin necesidad de String Typing (NO PONER PRIVADA)
     public MightyLifeComponent _mightyLifeComponent { get; private set; }
     public UIManager _UImanager { get; private set; }
+
+    [SerializeField] private AudioClip _timeOut;
     #endregion
 
     #region methods
@@ -43,17 +47,27 @@ public class GameManager : MonoBehaviour
     
 
     void Start()
-    {   
+    {
+        _timeMusicActive = false;
         _currentWeapon = 2;
     }
 
     void Update()
     {    
         _currentTime -= Time.deltaTime;
-        if (_currentTime <= 0)
+
+        // Resta progresivamente la vida al acabarse el tiempo
+        if (_currentTime <= 0 && _mightyLifeComponent._health > 0)
         {
             _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el daño por segundo para no tener que usar valores tan pequeños
 
+        }
+
+        // Pone la música de que se acaba el tiempo y la vida se resta
+        if (_currentTime <= 0.0f && !_timeMusicActive)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_timeOut);
+            _timeMusicActive = true;
         }
     }
 }

@@ -16,7 +16,7 @@ public class MightyLifeComponent : MonoBehaviour
     private bool _death;
 
     [SerializeField] private AudioClip _hurt;
-    //[SerializeField] private AudioSource _timeOut;
+    [SerializeField] private AudioClip _deathSFX;
 
     #endregion
 
@@ -41,7 +41,11 @@ public class MightyLifeComponent : MonoBehaviour
         
         if (_health <= 0)
         {
+            GetComponent<AudioSource>().PlayOneShot(_deathSFX);
             _death = true;
+            _myInputComponent.enabled = false;
+            _boxColiderNormal.isTrigger = true;
+            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
             //Destroy(gameObject);
         }
     }
@@ -54,7 +58,11 @@ public class MightyLifeComponent : MonoBehaviour
         GameManager.instance._UImanager.ActualizarInterfaz(_health);
         if (_health <= 0)
         {
+            GetComponent<AudioSource>().PlayOneShot(_deathSFX);
             _death = true;
+            _myInputComponent.enabled = false;
+            _boxColiderNormal.isTrigger = true;
+            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
             //Destroy(gameObject);
         }
     }
@@ -63,7 +71,6 @@ public class MightyLifeComponent : MonoBehaviour
     private void Start()
     {
         _death = false;
-        //_timeOut = GetComponent<AudioSource>();
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
 
@@ -87,12 +94,5 @@ public class MightyLifeComponent : MonoBehaviour
                 _canBeDamaged = true;
         }
         else _coolDown = _initialCoolDown;
-
-        if (_death)
-        {
-            _myInputComponent.enabled = false;
-            _boxColiderNormal.isTrigger = true;
-            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
-        }
     }
 }

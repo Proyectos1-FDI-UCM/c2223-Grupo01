@@ -242,6 +242,7 @@ MonoBehaviour:
   _deathTimeDamage: 10
   _player: {fileID: 1651152198}
   _blaster: {fileID: 1563385774}
+  _timeOut: {fileID: 8300000, guid: eac42f7d57e44ca4f82c22010e600802, type: 3}
 --- !u!4 &69379902
 Transform:
   m_ObjectHideFlags: 0
@@ -5592,7 +5593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140318663064654158, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
@@ -5648,6 +5649,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _deathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
     - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _myRigidBody2D
       value: 
