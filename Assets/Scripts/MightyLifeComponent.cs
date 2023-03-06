@@ -29,27 +29,29 @@ public class MightyLifeComponent : MonoBehaviour
     #endregion
 
     public void OnPlayerHit(float damage)
-    //Cuando se haga hit, daña al player
+    //Cuando se haga hit, daï¿½a al player
     {
         _animator.SetTrigger("_damaged");
         GetComponent<AudioSource>().PlayOneShot(_hurt);
 
 
         _canBeDamaged = false;
-        TakeDanage(damage);
+        TakeDamage(damage);
     }
 
     public void DeathTime(float damage)
-    //Cuando se acabe el tiempo, daña al player
+    //Cuando se acabe el tiempo, daï¿½a al player
     {
         _animator.SetTrigger("_timeOut");
-        TakeDanage(damage);
+        TakeDamage(damage);
     }
 
-    private void TakeDanage(float damage)
+    private void TakeDamage(float damage)
     {
         _health -= damage;
-        GameManager.instance._UImanager.ActualizarInterfaz(_health);
+        if(GameManager.instance._UImanager != null){
+            GameManager.instance._UImanager.ActualizarInterfaz(_health);
+        }
 
         if (_health <= 0)
         {
