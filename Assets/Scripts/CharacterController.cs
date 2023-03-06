@@ -61,6 +61,13 @@ public class CharacterController : MonoBehaviour
         return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .05f, _groundLayer);
     }
 
+    private bool IsCeillng()
+    // cada vez que tocamos el suelo reactivamos el doble salto
+    // y detecto si estoy en el suelo
+    {
+        return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.up, .05f, _groundLayer);
+    }
+
     public void MoveXAxis(float XAxismove)
     // Muevo al personaje en el eje X
     // hago Flip() para girar el sprite en la direccion a la que mire el Player
@@ -108,11 +115,14 @@ public class CharacterController : MonoBehaviour
     // Deslizamiento sobre el suelo impulsando al jugador.
     // Hacia la derecha o izquierda. Se desactiva input si estamos dasheando.
     {
-        _myCollider2D.isTrigger = true;
-        _slideObject.SetActive(true);
-        _myInputComponent.enabled = false;
-        _myRigidBody2D.velocity = Vector2.zero;
-        GetComponent<AudioSource>().PlayOneShot(_slide);
+        if (!_dash)
+        {
+            _myCollider2D.isTrigger = true;
+            _slideObject.SetActive(true);
+            _myInputComponent.enabled = false;
+            _myRigidBody2D.velocity = Vector2.zero;
+            GetComponent<AudioSource>().PlayOneShot(_slide);
+        }
         if (_facingRight)
         {
             _myRigidBody2D.AddForce(_dashForce * Vector2.right);
@@ -195,7 +205,7 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_isGrounded", _isgrounded);
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
-        if (_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space))
+        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space)) && !IsCeillng())
         {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
             {
@@ -206,6 +216,17 @@ public class CharacterController : MonoBehaviour
             _slideObject.SetActive(false);
             _myCollider2D.isTrigger = false;
             _dash = false;
+        }
+        else if(_myRigidBody2D.velocity.x == 0 && _dash && IsCeillng())
+        {
+            if (_facingRight)
+            {
+                transform.position += new Vector3(0.1f, 0, 0);
+            }
+            else
+            {
+                transform.position += new Vector3(- 0.1f, 0, 0);
+            }
         }
     }
 }
