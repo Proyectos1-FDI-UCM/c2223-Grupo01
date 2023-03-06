@@ -12,8 +12,13 @@ public class CharacterController : MonoBehaviour
     // pero no cambiada
     public bool _isgrounded { get; private set; }
     public bool _doublejump { get; private set; }
+    public bool _isOnIce{get; private set;}
+
+    [Header("Basic Movement")]
     [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
     [SerializeField] private float _movementSpeedX; // velocidad con la que se moverá mighty en el eje x
+    [SerializeField] private LayerMask _iceMask;
+    
     private Vector3 _velocity = Vector3.zero;
 
     private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
@@ -61,7 +66,7 @@ public class CharacterController : MonoBehaviour
         return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .05f, _groundLayer);
     }
 
-    private bool IsCeillng()
+    private bool IsCeiling()
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
@@ -168,8 +173,24 @@ public class CharacterController : MonoBehaviour
             _isClimbing = false;
         }
     }
-        #endregion
+    #endregion
 
+    #region Collision Methods
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Hielo")) //pensado para hacerlo con layer
+        {
+            _MovementSmoothing = 3;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hielo"))
+        {
+            _MovementSmoothing = 0;
+        }
+    }
+    #endregion
     private void Start()
     {
         // Inicializo componentes.
@@ -205,7 +226,7 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_isGrounded", _isgrounded);
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
-        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space)) && !IsCeillng())
+        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space)) && !IsCeiling())
         {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
             {
@@ -217,7 +238,7 @@ public class CharacterController : MonoBehaviour
             _myCollider2D.isTrigger = false;
             _dash = false;
         }
-        else if(_myRigidBody2D.velocity.x == 0 && _dash && IsCeillng())
+        else if(_myRigidBody2D.velocity.x == 0 && _dash && IsCeiling())
         {
             if (_facingRight)
             {
