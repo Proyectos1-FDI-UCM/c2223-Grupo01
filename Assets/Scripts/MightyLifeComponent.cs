@@ -16,19 +16,22 @@ public class MightyLifeComponent : MonoBehaviour
     private bool _death;
 
     [SerializeField] private AudioClip _hurt;
-    [SerializeField] private AudioSource _timeOut;
+    //[SerializeField] private AudioSource _timeOut;
 
     #endregion
 
     #region References
     private Animator _animator;
     private InputComponent _myInputComponent;
+
+    [SerializeField] private Rigidbody2D _myRigidBody2D;
+    [SerializeField] private BoxCollider2D _boxColiderNormal;
     #endregion
 
     public void OnPlayerHit(float damage)
     //Cuando se haga hit, daña al player
     {
-        
+        _animator.SetTrigger("_damaged");
         GetComponent<AudioSource>().PlayOneShot(_hurt);
 
 
@@ -39,18 +42,14 @@ public class MightyLifeComponent : MonoBehaviour
         if (_health <= 0)
         {
             _death = true;
-            _myInputComponent.enabled = false;
             //Destroy(gameObject);
-        }
-        else
-        {
-            _animator.SetTrigger("_damaged");
         }
     }
 
     public void DeathTime(float damage)
     //Cuando se acabe el tiempo, daña al player
     {
+        _animator.SetTrigger("_timeOut");
         _health -= damage;
         GameManager.instance._UImanager.ActualizarInterfaz(_health);
         if (_health <= 0)
@@ -64,7 +63,10 @@ public class MightyLifeComponent : MonoBehaviour
     private void Start()
     {
         _death = false;
-        _timeOut = GetComponent<AudioSource>();
+        //_timeOut = GetComponent<AudioSource>();
+        _boxColiderNormal = GetComponent<BoxCollider2D>();
+        _myRigidBody2D = GetComponent<Rigidbody2D>();
+
         _animator = GetComponent<Animator>();
         _myInputComponent = GetComponent<InputComponent>();
         GameManager.instance.RegisterMightyComponent(this);
@@ -75,6 +77,8 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        _animator.SetBool("_isDead", _death);
+
         if (!_canBeDamaged)
         {
             _coolDown -= Time.deltaTime;
@@ -84,12 +88,11 @@ public class MightyLifeComponent : MonoBehaviour
         }
         else _coolDown = _initialCoolDown;
 
-        if (GameManager.instance._currentTime == 0)
+        if (_death)
         {
-            _timeOut.Play();
-        }
-        _animator.SetBool("_isDead", _death);
-
+            _myInputComponent.enabled = false;
+            _boxColiderNormal.isTrigger = true;
+            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
         }
     }
 }
