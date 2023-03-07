@@ -26,6 +26,12 @@ public class MightyLifeComponent : MonoBehaviour
 
     [SerializeField] private Rigidbody2D _myRigidBody2D;
     [SerializeField] private BoxCollider2D _boxColiderNormal;
+
+    [SerializeField]
+    private Color[] _colores;   //Array de colores del player
+
+    [SerializeField]
+    private Renderer _renderC; //Renderiza el color del player
     #endregion
 
     public void OnPlayerHit(float damage)
@@ -58,7 +64,7 @@ public class MightyLifeComponent : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(_deathSFX);
             _death = true;
             _myInputComponent.enabled = false;
-            _boxColiderNormal.isTrigger = true;
+            _boxColiderNormal.enabled = false;
             _myRigidBody2D.bodyType = RigidbodyType2D.Static;
             //Destroy(gameObject);
         }
@@ -85,11 +91,18 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (!_canBeDamaged)
         {
+            //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
             _coolDown -= Time.deltaTime;
+
+            if (_coolDown % _coolDown == 0) _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
 
             if (_coolDown <= 0)
                 _canBeDamaged = true;
         }
-        else _coolDown = _initialCoolDown;
+        else
+        {
+            _renderC.material.color = _colores[1]; //Recupera su color original tras el cool down
+            _coolDown = _initialCoolDown;
+        }
     }
 }
