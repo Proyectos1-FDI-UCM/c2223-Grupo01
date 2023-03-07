@@ -17,7 +17,6 @@ public class CharacterController : MonoBehaviour
     [Header("Basic Movement")]
     [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
     [SerializeField] private float _movementSpeedX; // velocidad con la que se moverá mighty en el eje x
-    [SerializeField] private LayerMask _iceMask;
     
     private Vector3 _velocity = Vector3.zero;
 
@@ -178,9 +177,11 @@ public class CharacterController : MonoBehaviour
     #region Collision Methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Hielo")) //pensado para hacerlo con layer
+        // Cuando Mighty toque layer de Ice (núm 9), el suavizado se incrementará
+        // para dar efecto de resbalar.
+        if(collision.gameObject.layer == 9)
         {
-            _MovementSmoothing = 3;
+            _MovementSmoothing = 4;
         }
         else
         {
