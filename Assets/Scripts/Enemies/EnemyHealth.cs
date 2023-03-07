@@ -34,10 +34,11 @@ public class EnemyHealth : MonoBehaviour
     {
         //Animación de morir.
 
+        
         //Quitar al enemigo.
-
         GetComponent<Collider2D>().isTrigger = true;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        Destroy(gameObject,1);
 
         // si no va a pie vuela, no hace falta comprobar ambos
         if(_enemyMovement != null)
