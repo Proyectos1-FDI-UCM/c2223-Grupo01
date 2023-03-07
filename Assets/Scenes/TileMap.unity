@@ -19008,7 +19008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _damage: 20
-  _coolDownDeathAnim: 0
+  _coolDownDeathAnim: 1
 --- !u!95 &1281900306
 Animator:
   serializedVersion: 4
@@ -19312,7 +19312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 158693090694766206, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _coolDownDeathAnim
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6249533309063329142, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _visionAngle
