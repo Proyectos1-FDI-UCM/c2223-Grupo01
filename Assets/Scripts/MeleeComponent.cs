@@ -39,18 +39,21 @@ public class MeleeComponent : MonoBehaviour
             //El contador comienza cada vez que le pegas un cate al enemigo.
             //Comprobamos si el jugador esta a la izda o dcha
             {
-                _enemyMovement = enemy.GetComponent<EnemyMovement>();
-                _enemyMovement.KnockbackCounter = _enemyMovement.KnockbackTotalTime;
-                
-                if (enemy.transform.position.x <= transform.position.x)
+                if(enemy.GetComponent<EnemyMovement>() != null)
                 {
-                    _enemyMovement.KnockFromRight = true;
+                    _enemyMovement = enemy.GetComponent<EnemyMovement>();
+                    _enemyMovement.KnockbackCounter = _enemyMovement.KnockbackTotalTime;
+
+                    if (enemy.transform.position.x <= transform.position.x)
+                    {
+                        _enemyMovement.KnockFromRight = true;
+                    }
+                    if (enemy.transform.position.x >= transform.position.x)
+                    {
+                        _enemyMovement.KnockFromRight = false;
+                    }
+                    enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
                 }
-                if (enemy.transform.position.x >= transform.position.x)
-                {
-                    _enemyMovement.KnockFromRight = false;
-                }
-                enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
             }
             _canAttackMelee = false;
         }

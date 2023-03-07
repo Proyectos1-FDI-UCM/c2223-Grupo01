@@ -37,7 +37,7 @@ public class CharacterController : MonoBehaviour
     #endregion
 
     #region References
-    [SerializeField]private Rigidbody2D _myRigidBody2D; // Referencia al Rigid Body del player
+    private Rigidbody2D _myRigidBody2D; // Referencia al Rigid Body del player
     private BoxCollider2D _myCollider2D; // Referencia al Colider del player
     [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
     [SerializeField] private LayerMask _ladderLayer; // Layers que tomamos como escalabes
@@ -69,7 +69,7 @@ public class CharacterController : MonoBehaviour
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
-        return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.up, .05f, _groundLayer);
+        return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.up, 0.05f, _groundLayer);
     }
 
     public void MoveXAxis(float XAxismove)
