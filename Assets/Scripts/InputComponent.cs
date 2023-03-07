@@ -58,7 +58,7 @@ public class InputComponent : MonoBehaviour
         }
 
         // Reinicia el nivel tutorial. El numero es en relación con el orden de escenas al hacer la build
-        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(2);
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(1);
 
         // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));

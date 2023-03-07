@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MightyLifeComponent : MonoBehaviour
@@ -10,6 +11,10 @@ public class MightyLifeComponent : MonoBehaviour
     //[SerializeField] 
     public float _health; //La cantidad de vida del jugador.
     [SerializeField] private float _coolDown;
+
+    [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
+
+    [SerializeField] private float _canRepeatLevelTimer; //Contador que al llegar a 0 reinicia el nivel. Se activa al morir
     public float _initialCoolDown { get; private set; }
     public bool _canBeDamaged { get; private set; }
 
@@ -70,13 +75,23 @@ public class MightyLifeComponent : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 10)
+        {
+            _animator.SetTrigger("_damaged");
+            GetComponent<AudioSource>().PlayOneShot(_hurt);
+            TakeDamage(_health);
+        }
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
         _death = false;
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
-
+    
         _animator = GetComponent<Animator>();
         _myInputComponent = GetComponent<InputComponent>();
         GameManager.instance.RegisterMightyComponent(this);
@@ -93,8 +108,12 @@ public class MightyLifeComponent : MonoBehaviour
         {
             //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
             _coolDown -= Time.deltaTime;
-
-            if (_coolDown % _coolDown == 0) _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
+            _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
+            if (_coolDown > _timerInputFalseAfterHit)
+            {
+                _myInputComponent.enabled = false;
+            }
+            else _myInputComponent.enabled = true;
 
             if (_coolDown <= 0)
                 _canBeDamaged = true;
@@ -103,6 +122,12 @@ public class MightyLifeComponent : MonoBehaviour
         {
             _renderC.material.color = _colores[1]; //Recupera su color original tras el cool down
             _coolDown = _initialCoolDown;
+        }
+
+        if (_death)
+        {
+            _canRepeatLevelTimer -= Time.deltaTime;
+            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1);
         }
     }
 }

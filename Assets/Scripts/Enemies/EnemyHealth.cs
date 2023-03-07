@@ -10,6 +10,14 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float _damage;            //daño al jugador
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
+
+    [SerializeField] private float _coolDownDeathAnim;
+
+    private bool _death;
+    #endregion
+
+    #region References
+    private Animator _animator;
     #endregion
 
     #region methods
@@ -34,11 +42,12 @@ public class EnemyHealth : MonoBehaviour
     {
         //Animación de morir.
 
-        
+
         //Quitar al enemigo.
+        _death = true;
         GetComponent<Collider2D>().isTrigger = true;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        Destroy(gameObject,1);
+        
 
         // si no va a pie vuela, no hace falta comprobar ambos
         if(_enemyMovement != null)
@@ -69,5 +78,21 @@ public class EnemyHealth : MonoBehaviour
         _currentHealth = _maxHealth;  
         _enemyMovement = GetComponent<EnemyMovement>();
         _enemyFlyingMovement = GetComponent <EnemyFlyingMovement>();
+        _death = false;
+        _animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        _animator.SetBool("_death", _death);
+
+        if (_death)
+        {
+            _coolDownDeathAnim -= Time.deltaTime;
+            if (_coolDownDeathAnim <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
