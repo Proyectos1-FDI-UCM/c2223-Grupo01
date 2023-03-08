@@ -66,7 +66,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         GameManager.instance.RegisterUIMManager(this);
-        _playerLife = GameManager.instance._mightyLifeComponent;
+        _playerLife = GameManager.instance._player.GetComponent<MightyLifeComponent>();
         _currentTime = GameManager.instance._currentTime;
         /*_maxHealth = GameManager.instance._MaxHealth;  
         SetMaxHealth(_maxHealth);*/
