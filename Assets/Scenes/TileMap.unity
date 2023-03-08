@@ -32881,7 +32881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -727916230240251004, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: _enemySpeed
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -727916230240251004, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: _enemyMovementSmoothing
