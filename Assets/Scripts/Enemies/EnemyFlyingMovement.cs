@@ -11,6 +11,8 @@ public class EnemyFlyingMovement : MonoBehaviour
     [SerializeField] private float _enemySpeed = 5f;
     private Vector2 _initialPosition;
     private int _enemystate;
+    private enum Estados { patrullaje, perseguir, regresar};
+    private Estados _estados;
     #endregion
 
     #region Methods
@@ -31,33 +33,33 @@ public class EnemyFlyingMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, _initialPosition, _enemySpeed*Time.deltaTime);
     }
 
-    /*private void OnTriggerEnter2D(Collider2D Other)
+    private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {   
         transform.Rotate(0f, 180f, 0f);
-    }*/
-    private void ChangeEnemyState ( int estado) //Método que cambia los distintos estados del enemigo
+    }
+    private void ChangeEnemyState ( Estados estados) //Método que cambia los distintos estados del enemigo
     {
-        switch (estado)
+        switch (estados)
         {
-            case 0:
+            case Estados.patrullaje:
                 FlyingPatrol();
                 if (_myEnemyFOV._detected)
-                    _enemystate = 1;
+                    _estados = Estados.perseguir;
                 break;
-            case 1:
+            case Estados.perseguir:
                 FlyingChase();
                 if (!_myEnemyFOV._detected)
-                    _enemystate = 2;
+                    _estados = Estados.regresar;
                     break;
-            case 2:
+            case Estados.regresar:
                 ReturnPosition();
                
                 if (_myEnemyFOV._detected)
-                    _enemystate = 1;
+                   _estados = Estados.perseguir;
 
                 if (new Vector2(transform.position.x, transform.position.y) == _initialPosition)
-                    _enemystate = 0;
+                    _estados = Estados.patrullaje;
                 break;
         }    
     }
@@ -69,11 +71,13 @@ public class EnemyFlyingMovement : MonoBehaviour
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialPosition = transform.position;
-        _enemystate = 0;
+        _estados = Estados.patrullaje;
     }
 
     void Update()
     {
-        ChangeEnemyState(_enemystate);
+       //Debug.Log(_myEnemyFOV._detected);
+        //Debug.Log(_estados);
+        ChangeEnemyState(_estados);
     }
 }
