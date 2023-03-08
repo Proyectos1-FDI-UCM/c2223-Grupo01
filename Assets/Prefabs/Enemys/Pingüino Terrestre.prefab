@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 158693090694766206}
   - component: {fileID: 6249533309063329142}
   - component: {fileID: 160949013}
-  - component: {fileID: 160949012}
   m_Layer: 7
   m_Name: "Ping\xFCino Terrestre"
   m_TagString: Untagged
@@ -129,12 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 10
-  _enemydetectionSpeed: 3
+  _enemySpeed: 4
+  _enemydetectionSpeed: 6
+  _maxDistanceDetection: 2
   KnockbackForce: 20
   KnockbackCounter: 0
   KnockbackTotalTime: 0.2
   KnockFromRight: 0
+  _ground:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &9140318663064654158
 Rigidbody2D:
   serializedVersion: 4
@@ -150,7 +153,7 @@ Rigidbody2D:
   m_Mass: 1.026
   m_LinearDrag: 2
   m_AngularDrag: 2
-  m_GravityScale: 100
+  m_GravityScale: 25
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -169,6 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _damage: 10
+  _coolDownDeathAnim: 1
 --- !u!114 &6249533309063329142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 45
-  _visionDistance: 10
+  _visionDistance: 5
   _animator: {fileID: 0}
 --- !u!95 &160949013
 Animator:
@@ -204,16 +209,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &160949012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6326382012256657892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dac2b1fb8941914483e5d9d0112c539, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 50
