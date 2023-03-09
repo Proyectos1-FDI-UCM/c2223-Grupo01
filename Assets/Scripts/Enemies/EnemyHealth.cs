@@ -13,6 +13,9 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private float _coolDownDeathAnim;
 
+    [SerializeField] private AudioClip _hurt;
+    [SerializeField] private AudioClip _dead;
+
     private bool _death;
     #endregion
 
@@ -27,8 +30,9 @@ public class EnemyHealth : MonoBehaviour
     {
         _currentHealth -= damage;
 
+        GetComponent<AudioSource>().PlayOneShot(_hurt);
         //Animación de recibir daño.
-        
+
         if (_currentHealth <= 0) 
         {
             Die();
@@ -40,10 +44,7 @@ public class EnemyHealth : MonoBehaviour
     //Desactiva el collider del enemigo al morir.
     //Desactiva el EnemyComponent.
     {
-        //Animación de morir.
-
-
-        //Quitar al enemigo.
+        GetComponent<AudioSource>().PlayOneShot(_dead);
         _death = true;
         GetComponent<Collider2D>().isTrigger = true;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

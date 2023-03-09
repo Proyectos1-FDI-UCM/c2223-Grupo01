@@ -33,11 +33,11 @@ public class EnemyFlyingMovement : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, _initialPosition, _enemySpeed*Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D Other)
+    /*private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {   
         transform.Rotate(0f, 180f, 0f);
-    }
+    }*/
     private void ChangeEnemyState ( Estados estados) //Método que cambia los distintos estados del enemigo
     {
         switch (estados)
