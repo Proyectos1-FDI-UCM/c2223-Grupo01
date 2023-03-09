@@ -17,7 +17,7 @@ public class SkipIntroVideo : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer > 5.6f)
+        if (_timer > 8.5f)
         {
             SceneManager.LoadScene(1);
         }

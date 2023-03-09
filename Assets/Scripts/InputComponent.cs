@@ -37,20 +37,20 @@ public class InputComponent : MonoBehaviour
         {
             _myCharacterController.Jump();
         }
-        else if(_myCharacterController._isgrounded && Input.GetKeyDown(KeyCode.LeftControl)) // input del dash
+        else if(_myCharacterController._isgrounded && Input.GetKeyDown(KeyCode.L)) // input del dash
         {
             _myCharacterController.Dash();
         }
         
         // Disparamos
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
         }
 
         // Ataca cuerpo a cuerpo
-        if (Input.GetKeyDown(KeyCode.Z) && _myMeleeComponent._canAttackMelee)
+        if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent._canAttackMelee)
         {
             GetComponent<AudioSource>().PlayOneShot(_melee);
             _animator.SetTrigger("_melee");

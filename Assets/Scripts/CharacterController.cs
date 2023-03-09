@@ -17,7 +17,9 @@ public class CharacterController : MonoBehaviour
     [Header("Basic Movement")]
     [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
     [SerializeField] private float _movementSpeedX; // velocidad con la que se moverá mighty en el eje x
-    
+    private float _initialMovementSpeedX; // velocidad inicial con la que se moverá mighty en el eje x. Util para poder reconfigurar la velocidad, cuando estas en una plataforma que ralentiza por ejemplo
+    [SerializeField] private float _slowSpeedX; // velocidad con la que se moverá mighty en el eje x por las plataformas ralentizantes
+
     private Vector3 _velocity = Vector3.zero;
 
     private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
@@ -28,6 +30,8 @@ public class CharacterController : MonoBehaviour
     [Header("Dash")]
     private bool _facingRight = true;
     [SerializeField] private float _dashForce; // Fuerza para el dash
+    private float _initialdDashForce; // Fuerza inicial para el dash. Util para poder reconfigurar la fuerza del dash, cuando estas en una plataforma que ralentiza por ejemplo
+    [SerializeField] private float _smallDashForce; // Fuerza para el dash en las plataformas ralentizantes
     private bool _dash = false; // Booleano que detecta si estamos en medio de un dash
 
     [Header("Climb")]
@@ -187,6 +191,24 @@ public class CharacterController : MonoBehaviour
         {
             _MovementSmoothing = 0;
         }
+
+        //Cuando Mighty toque layer de Ralentizante (núm 11), la velocidad se reducirá al igual que la fuerza del dash
+        if (collision.gameObject.layer == 11 && _isgrounded) //El isgrouded no es necesario ahora, pero puede que de cara al futuro si, PARA MAS PREGUNTAS CONSULTAR A JOSE ANTONIO EL PORQUÉ
+        {
+            _movementSpeedX = _slowSpeedX;
+            _dashForce = _smallDashForce;
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //Cuando Mighty salga de la layer de Ralentizante (núm 11), recupera la velocidad original y la fuerza de dash original
+        if (collision.gameObject.layer == 11 || !_isgrounded) //El isgrouded no es necesario ahora, pero puede que de cara al futuro si, PARA MAS PREGUNTAS CONSULTAR A JOSE ANTONIO EL PORQUÉ
+        {
+            _movementSpeedX = _initialMovementSpeedX;
+            _dashForce = _initialdDashForce;
+        }
     }
     #endregion
     private void Start()
@@ -196,6 +218,9 @@ public class CharacterController : MonoBehaviour
         _myCollider2D = GetComponent<BoxCollider2D>();
         _myInputComponent = GetComponent<InputComponent>();
         _animator = GetComponent<Animator>();
+        //Inicializo parámetros
+        _initialMovementSpeedX = _movementSpeedX;
+        _initialdDashForce = _dashForce;
 
         // Guardo gravedad inicial.
         _initialGravity = _myRigidBody2D.gravityScale;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParallaxScroller : MonoBehaviour
 {
+    //PARA QUE FUNCIONE BIEN EL SCRIPT, LA IMAGEN DEBE TENER UN MATERIAL QUE SEA "UNLIT/TRANSPARENT", Y QUE EL WRAP MODE SEA "REPEAT"
+
     #region Parameters
     /// <summary>
     /// Speed used to move the texture
