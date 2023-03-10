@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioClip _dead;
 
-    private bool _death;
+    public bool _death { get; private set; }
     #endregion
 
     #region References

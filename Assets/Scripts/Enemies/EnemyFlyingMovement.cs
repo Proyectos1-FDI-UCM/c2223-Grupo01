@@ -76,8 +76,11 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     void Update()
     {
-       //Debug.Log(_myEnemyFOV._detected);
+        //Debug.Log(_myEnemyFOV._detected);
         //Debug.Log(_estados);
-        ChangeEnemyState(_estados);
+        if (!gameObject.GetComponent<EnemyHealth>()._death)
+        {
+            ChangeEnemyState(_estados);
+        }
     }
 }
