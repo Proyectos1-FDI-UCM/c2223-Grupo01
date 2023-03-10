@@ -48,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 12 && _canturn)
+        if (collision.gameObject.layer == 12 && _canturn || collision.gameObject.GetComponent<EnemyHealth>() && _canturn)
         {
             _canturn = false;
             Flip();

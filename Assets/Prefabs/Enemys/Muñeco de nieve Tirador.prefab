@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 160949013}
   - component: {fileID: 7705262566188771213}
   m_Layer: 7
-  m_Name: "Ping\xFCino Terrestre"
+  m_Name: "Mu\xF1eco de nieve Tirador"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,8 @@ Transform:
   m_LocalPosition: {x: -1.0375171, y: -2.61, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 676700370213554566}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1136138119, guid: 48727db391aae584da2c0c28c2aa5057, type: 3}
+  m_Sprite: {fileID: -836294872, guid: 707679c02fc4abe4eb780329d6610ba1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,14 +109,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.16}
+    oldSize: {x: 0.26, y: 0.27}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19, y: 0.15}
+  m_Size: {x: 0.19, y: 0.25}
   m_EdgeRadius: 0
 --- !u!114 &6326382012256657893
 MonoBehaviour:
@@ -129,9 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 4
-  _enemydetectionSpeed: 6
-  _maxDistanceDetection: 2
+  _enemySpeed: 0
+  _enemydetectionSpeed: 0
+  _maxDistanceDetection: 0
   KnockbackForce: 20
   KnockbackCounter: 0
   KnockbackTotalTime: 0.2
@@ -152,7 +153,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.026
+  m_Mass: 1.71
   m_LinearDrag: 0.5
   m_AngularDrag: 0.5
   m_GravityScale: 2
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 60
-  _visionDistance: 5
+  _visionDistance: 6
   _animator: {fileID: 0}
 --- !u!95 &160949013
 Animator:
@@ -203,7 +204,7 @@ Animator:
   m_GameObject: {fileID: 6326382012256657892}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e444948eb97f02e4f90a4443e1201db1, type: 2}
+  m_Controller: {fileID: 9100000, guid: e32e614ae655a44498bdeff1649dca88, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -309,3 +310,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &8362032265566184348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 676700370213554566}
+  - component: {fileID: 3247610598198039476}
+  m_Layer: 7
+  m_Name: armaEnemigo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &676700370213554566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362032265566184348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.201, y: 0.047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6326382012256657880}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3247610598198039476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362032265566184348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce90b5e1ad10ab841bbf13d0baebce90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 1256174170972558883, guid: 920b985323cc86f4f8aa37d0868ec45e, type: 3}
+  _coolDownShoot: 1
+  _disparoNormal: {fileID: 0}
