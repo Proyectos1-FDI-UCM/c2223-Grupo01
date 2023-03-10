@@ -18,6 +18,10 @@ public class EnemyMovement : MonoBehaviour
     public bool KnockFromRight;
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
     private bool _isflipped; //Si el enemigo ha dado la vuelta
+
+    private bool _canturn;
+    [SerializeField] private float _canturnCOUNTER;
+    private float _canturnIniCOUNTER;
     #endregion
 
     #region references
@@ -38,9 +42,20 @@ public class EnemyMovement : MonoBehaviour
         if(Other != GameManager.instance._player)
         {
             Flip();
+
         }
     }
-   private void Flip ()
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 12 && _canturn)
+        {
+            _canturn = false;
+            Flip();
+
+        }
+    }
+    private void Flip ()
     {
         transform.Rotate(0f, 180f, 0f);
         _isflipped = !_isflipped;
@@ -50,7 +65,8 @@ public class EnemyMovement : MonoBehaviour
 
  
     void Start()
-    {        
+    {   _canturn= true;
+        _canturnIniCOUNTER = _canturnCOUNTER;
         _rigidbody = GetComponent<Rigidbody2D>();
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
@@ -114,5 +130,15 @@ public class EnemyMovement : MonoBehaviour
             //Hace que el contador baje.
             KnockbackCounter = KnockbackCounter - Time.deltaTime; 
         }
+
+        if (!_canturn)
+        {
+            _canturnCOUNTER -= Time.deltaTime;
+            if (_canturnCOUNTER <= 0)
+            {
+                _canturn = true;
+            }
+        }
+        else _canturnCOUNTER = _canturnIniCOUNTER;
     }
 }
