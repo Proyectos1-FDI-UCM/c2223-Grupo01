@@ -1966,6 +1966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548b3e7c1aac504a984ca11c4340051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 0, z: 13}
+  target: {fileID: 0}
   smoothTime: 0.1
 --- !u!81 &1996744118
 AudioListener:
@@ -2195,8 +2197,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186aaabd91c64ed43ae85c6fcca65874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentTime: 0
+  _health: 100
+  _deathTimeDamage: 0
   _player: {fileID: 0}
-  _MaxHealth: 10
+  _timeOut: {fileID: 0}
 --- !u!4 &2112368936
 Transform:
   m_ObjectHideFlags: 0
