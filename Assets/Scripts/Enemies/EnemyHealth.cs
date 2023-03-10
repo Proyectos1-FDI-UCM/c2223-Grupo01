@@ -44,14 +44,14 @@ public class EnemyHealth : MonoBehaviour
     //Desactiva el collider del enemigo al morir.
     //Desactiva el EnemyComponent.
     {
-        GetComponent<AudioSource>().PlayOneShot(_dead);
         _death = true;
         GetComponent<Collider2D>().isTrigger = true;
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        
+        GetComponent<AudioSource>().PlayOneShot(_dead);
+
 
         // si no va a pie vuela, no hace falta comprobar ambos
-        if(_enemyMovement != null)
+        if (_enemyMovement != null)
         {
             _enemyMovement.enabled = false;
         }
