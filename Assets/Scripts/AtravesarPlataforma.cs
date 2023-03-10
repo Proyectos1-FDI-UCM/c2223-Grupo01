@@ -18,6 +18,7 @@ public class AtravesarPlataforma : MonoBehaviour
     private float _topPlataforma, _piePlayer;
     #endregion
 
+
     // Start is called before the first frame update
     void Start()
     // Inicializo referencias y guardo parametros.
