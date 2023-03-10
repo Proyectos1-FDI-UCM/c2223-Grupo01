@@ -147,28 +147,23 @@ public class CharacterController : MonoBehaviour
     {
         if ((YAxismove != 0 || _isClimbing) && _myRigidBody2D.IsTouchingLayers(_ladderLayer))
         {
-            if (_doublejump)
-            {
-                Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
+            Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
                 _myRigidBody2D.velocity = targetVelocity;
                 _myRigidBody2D.gravityScale = 0;
                 _isClimbing = true;
-            }
+            /*if (_doublejump)
+            {
+                //
+            }*/
         }
         else
         {
             _myRigidBody2D.gravityScale = _initialGravity;
-            if (_isClimbing && _doublejump)
+            /*if (_isClimbing && _doublejump)
             {
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
-            }
+            }*/
             _isClimbing = false;
-        }
-
-        if(YAxismove < 0){ //creo rayo para detectar si debajo hay escaleras
-            Vector2 posRayo = new Vector2(transform.position.x - (_myCollider2D.size.x/2), transform.position.y - (_myCollider2D.size.y / 2) - 0.1f);
-            RaycastHit2D hitRayo = Physics2D.Raycast(posRayo, Vector2.right, _myCollider2D.size.x, _ladderLayer);
-            Debug.DrawRay(posRayo, Vector2.right * _myCollider2D.size.x, Color.red);
         }
 
         if (_isgrounded)

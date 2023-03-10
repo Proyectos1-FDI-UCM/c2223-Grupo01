@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class InputComponent : MonoBehaviour
 {
     #region Parameters
-    public bool _lookUP { get; private set; }  //condición para mirar a arriba
+    public bool _lookUP { get; private set; }  //condiciï¿½n para mirar a arriba
     #endregion
 
     #region References
@@ -27,10 +27,12 @@ public class InputComponent : MonoBehaviour
         _myMeleeComponent= GetComponent<MeleeComponent>();
         _animator = GetComponent<Animator>();
     }
+    private void FixedUpdate()
+    {
+        _myCharacterController.Climb(Input.GetAxis("Vertical"));
+    }
     private void Update()
     {
-
-
         // Comprobamos si estamos pulsando el espacio y si podemos saltar
         // (o estamos en el suelo o no hemos gastado el doble salto)
         if ((_myCharacterController._isgrounded && Input.GetKeyDown(KeyCode.Space)) || (_myCharacterController._doublejump && Input.GetKeyDown(KeyCode.Space)))
@@ -57,12 +59,12 @@ public class InputComponent : MonoBehaviour
             _myMeleeComponent.Attack();
         }
 
-        // Reinicia el nivel tutorial. El numero es en relación con el orden de escenas al hacer la build
+        // Reinicia el nivel tutorial. El numero es en relaciï¿½n con el orden de escenas al hacer la build
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(1);
 
         // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
-        _myCharacterController.Climb(Input.GetAxis("Vertical"));
+        
        
         // Animaciones
         _animator.SetBool("_isRunning", Input.GetAxis("Horizontal") != 0);
