@@ -214,7 +214,11 @@ public class CharacterController : MonoBehaviour
     {
         if(collision.gameObject.layer == 15) //layer top escaleras
         {
-            if(UnityEngine.Input.GetKey(KeyCode.S))
+            /*if(UnityEngine.Input.GetKey(KeyCode.S))
+            {
+                _quieroBajarDeEscaleras = true;
+            }*/
+            if (_myInputComponent._lookDOWN)
             {
                 _quieroBajarDeEscaleras = true;
             }
@@ -247,6 +251,7 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        
         if(_quieroBajarDeEscaleras)
         {
             _topEscaleras.isTrigger = true; //se puede bajar del tope
@@ -268,6 +273,7 @@ public class CharacterController : MonoBehaviour
         //Actualiza Animator
         _animator.SetBool("_dash", _dash);
         _animator.SetBool("_isGrounded", _isgrounded);
+        _animator.SetBool("_isClimbing", _isClimbing);
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
         if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space)) && !IsCeiling())
