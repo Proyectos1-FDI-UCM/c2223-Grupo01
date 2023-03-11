@@ -104,27 +104,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_0
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 118
-        width: 28
-        height: 26
-      alignment: 9
-      pivot: {x: 0.3392857, y: 0.44230768}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec1d575acbbb481468e1f1f3535d46ec
-      internalID: 652166337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Sprites Migthy Melee 2.0_1
       rect:
         serializedVersion: 2
@@ -139,6 +118,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: ec1d575acbbb481468e1f1f3535d46ec
+      internalID: 652166337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Migthy Melee 2.0_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 115
+        width: 23
+        height: 32
+      alignment: 9
+      pivot: {x: 0.3478261, y: 0.453125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
       spriteID: 277c0c87c1fe9a74e8c13cf730deae1d
       internalID: 1425624595
       vertices: []
@@ -146,15 +146,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_2
+      name: Sprites Migthy Melee 2.0_6
       rect:
         serializedVersion: 2
-        x: 230
-        y: 115
-        width: 28
-        height: 32
+        x: 229
+        y: 67
+        width: 46
+        height: 34
       alignment: 9
-      pivot: {x: 0.4642857, y: 0.4375}
+      pivot: {x: 0.2826087, y: 0.4117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,7 +167,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_3
+      name: Sprites Migthy Melee 2.0_4
       rect:
         serializedVersion: 2
         x: 14
@@ -188,15 +188,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_4
+      name: Sprites Migthy Melee 2.0_7
       rect:
         serializedVersion: 2
-        x: 116
-        y: 68
-        width: 46
-        height: 29
+        x: 294
+        y: 69
+        width: 41
+        height: 35
       alignment: 9
-      pivot: {x: 0.20652173, y: 0.6034483}
+      pivot: {x: 0.19512194, y: 0.41428572}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: Sprites Migthy Melee 2.0_5
       rect:
         serializedVersion: 2
-        x: 229
-        y: 67
+        x: 116
+        y: 68
         width: 46
-        height: 34
+        height: 29
       alignment: 9
-      pivot: {x: 0.2826087, y: 0.4117647}
+      pivot: {x: 0.20652173, y: 0.6034483}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,15 +230,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_6
+      name: Sprites Migthy Melee 2.0_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 21
-        width: 46
-        height: 29
+        x: 15
+        y: 118
+        width: 28
+        height: 26
       alignment: 9
-      pivot: {x: 0.20652173, y: 0.39655173}
+      pivot: {x: 0.3392857, y: 0.44230768}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,15 +251,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_7
+      name: Sprites Migthy Melee 2.0_2
       rect:
         serializedVersion: 2
-        x: 115
-        y: 15
-        width: 46
-        height: 29
+        x: 230
+        y: 115
+        width: 28
+        height: 32
       alignment: 9
-      pivot: {x: 0.20652173, y: 0.6034483}
+      pivot: {x: 0.4642857, y: 0.4375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,6 +275,48 @@ TextureImporter:
       name: Sprites Migthy Melee 2.0_8
       rect:
         serializedVersion: 2
+        x: 14
+        y: 21
+        width: 46
+        height: 29
+      alignment: 9
+      pivot: {x: 0.20652173, y: 0.39655173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8de19de883032644beb5cd4a008b8e6
+      internalID: -1096806615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Migthy Melee 2.0_9
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 15
+        width: 46
+        height: 29
+      alignment: 9
+      pivot: {x: 0.20652173, y: 0.6034483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933755560c05c6b48804400e6af31f84
+      internalID: 1812730739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Migthy Melee 2.0_10
+      rect:
+        serializedVersion: 2
         x: 227
         y: 12
         width: 46
@@ -286,8 +328,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8de19de883032644beb5cd4a008b8e6
-      internalID: -1096806615
+      spriteID: 912e967fe0828a8499f3537602deec41
+      internalID: 1286968190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Migthy Melee 2.0_11
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 16
+        width: 41
+        height: 34
+      alignment: 9
+      pivot: {x: 0.19512194, y: 0.42647058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348545690ceb31742b693962a7d75a5f
+      internalID: 1857132495
       vertices: []
       indices: 
       edges: []
@@ -303,15 +366,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprites Migthy Melee 2.0_1: 1425624595
-      Sprites Migthy Melee 2.0_3: 2087667019
-      Sprites Migthy Melee 2.0_6: 1526833665
-      Sprites Migthy Melee 2.0_4: 246319866
-      Sprites Migthy Melee 2.0_7: -2023285094
+      Sprites Migthy Melee 2.0_1: 652166337
+      Sprites Migthy Melee 2.0_3: 1425624595
+      Sprites Migthy Melee 2.0_6: -739779650
+      Sprites Migthy Melee 2.0_11: 1857132495
+      Sprites Migthy Melee 2.0_10: 1286968190
+      Sprites Migthy Melee 2.0_4: 2087667019
+      Sprites Migthy Melee 2.0_7: 246319866
       Sprites Migthy Melee 2.0_5: 247160129
-      Sprites Migthy Melee 2.0_0: 652166337
-      Sprites Migthy Melee 2.0_2: -739779650
+      Sprites Migthy Melee 2.0_0: 1526833665
+      Sprites Migthy Melee 2.0_2: -2023285094
       Sprites Migthy Melee 2.0_8: -1096806615
+      Sprites Migthy Melee 2.0_9: 1812730739
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
