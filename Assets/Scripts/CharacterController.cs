@@ -199,6 +199,13 @@ public class CharacterController : MonoBehaviour
             _movementSpeedX = _slowSpeedX;
             _dashForce = _smallDashForce;
         }
+
+        //Si colisiona con la Plataforma Móvil.
+        if(collision.gameObject.tag == "PlataformaMóvil")
+        {   
+            //Hace que Mighty se mueva acorde a la plataforma móvil en lugar de quedarse en la misma posición al pararse. En resumen, hace que la plataforma transporte a Mighty.
+            transform.parent = collision.transform;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -209,6 +216,14 @@ public class CharacterController : MonoBehaviour
             _movementSpeedX = _initialMovementSpeedX;
             _dashForce = _initialdDashForce;
         }
+
+        //Al bajarnos de la plataforma móvil.
+        if (collision.gameObject.tag == "PlataformaMóvil")
+        {
+            //Vuelve nuestro transform original.
+            transform.parent = null;
+        }
+
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
