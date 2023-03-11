@@ -212,21 +212,16 @@ public class CharacterController : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 15) //layer top escaleras
+        if(collision.gameObject.layer == 15 && _myInputComponent._lookDOWN)
+        //si estoy en Layer Top Escaleras y miramos abajo (getaxisvertical < 0)
         {
-            /*if(UnityEngine.Input.GetKey(KeyCode.S))
-            {
-                _quieroBajarDeEscaleras = true;
-            }*/
-            if (_myInputComponent._lookDOWN)
-            {
-                _quieroBajarDeEscaleras = true;
-            }
+            //entonces queremos bajar por las escaleras
+            _quieroBajarDeEscaleras = true; 
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.layer == 8)
+        if(other.gameObject.layer == 8) //layer de escaleras
         {
             _quieroBajarDeEscaleras = false;
         }
