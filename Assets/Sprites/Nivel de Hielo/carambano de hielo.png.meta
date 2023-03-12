@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aaf1922f112b7c64c95bd6249385272b
+guid: 84af373cba0825f4682a06da3bc0d227
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprites Antagonista_0
+      name: carambano de hielo_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 21
-        width: 21
-        height: 27
+        x: 3
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a85178f14694cb498a415d6c0c8b687
-      internalID: 1208392600
+      spriteID: e31498fcf2d0ff34c83febb6dd8271d3
+      internalID: 534358392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Antagonista_1
+      name: carambano de hielo_1
       rect:
         serializedVersion: 2
-        x: 28
-        y: 21
-        width: 21
-        height: 31
+        x: 23
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24ec81d4ba0573b44939f086d4f6d19e
-      internalID: 2039035608
+      spriteID: 75608ca9bff5e05498749cae06c179f7
+      internalID: -371853723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Antagonista_2
+      name: carambano de hielo_2
       rect:
         serializedVersion: 2
-        x: 56
-        y: 21
-        width: 21
-        height: 31
+        x: 43
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9e71f341f6cde6409eaef6dd796c1b3
-      internalID: 1117792034
+      spriteID: c1816d51772ba6442a964e2fdbd9869f
+      internalID: -1630914204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Antagonista_3
+      name: carambano de hielo_3
       rect:
         serializedVersion: 2
-        x: 82
-        y: 21
-        width: 21
-        height: 31
+        x: 63
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a56be7b0c6aa0b54eb90df27295368b3
-      internalID: -417105686
+      spriteID: 2542be1155e8e2549966d7cd989d8fbe
+      internalID: 811555563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Antagonista_4
+      name: carambano de hielo_4
       rect:
         serializedVersion: 2
-        x: 105
-        y: 21
-        width: 29
-        height: 31
+        x: 83
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,113 +202,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad1440bb079801409b243a634fd36e3
-      internalID: 717234597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Antagonista_5
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 16
-        width: 29
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e815dc22372954e459c6eccd55d545cd
-      internalID: 750223057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Antagonista_6
-      rect:
-        serializedVersion: 2
-        x: 169
-        y: 16
-        width: 24
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51c9cde274a912648aa1f4089ed28fe6
-      internalID: 1380491287
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Antagonista_7
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 21
-        width: 30
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f52930000570ed4391bae776d30b88b
-      internalID: -23018112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Antagonista_8
-      rect:
-        serializedVersion: 2
-        x: 241
-        y: 21
-        width: 30
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6936a6c3548ea44fbe38c44a3c1d8b1
-      internalID: -1022246669
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Antagonista_9
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 3
-        width: 8
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6618d309da272d43902ba85e69c1aab
-      internalID: 1531569319
+      spriteID: 285c9c84834d182419a7e5f8ba088342
+      internalID: 1070155908
       vertices: []
       indices: 
       edges: []
@@ -324,16 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprites Antagonista_2: 1117792034
-      Sprites Antagonista_0: 1208392600
-      Sprites Antagonista_6: 1380491287
-      Sprites Antagonista_5: 750223057
-      Sprites Antagonista_3: -417105686
-      Sprites Antagonista_7: -23018112
-      Sprites Antagonista_9: 1531569319
-      Sprites Antagonista_4: 717234597
-      Sprites Antagonista_1: 2039035608
-      Sprites Antagonista_8: -1022246669
+      carambano de hielo_0: 534358392
+      carambano de hielo_3: 811555563
+      carambano de hielo_2: -1630914204
+      carambano de hielo_1: -371853723
+      carambano de hielo_4: 1070155908
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
