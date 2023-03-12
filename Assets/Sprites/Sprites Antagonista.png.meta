@@ -108,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 21
+        y: 61
         width: 21
         height: 27
       alignment: 0
@@ -128,10 +128,10 @@ TextureImporter:
       name: Sprites Antagonista_1
       rect:
         serializedVersion: 2
-        x: 28
-        y: 21
-        width: 21
-        height: 31
+        x: 27
+        y: 60
+        width: 23
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 56
-        y: 21
+        y: 61
         width: 21
         height: 31
       alignment: 0
@@ -171,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 82
-        y: 21
+        y: 61
         width: 21
         height: 31
       alignment: 0
@@ -192,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 105
-        y: 21
+        y: 61
         width: 29
         height: 31
       alignment: 0
@@ -213,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 135
-        y: 16
+        y: 56
         width: 29
         height: 36
       alignment: 0
@@ -233,10 +233,10 @@ TextureImporter:
       name: Sprites Antagonista_6
       rect:
         serializedVersion: 2
-        x: 169
-        y: 16
-        width: 24
-        height: 36
+        x: 168
+        y: 56
+        width: 26
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,9 +254,9 @@ TextureImporter:
       name: Sprites Antagonista_7
       rect:
         serializedVersion: 2
-        x: 206
-        y: 21
-        width: 30
+        x: 196
+        y: 61
+        width: 29
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: Sprites Antagonista_8
       rect:
         serializedVersion: 2
-        x: 241
-        y: 21
-        width: 30
-        height: 31
+        x: 226
+        y: 60
+        width: 31
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: Sprites Antagonista_9
       rect:
         serializedVersion: 2
-        x: 6
-        y: 3
-        width: 8
-        height: 11
+        x: 264
+        y: 74
+        width: 32
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,6 +309,132 @@ TextureImporter:
       bones: []
       spriteID: b6618d309da272d43902ba85e69c1aab
       internalID: 1531569319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_10
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 73
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08d85f67d464284b998a1e040d82fe3
+      internalID: -1985551680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 43
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfdc752aab8cb504bb3d2834863d4c8e
+      internalID: -1485303068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 14
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d20533e60d973e429cdddfdfc2c6bff
+      internalID: -365919126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 13
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a19842ad0f39f45a534877a5d53b42
+      internalID: -1928591466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_14
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 44
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da5065b550a4a440a13f2dd4f087697
+      internalID: 1508214745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_15
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 43
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a0e2060316221458f227048c0eb181
+      internalID: 791221941
       vertices: []
       indices: 
       edges: []
@@ -324,16 +450,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Sprites Antagonista_14: 1508214745
       Sprites Antagonista_2: 1117792034
       Sprites Antagonista_0: 1208392600
       Sprites Antagonista_6: 1380491287
+      Sprites Antagonista_15: 791221941
+      Sprites Antagonista_11: -1485303068
       Sprites Antagonista_5: 750223057
       Sprites Antagonista_3: -417105686
       Sprites Antagonista_7: -23018112
       Sprites Antagonista_9: 1531569319
       Sprites Antagonista_4: 717234597
       Sprites Antagonista_1: 2039035608
+      Sprites Antagonista_10: -1985551680
+      Sprites Antagonista_13: -1928591466
       Sprites Antagonista_8: -1022246669
+      Sprites Antagonista_12: -365919126
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
