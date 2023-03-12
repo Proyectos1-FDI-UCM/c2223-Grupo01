@@ -149,12 +149,12 @@ TextureImporter:
       name: Sprites Migthy Melee 2.0_6
       rect:
         serializedVersion: 2
-        x: 229
+        x: 230
         y: 67
-        width: 48
+        width: 47
         height: 34
       alignment: 9
-      pivot: {x: 0.27083334, y: 0.4117647}
+      pivot: {x: 0.25531915, y: 0.4117647}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,12 +254,12 @@ TextureImporter:
       name: Sprites Migthy Melee 2.0_2
       rect:
         serializedVersion: 2
-        x: 230
+        x: 231
         y: 115
-        width: 28
+        width: 27
         height: 32
       alignment: 9
-      pivot: {x: 0.4642857, y: 0.4375}
+      pivot: {x: 0.44444445, y: 0.4375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -317,12 +317,12 @@ TextureImporter:
       name: Sprites Migthy Melee 2.0_10
       rect:
         serializedVersion: 2
-        x: 227
+        x: 228
         y: 9
-        width: 50
+        width: 49
         height: 37
       alignment: 9
-      pivot: {x: 0.26, y: 0.45945945}
+      pivot: {x: 0.24489796, y: 0.45945945}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

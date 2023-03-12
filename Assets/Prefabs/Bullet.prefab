@@ -98,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2133623756580499680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1882577b0892444bbaf0d0c17c571e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 51838ebfdeb8d464fa2ee2dfc61f9f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1000
@@ -124,10 +124,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2133623756580499680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cd65b93ce969514c84a9ce8567cb30b, type: 3}
+  m_Script: {fileID: 11500000, guid: 082275a10e30e164287e6de23e393225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletDamage: 20
+  _bulletDamage: 10
   _actualDamage: 0
 --- !u!61 &5356210953026106083
 BoxCollider2D:
