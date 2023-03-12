@@ -5,11 +5,6 @@ using UnityEngine;
 public class CarambanosDeHielo : MonoBehaviour
 {
     #region parameters && references
-    //Booleano que determina si cae o no el cono. Puede no ser necesario en un principio así que lo dejaré comentado por ahora. Aunque si lo quieres quitar adelante, de momento el script hace la misma funcion sin este booleano
-    //private bool _isfalling;
-    //Coordenadas del eje X para luego en el editor poner como de ancho puede ser el cono en la IZQ y DER. De momento se me ocurrió solo esto
-    [SerializeField] private float _anguloX1;
-    [SerializeField] private float _anguloX2;
     //Distancia de deteccción
     [SerializeField] private float _distancia;
     //Daño al chocar con el player
@@ -22,8 +17,8 @@ public class CarambanosDeHielo : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawRay(transform.position, _distancia * (Vector2.down + new Vector2(_anguloX1, 0.0f)));
-        Gizmos.DrawRay(transform.position, _distancia * (Vector2.down + new Vector2(_anguloX2, 0.0f)));
+        Gizmos.DrawRay(transform.position + new Vector3(-0.45f, 0.0f, 0.0f), _distancia * Vector2.down);
+        Gizmos.DrawRay(transform.position + new Vector3(0.45f, 0.0f, 0.0f), _distancia * Vector2.down);
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -44,28 +39,16 @@ public class CarambanosDeHielo : MonoBehaviour
     void Update()
     {
 
-        Debug.DrawRay(transform.position, (Vector2.down + new Vector2(_anguloX1, 0.0f)) * _distancia, Color.red);
-        Debug.DrawRay(transform.position, (Vector2.down + new Vector2(_anguloX2, 0.0f)) * _distancia, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(-0.45f, 0.0f, 0.0f), Vector2.down * _distancia, Color.red);
+        Debug.DrawRay(transform.position + new Vector3(0.45f, 0.0f, 0.0f), Vector2.down * _distancia, Color.red);
 
         //Si uno de los 2 rayos detecta al player, deja que el carambano se caiga
-        if ((Physics2D.Raycast(transform.position, Vector2.down + new Vector2(_anguloX1, 0.0f), _distancia, _player) || Physics2D.Raycast(transform.position, Vector2.down + new Vector2(_anguloX2, 0.0f), _distancia, _player)))
+        if ((Physics2D.Raycast(transform.position + new Vector3(-0.45f, 0.0f, 0.0f), Vector2.down, _distancia, _player) || Physics2D.Raycast(transform.position + new Vector3(0.45f, 0.0f, 0.0f), Vector2.down, _distancia, _player)))
         {
-            Debug.DrawRay(transform.position, (Vector2.down + new Vector2(_anguloX1, 0.0f)) * _distancia, Color.green);
-            Debug.DrawRay(transform.position, (Vector2.down + new Vector2(_anguloX2, 0.0f)) * _distancia, Color.green);
+            Debug.DrawRay(transform.position + new Vector3(-0.45f, 0.0f, 0.0f), Vector2.down * _distancia, Color.green);
+            Debug.DrawRay(transform.position + new Vector3(0.45f, 0.0f, 0.0f), Vector2.down * _distancia, Color.green);
             //De cara al futuro sería interesante poder configurar la masa para que caiga a cierta velocidad, pero de momento no lo necesitamos
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
-
-        /*if ( (Physics2D.Raycast(transform.position, Vector2.down + new Vector2(_anguloX1, 0.0f), _distancia, _player) || Physics2D.Raycast(transform.position, Vector2.down + new Vector2(_anguloX2, 0.0f), _distancia, _player)) && !_isfalling)
-        {
-            Debug.DrawRay(transform.position, (Vector2.down + new Vector2(_anguloX1, 0.0f)) * _distancia, Color.green);
-            Debug.DrawRay(transform.position, (Vector2.down + new Vector2(_anguloX2, 0.0f)) * _distancia, Color.green);
-            _isfalling = true;
-        }*/
-
-            /*if (_isfalling)
-            {
-                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            }*/
     }
 }

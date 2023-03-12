@@ -737,12 +737,12 @@ TextureImporter:
       name: Sprites Migthy (1)_30
       rect:
         serializedVersion: 2
-        x: 313
+        x: 311
         y: 15
-        width: 27
+        width: 29
         height: 23
       alignment: 9
-      pivot: {x: 0.35185185, y: 0.5}
+      pivot: {x: 0.39655173, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
