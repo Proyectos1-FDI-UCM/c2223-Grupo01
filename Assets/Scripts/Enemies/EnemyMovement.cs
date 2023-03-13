@@ -72,7 +72,6 @@ public class EnemyMovement : MonoBehaviour
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialSpeed = _enemySpeed;
         _isflipped=false;
-      
     }
 
     void Update()
