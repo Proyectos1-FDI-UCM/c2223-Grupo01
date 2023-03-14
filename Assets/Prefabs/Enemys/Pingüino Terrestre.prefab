@@ -132,12 +132,8 @@ MonoBehaviour:
   _enemySpeed: 4
   _enemydetectionSpeed: 6
   _maxDistanceDetection: 2
-  KnockbackForce: 20
-  KnockbackCounter: 0
-  KnockbackTotalTime: 0.2
-  KnockFromRight: 0
   _canturnCOUNTER: 0.5
-  _ground:
+  _groundLayer:
     serializedVersion: 2
     m_Bits: 64
 --- !u!50 &9140318663064654158

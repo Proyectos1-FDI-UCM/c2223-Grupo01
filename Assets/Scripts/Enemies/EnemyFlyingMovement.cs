@@ -12,8 +12,16 @@ public class EnemyFlyingMovement : MonoBehaviour
     private Vector2 _initialPosition;
     private int _enemystate;
     private Rigidbody2D _rigidbody;
+    private float _knockbackCounter;
     private enum Estados { patrullaje, perseguir, regresar};
-    private Estados _estados;
+    private Estados _estado;
+    #endregion
+
+    #region getter && setter
+    public void SetcknockBackCounter(float knockbackCounter)
+    {
+        _knockbackCounter = knockbackCounter;
+    }
     #endregion
 
     #region Methods
@@ -41,28 +49,37 @@ public class EnemyFlyingMovement : MonoBehaviour
     {   
         transform.Rotate(0f, 180f, 0f);
     }*/
-    private void ChangeEnemyState ( Estados estados) //Método que cambia los distintos estados del enemigo
+    private void UpdateEnemyState ( Estados estado) //Método que cambia los distintos estados del enemigo
     {
-        switch (estados)
+        switch (estado)
         {
             case Estados.patrullaje:
-                FlyingPatrol();
                 if (_myEnemyFOV._detected)
-                    _estados = Estados.perseguir;
+                {
+                    _estado = Estados.perseguir;
+                }
                 break;
+
             case Estados.perseguir:
                 FlyingChase();
                 if (!_myEnemyFOV._detected)
-                    _estados = Estados.regresar;
+                {
+                    _estado = Estados.regresar;
+                }
                     break;
+
             case Estados.regresar:
                 ReturnPosition();
                
                 if (_myEnemyFOV._detected)
-                   _estados = Estados.perseguir;
+                {
+                    _estado = Estados.perseguir;
+                }
 
                 if (new Vector2(transform.position.x, transform.position.y) == _initialPosition)
-                    _estados = Estados.patrullaje;
+                {
+                    _estado = Estados.patrullaje;
+                }
                 break;
         }    
     }
@@ -74,7 +91,7 @@ public class EnemyFlyingMovement : MonoBehaviour
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialPosition = transform.position;
-        _estados = Estados.patrullaje;
+        _estado = Estados.patrullaje;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -84,7 +101,14 @@ public class EnemyFlyingMovement : MonoBehaviour
         //Debug.Log(_estados);
         if (!gameObject.GetComponent<EnemyHealth>()._death)
         {
-            ChangeEnemyState(_estados);
+            if(_knockbackCounter <= 0)
+            {
+                UpdateEnemyState(_estado);
+            }
+            else
+            {
+                _knockbackCounter -= Time.deltaTime;
+            }
         }
     }
 }

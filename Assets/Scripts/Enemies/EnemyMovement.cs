@@ -15,15 +15,14 @@ public class EnemyMovement : MonoBehaviour
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
     private bool _isflipped; //Si el enemigo ha dado la vuelta
     private float _knockbackCounter;
-    private float _knockBackInicial; //Cuánto durará el knockback.
-
     private bool _canturn;
     [SerializeField] private float _canturnCOUNTER;
     private float _canturnIniCOUNTER;
     #endregion
 
     #region references
-    [SerializeField] private LayerMask _ground;
+    [SerializeField] private LayerMask _groundLayer;
+    private Collider2D _myCollider2D;
     private GameObject _player; 
     private EnemyFOV _myEnemyFOV;
     private Rigidbody2D _rigidbody;
@@ -39,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
     #region Methods
     private bool _isgrounded() //Si el enemigo está en el suelo
     {
-        return Physics2D.Raycast(transform.position, -Vector2.up, 0.5f, _ground);
+            return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.down, .05f, _groundLayer);
     }
     private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
@@ -77,7 +76,7 @@ public class EnemyMovement : MonoBehaviour
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialSpeed = _enemySpeed;
         _isflipped=false;
-        _knockBackInicial = _knockbackCounter;
+        _myCollider2D = GetComponent<Collider2D>();
     }
 
     void Update()

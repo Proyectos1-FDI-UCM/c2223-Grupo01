@@ -16,7 +16,7 @@ public class MeleeComponent : MonoBehaviour
     private float _initialCoolDownMelee;
 
     // variables del kcnokbak
-    private float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
+    [SerializeField] private float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
     [SerializeField] private float _KnockbackTime;                      //Cooldown del knockback.
     private bool KnockFromRight;
     private bool _canAttackMelee;//condición en la que se permitirá usar el arma a melee
@@ -86,6 +86,10 @@ public class MeleeComponent : MonoBehaviour
                 if(enemy.GetComponent<EnemyMovement>() != null)
                 {
                     enemy.GetComponent<EnemyMovement>().SetcknockBackCounter(_KnockbackTime);
+                }
+                else if(enemy.GetComponent<EnemyFlyingMovement>() != null)
+                {
+                    enemy.GetComponent<EnemyFlyingMovement>().SetcknockBackCounter(_KnockbackTime);
                 }
             }
             _canAttackMelee = false;
