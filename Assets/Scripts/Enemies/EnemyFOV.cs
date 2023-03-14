@@ -9,12 +9,19 @@ public class EnemyFOV : MonoBehaviour
     #region parameters 
     [SerializeField][Range(0f, 360f)] private float _visionAngle = 45f; //El ángulo de visión del enemigo.
     [SerializeField] private float _visionDistance = 10f;               //La máxima distancia de nuestro cono de visión.
-    public bool _detected { get; private set; }                         //Booleano que determina si el enemigo ha detectado al jugador
+    private bool _detected;                        //Booleano que determina si el enemigo ha detectado al jugador
     #endregion
 
     #region references
     private GameObject _player;
     [SerializeField] private Animator _animator;
+    #endregion
+
+    #region getter && setters
+    public bool GetDetected()
+    {
+        return _detected;
+    }
     #endregion
 
     #region methods

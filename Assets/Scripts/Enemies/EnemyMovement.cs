@@ -89,7 +89,7 @@ public class EnemyMovement : MonoBehaviour
             if (_isgrounded())
             {
                 //Si el enemigo no ha detectado al jugador, este seguirá su patrón normal
-                if (!_myEnemyFOV._detected)
+                if (!_myEnemyFOV.GetDetected())
                 {
                     // la velocidad de patrullaje es la inicial
 
@@ -98,7 +98,7 @@ public class EnemyMovement : MonoBehaviour
                  _rigidbody.velocity = (transform.right * _enemySpeed);
                 }
                 //Si el enemigo nos detecta. 
-                else if (_myEnemyFOV._detected)
+                else if (_myEnemyFOV.GetDetected())
                 {
                     //la dirección a la que nuestro enemigo se moverá.
                     if(Mathf.Abs(_distfromplayer)> _maxDistanceDetection)

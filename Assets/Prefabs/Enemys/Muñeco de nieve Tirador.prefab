@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 6326382012256657880}
   - component: {fileID: 6326382012256657895}
   - component: {fileID: 6326382012256657894}
-  - component: {fileID: 6326382012256657893}
   - component: {fileID: 9140318663064654158}
   - component: {fileID: 158693090694766206}
-  - component: {fileID: 6249533309063329142}
   - component: {fileID: 160949013}
   - component: {fileID: 7705262566188771213}
+  - component: {fileID: 6662258008865498230}
+  - component: {fileID: 3758571706154678328}
   m_Layer: 7
   m_Name: "Mu\xF1eco de nieve Tirador"
   m_TagString: Untagged
@@ -118,29 +118,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &6326382012256657893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6326382012256657892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemySpeed: 0
-  _enemydetectionSpeed: 0
-  _maxDistanceDetection: 0
-  KnockbackForce: 20
-  KnockbackCounter: 0
-  KnockbackTotalTime: 0.2
-  KnockFromRight: 0
-  _canturnCOUNTER: 0.5
-  _ground:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!50 &9140318663064654158
 Rigidbody2D:
   serializedVersion: 4
@@ -179,21 +156,6 @@ MonoBehaviour:
   _coolDownDeathAnim: 1
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
---- !u!114 &6249533309063329142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6326382012256657892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3af312661e9daad40a4595d6bc6c9822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _visionAngle: 60
-  _visionDistance: 6
-  _animator: {fileID: 0}
 --- !u!95 &160949013
 Animator:
   serializedVersion: 4
@@ -310,6 +272,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6662258008865498230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce90b5e1ad10ab841bbf13d0baebce90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bullet: {fileID: 1256174170972558883, guid: 920b985323cc86f4f8aa37d0868ec45e, type: 3}
+  _coolDownShoot: 0.5
+  _bulletSpawnTransform: {fileID: 676700370213554566}
+  _disparoNormal: {fileID: 0}
+--- !u!114 &3758571706154678328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af312661e9daad40a4595d6bc6c9822, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _visionAngle: 45
+  _visionDistance: 10
+  _animator: {fileID: 0}
 --- !u!1 &8362032265566184348
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +312,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676700370213554566}
-  - component: {fileID: 3247610598198039476}
   m_Layer: 7
   m_Name: armaEnemigo
   m_TagString: Untagged
@@ -335,25 +327,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8362032265566184348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.201, y: 0.047, z: 0}
+  m_LocalPosition: {x: 0.253, y: 0.017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6326382012256657880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3247610598198039476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8362032265566184348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce90b5e1ad10ab841bbf13d0baebce90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bullet: {fileID: 1256174170972558883, guid: 920b985323cc86f4f8aa37d0868ec45e, type: 3}
-  _coolDownShoot: 1
-  _disparoNormal: {fileID: 0}

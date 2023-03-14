@@ -9,7 +9,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     private GameObject _player; 
     private EnemyFOV _myEnemyFOV; 
     [SerializeField] private float _enemySpeed = 5f;
-    private Vector2 _initialPosition;
+    private Transform _initialPosition;
     private Rigidbody2D _rigidbody;
     private float _knockbackCounter;
     private bool _isflipped; //Si el enemigo ha dado la vuelta
@@ -43,7 +43,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     private void ReturnPosition()
     //Provoca que los enemigos vuelvan a su posición inicial.
     {
-        Vector3 _returndirection = new Vector3(_initialPosition.x - transform.position.x, _initialPosition.y - transform.position.y,0f);    
+        Vector3 _returndirection = new Vector3(_initialPosition.position.x - transform.position.x, _initialPosition.position.y - transform.position.y,0f);    
         _rigidbody.velocity = (_returndirection.normalized * _enemySpeed);
     }
 
@@ -59,7 +59,7 @@ public class EnemyFlyingMovement : MonoBehaviour
         {
             case Estados.patrullaje:
                 FlyingPatrol();
-                if (_myEnemyFOV._detected)
+                if (_myEnemyFOV.GetDetected())
                 {
                     _estado = Estados.perseguir;
                 }
@@ -67,7 +67,7 @@ public class EnemyFlyingMovement : MonoBehaviour
 
             case Estados.perseguir:
                 FlyingChase();
-                if (!_myEnemyFOV._detected)
+                if (!_myEnemyFOV.GetDetected())
                 {
                     _estado = Estados.regresar;
                 }
@@ -76,12 +76,12 @@ public class EnemyFlyingMovement : MonoBehaviour
             case Estados.regresar:
                 ReturnPosition();
                
-                if (_myEnemyFOV._detected)
+                if (_myEnemyFOV.GetDetected())
                 {
                     _estado = Estados.perseguir;
                 }
 
-                if (new Vector2(transform.position.x, transform.position.y) == _initialPosition)
+                if (transform.transform == _initialPosition)
                 {
                     _estado = Estados.patrullaje;
                 }
@@ -115,7 +115,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     {
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
-        _initialPosition = transform.position;
+        _initialPosition.position = transform.position;
         _estado = Estados.patrullaje;
         _rigidbody = GetComponent<Rigidbody2D>();
         _isflipped = false;

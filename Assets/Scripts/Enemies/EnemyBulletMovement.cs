@@ -20,11 +20,11 @@ public class EnemyBulletMovement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
 
         //Comprobación de cual será la dirección de la bala: derecha o izquierda
-        if (gameObject.transform.rotation.y >= 0)
+        if (gameObject.transform.position.x <= GameManager.instance._player.transform.position.x)
         {
             _direccionX = 1.0f;
         }
-        else if (gameObject.transform.rotation.y < 0)
+        else
         {
             _direccionX = -1.0f;
         }
