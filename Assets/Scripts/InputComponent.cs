@@ -56,12 +56,12 @@ public class InputComponent : MonoBehaviour
         }
 
         // Ataca cuerpo a cuerpo
-        if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent._canAttackMelee)
+        /*if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent._canAttackMelee)
         {
             GetComponent<AudioSource>().PlayOneShot(_melee);
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
-        }
+        }*/
 
         // Reinicia el nivel tutorial. El numero es en relaci�n con el orden de escenas al hacer la build
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(1);

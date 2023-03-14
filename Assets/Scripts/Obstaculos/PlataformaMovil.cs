@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlataformaMóvil : MonoBehaviour
+public class PlataformaMovil : MonoBehaviour
 {
     #region References
-    [SerializeField] GameObject _objetoaMover;
-    [SerializeField] Transform _puntoDePartida;
-    [SerializeField] Transform _puntoFinal;
-    [SerializeField] float velocidad;
+    [SerializeField] private GameObject _objetoaMover;
+    [SerializeField] private Transform _puntoDePartida;
+    [SerializeField] private Transform _puntoFinal;
+    #endregion
+    #region Parameters
+    [SerializeField] private float _velocidad;
     private Vector3 _moverHacia;
     #endregion
 
@@ -23,7 +25,7 @@ public class PlataformaMóvil : MonoBehaviour
     void Update()
     {
         //La posición de la plataforma cambia según MoveTowards("Posición actual", "Hacia dónde se mueve", "Velocidad con la que se mueve")
-        _objetoaMover.transform.position = Vector3.MoveTowards(_objetoaMover.transform.position, _moverHacia, velocidad * Time.deltaTime);
+        _objetoaMover.transform.position = Vector3.MoveTowards(_objetoaMover.transform.position, _moverHacia, _velocidad * Time.deltaTime);
 
         //Si la posición de la plataforma == posición final del recorrido...
         if(_objetoaMover.transform.position == _puntoFinal.position)
