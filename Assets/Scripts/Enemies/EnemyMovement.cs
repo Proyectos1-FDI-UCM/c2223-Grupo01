@@ -129,6 +129,9 @@ public class EnemyMovement : MonoBehaviour
                 _canturn = true;
             }
         }
-        else _canturnCOUNTER = _canturnIniCOUNTER;
+        else
+        {
+            _canturnCOUNTER = _canturnIniCOUNTER;
+        } 
     }
 }

@@ -10,9 +10,12 @@ public class EnemyFlyingMovement : MonoBehaviour
     private EnemyFOV _myEnemyFOV; 
     [SerializeField] private float _enemySpeed = 5f;
     private Vector2 _initialPosition;
-    private int _enemystate;
     private Rigidbody2D _rigidbody;
     private float _knockbackCounter;
+    private bool _isflipped; //Si el enemigo ha dado la vuelta
+    private bool _canturn;
+    [SerializeField] private float _canturnCOUNTER;
+    private float _canturnIniCOUNTER;
     private enum Estados { patrullaje, perseguir, regresar};
     private Estados _estado;
     #endregion
@@ -44,16 +47,18 @@ public class EnemyFlyingMovement : MonoBehaviour
         _rigidbody.velocity = (_returndirection.normalized * _enemySpeed);
     }
 
-    /*private void OnTriggerEnter2D(Collider2D Other)
-    // Cada vez que colisione con un collider, el enemigo dará la vuelta.
-    {   
+    private void Flip()
+    {
         transform.Rotate(0f, 180f, 0f);
-    }*/
+        _isflipped = !_isflipped;
+    }
+
     private void UpdateEnemyState ( Estados estado) //Método que cambia los distintos estados del enemigo
     {
         switch (estado)
         {
             case Estados.patrullaje:
+                FlyingPatrol();
                 if (_myEnemyFOV._detected)
                 {
                     _estado = Estados.perseguir;
@@ -83,7 +88,27 @@ public class EnemyFlyingMovement : MonoBehaviour
                 break;
         }    
     }
-    
+    #endregion
+
+    #region Collision methods
+    private void OnTriggerEnter2D(Collider2D Other)
+    // Cada vez que colisione con un collider, el enemigo dará la vuelta.
+    {
+        if (Other != GameManager.instance._player)
+        {
+            Flip();
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 12 && _canturn || collision.gameObject.GetComponent<EnemyHealth>() && _canturn)
+        {
+            _canturn = false;
+            Flip();
+
+        }
+    }
     #endregion
 
     void Start()
@@ -93,6 +118,9 @@ public class EnemyFlyingMovement : MonoBehaviour
         _initialPosition = transform.position;
         _estado = Estados.patrullaje;
         _rigidbody = GetComponent<Rigidbody2D>();
+        _isflipped = false;
+        _canturn = true;
+        _canturnIniCOUNTER = _canturnCOUNTER;
     }
 
     void Update()
@@ -109,6 +137,19 @@ public class EnemyFlyingMovement : MonoBehaviour
             {
                 _knockbackCounter -= Time.deltaTime;
             }
+        }
+
+        if (!_canturn)
+        {
+            _canturnCOUNTER -= Time.deltaTime;
+            if (_canturnCOUNTER <= 0)
+            {
+                _canturn = true;
+            }
+        }
+        else
+        {
+            _canturnCOUNTER = _canturnIniCOUNTER;
         }
     }
 }
