@@ -1,12 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlataformasGiratorias : MonoBehaviour
 {
-    private float _currentRotation = 0f; 
-    private float _destinedRotation= 90f;
     private float _countdowntime = 0f;
+    private float _DesiredRotation = 90f;
     [SerializeField]private float _rotationSpeed;
     [SerializeField]private float _setTime = 3;
     
@@ -19,24 +19,22 @@ public class PlataformasGiratorias : MonoBehaviour
 
         if (_countdowntime > _setTime)
         {
-            if (_currentRotation < _destinedRotation)
-            {
-                _currentRotation += _rotationSpeed*Time.deltaTime;
-                _currentRotation=Mathf.Round(_currentRotation);
-                transform.rotation = Quaternion.Euler(0, 0, _currentRotation);
+            
+             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0,0, _DesiredRotation), _rotationSpeed * Time.deltaTime);
+           
+            if (transform.rotation.eulerAngles.z == _DesiredRotation)
 
-            }
-            else if (_currentRotation ==_destinedRotation)
-            {              
-                _destinedRotation += 90;
-                _countdowntime = 0f;
+            {
+                _DesiredRotation = (_DesiredRotation + 90f) % 360;
+                _countdowntime = 0;
             }
         }                    
     }
    
     
+    
     void Update()
     {
-        RotatePlatform();   
+       RotatePlatform();    
     }
 }
