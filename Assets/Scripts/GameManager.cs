@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
         _UImanager = UIManager;
         return _UImanager;
     }
+
+    //public MeleeComponent RegisterMeleeComponent( MeleeComponent mele)
+
     #endregion
 
     // awake para la instancia de la clase

@@ -14,7 +14,19 @@ public class MeleeComponent : MonoBehaviour
     private EnemyMovement _enemyMovement = null;        //Sirve para comunicarse con el script de "EnemyMovement".
     [SerializeField] private float _coolDownMelee; //tiempo en el que se permitirá usar el arma a melee
     private float _initialCoolDownMelee;
-    public bool _canAttackMelee { get; private set; }//condición en la que se permitirá usar el arma a melee
+    // variables del kcnokbak
+    private float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
+    private float KnockbackCounter;                      //Cooldown del knockback.
+    private float KnockbackTotalTime;                    //Cuánto durará el knockback.
+    private bool KnockFromRight;
+    private bool _canAttackMelee;//condición en la que se permitirá usar el arma a melee
+    #endregion
+
+    #region getters && setters
+    public float SetKnockBackCounter()
+    {
+        return KnockbackCounter;
+    }
     #endregion
 
     #region Methods
@@ -39,21 +51,34 @@ public class MeleeComponent : MonoBehaviour
             //El contador comienza cada vez que le pegas un cate al enemigo.
             //Comprobamos si el jugador esta a la izda o dcha
             {
-                if(enemy.GetComponent<EnemyMovement>() != null)
-                {
-                    _enemyMovement = enemy.GetComponent<EnemyMovement>();
-                    _enemyMovement.KnockbackCounter = _enemyMovement.KnockbackTotalTime;
+                KnockbackCounter = KnockbackTotalTime;
 
-                    if (enemy.transform.position.x <= transform.position.x)
-                    {
-                        _enemyMovement.KnockFromRight = true;
-                    }
-                    if (enemy.transform.position.x >= transform.position.x)
-                    {
-                        _enemyMovement.KnockFromRight = false;
-                    }
-                    enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+                if (enemy.transform.position.x <= transform.position.x)
+                {
+                    KnockFromRight = true;
                 }
+                if (enemy.transform.position.x >= transform.position.x)
+                {
+                    KnockFromRight = false;
+                }
+                enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+
+                Rigidbody2D _rigidbody = enemy.GetComponent<Rigidbody2D>();
+                //Si golpea por la derecha...
+                if (KnockFromRight)
+                {
+                    //"-KnockbackForce" mueve al enemigo para atrás.
+                    //Es el vector de la fuerza que pega el knockback.
+                    _rigidbody.velocity = new Vector2(-KnockbackForce, 0);
+                }
+                //Si golpea por la izquierda...
+                if (!KnockFromRight)
+                {
+                    //Esta vuelta manda al enemigo a la derecha.
+                    _rigidbody.velocity = new Vector2(KnockbackForce, 0);
+                }
+                //Hace que el contador baje.
+                KnockbackCounter = KnockbackCounter - Time.deltaTime;
             }
             _canAttackMelee = false;
         }

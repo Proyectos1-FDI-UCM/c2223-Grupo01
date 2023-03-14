@@ -10,7 +10,7 @@ public class CharacterController : MonoBehaviour
     #region Parameters
     // private set: esta variable puede ser le�da desde otros scripts
     // pero no cambiada
-    public bool _isgrounded { get; private set; }
+    private bool _isgrounded;
     public bool _doublejump { get; private set; }
     public bool _isOnIce{get; private set;}
 
@@ -57,7 +57,15 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject _slideObject;
     #endregion
 
+    #region getters && setters
+    public bool GetIsGrounded()
+    {
+        return _isgrounded;
+    }
+    #endregion
+
     #region Methods
+
     private bool IsGrounded()
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo

@@ -7,7 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     #region Parameters
-    [SerializeField] private TMP_Text _timetext;
+    [SerializeField] private Text _timetext;
     [SerializeField] private Image _regular;        //La imagen del arma de fuego regular.
     [SerializeField] private Image _fire;
     [SerializeField] private Image _ice;

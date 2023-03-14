@@ -12,12 +12,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _enemydetectionSpeed = 3f;
     [SerializeField] private float _maxDistanceDetection = 2f;
     private float _initialSpeed;
-    public float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
-    public float KnockbackCounter;                      //Cooldown del knockback.
-    public float KnockbackTotalTime;                    //Cuánto durará el knockback.
-    public bool KnockFromRight;
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
     private bool _isflipped; //Si el enemigo ha dado la vuelta
+    private float _knockbackCounter;
 
     private bool _canturn;
     [SerializeField] private float _canturnCOUNTER;
@@ -30,6 +27,7 @@ public class EnemyMovement : MonoBehaviour
     private EnemyFOV _myEnemyFOV;
     private Rigidbody2D _rigidbody;
     #endregion
+
 
     #region Methods
     private bool _isgrounded() //Si el enemigo está en el suelo
@@ -79,7 +77,7 @@ public class EnemyMovement : MonoBehaviour
     {
         _distfromplayer = _player.transform.position.x - transform.position.x; 
         //Solo se puede mover el enemigo si no está en modo knockback.
-
+        //_knockbackCounter = 
         if (KnockbackCounter <= 0) 
         {   
             if (_isgrounded())
@@ -114,21 +112,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else //Si está en modo knockback
         {
-            //Si golpea por la derecha...
-            if (KnockFromRight) 
-            {
-                //"-KnockbackForce" mueve al enemigo para atrás.
-                //Es el vector de la fuerza que pega el knockback.
-                _rigidbody.velocity = new Vector2(-KnockbackForce, 0); 
-            }
-            //Si golpea por la izquierda...
-            if (!KnockFromRight) 
-            {
-                //Esta vuelta manda al enemigo a la derecha.
-                _rigidbody.velocity = new Vector2(KnockbackForce, 0); 
-            }
-            //Hace que el contador baje.
-            KnockbackCounter = KnockbackCounter - Time.deltaTime; 
+            
         }
 
         if (!_canturn)

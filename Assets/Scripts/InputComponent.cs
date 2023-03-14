@@ -35,11 +35,11 @@ public class InputComponent : MonoBehaviour
     {
         // Comprobamos si estamos pulsando el espacio y si podemos saltar
         // (o estamos en el suelo o no hemos gastado el doble salto)
-        if ((_myCharacterController._isgrounded && Input.GetKeyDown(KeyCode.Space)) || (_myCharacterController._doublejump && Input.GetKeyDown(KeyCode.Space)))
+        if ((_myCharacterController.GetIsGrounded() && Input.GetKeyDown(KeyCode.Space)) || (_myCharacterController._doublejump && Input.GetKeyDown(KeyCode.Space)))
         {
             _myCharacterController.Jump();
         }
-        else if(_myCharacterController._isgrounded && Input.GetKeyDown(KeyCode.L)) // input del dash
+        else if(_myCharacterController.GetIsGrounded() && Input.GetKeyDown(KeyCode.L)) // input del dash
         {
             _myCharacterController.Dash();
         }
