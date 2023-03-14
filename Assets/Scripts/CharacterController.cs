@@ -209,7 +209,7 @@ public class CharacterController : MonoBehaviour
         }
 
         //Si colisiona con la Plataforma Móvil.
-        if(collision.gameObject.tag == "PlataformaMóvil")
+        if(collision.gameObject.layer == 16)
         {   
             //Hace que Mighty se mueva acorde a la plataforma móvil en lugar de quedarse en la misma posición al pararse. En resumen, hace que la plataforma transporte a Mighty.
             transform.parent = collision.transform;
@@ -226,7 +226,7 @@ public class CharacterController : MonoBehaviour
         }
 
         //Al bajarnos de la plataforma móvil.
-        if (collision.gameObject.tag == "PlataformaMóvil")
+        if (collision.gameObject.layer == 16)
         {
             //Vuelve nuestro transform original.
             transform.parent = null;

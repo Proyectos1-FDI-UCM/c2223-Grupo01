@@ -11,9 +11,10 @@ public class CintaCorredera : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        /*if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<CharacterController>()._isgrounded)
+
+        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<CharacterController>().GetIsGrounded())
         {
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(_speed * _direccion);
-        }*/
+        }
     }
 }
