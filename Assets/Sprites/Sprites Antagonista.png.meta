@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 54288b8d67274b34a88b1bdb389eeb2e
+guid: aaf1922f112b7c64c95bd6249385272b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,253 +104,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_1
+      name: Sprites Antagonista_0
       rect:
         serializedVersion: 2
-        x: 117
-        y: 119
-        width: 28
-        height: 24
-      alignment: 9
-      pivot: {x: 0.3392857, y: 0.5208333}
+        x: 5
+        y: 61
+        width: 21
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec1d575acbbb481468e1f1f3535d46ec
-      internalID: 652166337
+      spriteID: 0a85178f14694cb498a415d6c0c8b687
+      internalID: 1208392600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_3
+      name: Sprites Antagonista_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 115
+        x: 27
+        y: 60
         width: 23
-        height: 32
-      alignment: 9
-      pivot: {x: 0.3478261, y: 0.453125}
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 277c0c87c1fe9a74e8c13cf730deae1d
-      internalID: 1425624595
+      spriteID: 24ec81d4ba0573b44939f086d4f6d19e
+      internalID: 2039035608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_6
+      name: Sprites Antagonista_2
       rect:
         serializedVersion: 2
-        x: 230
-        y: 67
-        width: 47
-        height: 34
-      alignment: 9
-      pivot: {x: 0.25531915, y: 0.4117647}
+        x: 56
+        y: 61
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8269e04b9368655498bcdfdfa5a0ffee
-      internalID: -739779650
+      spriteID: e9e71f341f6cde6409eaef6dd796c1b3
+      internalID: 1117792034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_4
+      name: Sprites Antagonista_3
       rect:
         serializedVersion: 2
-        x: 14
-        y: 75
-        width: 46
-        height: 29
-      alignment: 9
-      pivot: {x: 0.20652173, y: 0.39655173}
+        x: 82
+        y: 61
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c15aa8faffc1ba4a82c4e1496f10575
-      internalID: 2087667019
+      spriteID: a56be7b0c6aa0b54eb90df27295368b3
+      internalID: -417105686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_7
+      name: Sprites Antagonista_4
       rect:
         serializedVersion: 2
-        x: 294
-        y: 69
-        width: 41
-        height: 32
-      alignment: 9
-      pivot: {x: 0.19512194, y: 0.453125}
+        x: 105
+        y: 61
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fc0a79e16efe324db0ab6c2379759ba
-      internalID: 246319866
+      spriteID: 1ad1440bb079801409b243a634fd36e3
+      internalID: 717234597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_5
+      name: Sprites Antagonista_5
       rect:
         serializedVersion: 2
-        x: 116
-        y: 68
-        width: 46
-        height: 29
-      alignment: 9
-      pivot: {x: 0.20652173, y: 0.6034483}
+        x: 135
+        y: 56
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 477c60097adfde14e99f26904ebcb705
-      internalID: 247160129
+      spriteID: e815dc22372954e459c6eccd55d545cd
+      internalID: 750223057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_0
+      name: Sprites Antagonista_6
       rect:
         serializedVersion: 2
-        x: 15
-        y: 118
-        width: 28
-        height: 26
-      alignment: 9
-      pivot: {x: 0.3392857, y: 0.44230768}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d97c358800a5d44a98b7129572dccbb
-      internalID: 1526833665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_2
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 115
-        width: 27
-        height: 32
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.4375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65f57f72115cb27478b628a8ea026ba0
-      internalID: -2023285094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_8
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 21
-        width: 46
-        height: 29
-      alignment: 9
-      pivot: {x: 0.20652173, y: 0.39655173}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8de19de883032644beb5cd4a008b8e6
-      internalID: -1096806615
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_9
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 15
-        width: 46
-        height: 29
-      alignment: 9
-      pivot: {x: 0.20652173, y: 0.6034483}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 933755560c05c6b48804400e6af31f84
-      internalID: 1812730739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_10
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 9
-        width: 49
+        x: 168
+        y: 56
+        width: 26
         height: 37
-      alignment: 9
-      pivot: {x: 0.24489796, y: 0.45945945}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 912e967fe0828a8499f3537602deec41
-      internalID: 1286968190
+      spriteID: 51c9cde274a912648aa1f4089ed28fe6
+      internalID: 1380491287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Melee 2.0_11
+      name: Sprites Antagonista_7
       rect:
         serializedVersion: 2
-        x: 294
-        y: 16
-        width: 41
-        height: 32
-      alignment: 9
-      pivot: {x: 0.19512194, y: 0.453125}
+        x: 196
+        y: 61
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 348545690ceb31742b693962a7d75a5f
-      internalID: 1857132495
+      spriteID: 5f52930000570ed4391bae776d30b88b
+      internalID: -23018112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_8
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 60
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6936a6c3548ea44fbe38c44a3c1d8b1
+      internalID: -1022246669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_9
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 74
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6618d309da272d43902ba85e69c1aab
+      internalID: 1531569319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_10
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 73
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08d85f67d464284b998a1e040d82fe3
+      internalID: -1985551680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 43
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfdc752aab8cb504bb3d2834863d4c8e
+      internalID: -1485303068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_12
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 14
+        width: 29
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d20533e60d973e429cdddfdfc2c6bff
+      internalID: -365919126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 13
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a19842ad0f39f45a534877a5d53b42
+      internalID: -1928591466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_14
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 44
+        width: 36
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da5065b550a4a440a13f2dd4f087697
+      internalID: 1508214745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Antagonista_15
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 43
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a0e2060316221458f227048c0eb181
+      internalID: 791221941
       vertices: []
       indices: 
       edges: []
@@ -366,18 +450,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprites Migthy Melee 2.0_1: 652166337
-      Sprites Migthy Melee 2.0_3: 1425624595
-      Sprites Migthy Melee 2.0_6: -739779650
-      Sprites Migthy Melee 2.0_11: 1857132495
-      Sprites Migthy Melee 2.0_10: 1286968190
-      Sprites Migthy Melee 2.0_4: 2087667019
-      Sprites Migthy Melee 2.0_7: 246319866
-      Sprites Migthy Melee 2.0_5: 247160129
-      Sprites Migthy Melee 2.0_0: 1526833665
-      Sprites Migthy Melee 2.0_2: -2023285094
-      Sprites Migthy Melee 2.0_8: -1096806615
-      Sprites Migthy Melee 2.0_9: 1812730739
+      Sprites Antagonista_14: 1508214745
+      Sprites Antagonista_2: 1117792034
+      Sprites Antagonista_0: 1208392600
+      Sprites Antagonista_6: 1380491287
+      Sprites Antagonista_15: 791221941
+      Sprites Antagonista_11: -1485303068
+      Sprites Antagonista_5: 750223057
+      Sprites Antagonista_3: -417105686
+      Sprites Antagonista_7: -23018112
+      Sprites Antagonista_9: 1531569319
+      Sprites Antagonista_4: 717234597
+      Sprites Antagonista_1: 2039035608
+      Sprites Antagonista_10: -1985551680
+      Sprites Antagonista_13: -1928591466
+      Sprites Antagonista_8: -1022246669
+      Sprites Antagonista_12: -365919126
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

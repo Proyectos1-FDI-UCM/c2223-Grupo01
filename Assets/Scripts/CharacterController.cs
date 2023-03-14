@@ -36,8 +36,10 @@ public class CharacterController : MonoBehaviour
 
     [Header("Climb")]
     private float _initialGravity; // gravedad inicial
-    private float _climbVelocity = 10f; // velocidad de escalada
+    [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
+    public bool _quieroBajarDeEscaleras {get; private set;}
+    [SerializeField] private BoxCollider2D _topEscaleras;
     #endregion
 
     #region References
@@ -155,23 +157,27 @@ public class CharacterController : MonoBehaviour
     {
         if ((YAxismove != 0 || _isClimbing) && _myRigidBody2D.IsTouchingLayers(_ladderLayer))
         {
+            _quieroBajarDeEscaleras = false;
             Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
-                _myRigidBody2D.velocity = targetVelocity;
-                _myRigidBody2D.gravityScale = 0;
-                _isClimbing = true;
-            /*if (_doublejump)
-            {
-                //
-            }*/
+            _myRigidBody2D.velocity = targetVelocity;
+            _myRigidBody2D.gravityScale = 0;
+            _isClimbing = true;
+            _topEscaleras.isTrigger = true; //podemos subir el tope de las escaleras
         }
-        else
+        else // Cuando salga del _ladderLayer
         {
             _myRigidBody2D.gravityScale = _initialGravity;
-            /*if (_isClimbing && _doublejump)
+            if (_isClimbing)
             {
-                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
-            }*/
+                // Hace que Mighty no se impulse al salir de la escalera
+                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0); 
+            }
             _isClimbing = false;
+
+            if(!_quieroBajarDeEscaleras)
+            {
+                _topEscaleras.isTrigger = false; //no se pueda bajar el tope de las escaleras
+            }
         }
 
         if (_isgrounded)
@@ -202,6 +208,12 @@ public class CharacterController : MonoBehaviour
             _dashForce = _smallDashForce;
         }
 
+        //Si colisiona con la Plataforma Móvil.
+        if(collision.gameObject.tag == "PlataformaMóvil")
+        {   
+            //Hace que Mighty se mueva acorde a la plataforma móvil en lugar de quedarse en la misma posición al pararse. En resumen, hace que la plataforma transporte a Mighty.
+            transform.parent = collision.transform;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -211,6 +223,30 @@ public class CharacterController : MonoBehaviour
         {
             _movementSpeedX = _initialMovementSpeedX;
             _dashForce = _initialdDashForce;
+        }
+
+        //Al bajarnos de la plataforma móvil.
+        if (collision.gameObject.tag == "PlataformaMóvil")
+        {
+            //Vuelve nuestro transform original.
+            transform.parent = null;
+        }
+
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer == 15 && _myInputComponent._lookDOWN)
+        //si estoy en Layer Top Escaleras y miramos abajo (getaxisvertical < 0)
+        {
+            //entonces queremos bajar por las escaleras
+            _quieroBajarDeEscaleras = true; 
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.layer == 8) //layer de escaleras
+        {
+            _quieroBajarDeEscaleras = false;
         }
     }
     #endregion
@@ -233,6 +269,11 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
+        
+        if(_quieroBajarDeEscaleras)
+        {
+            _topEscaleras.isTrigger = true; //se puede bajar del tope
+        }
         //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
 
@@ -250,6 +291,7 @@ public class CharacterController : MonoBehaviour
         //Actualiza Animator
         _animator.SetBool("_dash", _dash);
         _animator.SetBool("_isGrounded", _isgrounded);
+        _animator.SetBool("_isClimbing", _isClimbing);
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
         if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space)) && !IsCeiling())

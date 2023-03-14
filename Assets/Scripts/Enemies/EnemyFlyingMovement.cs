@@ -11,6 +11,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     [SerializeField] private float _enemySpeed = 5f;
     private Vector2 _initialPosition;
     private int _enemystate;
+    private Rigidbody2D _rigidbody;
     private enum Estados { patrullaje, perseguir, regresar};
     private Estados _estados;
     #endregion
@@ -19,18 +20,20 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     private void FlyingPatrol() //Método que provoca que el enemigo se mueva de izquierda a derecha
     {
-        transform.Translate(Vector3.right * Time.deltaTime * _enemySpeed);
+        _rigidbody.velocity = (transform.right * _enemySpeed);
     }
     private void FlyingChase()
     //Provoca que el enemigo empieze a perseguir al jugador.
     {
-        transform.position = Vector2.MoveTowards(transform.position, _player.transform.position, _enemySpeed * Time.deltaTime);
+        Vector3 _enemydirection = new Vector3(_player.transform.position.x-transform.position.x, _player.transform.position.y-transform.position.y,0f);
+        _rigidbody.velocity = (_enemydirection.normalized*_enemySpeed);
     }
 
     private void ReturnPosition()
     //Provoca que los enemigos vuelvan a su posición inicial.
     {
-        transform.position = Vector2.MoveTowards(transform.position, _initialPosition, _enemySpeed*Time.deltaTime);
+        Vector3 _returndirection = new Vector3(_initialPosition.x - transform.position.x, _initialPosition.y - transform.position.y,0f);    
+        _rigidbody.velocity = (_returndirection.normalized * _enemySpeed);
     }
 
     /*private void OnTriggerEnter2D(Collider2D Other)
@@ -72,6 +75,7 @@ public class EnemyFlyingMovement : MonoBehaviour
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialPosition = transform.position;
         _estados = Estados.patrullaje;
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()

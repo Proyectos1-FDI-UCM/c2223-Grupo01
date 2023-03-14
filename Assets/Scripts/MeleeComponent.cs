@@ -12,8 +12,9 @@ public class MeleeComponent : MonoBehaviour
     [SerializeField] private float attackRate = 2f;     //Indica cuántas veces se va a atacar por segundo.
     private float nextAttackTime = 0f;                  //Cooldown del ataque.
     private EnemyMovement _enemyMovement = null;        //Sirve para comunicarse con el script de "EnemyMovement".
-    [SerializeField] private float _coolDownMelee; //tiempo en el que se permitirá usar el arma a melee
+    [SerializeField] private float _coolDownMelee;      //tiempo en el que se permitirá usar el arma a melee
     private float _initialCoolDownMelee;
+
     // variables del kcnokbak
     private float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
     private float KnockbackCounter;                      //Cooldown del knockback.

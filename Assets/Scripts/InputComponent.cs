@@ -8,6 +8,7 @@ public class InputComponent : MonoBehaviour
 {
     #region Parameters
     public bool _lookUP { get; private set; }  //condici�n para mirar a arriba
+    public bool _lookDOWN { get; private set; }  //condici�n para mirar a abajo (escaleras)
     #endregion
 
     #region References
@@ -29,7 +30,10 @@ public class InputComponent : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        _myCharacterController.Climb(Input.GetAxis("Vertical"));
+        if(!_myCharacterController._quieroBajarDeEscaleras)
+        {
+            _myCharacterController.Climb(Input.GetAxis("Vertical"));
+        }
     }
     private void Update()
     {
@@ -64,11 +68,13 @@ public class InputComponent : MonoBehaviour
 
         // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));
-        
        
         // Animaciones
         _animator.SetBool("_isRunning", Input.GetAxis("Horizontal") != 0);
         _lookUP = Input.GetAxis("Vertical") > 0;
+        _lookDOWN = Input.GetAxis("Vertical") < 0;
         _animator.SetBool("_isLookUp", _lookUP);//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
+        _animator.SetBool("_isLookDown", _lookDOWN);
     }
+
 }

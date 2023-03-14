@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 736711c37c3a9f24c8a66f10ea1b4c9f
+guid: 84af373cba0825f4682a06da3bc0d227
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,190 +104,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_0
+      name: carambano de hielo_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 61
-        width: 21
-        height: 28
-      alignment: 9
-      pivot: {x: 0.45238096, y: 0.5}
+        x: 3
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c418755a0dad1b9428f89dbe29ac9605
-      internalID: 229582100
+      spriteID: e31498fcf2d0ff34c83febb6dd8271d3
+      internalID: 534358392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_1
+      name: carambano de hielo_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 62
-        width: 22
-        height: 23
+        x: 23
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8968bf3c9beaae146b95e3f1612ef820
-      internalID: -1138643351
+      spriteID: 75608ca9bff5e05498749cae06c179f7
+      internalID: -371853723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_2
+      name: carambano de hielo_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 62
-        width: 22
-        height: 23
+        x: 43
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8772d91e61bd1d44cbb12c5c8b7b7a79
-      internalID: 1992804410
+      spriteID: c1816d51772ba6442a964e2fdbd9869f
+      internalID: -1630914204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_3
+      name: carambano de hielo_3
       rect:
         serializedVersion: 2
-        x: 109
-        y: 62
-        width: 22
-        height: 23
+        x: 63
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96904010b15027e40942990e7737573b
-      internalID: 2104196825
+      spriteID: 2542be1155e8e2549966d7cd989d8fbe
+      internalID: 811555563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_4
+      name: carambano de hielo_4
       rect:
         serializedVersion: 2
-        x: 142
-        y: 62
-        width: 19
-        height: 23
+        x: 83
+        y: 56
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ecb225a0116ad544bcf527d38124058
-      internalID: -1912979273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_5
-      rect:
-        serializedVersion: 2
-        x: 171
-        y: 62
-        width: 19
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6be2ae3573a42e47a7638117cd3eb6b
-      internalID: -1620887059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_6
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 62
-        width: 19
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13e58eba862f99e47ab8a4fee3f54322
-      internalID: -663559168
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_7
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 9
-        width: 17
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fea9322aa13d7543aa453d5ac1c58cb
-      internalID: 2062953463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sprites Migthy Mirando Arriba_8
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 9
-        width: 17
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5dc77dd13e9bd584f886c66536072b01
-      internalID: -1351937758
+      spriteID: 285c9c84834d182419a7e5f8ba088342
+      internalID: 1070155908
       vertices: []
       indices: 
       edges: []
@@ -303,15 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sprites Migthy Mirando Arriba_1: -1138643351
-      Sprites Migthy Mirando Arriba_7: 2062953463
-      Sprites Migthy Mirando Arriba_5: -1620887059
-      Sprites Migthy Mirando Arriba_6: -663559168
-      Sprites Migthy Mirando Arriba_0: 229582100
-      Sprites Migthy Mirando Arriba_8: -1351937758
-      Sprites Migthy Mirando Arriba_2: 1992804410
-      Sprites Migthy Mirando Arriba_4: -1912979273
-      Sprites Migthy Mirando Arriba_3: 2104196825
+      carambano de hielo_0: 534358392
+      carambano de hielo_3: 811555563
+      carambano de hielo_2: -1630914204
+      carambano de hielo_1: -371853723
+      carambano de hielo_4: 1070155908
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

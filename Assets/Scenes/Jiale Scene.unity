@@ -20501,7 +20501,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281900298}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -20775,11 +20775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.08
+      value: 65.23
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.51
+      value: -1.35
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21576,7 +21576,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.3321404
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -21619,7 +21619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0548b3e7c1aac504a984ca11c4340051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Offset: {x: 0, y: 0, z: 20}
+  Offset: {x: -2, y: -2, z: 20}
   target: {fileID: 519500136}
   smoothTime: 0.1
 --- !u!1 &1711526601
@@ -33480,11 +33480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6373710257464961639, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.39
+      value: 69.51
       objectReference: {fileID: 0}
     - target: {fileID: 6373710257464961639, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.82
+      value: 0.93
       objectReference: {fileID: 0}
     - target: {fileID: 6373710257464961639, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: m_LocalPosition.z
