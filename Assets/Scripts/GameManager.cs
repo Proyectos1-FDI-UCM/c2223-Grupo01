@@ -38,7 +38,10 @@ public class GameManager : MonoBehaviour
         return _UImanager;
     }
 
-    //public MeleeComponent RegisterMeleeComponent( MeleeComponent mele)
+    public MeleeComponent RegisterMeleeComponent( MeleeComponent mele)
+    {
+        return mele;
+    }
 
     #endregion
 

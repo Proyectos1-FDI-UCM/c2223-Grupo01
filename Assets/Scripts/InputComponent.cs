@@ -56,7 +56,7 @@ public class InputComponent : MonoBehaviour
         }
 
         // Ataca cuerpo a cuerpo
-        if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent._canAttackMelee)
+        if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent.GetAttackMelee())
         {
             GetComponent<AudioSource>().PlayOneShot(_melee);
             _animator.SetTrigger("_melee");

@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
     private bool _isflipped; //Si el enemigo ha dado la vuelta
     private float _knockbackCounter;
+    private float _knockBackInicial; //Cuánto durará el knockback.
 
     private bool _canturn;
     [SerializeField] private float _canturnCOUNTER;
@@ -28,6 +29,12 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     #endregion
 
+    #region getter && setter
+    public void SetcknockBackCounter(float knockbackCounter)
+    {
+        _knockbackCounter = knockbackCounter;
+    }
+    #endregion
 
     #region Methods
     private bool _isgrounded() //Si el enemigo está en el suelo
@@ -70,6 +77,7 @@ public class EnemyMovement : MonoBehaviour
         _myEnemyFOV = GetComponent<EnemyFOV>();
         _initialSpeed = _enemySpeed;
         _isflipped=false;
+        _knockBackInicial = _knockbackCounter;
     }
 
     void Update()
@@ -77,7 +85,7 @@ public class EnemyMovement : MonoBehaviour
         _distfromplayer = _player.transform.position.x - transform.position.x; 
         //Solo se puede mover el enemigo si no está en modo knockback.
         //_knockbackCounter = 
-        if (KnockbackCounter <= 0) 
+        if (_knockbackCounter <= 0) 
         {   
             if (_isgrounded())
             {
@@ -111,7 +119,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else //Si está en modo knockback
         {
-            
+            _knockbackCounter -= Time.deltaTime;
         }
 
         if (!_canturn)

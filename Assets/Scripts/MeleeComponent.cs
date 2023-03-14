@@ -17,16 +17,20 @@ public class MeleeComponent : MonoBehaviour
 
     // variables del kcnokbak
     private float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
-    private float KnockbackCounter;                      //Cooldown del knockback.
-    private float KnockbackTotalTime;                    //Cuánto durará el knockback.
+    [SerializeField] private float _KnockbackTime;                      //Cooldown del knockback.
     private bool KnockFromRight;
     private bool _canAttackMelee;//condición en la que se permitirá usar el arma a melee
     #endregion
 
     #region getters && setters
+    public bool GetAttackMelee()
+    {
+        return _canAttackMelee;
+    }
+
     public float SetKnockBackCounter()
     {
-        return KnockbackCounter;
+        return _KnockbackTime;
     }
     #endregion
 
@@ -52,7 +56,6 @@ public class MeleeComponent : MonoBehaviour
             //El contador comienza cada vez que le pegas un cate al enemigo.
             //Comprobamos si el jugador esta a la izda o dcha
             {
-                KnockbackCounter = KnockbackTotalTime;
 
                 if (enemy.transform.position.x <= transform.position.x)
                 {
@@ -78,8 +81,12 @@ public class MeleeComponent : MonoBehaviour
                     //Esta vuelta manda al enemigo a la derecha.
                     _rigidbody.velocity = new Vector2(KnockbackForce, 0);
                 }
-                //Hace que el contador baje.
-                KnockbackCounter = KnockbackCounter - Time.deltaTime;
+
+
+                if(enemy.GetComponent<EnemyMovement>() != null)
+                {
+                    enemy.GetComponent<EnemyMovement>().SetcknockBackCounter(_KnockbackTime);
+                }
             }
             _canAttackMelee = false;
         }
@@ -100,6 +107,7 @@ public class MeleeComponent : MonoBehaviour
     {
         _initialCoolDownMelee = _coolDownMelee;
         _canAttackMelee = true;
+        GameManager.instance.RegisterMeleeComponent(this);
     }
 
     private void Update()
