@@ -1799,7 +1799,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SuperMelee
-  m_Speed: 1.5
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1267262207760234345}
@@ -1814,7 +1814,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 158aaff6638ef9a4385a440aa34b0d1b, type: 2}
+  m_Motion: {fileID: 7400000, guid: d57a36a1106dd574897cfe02b6dabd44, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

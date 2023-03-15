@@ -20786,10 +20786,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mighty
       objectReference: {fileID: 0}
-    - target: {fileID: 3307213394960240520, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.015
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
 --- !u!1 &1385921328
