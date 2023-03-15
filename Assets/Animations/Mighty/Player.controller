@@ -237,10 +237,10 @@ AnimatorStateMachine:
     m_Position: {x: 560, y: -560, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5500935502716823303}
-    m_Position: {x: 343.64764, y: -847.7563, z: 0}
+    m_Position: {x: -430, y: -440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3690270062759152344}
-    m_Position: {x: -290, y: -640, z: 0}
+    m_Position: {x: -780, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5147120420230600961}
     m_Position: {x: -620, y: 240, z: 0}
@@ -264,7 +264,7 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -580, y: -730, z: 0}
+  m_AnyStatePosition: {x: -760, y: -390, z: 0}
   m_EntryPosition: {x: -1050, y: 140, z: 0}
   m_ExitPosition: {x: -510, y: -900, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -463,7 +463,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk&Shoot&Up 1
-  m_Speed: 0.4
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 569497434266015495}
@@ -976,7 +976,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 976626e5de22cf840b2c6c4f6c1ce53a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 11d0908d0d31b7e4b9fe009899c85851, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: _isGrounded
@@ -1261,7 +1261,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk&Shoot
-  m_Speed: 0.4
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8466889669853204833}
@@ -1324,7 +1324,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk
-  m_Speed: 0.4
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7905220410001971792}
@@ -2344,7 +2344,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1a2222cdc475b6940819b9fc06e04aa1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2c8b56432f7043f4786f3e8c7a23d965, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2606,7 +2606,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3f4eaf206922d794f8b5aa676af698a1, type: 2}
+  m_Motion: {fileID: 7400000, guid: bd0d7b4efda566f42ab3b985e6b69b82, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -3031,7 +3031,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walk&Up
-  m_Speed: 0.4
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7008205121817546093}
