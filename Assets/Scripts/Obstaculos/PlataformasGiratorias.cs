@@ -5,27 +5,34 @@ using UnityEngine;
 
 public class PlataformasGiratorias : MonoBehaviour
 {
-    private float _countdowntime = 0f;
-    private float _DesiredRotation = 90f;
+    private float _Timer = 0f;
+    private float _initialrotation;
+    [SerializeField]private float _DesiredRotation;
     [SerializeField]private float _rotationSpeed;
     [SerializeField]private float _setTime = 3;
-    
+
+    private void Start()
+    {
+        _initialrotation=_DesiredRotation;
+    }
     void Update()
     {
         //El método incluye un contador que determina cada cuanto ejecuta la rotación.
         //Cuando se ejecuta la rotatación, le sumo a la rotación actual un valor y lo redondeo.
-        _countdowntime += Time.deltaTime;
+        Debug.Log(transform.rotation.eulerAngles.z);
+        Debug.Log(transform.rotation.eulerAngles.z + "  " + _DesiredRotation);
+        _Timer += Time.deltaTime;
 
-        if (_countdowntime > _setTime)
+        if (_Timer > _setTime)
         {
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, _DesiredRotation), _rotationSpeed * Time.deltaTime);
 
-            if (transform.rotation.eulerAngles.z == _DesiredRotation)
+            if (Mathf.Approximately(transform.rotation.eulerAngles.z, _DesiredRotation))
 
             {
-                _DesiredRotation = (_DesiredRotation + 90f) % 360;
-                _countdowntime = 0;
+                _DesiredRotation = (_DesiredRotation + _initialrotation) % 360;
+                _Timer = 0;
             }
         }
     }
