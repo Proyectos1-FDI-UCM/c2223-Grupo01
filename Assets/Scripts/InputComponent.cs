@@ -16,6 +16,7 @@ public class InputComponent : MonoBehaviour
     private ShootingComponent _myShootingComponent;
     private MeleeComponent _myMeleeComponent;
     private Animator _animator;
+    private PauseMenu _pausa;
 
     [SerializeField] private AudioClip _melee;
     #endregion
@@ -53,6 +54,12 @@ public class InputComponent : MonoBehaviour
         {
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
+        }
+
+        //Pausa.
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            _pausa.Pausa();
         }
 
         // Ataca cuerpo a cuerpo
