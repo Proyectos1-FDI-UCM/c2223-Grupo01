@@ -34,12 +34,12 @@ public class ShootingComponent : MonoBehaviour
         if (_myInputComponent._lookUP && gameObject.transform.rotation.y >= 0)
         {
             Vector2 miposicion = transform.position;
-            _bulletSpawnTransform.position= miposicion + new Vector2 (0.5f, 1.5f) ;
+            _bulletSpawnTransform.position= miposicion + new Vector2 (0.45f, 1.2f) ;
         }
         else if (_myInputComponent._lookUP && gameObject.transform.rotation.y < 0)
         {
             Vector2 miposicion = transform.position;
-            _bulletSpawnTransform.position = miposicion + new Vector2(-0.5f, 1.5f);
+            _bulletSpawnTransform.position = miposicion + new Vector2(-0.45f, 1.2f);
         }
         else if (!_myInputComponent._lookUP && gameObject.transform.rotation.y >= 0)
         {
