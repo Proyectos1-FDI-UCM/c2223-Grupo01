@@ -20786,6 +20786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mighty
       objectReference: {fileID: 0}
+    - target: {fileID: 3307213394960240520, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.015
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
 --- !u!1 &1385921328
@@ -33639,6 +33643,10 @@ PrefabInstance:
     - target: {fileID: 6662258008865498230, guid: eeb792d250dfc3b44b1bcd8a36b6087d, type: 3}
       propertyPath: _patrolFlip
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662258008865498230, guid: eeb792d250dfc3b44b1bcd8a36b6087d, type: 3}
+      propertyPath: _coolDownShoot
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9140318663064654158, guid: eeb792d250dfc3b44b1bcd8a36b6087d, type: 3}
       propertyPath: m_Mass

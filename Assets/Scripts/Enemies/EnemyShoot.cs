@@ -20,6 +20,7 @@ public class EnemyShoot : MonoBehaviour
 
     #region References
     [SerializeField] private AudioClip _disparoNormal;
+    private Animator _animator;
     #endregion
 
     #region Methods
@@ -27,7 +28,10 @@ public class EnemyShoot : MonoBehaviour
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
         //GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
+        _animator.SetTrigger("_shoot");
+
         Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);
+        
         Debug.Log("dispara");
         _canShoot = false;
     }
@@ -37,11 +41,13 @@ public class EnemyShoot : MonoBehaviour
     {
         _initialCoolDownShoot = _coolDownShoot;
          _initialPatrolFlip = _patrolFlip;
+        _animator = GetComponent<Animator>();
 }
 
     // Update is called once per frame
     void Update()
     {
+
         if (gameObject.GetComponent<EnemyFOV>().GetDetected())
         {
             if (!_canShoot)
