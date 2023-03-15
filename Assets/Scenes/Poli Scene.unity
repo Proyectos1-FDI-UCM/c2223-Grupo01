@@ -19046,110 +19046,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _hurt
-      value: 
-      objectReference: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _renderC
-      value: 
-      objectReference: {fileID: 1651152215}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _coolDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _deathSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _myRigidBody2D
-      value: 
-      objectReference: {fileID: 1651152206}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _boxColiderNormal
-      value: 
-      objectReference: {fileID: 1651152207}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _canRepeatLevelTimer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[0].a
-      value: 0.49019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[0].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[0].g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[0].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[1].a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[1].b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[1].g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _colores.Array.data[1].r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _timerInputFalseAfterHit
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _dashForce
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _slowSpeedX
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _topEscaleras
       value: 
       objectReference: {fileID: 321934783}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _climbVelocity
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _movementSpeedX
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _smallDashForce
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _groundLayer.m_Bits
-      value: 2240
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _ladderLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111582, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -19197,30 +19097,6 @@ PrefabInstance:
     - target: {fileID: 3307213394870111648, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_Name
       value: Mighty
-      objectReference: {fileID: 0}
-    - target: {fileID: 3307213394870111648, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: attackRate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: attackRange
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: attackDamage
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: _coolDownMelee
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7454398845290798836, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
@@ -19446,21 +19322,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1651152206 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 3307213394870111580, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-  m_PrefabInstance: {fileID: 1288372558}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1651152207 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3307213394870111649, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-  m_PrefabInstance: {fileID: 1288372558}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1651152215 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3307213394870111582, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
-  m_PrefabInstance: {fileID: 1288372558}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1698152865
 GameObject:
   m_ObjectHideFlags: 0

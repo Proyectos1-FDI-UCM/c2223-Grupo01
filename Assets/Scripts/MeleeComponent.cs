@@ -6,19 +6,19 @@ public class MeleeComponent : MonoBehaviour
 {
     #region Parameters & References
     [SerializeField] private Transform attackPoint;     //El punto que checkea si le ha dao a un enemigo.
-    [SerializeField] private LayerMask enemyLayers;     //Para referirse a dónde están los enemigos (para pegarles). WIP: Recuerda hacer la layer de los enemigos.
+    [SerializeField] private LayerMask enemyLayers;     //Para referirse a dï¿½nde estï¿½n los enemigos (para pegarles). WIP: Recuerda hacer la layer de los enemigos.
     [SerializeField] private float attackRange = 0.5f;  //El rango con el que ataca (radio).
-    [SerializeField] private int attackDamage = 40;     //Daño por golpe.
-    [SerializeField] private float attackRate = 2f;     //Indica cuántas veces se va a atacar por segundo.
+    [SerializeField] private int attackDamage = 40;     //Daï¿½o por golpe.
+    [SerializeField] private float attackRate = 2f;     //Indica cuï¿½ntas veces se va a atacar por segundo.
     private float nextAttackTime = 0f;                  //Cooldown del ataque.
     [SerializeField] private float _coolDownMelee;      //tiempo en el que se permitirá usar el arma a melee
     private float _initialCoolDownMelee;
 
     // variables del kcnokbak
-    [SerializeField] private float KnockbackForce;                        //Cuánta fuerza tendrá el knockback.
+    [SerializeField] private float KnockbackForce;                        //Cuï¿½nta fuerza tendrï¿½ el knockback.
     [SerializeField] private float _KnockbackTime;                      //Cooldown del knockback.
     private bool KnockFromRight;
-    private bool _canAttackMelee;//condición en la que se permitirá usar el arma a melee
+    private bool _canAttackMelee;//condiciï¿½n en la que se permitirï¿½ usar el arma a melee
     #endregion
 
     #region getters && setters
@@ -34,7 +34,7 @@ public class MeleeComponent : MonoBehaviour
     #endregion
 
     #region Methods
-    //WIP: Falta hacer que al darle a la tecla de atacar, haga aleatoriamente (una u otra) las animaciones "Attack 1" y "Attack 2". Por el momento sólo he puesto "Attack 1".
+    //WIP: Falta hacer que al darle a la tecla de atacar, haga aleatoriamente (una u otra) las animaciones "Attack 1" y "Attack 2". Por el momento sï¿½lo he puesto "Attack 1".
     public void Attack()   
     {
         if (Time.time >= nextAttackTime) 
@@ -45,11 +45,11 @@ public class MeleeComponent : MonoBehaviour
             //Detectar a los enemigos en el rango de ataque (el radio del golpe).
 
             //"hitEnemies" es un array de los enemigos que hay.
-            //"OverlapCircleAll" crea un círculo desde el objeto que le digas y del radio que le digas.
-            //Funciona así: OverlapCircleAll("centro","radio","lo que quieras detectar"). Funciona con físicas.
+            //"OverlapCircleAll" crea un cï¿½rculo desde el objeto que le digas y del radio que le digas.
+            //Funciona asï¿½: OverlapCircleAll("centro","radio","lo que quieras detectar"). Funciona con fï¿½sicas.
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-            //Daño hacia los enemigos.
+            //Daï¿½o hacia los enemigos.
 
             foreach (Collider2D enemy in hitEnemies)
             //El contador comienza cada vez que le pegas un cate al enemigo.
@@ -70,7 +70,7 @@ public class MeleeComponent : MonoBehaviour
                 //Si golpea por la derecha...
                 if (KnockFromRight)
                 {
-                    //"-KnockbackForce" mueve al enemigo para atrás.
+                    //"-KnockbackForce" mueve al enemigo para atrï¿½s.
                     //Es el vector de la fuerza que pega el knockback.
                     _rigidbody.velocity = new Vector2(-KnockbackForce, 0);
                 }

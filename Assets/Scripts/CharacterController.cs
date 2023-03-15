@@ -28,15 +28,17 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _jumpForce; // fuerza del salto
 
     [Header("Dash")]
-    private bool _facingRight = true;
     [SerializeField] private float _dashForce; // Fuerza para el dash
-    private float _initialdDashForce; // Fuerza inicial para el dash. Util para poder reconfigurar la fuerza del dash, cuando estas en una plataforma que ralentiza por ejemplo
     [SerializeField] private float _smallDashForce; // Fuerza para el dash en las plataformas ralentizantes
+    private bool _facingRight = true;
+    private float _initialdDashForce; // Fuerza inicial para el dash.
+    //Util para poder reconfigurar la fuerza del dash, cuando estas en una plataforma que ralentiza por ejemplo
     private bool _dash = false; // Booleano que detecta si estamos en medio de un dash
+    [SerializeField] private GameObject _slideObject;
 
     [Header("Climb")]
-    private float _initialGravity; // gravedad inicial
     [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
+    private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     public bool _quieroBajarDeEscaleras {get; private set;}
     [SerializeField] private BoxCollider2D _topEscaleras;
@@ -45,18 +47,18 @@ public class CharacterController : MonoBehaviour
     #region References
     private Rigidbody2D _myRigidBody2D; // Referencia al Rigid Body del player
     private BoxCollider2D _myCollider2D; // Referencia al Colider del player
+    [Header("Layers")]
     [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
     [SerializeField] private LayerMask _ladderLayer; // Layers que tomamos como escalabes
     private InputComponent _myInputComponent; // Referencia al input
     private Animator _animator; // Referencia al animator
 
     // Sonidos varios
+    [Header("Sounds")]
     [SerializeField] private AudioClip _aterrizaje;
     [SerializeField] private AudioClip _dobleSalto;
     [SerializeField] private AudioClip _normalJump;
     [SerializeField] private AudioClip _slide;
-
-    [SerializeField] private GameObject _slideObject;
     #endregion
 
     #region getters && setters
@@ -67,7 +69,6 @@ public class CharacterController : MonoBehaviour
     #endregion
 
     #region Methods
-
     private bool IsGrounded()
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
@@ -174,7 +175,7 @@ public class CharacterController : MonoBehaviour
             }
             _isClimbing = false;
 
-            if(!_quieroBajarDeEscaleras)
+            if(!_quieroBajarDeEscaleras) //da error si no hay topescaleras
             {
                 _topEscaleras.isTrigger = false; //no se pueda bajar el tope de las escaleras
             }
