@@ -218,7 +218,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackRange: 1.05
+  attackRange: 1.1
   attackDamage: 40
   attackRate: 60
   _coolDownMelee: 0.3
