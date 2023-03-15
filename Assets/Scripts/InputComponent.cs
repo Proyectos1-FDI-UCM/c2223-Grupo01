@@ -56,12 +56,6 @@ public class InputComponent : MonoBehaviour
             _myShootingComponent.Shoot();
         }
 
-        //Pausa.
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            _pausa.Pausa();
-        }
-
         // Ataca cuerpo a cuerpo
 
         if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent.GetAttackMelee())
