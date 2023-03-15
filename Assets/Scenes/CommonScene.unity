@@ -1816,9 +1816,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6933013125266088328, guid: 0bb35223cc77ea944841d33915057e28, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7365059970878059402, guid: 0bb35223cc77ea944841d33915057e28, type: 3}
       propertyPath: m_Name
       value: "Plataforma M\xF3vil"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365059970878059402, guid: 0bb35223cc77ea944841d33915057e28, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bb35223cc77ea944841d33915057e28, type: 3}

@@ -16,6 +16,7 @@ public class InputComponent : MonoBehaviour
     private ShootingComponent _myShootingComponent;
     private MeleeComponent _myMeleeComponent;
     private Animator _animator;
+    private PauseMenu _pausa;
 
     [SerializeField] private AudioClip _melee;
     #endregion
