@@ -10,7 +10,7 @@ public class CharacterController : MonoBehaviour
     #region Parameters
     // private set: esta variable puede ser le�da desde otros scripts
     // pero no cambiada
-    private bool _isgrounded;
+    public bool _isgrounded { get; private set; }
     public bool _doublejump { get; private set; }
     public bool _isOnIce{get; private set;}
 

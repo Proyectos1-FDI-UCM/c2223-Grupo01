@@ -19,8 +19,9 @@ public class InputComponent : MonoBehaviour
     private PauseMenu _pausa;
 
     [SerializeField] private AudioClip _melee;
+    [SerializeField] private AudioClip _airMelee;
     #endregion
- 
+
     void Start()
     //Inicializo referencias
     {
@@ -59,9 +60,15 @@ public class InputComponent : MonoBehaviour
         // Ataca cuerpo a cuerpo
 
         if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent.GetAttackMelee())
-
         {
-            GetComponent<AudioSource>().PlayOneShot(_melee);
+            if (!_myCharacterController._isgrounded)
+            {
+                GetComponent<AudioSource>().PlayOneShot(_airMelee);
+            }
+            else
+            {
+                GetComponent<AudioSource>().PlayOneShot(_melee);
+            }
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
         }

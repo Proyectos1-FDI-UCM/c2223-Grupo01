@@ -186,7 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f913a26ff8e6442b2335a17be952f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _melee: {fileID: 8300000, guid: de8031e0770d14a4b9fc726ee26e9836, type: 3}
+  _melee: {fileID: 8300000, guid: 8dcb02e82393954489cfbb94afa8d016, type: 3}
+  _airMelee: {fileID: 8300000, guid: 8a2d78e5140c3b0439f5944dda4f8517, type: 3}
 --- !u!114 &3307213394870111579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: 2133623756580499680, guid: 637b8d1b92671cd4fa5a18d02044eae4, type: 3}
   _bulletSpawnTransform: {fileID: 3307213394960240520}
-  _disparoNormal: {fileID: 8300000, guid: f9a9a125870933b45bd879f01b41987b, type: 3}
+  _disparoNormal: {fileID: 8300000, guid: 5994de12674e43949af2af55bf2b92a3, type: 3}
 --- !u!114 &5106214237236784140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ MonoBehaviour:
   attackRange: 1.1
   attackDamage: 40
   attackRate: 240
-  _coolDownMelee: 0.5
+  _coolDownMelee: 0.35
   KnockbackForce: 7
   _KnockbackTime: 0.4
 --- !u!95 &989400450
