@@ -43,8 +43,9 @@ public class EnemyFlyingMovement : MonoBehaviour
     private void ReturnPosition()
     //Provoca que los enemigos vuelvan a su posición inicial.
     {
-        Vector3 _returndirection = new Vector3(_initialPosition.position.x - transform.position.x, _initialPosition.position.y - transform.position.y,0f);    
-        _rigidbody.velocity = (_returndirection.normalized * _enemySpeed);
+        {
+            _rigidbody.velocity = ((_initialPosition.position - transform.position).normalized * _enemySpeed);
+        }
     }
 
     private void Flip()
@@ -53,7 +54,7 @@ public class EnemyFlyingMovement : MonoBehaviour
         _isflipped = !_isflipped;
     }
 
-    private void UpdateEnemyState ( Estados estado) //Método que cambia los distintos estados del enemigo
+    private void UpdateEnemyState(Estados estado) //Método que cambia los distintos estados del enemigo
     {
         switch (estado)
         {
@@ -71,22 +72,22 @@ public class EnemyFlyingMovement : MonoBehaviour
                 {
                     _estado = Estados.regresar;
                 }
-                    break;
+                break;
 
             case Estados.regresar:
                 ReturnPosition();
-               
+
                 if (_myEnemyFOV.GetDetected())
                 {
                     _estado = Estados.perseguir;
                 }
 
-                if (transform.transform == _initialPosition)
+                if (Vector3.Distance(_initialPosition.position, transform.position) < 0.5f)
                 {
                     _estado = Estados.patrullaje;
                 }
                 break;
-        }    
+        }
     }
     #endregion
 
@@ -126,7 +127,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     void Update()
     {
         //Debug.Log(_myEnemyFOV._detected);
-        //Debug.Log(_estados);
+        Debug.Log(_estado);
         if (!gameObject.GetComponent<EnemyHealth>()._death)
         {
             if(_knockbackCounter <= 0)
