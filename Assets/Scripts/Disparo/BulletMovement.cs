@@ -58,7 +58,5 @@ public class BulletMovement : MonoBehaviour
     {
         //_myRigidbody.velocity = _myRigidbody.velocity * _speed * _direccion * Time.deltaTime;//desplazamiento de la bala
         _myRigidbody.velocity = new Vector2(_speed * _direccionX * Time.deltaTime, _speed * _direccionY * Time.deltaTime);//desplazamiento de la bala
-        Debug.Log(_direccionX);
-        Debug.Log(_direccionY);
     }
 }
