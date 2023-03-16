@@ -6,17 +6,17 @@ using UnityEngine;
 public class EnemyFlyingMovement : MonoBehaviour
 {
     #region Parameters & References
-    private GameObject _player; 
-    private EnemyFOV _myEnemyFOV; 
+    private GameObject _player;
+    private EnemyFOV _myEnemyFOV;
     [SerializeField] private float _enemySpeed = 5f;
-    private Transform _initialPosition;
+    private Vector3 _initialPosition;
     private Rigidbody2D _rigidbody;
     private float _knockbackCounter;
     private bool _isflipped; //Si el enemigo ha dado la vuelta
     private bool _canturn;
     [SerializeField] private float _canturnCOUNTER;
     private float _canturnIniCOUNTER;
-    private enum Estados { patrullaje, perseguir, regresar};
+    private enum Estados { patrullaje, perseguir, regresar };
     private Estados _estado;
     #endregion
 
@@ -31,26 +31,31 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     private void FlyingPatrol() //Método que provoca que el enemigo se mueva de izquierda a derecha
     {
-        _rigidbody.velocity = (transform.right * _enemySpeed);
+        if (!_isflipped)
+        {
+            _rigidbody.velocity = (Vector3.right * _enemySpeed);
+        }
+        else
+        {
+            _rigidbody.velocity = (Vector3.left * _enemySpeed);
+        }
     }
     private void FlyingChase()
     //Provoca que el enemigo empieze a perseguir al jugador.
     {
-        Vector3 _enemydirection = new Vector3(_player.transform.position.x-transform.position.x, _player.transform.position.y-transform.position.y,0f);
-        _rigidbody.velocity = (_enemydirection.normalized*_enemySpeed);
+        Vector2 _enemydirection = _player.transform.position - transform.position;
+        _rigidbody.velocity = (_enemydirection.normalized * _enemySpeed);
     }
 
     private void ReturnPosition()
     //Provoca que los enemigos vuelvan a su posición inicial.
     {
-        {
-            _rigidbody.velocity = ((_initialPosition.position - transform.position).normalized * _enemySpeed);
-        }
+        _rigidbody.velocity = ((_initialPosition - transform.position).normalized * _enemySpeed);
     }
 
     private void Flip()
     {
-        transform.Rotate(0f, 180f, 0f);
+        transform.Rotate(0, 180, 0);
         _isflipped = !_isflipped;
     }
 
@@ -82,7 +87,7 @@ public class EnemyFlyingMovement : MonoBehaviour
                     _estado = Estados.perseguir;
                 }
 
-                if (Vector3.Distance(_initialPosition.position, transform.position) < 0.5f)
+                if (Vector3.Distance(_initialPosition, (Vector2)transform.position) < 0.5f)
                 {
                     _estado = Estados.patrullaje;
                 }
@@ -107,7 +112,6 @@ public class EnemyFlyingMovement : MonoBehaviour
         {
             _canturn = false;
             Flip();
-
         }
     }
     #endregion
@@ -116,21 +120,21 @@ public class EnemyFlyingMovement : MonoBehaviour
     {
         _player = GameManager.instance._player;
         _myEnemyFOV = GetComponent<EnemyFOV>();
-        _initialPosition.position = transform.position;
+        _initialPosition = transform.position;
         _estado = Estados.patrullaje;
-        _rigidbody = GetComponent<Rigidbody2D>();
         _isflipped = false;
         _canturn = true;
         _canturnIniCOUNTER = _canturnCOUNTER;
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        //Debug.Log(_myEnemyFOV._detected);
+        Debug.Log(Mathf.Approximately(transform.position.x, _initialPosition.x) && Mathf.Approximately(transform.position.y, _initialPosition.y));
         Debug.Log(_estado);
         if (!gameObject.GetComponent<EnemyHealth>()._death)
         {
-            if(_knockbackCounter <= 0)
+            if (_knockbackCounter <= 0)
             {
                 UpdateEnemyState(_estado);
             }
@@ -146,11 +150,12 @@ public class EnemyFlyingMovement : MonoBehaviour
             if (_canturnCOUNTER <= 0)
             {
                 _canturn = true;
+                _canturnCOUNTER = _canturnIniCOUNTER;
             }
-        }
-        else
-        {
-            _canturnCOUNTER = _canturnIniCOUNTER;
+            else
+            {
+                _canturn = false;
+            }
         }
     }
 }
