@@ -10,7 +10,7 @@ public class CharacterController : MonoBehaviour
     #region Parameters
     // private set: esta variable puede ser le�da desde otros scripts
     // pero no cambiada
-    public bool _isgrounded { get; private set; }
+    private bool _isgrounded;
     public bool _doublejump { get; private set; }
     public bool _isOnIce{get; private set;}
 
@@ -195,12 +195,9 @@ public class CharacterController : MonoBehaviour
         // para dar efecto de resbalar.
         if(collision.gameObject.layer == 9)
         {
-            _MovementSmoothing = 4;
+            _MovementSmoothing = 4.0f;
         }
-        else
-        {
-            _MovementSmoothing = 0;
-        }
+        
 
         //Cuando Mighty toque layer de Ralentizante (núm 11), la velocidad se reducirá al igual que la fuerza del dash
         if (collision.gameObject.layer == 11 && _isgrounded) //El isgrouded no es necesario ahora, pero puede que de cara al futuro si, PARA MAS PREGUNTAS CONSULTAR A JOSE ANTONIO EL PORQUÉ
@@ -231,6 +228,11 @@ public class CharacterController : MonoBehaviour
         {
             //Vuelve nuestro transform original.
             transform.parent = null;
+        }
+
+        if (collision.gameObject.layer == 9 || !_isgrounded)
+        {
+            _MovementSmoothing = 0.1f;
         }
 
     }

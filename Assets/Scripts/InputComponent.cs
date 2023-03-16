@@ -43,6 +43,7 @@ public class InputComponent : MonoBehaviour
         // (o estamos en el suelo o no hemos gastado el doble salto)
         if ((_myCharacterController.GetIsGrounded() && Input.GetKeyDown(KeyCode.Space)) || (_myCharacterController._doublejump && Input.GetKeyDown(KeyCode.Space)))
         {
+            if (_myCharacterController.GetIsGrounded()) _animator.SetTrigger("_jump");
             _myCharacterController.Jump();
         }
         else if(_myCharacterController.GetIsGrounded() && Input.GetKeyDown(KeyCode.L)) // input del dash
@@ -61,13 +62,13 @@ public class InputComponent : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent.GetAttackMelee())
         {
-            if (!_myCharacterController._isgrounded)
+            if (_myCharacterController.GetIsGrounded())
             {
-                GetComponent<AudioSource>().PlayOneShot(_airMelee);
+                GetComponent<AudioSource>().PlayOneShot(_melee);
             }
             else
             {
-                GetComponent<AudioSource>().PlayOneShot(_melee);
+                GetComponent<AudioSource>().PlayOneShot(_airMelee);
             }
             _animator.SetTrigger("_melee");
             _myMeleeComponent.Attack();
