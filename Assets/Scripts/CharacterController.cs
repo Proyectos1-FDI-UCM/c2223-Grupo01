@@ -195,7 +195,7 @@ public class CharacterController : MonoBehaviour
         // para dar efecto de resbalar.
         if(collision.gameObject.layer == 9)
         {
-            _MovementSmoothing = 4.0f;
+            _MovementSmoothing = 10.0f;
         }
         
 
