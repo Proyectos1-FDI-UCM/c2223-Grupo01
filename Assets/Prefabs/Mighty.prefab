@@ -223,7 +223,7 @@ MonoBehaviour:
   attackRate: 240
   _coolDownMelee: 0.5
   KnockbackForce: 7
-  _KnockbackTime: 0.5
+  _KnockbackTime: 0.4
 --- !u!95 &989400450
 Animator:
   serializedVersion: 4
