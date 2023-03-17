@@ -177,10 +177,6 @@ public class CharacterController : MonoBehaviour
             }
             _isClimbing = false;
         }
-        if (_isgrounded)
-        {
-            _isClimbing = false;
-        }
     }
     #endregion
 
