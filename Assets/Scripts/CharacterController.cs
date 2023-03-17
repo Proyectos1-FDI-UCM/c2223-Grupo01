@@ -40,9 +40,6 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
-    public bool _quieroBajarDeEscaleras {get; private set;}
-    //[SerializeField] private BoxCollider2D _topEscaleras;
-    //[SerializeField] private Transform _topOfLadder; //objeto colocado en la parte superior de las escaleras
     [SerializeField] private Collider2D _currentLadder;
 
     #endregion
@@ -52,7 +49,6 @@ public class CharacterController : MonoBehaviour
     private BoxCollider2D _myCollider2D; // Referencia al Colider del player
     [Header("Layers")]
     [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
-    [SerializeField] private LayerMask _ladderLayer; // Layers que tomamos como escalabes
     private InputComponent _myInputComponent; // Referencia al input
     private Animator _animator; // Referencia al animator
 
@@ -175,8 +171,11 @@ public class CharacterController : MonoBehaviour
         // y se detiene el movimiento vertical del jugador.
         {
             _myRigidBody2D.gravityScale = _initialGravity;
+            if(_isClimbing)
+            {
+                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
+            }
             _isClimbing = false;
-            _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
         }
         if (_isgrounded)
         {
