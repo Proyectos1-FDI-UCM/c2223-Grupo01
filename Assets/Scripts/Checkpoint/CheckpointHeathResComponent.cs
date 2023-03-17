@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CheckpointHeathResComponent : MonoBehaviour
@@ -9,16 +10,19 @@ public class CheckpointHeathResComponent : MonoBehaviour
     private float _playerHealth;
     #endregion
 
+    #region parameters
+    
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         _player = GameManager.instance._player;
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("Vaporeon besto pokimon");
     }
+
 }
