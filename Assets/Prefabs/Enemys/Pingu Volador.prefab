@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8738630133945712333}
   - component: {fileID: -6227665093895633845}
   - component: {fileID: -8762152322370305807}
+  - component: {fileID: -3812363866007510284}
   m_Layer: 0
   m_Name: Pingu Volador
   m_TagString: Untagged
@@ -102,7 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 5
-  _canturnCOUNTER: 0
+  _enemyDetectedSpeed: 7
+  _canturnCOUNTER: 0.1
 --- !u!114 &5020723013684745517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af312661e9daad40a4595d6bc6c9822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionAngle: 45
-  _visionDistance: 10
+  _visionAngle: 75
+  _visionDistance: 6
   _animator: {fileID: 0}
 --- !u!61 &8738630133945712333
 BoxCollider2D:
@@ -142,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23, y: 0.15}
+  m_Size: {x: 0.17, y: 0.15}
   m_EdgeRadius: 0
 --- !u!50 &-6227665093895633845
 Rigidbody2D:
@@ -159,12 +161,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &-8762152322370305807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +184,23 @@ MonoBehaviour:
   _coolDownDeathAnim: 0
   _hurt: {fileID: 0}
   _dead: {fileID: 0}
+--- !u!95 &-3812363866007510284
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897470401433983102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

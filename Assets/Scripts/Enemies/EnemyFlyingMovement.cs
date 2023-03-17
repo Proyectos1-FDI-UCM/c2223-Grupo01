@@ -9,6 +9,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     private GameObject _player;
     private EnemyFOV _myEnemyFOV;
     [SerializeField] private float _enemySpeed = 5f;
+    [SerializeField] private float _enemyDetectedSpeed = 7f;
     private Vector3 _initialPosition;
     private Rigidbody2D _rigidbody;
     private float _knockbackCounter;
@@ -44,7 +45,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     //Provoca que el enemigo empieze a perseguir al jugador.
     {
         Vector2 _enemydirection = _player.transform.position - transform.position;
-        _rigidbody.velocity = (_enemydirection.normalized * _enemySpeed);
+        _rigidbody.velocity = (_enemydirection.normalized * _enemyDetectedSpeed);
     }
 
     private void ReturnPosition()

@@ -135,7 +135,7 @@ MonoBehaviour:
   _canturnCOUNTER: 0.5
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!50 &9140318663064654158
 Rigidbody2D:
   serializedVersion: 4
