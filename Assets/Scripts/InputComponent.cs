@@ -32,10 +32,11 @@ public class InputComponent : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(!_myCharacterController._quieroBajarDeEscaleras)
+        _myCharacterController.Climb(Input.GetAxis("Vertical"));
+        /*if(!_myCharacterController._quieroBajarDeEscaleras)
         {
             _myCharacterController.Climb(Input.GetAxis("Vertical"));
-        }
+        }*/
     }
     private void Update()
     {

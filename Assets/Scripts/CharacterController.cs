@@ -168,17 +168,17 @@ public class CharacterController : MonoBehaviour
         else // Cuando salga del _ladderLayer
         {
             _myRigidBody2D.gravityScale = _initialGravity;
-            if (_isClimbing)
+            /*if (_isClimbing)
             {
                 // Hace que Mighty no se impulse al salir de la escalera
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0); 
-            }
+            }*/
             _isClimbing = false;
 
-            if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
+            /*if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
             {
                 _topEscaleras.isTrigger = false; //no se pueda bajar el tope de las escaleras
-            }
+            }*/
         }
 
         if (_isgrounded)
