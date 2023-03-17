@@ -27,10 +27,19 @@ public class UIManager : MonoBehaviour
     //Redondea el número para sacar los minutos y segundos
     //Coge el archivo de texto del timer para cambiarlo.
     {
-        float minutes = Mathf.FloorToInt(Currenttime / 60);
-        float seconds = Mathf.FloorToInt(Currenttime % 60);
-        _timetext.text = string.Format("{0:0}:{1:00}", minutes, seconds);   
+        if (Currenttime > 0 && _playerLife._health > 0)
+        {
+            float minutes = Mathf.FloorToInt(Currenttime / 60);
+            float seconds = Mathf.FloorToInt(Currenttime % 60);
+            _timetext.text = string.Format("{0:0}:{1:00}", minutes, seconds);
+        }
+        if (Currenttime<0)
+        {
+            _timetext.text = "ERROR";
+            _timetext.color = new Color(1, 0, 0, 1);
+        }
     }
+
 
 
     public void ActualizarInterfaz(float health)

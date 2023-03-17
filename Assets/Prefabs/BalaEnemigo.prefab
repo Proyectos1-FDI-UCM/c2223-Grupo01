@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BalaEnemigo
       objectReference: {fileID: 0}
+    - target: {fileID: 4655259405257507437, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
+      propertyPath: _enemysBulletDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5523820004789212307, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
       propertyPath: _maxLifetime
       value: 1000

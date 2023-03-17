@@ -147,7 +147,5 @@ public class EnemyMovement : MonoBehaviour
                 _canturnCOUNTER = _canturnIniCOUNTER;
             }
         }
-        Debug.Log(_enemydetectionSpeed);
-        Debug.Log(_enemySpeed);
     }
 }
