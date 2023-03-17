@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class EscaleraController : MonoBehaviour
 {
+    //Este script lo tendrá Mighty para ser capaz de subir y bajar escaleras.
     #region parameters
-    private float _velocidadSubida;
-    private float _velocidadBajada;
+    private float _velocidadEscalada;
     private float _gravedadInicial;
     #endregion
-    
+
     #region references
     [SerializeField] private BoxCollider2D _mightyCollider;
     [SerializeField] private Rigidbody2D _mightyRigidBody;
-    private BoxCollider2D _escalerasCollider;
     #endregion
 
     #region Metodos
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.layer == 8)
+        {
+            _mightyRigidBody.gravityScale = 0;
+        }
+    }
     void OnCollisionExit2D(Collision2D other)
     {
         if(other.gameObject.layer == 8)
         {
-
+            _mightyRigidBody.gravityScale = _gravedadInicial;
         }
     }
     #endregion
@@ -29,11 +35,23 @@ public class EscaleraController : MonoBehaviour
     void Start()
     {
         _gravedadInicial = _mightyRigidBody.gravityScale;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetAxis("Vertical") > 0)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0,_velocidadEscalada);
+        }
+        else if(Input.GetAxis("Vertical") < 0)
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, -_velocidadEscalada);
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
     }
 }
