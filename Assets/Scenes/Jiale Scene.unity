@@ -20566,12 +20566,8 @@ MonoBehaviour:
   _enemySpeed: 0
   _enemydetectionSpeed: 0
   _maxDistanceDetection: 0
-  KnockbackForce: 0
-  KnockbackCounter: 0
-  KnockbackTotalTime: 0
-  KnockFromRight: 0
   _canturnCOUNTER: 0
-  _ground:
+  _groundLayer:
     serializedVersion: 2
     m_Bits: 0
 --- !u!82 &1281900313
@@ -20828,6 +20824,10 @@ PrefabInstance:
     - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: attackDamage
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _KnockbackTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5106214237236784140, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _coolDownMelee
@@ -33461,6 +33461,10 @@ PrefabInstance:
     - target: {fileID: -727916230240251004, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: _enemySpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -727916230240251004, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
+      propertyPath: _canturnCOUNTER
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -727916230240251004, guid: 1e3e53a305a569843a6b17586305621c, type: 3}
       propertyPath: _enemyMovementSmoothing
