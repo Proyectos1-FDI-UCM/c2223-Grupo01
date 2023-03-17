@@ -40,7 +40,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
-    [SerializeField] private Collider2D _currentLadder;
+    private Collider2D _currentLadder;
     // private float _ladderTop;
     // [SerializeField] private float _ladderTopOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
     #endregion
