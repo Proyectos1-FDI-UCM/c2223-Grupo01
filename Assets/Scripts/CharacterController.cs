@@ -161,7 +161,7 @@ public class CharacterController : MonoBehaviour
     {
         //Se comprueba si el jugador está moviéndose verticalmente o ya está subiendo,
         //si la escalera actual no es nula y está en la capa "Escalable".
-        if ((YAxismove != 0 || _isClimbing) && _currentLadder != null && _currentLadder.gameObject.layer == LayerMask.NameToLayer("Escalable"))
+        if ((YAxismove != 0 || _isClimbing) && _currentLadder != null && _currentLadder.gameObject.layer == 8)
         {
             //Se establece la velocidad del jugador en la dirección vertical 
             //y se desactiva la gravedad para que el jugador pueda subir por la escalera.
@@ -177,6 +177,10 @@ public class CharacterController : MonoBehaviour
             _myRigidBody2D.gravityScale = _initialGravity;
             _isClimbing = false;
             _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
+        }
+        if (_isgrounded)
+        {
+            _isClimbing = false;
         }
     }
     #endregion
@@ -228,7 +232,6 @@ public class CharacterController : MonoBehaviour
         {
             _MovementSmoothing = 0.1f;
         }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
