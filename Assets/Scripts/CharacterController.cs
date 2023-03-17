@@ -11,8 +11,8 @@ public class CharacterController : MonoBehaviour
     // private set: esta variable puede ser leida desde otros scripts
     // pero no cambiada
     private bool _isgrounded;
-    public bool _doublejump { get; private set; }
-    public bool _isOnIce{get; private set;}
+    public bool _doublejump {get; private set;}
+    public bool _isOnIce {get; private set;}
 
     [Header("Basic Movement")]
     [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     [SerializeField] private Collider2D _currentLadder;
-
+    [SerializeField]private float _topLadderOffset = 3f; //la distancia desde la escalera donde se detendrá el jugador
     #endregion
 
     #region References
@@ -155,20 +155,27 @@ public class CharacterController : MonoBehaviour
     public void Climb(float YAxismove)
     //Metodo de escalada.
     {
+        if ((YAxismove != 0 || _isClimbing) && _currentLadder != null && _currentLadder.gameObject.layer == 8)
         //Se comprueba si el jugador está moviéndose verticalmente o ya está subiendo,
         //si la escalera actual no es nula y está en la capa "Escalable".
-        if ((YAxismove != 0 || _isClimbing) && _currentLadder != null && _currentLadder.gameObject.layer == 8)
-        {
-            //Se establece la velocidad del jugador en la dirección vertical 
-            //y se desactiva la gravedad para que el jugador pueda subir por la escalera.
+        { 
+            //Se establece la velocidad del jugador en la dirección vertical
+            //y se desactiva la gravedad para que el jugador pueda subir por la escalera.  
             Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
             _myRigidBody2D.velocity = targetVelocity;
             _myRigidBody2D.gravityScale = 0;
             _isClimbing = true;
+
+            //check si ha llegado a la cima de la escalera
+            float ladderTop = _currentLadder.transform.position.y + _currentLadder.bounds.extents.y;
+            if(transform.position.y >= ladderTop - _topLadderOffset)
+            {
+                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
+            }
         }
         else
-        // De lo contrario, se restaura la gravedad del objeto, se establece isClimbing a false
-        // y se detiene el movimiento vertical del jugador.
+        // De lo contrario, se restaura la gravedad, se establece isClimbing a false
+        // y se detiene el movimiento vertical.
         {
             _myRigidBody2D.gravityScale = _initialGravity;
             if(_isClimbing)
@@ -246,7 +253,6 @@ public class CharacterController : MonoBehaviour
         {
             _currentLadder = null;
             _isClimbing = false;
-            _myRigidBody2D.gravityScale = _initialGravity;
         }
     }
     #endregion
