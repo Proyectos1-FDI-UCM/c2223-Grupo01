@@ -82,6 +82,10 @@ public class EnemyHealth : MonoBehaviour
         {
             collision.gameObject.GetComponent<MightyLifeComponent>().OnPlayerHit(_damage);
         }
+        if (collision.gameObject.layer == 10)
+        {
+            Die();
+        }
     }
     #endregion
 
