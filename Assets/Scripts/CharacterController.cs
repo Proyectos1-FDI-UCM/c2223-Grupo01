@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     public bool _quieroUsarEscalera {get; private set;}
-    //[SerializeField] private BoxCollider2D _topEscaleras;
+    [SerializeField] private BoxCollider2D _topEscaleras;
     #endregion
 
     #region References
@@ -182,14 +182,13 @@ public class CharacterController : MonoBehaviour
             }*/
             _isClimbing = false;
 
-
             /*if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
             {
                 _topEscaleras.isTrigger = false; //no se pueda bajar el tope de las escaleras
             }*/
         }
 
-        if (_isgrounded)
+        if (_isgrounded) //para no volar
         {
             _isClimbing = false;
         }
