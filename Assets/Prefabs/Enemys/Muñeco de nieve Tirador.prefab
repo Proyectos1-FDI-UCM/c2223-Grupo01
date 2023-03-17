@@ -287,7 +287,7 @@ MonoBehaviour:
   _bullet: {fileID: 1256174170972558883, guid: 920b985323cc86f4f8aa37d0868ec45e, type: 3}
   _coolDownShoot: 1
   _bulletSpawnTransform: {fileID: 676700370213554566}
-  _patrolFlip: 0.5
+  _patrolFlip: 1.5
   _disparoNormal: {fileID: 0}
 --- !u!114 &3758571706154678328
 MonoBehaviour:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 45
-  _visionDistance: 10
+  _visionDistance: 5
   _animator: {fileID: 0}
 --- !u!1 &8362032265566184348
 GameObject:

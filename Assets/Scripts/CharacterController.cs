@@ -175,7 +175,7 @@ public class CharacterController : MonoBehaviour
             }
             _isClimbing = false;
 
-            if(!_quieroBajarDeEscaleras) //da error si no hay topescaleras
+            if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
             {
                 _topEscaleras.isTrigger = false; //no se pueda bajar el tope de las escaleras
             }
