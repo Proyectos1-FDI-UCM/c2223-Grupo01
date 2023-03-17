@@ -36,9 +36,10 @@ public class UIManager : MonoBehaviour
         if (Currenttime<0)
         {
             _timetext.text = "ERROR";
-            _timetext.color = new Color(1,0,0,1);
+            _timetext.color = new Color(1, 0, 0, 1);
         }
     }
+
 
 
     public void ActualizarInterfaz(float health)
