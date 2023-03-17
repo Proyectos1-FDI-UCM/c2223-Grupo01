@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     [SerializeField] private Collider2D _currentLadder;
     private float _ladderTop = 0;
-    [SerializeField] private float _topLadderOffset = 3f; //la distancia desde la escalera donde se detendrá el jugador
+    [SerializeField] private float _topLadderOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
     #endregion
 
     #region References
@@ -168,6 +168,7 @@ public class CharacterController : MonoBehaviour
             _isClimbing = true;
 
             //check si ha llegado a la cima de la escalera
+            _ladderTop = _currentLadder.transform.position.y + _currentLadder.bounds.extents.y - _currentLadder.transform.localPosition.y;
             if(transform.position.y >= _ladderTop - _topLadderOffset)
             {
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
@@ -275,10 +276,6 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        if(_currentLadder != null)
-        {
-            _ladderTop = _currentLadder.transform.position.y + _currentLadder.bounds.extents.y;
-        }
         Debug.Log(_ladderTop);
         
         _isgrounded = IsGrounded();
