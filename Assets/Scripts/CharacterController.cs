@@ -20,7 +20,7 @@ public class CharacterController : MonoBehaviour
     private float _initialMovementSpeedX; // velocidad inicial con la que se moverá mighty en el eje x. Util para poder reconfigurar la velocidad, cuando estas en una plataforma que ralentiza por ejemplo
     [SerializeField] private float _slowSpeedX; // velocidad con la que se moverá mighty en el eje x por las plataformas ralentizantes
 
-    private Vector3 _velocity = Vector3.zero;
+    private Vector3 _velocity = Vector3.zero; // velocidad en MoveXAxis
 
     private bool _aterrizado; // booleano que detecta cuando aterrizamos en el suelo
 
@@ -158,45 +158,25 @@ public class CharacterController : MonoBehaviour
 
     //metodo de escalada
     public void Climb(float YAxismove)
-    //Cuando haya yaismove y este tocando ladderlayer, sube o baja escaleras
-    //cuando salga de las escaleras que se quede sobre ellas hasta que reciba yaxismove
+    //se comprueba si el jugador está moviéndose verticalmente o ya está subiendo,
+    //si la escalera actual no es nula y está en la capa "Escalable".
     {
         if ((YAxismove != 0 || _isClimbing) && _currentLadder != null && _currentLadder.gameObject.layer == LayerMask.NameToLayer("Escalable"))
         {
-            //_quieroBajarDeEscaleras = false;
+            //Se establece la velocidad del jugador en la dirección vertical 
+            //y se desactiva la gravedad para que el jugador pueda subir por la escalera.
             Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
             _myRigidBody2D.velocity = targetVelocity;
             _myRigidBody2D.gravityScale = 0;
-
             _isClimbing = true;
-            //_topEscaleras.isTrigger = true; //podemos subir el tope de las escaleras
         }
         else
-        // Cuando salga del _ladderLayer se vuelve a la gravedad inicial
-        //si estamos encima de escaleras, que se pare sobre ellas (por rayos o trigger?)
-        //cuando detecte que salimos de top escaleras (trigger), que se pare movimiento en eje Y
-        //a no ser que pulsemos yaxismove de nuevo
+        // De lo contrario, se restaura la gravedad del objeto, se establece isClimbing a false
+        // y se detiene el movimiento vertical del jugador.
         {
             _myRigidBody2D.gravityScale = _initialGravity;
-            
-            /*if (_isClimbing)
-            {
-                // Hace que Mighty no se impulse al salir de la escalera
-                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0); 
-            }*/
             _isClimbing = false;
-            _myRigidbody2D.velocity = new Vector2(_myRigidbody2D.velocity.x, 0);
-            
-
-            /*if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
-            {
-                _topEscaleras.isTrigger = false; //no se pueda bajar el tope de las escaleras
-            }*/
-        }
-
-        if (_isgrounded) //para no volar
-        {
-            _isClimbing = false;
+            _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
         }
     }
     #endregion
@@ -249,32 +229,27 @@ public class CharacterController : MonoBehaviour
         }
 
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if(collision.gameObject.layer == 15 && _myInputComponent._lookDOWN)
-        //si estoy en Layer Top Escaleras y miramos abajo (getaxisvertical < 0)
-        {
-            //entonces queremos bajar por las escaleras
-            _quieroBajarDeEscaleras = true; 
-        }
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //se comprueba si el objeto con el que el jugador ha chocado tiene la capa "Escalable"
+        // y se asigna a currentLadder.
         if (LayerMask.GetMask("Escalable") == (LayerMask.GetMask(LayerMask.LayerToName(other.gameObject.layer))))
         {
             _currentLadder = other;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
-{
-    if (other == _currentLadder)
+    {
+        // Si el objeto que el jugador ha dejado es la escalera actual
+        // y se establece currentLadder a null, se establece isClimbing a false
+        // y se restaura la gravedad inicial del objeto.
+        if (other == _currentLadder)
         {
             _currentLadder = null;
             _isClimbing = false;
-            _myRigidbody2D.gravityScale = _initialGravity;
+            _myRigidBody2D.gravityScale = _initialGravity;
         }
-}
-
+    }
     #endregion
     private void Start()
     {
@@ -295,12 +270,6 @@ public class CharacterController : MonoBehaviour
 
     private void Update()
     {
-        
-        /*if(_quieroBajarDeEscaleras)
-        {
-            _topEscaleras.isTrigger = true; //se puede bajar del tope
-        }*/
-        //Comprueba si estamos tocando el suelo
         _isgrounded = IsGrounded();
 
         if (!_aterrizado && _isgrounded) // si estamos atterizando en el suelo se produce un sonido, si no está en el suelo aterrizado es false
