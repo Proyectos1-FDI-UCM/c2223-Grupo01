@@ -15,12 +15,24 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioClip _dead;
+    private int _numbalasCongelado;
 
     public bool _death { get; private set; }
     #endregion
 
     #region References
     private Animator _animator;
+    #endregion
+
+    #region getter && setter
+    public int GetNumBalasCongelado()
+    {
+        return _numbalasCongelado;
+    }
+    public void SetNumBalasCongelado(int numBalas)
+    {
+        _numbalasCongelado = numBalas;
+    }
     #endregion
 
     #region methods
@@ -81,6 +93,7 @@ public class EnemyHealth : MonoBehaviour
         _enemyFlyingMovement = GetComponent <EnemyFlyingMovement>();
         _death = false;
         _animator = GetComponent<Animator>();
+        _numbalasCongelado = 0;
     }
 
     private void Update()

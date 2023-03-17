@@ -2,14 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private float _enemySpeed = 5f;
-    [SerializeField] private float _enemydetectionSpeed = 3f;
+    [SerializeField] private float _enemySpeed = 3f;
+    [SerializeField] private float _enemydetectionSpeed = 5f;
     [SerializeField] private float _maxDistanceDetection = 2f;
     private float _initialSpeed;
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
@@ -32,6 +33,22 @@ public class EnemyMovement : MonoBehaviour
     public void SetcknockBackCounter(float knockbackCounter)
     {
         _knockbackCounter = knockbackCounter;
+    }
+    public float GetEnemySpeed()
+    {
+        return _enemySpeed;
+    }
+    public void SetEnemySpeed(float newEsnemySpeed)
+    {
+        _enemySpeed = newEsnemySpeed;
+    }
+    public float GetEnemyDetectionSpeed()
+    {
+        return _enemydetectionSpeed;
+    }
+    public void SetEnemyDetectionSpeed(float newEsnemySpeed)
+    {
+        _enemydetectionSpeed = newEsnemySpeed;
     }
     #endregion
 
@@ -130,5 +147,7 @@ public class EnemyMovement : MonoBehaviour
                 _canturnCOUNTER = _canturnIniCOUNTER;
             }
         }
+        Debug.Log(_enemydetectionSpeed);
+        Debug.Log(_enemySpeed);
     }
 }

@@ -1,34 +1,93 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class BulletCollisionComponent : MonoBehaviour
 {
     #region Parameters
-    [SerializeField] private int _bulletDamage;
+    [Header("Disparo al player")]
+    [SerializeField] private int _enemysBulletDamage;
+    [Header("Disparo Normal")]
+    [SerializeField] private int _normalBulletDamage;
+    [Header("Disparo de Hielo")]
+    [SerializeField] private int _iceBulletDamage;
+    [SerializeField] private int _ralentizado;
 
     public enum typeOfDamage { Normal, Ice, Fire };
     [SerializeField]private typeOfDamage _actualDamage;
     #endregion
 
     #region methods
-    private void OnCollisionStay2D(Collision2D collision) // Colisiones de la bala
+
+    private void Hit(GameObject collision)
     {
-        if(collision.gameObject != GameManager.instance._player)
+        if (collision.GetComponent<EnemyHealth>() != null)
         {
-            Destroy(gameObject);
-            if (collision.gameObject.GetComponent<EnemyHealth>() != null)
-            {
-                collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(_bulletDamage);
-            }
+            OnHitEnemy(collision);
         }
-        else if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
+        else if (collision.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
         {
-            collision.gameObject.GetComponent<MightyLifeComponent>().OnPlayerHit(_bulletDamage);
+            collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_enemysBulletDamage);
         }
-        Destroy(gameObject);
     }
 
+    private void OnHitEnemy(GameObject collision)
+    {
+        switch (_actualDamage)
+        {
+            case typeOfDamage.Normal:
+                {
+                    NormalHit(collision.gameObject);
+                    break;
+                }
 
+            case typeOfDamage.Ice:
+                {
+                    IcelHit(collision.gameObject);
+                    break;
+                }
+
+            case typeOfDamage.Fire:
+                {
+                    break;
+                }
+        }
+    }
+
+    // Comprueba con qué objeto hemos colisionado y le aplica su daño
+    private void NormalHit(GameObject collision)
+    {
+        if (collision.GetComponent<EnemyHealth>() != null)
+        {
+            collision.GetComponent<EnemyHealth>().TakeDamage(_normalBulletDamage);
+        }
+    }
+
+    private void IcelHit(GameObject collision)
+    {
+
+        if (collision.GetComponent<EnemyMovement>() != null)
+        {
+            collision.GetComponent<EnemyHealth>().TakeDamage(_iceBulletDamage);
+            collision.GetComponent<EnemyMovement>().SetEnemySpeed(collision.GetComponent<EnemyMovement>().GetEnemySpeed() - _ralentizado);
+            collision.GetComponent<EnemyMovement>().SetEnemyDetectionSpeed(collision.GetComponent<EnemyMovement>().GetEnemyDetectionSpeed() - _ralentizado);
+            collision.GetComponent<EnemyHealth>().SetNumBalasCongelado(collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() + 1);
+            if(collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() == 3)
+            {
+                collision.GetComponent<EnemyMovement>().SetEnemySpeed(0);
+                collision.GetComponent<EnemyMovement>().SetEnemyDetectionSpeed(0);
+            }
+        }
+    }
+
+    #endregion
+
+    #region collision methods
+    private void OnCollisionEnter2D(Collision2D collision) // Colisiones de la bala
+    {
+        Hit(collision.gameObject);
+        Destroy(gameObject);
+    }
     #endregion
 }
