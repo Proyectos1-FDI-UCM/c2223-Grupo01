@@ -156,11 +156,11 @@ public class CharacterController : MonoBehaviour
         _dash = true;
     }
 
-    //metodo de escalada
     public void Climb(float YAxismove)
-    //se comprueba si el jugador está moviéndose verticalmente o ya está subiendo,
-    //si la escalera actual no es nula y está en la capa "Escalable".
+    //Metodo de escalada.
     {
+        //Se comprueba si el jugador está moviéndose verticalmente o ya está subiendo,
+        //si la escalera actual no es nula y está en la capa "Escalable".
         if ((YAxismove != 0 || _isClimbing) && _currentLadder != null && _currentLadder.gameObject.layer == LayerMask.NameToLayer("Escalable"))
         {
             //Se establece la velocidad del jugador en la dirección vertical 
@@ -193,7 +193,7 @@ public class CharacterController : MonoBehaviour
         
 
         //Cuando Mighty toque layer de Ralentizante (núm 11), la velocidad se reducirá al igual que la fuerza del dash
-        if (collision.gameObject.layer == 11 && _isgrounded) //El isgrouded no es necesario ahora, pero puede que de cara al futuro si, PARA MAS PREGUNTAS CONSULTAR A JOSE ANTONIO EL PORQUÉ
+        if (collision.gameObject.layer == 11 && _isgrounded) //El isgrounded no es necesario ahora, pero puede que de cara al futuro si, PARA MAS PREGUNTAS CONSULTAR A JOSE ANTONIO EL PORQUÉ
         {
             _movementSpeedX = _slowSpeedX;
             _dashForce = _smallDashForce;
@@ -202,7 +202,8 @@ public class CharacterController : MonoBehaviour
         //Si colisiona con la Plataforma Móvil.
         if(collision.gameObject.layer == 16)
         {   
-            //Hace que Mighty se mueva acorde a la plataforma móvil en lugar de quedarse en la misma posición al pararse. En resumen, hace que la plataforma transporte a Mighty.
+            //Hace que Mighty se mueva acorde a la plataforma móvil en lugar de quedarse en la misma posición al pararse.
+            //En resumen, hace que la plataforma transporte a Mighty.
             transform.parent = collision.transform;
         }
     }
@@ -233,7 +234,7 @@ public class CharacterController : MonoBehaviour
     {
         //se comprueba si el objeto con el que el jugador ha chocado tiene la capa "Escalable"
         // y se asigna a currentLadder.
-        if (LayerMask.GetMask("Escalable") == (LayerMask.GetMask(LayerMask.LayerToName(other.gameObject.layer))))
+        if (other.gameObject.layer == 8)
         {
             _currentLadder = other;
         }
