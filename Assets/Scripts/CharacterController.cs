@@ -8,7 +8,7 @@ using UnityEngine.Windows;
 public class CharacterController : MonoBehaviour
 {
     #region Parameters
-    // private set: esta variable puede ser le�da desde otros scripts
+    // private set: esta variable puede ser leida desde otros scripts
     // pero no cambiada
     private bool _isgrounded;
     public bool _doublejump { get; private set; }
@@ -40,8 +40,9 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
-    public bool _quieroUsarEscalera {get; private set;}
-    [SerializeField] private BoxCollider2D _topEscaleras;
+    public bool _quieroBajarDeEscaleras {get; private set;}
+    //[SerializeField] private BoxCollider2D _topEscaleras;
+    private Transform _topOfLadder; //objeto colocado en la parte superior de las escaleras
     #endregion
 
     #region References
@@ -164,6 +165,7 @@ public class CharacterController : MonoBehaviour
             Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
             _myRigidBody2D.velocity = targetVelocity;
             _myRigidBody2D.gravityScale = 0;
+
             _isClimbing = true;
             //_topEscaleras.isTrigger = true; //podemos subir el tope de las escaleras
         }
@@ -181,6 +183,12 @@ public class CharacterController : MonoBehaviour
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0); 
             }*/
             _isClimbing = false;
+
+            if(_myRigidBody2D.IsTouching(_topOfLadder.GetComponent<Collider2D>()) && YAxismove == 0)
+            {
+                // Detiene el movimiento vertical del personaje
+                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
+            }
 
             /*if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
             {
@@ -249,14 +257,14 @@ public class CharacterController : MonoBehaviour
         //si estoy en Layer Top Escaleras y miramos abajo (getaxisvertical < 0)
         {
             //entonces queremos bajar por las escaleras
-            _quieroUsarEscalera = true; 
+            _quieroBajarDeEscaleras = true; 
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.layer == 8) //layer de escaleras
         {
-            _quieroUsarEscalera = false;
+            _quieroBajarDeEscaleras = false;
         }
     }
     #endregion
@@ -280,7 +288,7 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         
-        if(_quieroUsarEscalera)
+        if(_quieroBajarDeEscaleras)
         {
             _topEscaleras.isTrigger = true; //se puede bajar del tope
         }
