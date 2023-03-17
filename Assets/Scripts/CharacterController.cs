@@ -40,8 +40,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
-    public bool _quieroBajarDeEscaleras {get; private set;}
-    [SerializeField] private BoxCollider2D _topEscaleras;
+    public bool _quieroUsarEscalera {get; private set;}
+    //[SerializeField] private BoxCollider2D _topEscaleras;
     #endregion
 
     #region References
@@ -155,25 +155,33 @@ public class CharacterController : MonoBehaviour
 
     //metodo de escalada
     public void Climb(float YAxismove)
+    //Cuando haya yaismove y este tocando ladderlayer, sube o baja escaleras
+    //cuando salga de las escaleras que se quede sobre ellas hasta que reciba yaxismove
     {
         if ((YAxismove != 0 || _isClimbing) && _myRigidBody2D.IsTouchingLayers(_ladderLayer))
         {
-            _quieroBajarDeEscaleras = false;
+            //_quieroBajarDeEscaleras = false;
             Vector2 targetVelocity = new Vector2(_myRigidBody2D.velocity.x, YAxismove * _climbVelocity);
             _myRigidBody2D.velocity = targetVelocity;
             _myRigidBody2D.gravityScale = 0;
             _isClimbing = true;
-            _topEscaleras.isTrigger = true; //podemos subir el tope de las escaleras
+            //_topEscaleras.isTrigger = true; //podemos subir el tope de las escaleras
         }
-        else // Cuando salga del _ladderLayer
+        else
+        // Cuando salga del _ladderLayer se vuelve a la gravedad inicial
+        //si estamos encima de escaleras, que se pare sobre ellas (por rayos o trigger?)
+        //cuando detecte que salimos de top escaleras (trigger), que se pare movimiento en eje Y
+        //a no ser que pulsemos yaxismove de nuevo
         {
             _myRigidBody2D.gravityScale = _initialGravity;
+            
             /*if (_isClimbing)
             {
                 // Hace que Mighty no se impulse al salir de la escalera
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0); 
             }*/
             _isClimbing = false;
+
 
             /*if(!_quieroBajarDeEscaleras && _topEscaleras != null) //da error si no hay topescaleras
             {
@@ -242,14 +250,14 @@ public class CharacterController : MonoBehaviour
         //si estoy en Layer Top Escaleras y miramos abajo (getaxisvertical < 0)
         {
             //entonces queremos bajar por las escaleras
-            _quieroBajarDeEscaleras = true; 
+            _quieroUsarEscalera = true; 
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.layer == 8) //layer de escaleras
         {
-            _quieroBajarDeEscaleras = false;
+            _quieroUsarEscalera = false;
         }
     }
     #endregion
@@ -273,7 +281,7 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         
-        if(_quieroBajarDeEscaleras)
+        if(_quieroUsarEscalera)
         {
             _topEscaleras.isTrigger = true; //se puede bajar del tope
         }
