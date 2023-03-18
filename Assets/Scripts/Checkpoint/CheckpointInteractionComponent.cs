@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.UIElements;
 using UnityEngine;
 
@@ -15,16 +16,22 @@ public class CheckpointInteractionComponent : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
-    void Start()
-    {
-        _player = GameManager.instance._player;
-    }
+    //void Start()
+    //{
+
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag(_playertag))
         {
-            Debug.Log("Vaporeon besto pokimon");
+            _player = collision.gameObject;
+
+            Debug.Log(_player.name);
+
+
+
+
         }
     }
 }

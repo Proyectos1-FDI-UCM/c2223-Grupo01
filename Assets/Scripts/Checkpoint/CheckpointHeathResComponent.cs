@@ -11,7 +11,7 @@ public class CheckpointHeathResComponent : MonoBehaviour
     #endregion
 
     #region parameters
-    
+
     #endregion
 
     // Start is called before the first frame update
@@ -19,10 +19,4 @@ public class CheckpointHeathResComponent : MonoBehaviour
     {
         _player = GameManager.instance._player;
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-    }
-
 }
