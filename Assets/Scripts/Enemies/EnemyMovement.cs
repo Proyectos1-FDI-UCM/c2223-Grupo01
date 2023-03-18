@@ -108,10 +108,6 @@ public class EnemyMovement : MonoBehaviour
                 //Si el enemigo no ha detectado al jugador, este seguirá su patrón normal
                 if (!_myEnemyFOV.GetDetected())
                 {
-                    // la velocidad de patrullaje es la inicial
-
-                    _enemySpeed = _initialSpeed;
-
                  _rigidbody.velocity = (transform.right * _enemySpeed);
                 }
                 //Si el enemigo nos detecta. 
