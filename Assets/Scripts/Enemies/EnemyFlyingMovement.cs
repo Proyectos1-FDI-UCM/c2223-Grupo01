@@ -26,6 +26,22 @@ public class EnemyFlyingMovement : MonoBehaviour
     {
         _knockbackCounter = knockbackCounter;
     }
+    public float GetEnemySpeed()
+    {
+        return _enemySpeed;
+    }
+    public void SetEnemySpeed(float newEsnemySpeed)
+    {
+        _enemySpeed = newEsnemySpeed;
+    }
+    public float GetEnemyDetectedSpeed()
+    {
+        return _enemyDetectedSpeed;
+    }
+    public void SetEnemyDetectedSpeed(float newEsnemySpeed)
+    {
+        _enemyDetectedSpeed = newEsnemySpeed;
+    }
     #endregion
 
     #region Methods

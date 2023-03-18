@@ -14,6 +14,9 @@ public class BulletCollisionComponent : MonoBehaviour
     [SerializeField] private int _iceBulletDamage;
     [SerializeField] private int _ralentizado;
 
+    private EnemyMovement _enemyMovement;
+    private EnemyFlyingMovement _enemyFlyingMovement;
+    private EnemyHealth _enemyHealth;
     public enum typeOfDamage { Normal, Ice, Fire };
     [SerializeField]private typeOfDamage _actualDamage;
     #endregion
@@ -66,18 +69,43 @@ public class BulletCollisionComponent : MonoBehaviour
 
     private void IcelHit(GameObject collision)
     {
+        _enemyHealth = collision.GetComponent<EnemyHealth>();
+        _enemyHealth.TakeDamage(_iceBulletDamage);
+        if(collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() < 3)
+        {
+            _enemyHealth.SetNumBalasCongelado(_enemyHealth.GetNumBalasCongelado() + 1);
+            if (collision.GetComponent<EnemyMovement>() != null)
+            {
+                _enemyMovement = collision.GetComponent<EnemyMovement>();
+                _enemyMovement.SetEnemySpeed(_enemyMovement.GetEnemySpeed() - _ralentizado);
+                _enemyMovement.SetEnemyDetectionSpeed(_enemyMovement.GetEnemyDetectionSpeed() - _ralentizado);
+            }
+            else if (collision.GetComponent<EnemyFlyingMovement>() != null)
+            {
+                _enemyFlyingMovement = collision.GetComponent<EnemyFlyingMovement>();
+                _enemyFlyingMovement.SetEnemySpeed(_enemyFlyingMovement.GetEnemySpeed() - _ralentizado);
+                _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyDetectedSpeed() - _ralentizado);
+            }
+        }
+        
+        if (collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() == 3)
+        {
+            Congelado(collision);
+        }
+    }
 
+    private void Congelado(GameObject collision)
+    {
         if (collision.GetComponent<EnemyMovement>() != null)
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage(_iceBulletDamage);
-            collision.GetComponent<EnemyMovement>().SetEnemySpeed(collision.GetComponent<EnemyMovement>().GetEnemySpeed() - _ralentizado);
-            collision.GetComponent<EnemyMovement>().SetEnemyDetectionSpeed(collision.GetComponent<EnemyMovement>().GetEnemyDetectionSpeed() - _ralentizado);
-            collision.GetComponent<EnemyHealth>().SetNumBalasCongelado(collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() + 1);
-            if(collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() == 3)
-            {
-                collision.GetComponent<EnemyMovement>().SetEnemySpeed(0);
-                collision.GetComponent<EnemyMovement>().SetEnemyDetectionSpeed(0);
-            }
+            _enemyMovement.SetEnemySpeed(0);
+            _enemyMovement.SetEnemyDetectionSpeed(0);
+        }
+        else if (collision.GetComponent<EnemyFlyingMovement>() != null)
+        {
+            _enemyFlyingMovement.SetEnemySpeed(0);
+            _enemyFlyingMovement.SetEnemyDetectedSpeed(0);
+            collision.GetComponent<Rigidbody2D>().gravityScale = 10;
         }
     }
 
