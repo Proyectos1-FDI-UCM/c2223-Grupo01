@@ -13,24 +13,28 @@ public class CheckpointInteractionComponent : MonoBehaviour
     #endregion
 
     #region parameters
-    [SerializeField] private string _playertag;
-    [SerializeField] private float _ammounthealthres;
+    [SerializeField] private float _healthRes;
+    [SerializeField] private float _timeRes;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag(_playertag))
+        if(collision.CompareTag("Player"))
         {
-            // referencias en la colisión
+            // referencias en la colision
             _player = collision.gameObject;
             _mightylifecomponet = _player.GetComponent<MightyLifeComponent>();
 
             // sanación de Mighty
-            _mightylifecomponet._health = _ammounthealthres;
+            _mightylifecomponet._health = _healthRes;
             if (GameManager.instance._UImanager != null)
             {
                 GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponet._health);
             }
+
+            // resetep del cronometro
+            
+
         }
     }
 }

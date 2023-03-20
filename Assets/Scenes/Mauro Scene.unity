@@ -2078,6 +2078,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7210435591445313505, guid: 715fe3e7d9e970348885015daa4ccc55, type: 3}
+      propertyPath: _timeres
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210435591445313505, guid: 715fe3e7d9e970348885015daa4ccc55, type: 3}
+      propertyPath: _healthres
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210435591445313505, guid: 715fe3e7d9e970348885015daa4ccc55, type: 3}
       propertyPath: _playertag
       value: Player
       objectReference: {fileID: 0}
