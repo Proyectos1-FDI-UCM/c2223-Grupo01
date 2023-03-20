@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlataformaMovil : MonoBehaviour
@@ -8,37 +9,35 @@ public class PlataformaMovil : MonoBehaviour
     [SerializeField] private GameObject _objetoaMover;
     [SerializeField] private Transform _puntoDePartida;
     [SerializeField] private Transform _puntoFinal;
+    Rigidbody2D rb;
     #endregion
+
     #region Parameters
     [SerializeField] private float _velocidad;
-    private Vector3 _moverHacia;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         //Queremos que al inicar se mueva hacia el punto final.
-        _moverHacia = _puntoFinal.position;
+        rb.MovePosition(_puntoFinal.position * Time.deltaTime * _velocidad);
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        //La posición de la plataforma cambia según MoveTowards("Posición actual", "Hacia dónde se mueve", "Velocidad con la que se mueve")
-        _objetoaMover.transform.position = Vector3.MoveTowards(_objetoaMover.transform.position, _moverHacia, _velocidad * Time.deltaTime);
-
         //Si la posición de la plataforma == posición final del recorrido...
-        if(_objetoaMover.transform.position == _puntoFinal.position)
+        if (_objetoaMover.transform.position == _puntoFinal.position)
         {
             //...se mueve hacia el punto de partida.
-            _moverHacia = _puntoDePartida.position;
+            rb.MovePosition(_puntoDePartida.position * Time.deltaTime * _velocidad);
         }
 
         //Lo mismo que arriba pero al revés.
-        if(_objetoaMover.transform.position == _puntoDePartida.position)
+        if (_objetoaMover.transform.position == _puntoDePartida.position)
         {
-            _moverHacia = _puntoFinal.position;
+            rb.MovePosition(_puntoFinal.position * Time.deltaTime * _velocidad);  
         }
+        
     }
 }
 
