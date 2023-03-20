@@ -1,42 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlataformaMovil : MonoBehaviour
 {
     #region References
-    [SerializeField] private Transform _puntoDePartida;
-    [SerializeField] private Transform _puntoFinal;
-    Rigidbody2D rb;
+    [SerializeField] GameObject ObjetoaMover;
+    [SerializeField] Transform punto1, punto2;
     #endregion
 
     #region Parameters
-    [SerializeField] private float _velocidad;
+    [SerializeField] float velocidad;
+    private Vector3 MoverHacia;
     #endregion
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        //Queremos que al inicar se mueva hacia el punto final.
-        rb.MovePosition(_puntoFinal.position * Time.deltaTime * _velocidad);
+        //Al comienzo se mueve hacia el punto 2
+        MoverHacia = punto2.position;
     }
-    private void FixedUpdate()
+
+    private void Update()
     {
-        //Si la posición de la plataforma == posición final del recorrido...
-        if (transform.position == _puntoFinal.position)
+        //Si la posición es punto 2, se mueve a punto 1.
+        if (ObjetoaMover.transform.position == punto2.position)
         {
-            //...se mueve hacia el punto de partida.
-            rb.MovePosition(_puntoDePartida.position * Time.deltaTime * _velocidad);
+            MoverHacia = punto1.position;
         }
 
-        //Lo mismo que arriba pero al revés.
-        if (transform.position == _puntoDePartida.position)
+        //Lo mismo que antes pero al revés.
+        if (ObjetoaMover.transform.position == punto1.position)
         {
-            rb.MovePosition(_puntoFinal.position * Time.deltaTime * _velocidad);  
+            MoverHacia = punto2.position;
         }
-        
     }
+
+    //Para cuando haya que hacerlo con Rigidbody, probar con método MovePosition.
 }
+    
+
 
