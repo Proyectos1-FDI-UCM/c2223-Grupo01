@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -76,9 +76,3120 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_0"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b27b2fb61b18f4788350bfb308c076
+      internalID: 1736386004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_1"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47207fa177b40342ae396668be418fc
+      internalID: -595377040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_2"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9701d6d68a4163442a4085ee0f611caa
+      internalID: -101283713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_3"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226665faa299e414fa37074bf868088d
+      internalID: -1165356292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_4"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128b48c5bca47b540b88a26790e50ecb
+      internalID: -605500017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_5"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7e6e5c2ccc1d3458ac3edbf87e3aba
+      internalID: -2032780407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_6"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbb557ffbcf94f40b75901e0da73bd6
+      internalID: 224639651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_7"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9ad63a33b72b24a89104e9e503b1b1
+      internalID: 384958883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_8"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0bc2294e5a59254c9c5a58889c5db7a
+      internalID: 1904329749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_9"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617675eed4784724ab06d55883971090
+      internalID: 1217570577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_10"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b37e0467b6a794193f2acc01cd1c3c
+      internalID: -1716325190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_11"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d4b64056b0cb44b825f542ff079e8c
+      internalID: 30963795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_12"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49e34840808cc94abe89ee15ae1bdf1
+      internalID: -531794245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_13"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef44103bfe6104458f9d26c024bd86f
+      internalID: -2055642424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_14"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0bdd4da3ae5ad49a90edf427e24c51
+      internalID: -1748370867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_15"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f3d5ac5e1f0ef428cfa9c9aa5ad9b7
+      internalID: -412218512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_16"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 282
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd23bc051889a6f429b8dd831839eecf
+      internalID: -43410402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_17"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8074561a54c4a4298ac8d8fa84890d
+      internalID: 638838883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_18"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2d601ee90c8b5c47b5d2f680ea54856
+      internalID: 2115685483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_19"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aadc4d6831d39f745a265b57d30bca13
+      internalID: -1027988539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_20"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d604cb99176c64db36ea22146eacdb
+      internalID: -381657802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_21"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef99708e45b467446b3e92a9d470d169
+      internalID: 802645697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_22"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed1f8c17c031f649b590bea82f23157
+      internalID: -770800243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_23"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15b3081cc32eb840a88cced8e0a0d2f
+      internalID: 594620291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_24"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079f89ad025d82c489b69125b8fb8b74
+      internalID: -1996886877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_25"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a4de3b9eaa99f46b886ec722e3a0ec
+      internalID: -1195968508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_26"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 265
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde0a47a84283b149aefa8a3cf83983b
+      internalID: 61660710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_27"
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 265
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5b3fb13a4888d4c842526d5c2ca977
+      internalID: 538645194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_28"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 265
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da86252c0ae62d14e8e11e4eb411f45e
+      internalID: 2133018068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_29"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9899cce5c23c68543b3f08556611a5ce
+      internalID: -1571214248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_30"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2720c75ddc92340a89cdc85211d11b
+      internalID: 983060354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_31"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747f722caeffbdd42a6ffa146c292f3a
+      internalID: -1857588267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_32"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1567b82418bbf9c4492bcec2641b4813
+      internalID: -194956066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_33"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97218d0628a723c4197aedd45adc133a
+      internalID: -1131266233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_34"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 265
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c8a28e0ee570244b321c5ab7b1d23b
+      internalID: -749779493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_35"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85718d85bd954ec4baa070bd22edd817
+      internalID: 1492727134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_36"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6060617fea05c42818918888d1dc9a
+      internalID: -1416073364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_37"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82494b4a69114ce4899b9faf563b3060
+      internalID: -669797021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_38"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7c5b3c73129cd48826a9cd5a33def2
+      internalID: 1429680374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_39"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3588a333348f704da216b90e720e550
+      internalID: -1942914755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_40"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cabbf008774cc4796bfefc23f277ac
+      internalID: 50757231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_41"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd30b8eed44272468bc8b6c59f5df46
+      internalID: 1291848694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_42"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c409e2066c40dfb48a019eae1eb2d085
+      internalID: 1025314643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_43"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b82609be52f764b8470fda238cbf34
+      internalID: -102316511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_44"
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 248
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964abf8c46d106b40a7e00a5d8c53937
+      internalID: -1180772300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_45"
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 248
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e716e470e7e1a6439f73502293b2b48
+      internalID: -800026529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_46"
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 248
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7309d53c5ef0244cb62ee22d43c50ed
+      internalID: 712708207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_47"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f813d7f2beb674c8f667aa085c3f1e
+      internalID: 1932749852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_48"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11954c3388e3f2b4aa7d51a12c01b337
+      internalID: -1529432579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_49"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70ccabb0b89a58f4d878a89b6ab47a3b
+      internalID: 840220895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_50"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502936d0355a86143981c4bf39b36273
+      internalID: -1646521418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_51"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a184175766d07d40910b72cf229fd63
+      internalID: 247616628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_52"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 248
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47d4257cd6aa5244a8aae4595f85b9e
+      internalID: -937182493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_53"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de36384de3fc2d42be7e11cd35a77f6
+      internalID: -1069167985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_54"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17cd0ada47e5c0a4d83e62735afb81b7
+      internalID: -2141780483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_55"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abb61ade34aec146baa48fd56446536
+      internalID: 523217825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_56"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666036f45d136284cbb57a4802d03b96
+      internalID: -2111217401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_57"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eddc68b5bfbe574d8f2e0de65d685a9
+      internalID: -1080026506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_58"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b81793a3c7007e4fae144de9783db33
+      internalID: -2080816863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_59"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044bd426bae4f8a4392b27aa3e8dfbe0
+      internalID: -1507547857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_60"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5304529d523f6498964cb542cee12b
+      internalID: 75736595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_61"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794b74707df496746a3075cda024d98b
+      internalID: -280824216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_62"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6866ea75cc58154bbfebccc8b79598a
+      internalID: 2711427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_63"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62df68465cf9e94da27985fee2e6290
+      internalID: 115430594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_64"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d10a6b9b9487a4dafce93a59e72d2c
+      internalID: -1529021704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_65"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b67b96497614da4ebee2422a92cbfce
+      internalID: -883914088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_66"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbda51b2de0118a4bb45ab11c3be4efc
+      internalID: -720084254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_67"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573ebf417ec34f646bf5a9af087c538f
+      internalID: 614747784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_68"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4881f8cba9aaab40aac13ddaf3f45eb
+      internalID: -671781774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_69"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 231
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd39e334edf62040941c71ec204821f
+      internalID: 675869665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_70"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50981c4059352e64bbce3fb0b06e1641
+      internalID: 131917432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_71"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3accfb9b12e6d4429e612f753644902
+      internalID: -1485614418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_72"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d6a3c555d7c8846be2479e6b905b44
+      internalID: 321264987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_73"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbeb633e0d6af9b419186b568b88a54d
+      internalID: -1110948319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_74"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271558b2c9345614dab9d791b91fd452
+      internalID: -1165530804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_75"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a01f6387142bf4283dca8e2af6bcb4
+      internalID: -1122999629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_76"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36238bc9d526cac48a4db91c015bf580
+      internalID: -657630622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_77"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb29d383144d0348a98cf013934b758
+      internalID: 1293548248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_78"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5027f2b4f6f6f940b949935bcc07acc
+      internalID: -1653430066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_79"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3a48f06ae3b734da9a2725447e0533
+      internalID: 191442133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_80"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a4f2217e085074d900874930b91a61
+      internalID: 564618091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_81"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2698f190ae4b5164db85d97022672db7
+      internalID: 1820313387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_82"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a9099611609b147bd01036f711946e
+      internalID: -1822310926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_83"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0edcffa5b2de6ec43b3a918534a063a1
+      internalID: 1808769679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_84"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d128c6ade47754cb724d5ed993bbf7
+      internalID: 295347436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_85"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6522c5672ea220241bd99b77a856c87d
+      internalID: 1502647827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_86"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 214
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91646bf473067774dae57b9933520620
+      internalID: -324918776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_87"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2959873d5baa4cf49a2893ed2ad44c06
+      internalID: 480814224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_88"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e09da2de96f5740b4267bb84665c6c
+      internalID: 1231206728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_89"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6acc5868db2e142a113bd188c72f13
+      internalID: -1286574035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_90"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ecc82bfe7b3154e8a09a0124547f2a
+      internalID: -1032544506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_91"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c813e33a88767a54cbb2c73e18358568
+      internalID: 368171097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_92"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e903aa019594b4099cbffa263f4b3d
+      internalID: 1374617732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_93"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5305fe0516f3044b23515240057ec6
+      internalID: -1769346958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_94"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e9353878fec4b4fb1c3fea76a79882
+      internalID: -1774539679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_95"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aac9c64af2c2674b8dacf6fb000cd3f
+      internalID: -1601174715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_96"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99cdd0925308026409b8b28bf2873b28
+      internalID: 739880591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_97"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9ec0665554cae4eab39b07432dbd19
+      internalID: 1709701789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_98"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e077aaca1d703488bb7dc6ab4f9a28
+      internalID: -698968948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_99"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11915eec6905d54289155b5dd4c6743
+      internalID: 1123125575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_100"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04d951bcfd443d4ba4cd49982815937
+      internalID: 1912479120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_101"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6f3b7985cad744293be7f1f050876b
+      internalID: -962817509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_102"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294b6b2b9503ec24e895a89d32d492b9
+      internalID: -1384612762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_103"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 197
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59bb7c3659777b84eb1c57cd52f3e898
+      internalID: 590440615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_104"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a09a5d08873d7a4195bacf3114dffa6
+      internalID: 238982478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_105"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f9633f76f34a84aa6fad5a015c5d02
+      internalID: 625119490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_106"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c91ac3f9ae3d04985ec08fa4c4146b
+      internalID: 1764998491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_107"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a014da299491b4389a1426d59f8258
+      internalID: 1299744332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_108"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fcff57157781e64d874fc79e8c2b8b5
+      internalID: -808351121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_109"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a130fdb93c5d23745b132f4effd02a83
+      internalID: -1610660425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_110"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08663bdb11641b04f9cd707ec68ef00b
+      internalID: 1549323318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_111"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fc8cf0da6226240b8deff5ba6f3606
+      internalID: -365644069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_112"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f6297d00efa4b4cb1afd5ba794605e
+      internalID: -1894595554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_113"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf8b3b98a0550d448aa530e2af501f0
+      internalID: 1383567420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_114"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae90403c4abcc764b80ac128e5c7cafd
+      internalID: 463235999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_115"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821125f3d8870794fbbcc1ee6b212611
+      internalID: -1995825840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_116"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082eb2ff58cbc804e8dcfe927e374faf
+      internalID: 1321628516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_117"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de0cb3fa5cbac34581b0601d84a0a8c
+      internalID: 1778062291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_118"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab21db66400a57e4081be3e143c004e3
+      internalID: 113710162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_119"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71397a7dfa93bd847bf9b9cef810d092
+      internalID: -2045872984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_120"
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a0b5d5b782dc84c98ac7d16b2d049b
+      internalID: -641339231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_121"
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b65069a4f80af4eb4db7cd63d56bfa
+      internalID: 1539115896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_122"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d903e7a01479b041948fd395ce5961a
+      internalID: 1495986584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_123"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bacf7963ac2044e9df263d6894be89
+      internalID: -594829029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_124"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3c4c10653aabc41b260bf4543b50f3
+      internalID: -2066439821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_125"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8801bd05f228f454eb540f4424f82969
+      internalID: 1163434275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_126"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e204fb7fa28aea49a7286e385f46881
+      internalID: 893079183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_127"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ce491061716b34e962e62e34b01ab3
+      internalID: -627519084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_128"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6167d65dfbd2f4cb86483fc4739779
+      internalID: 1478058409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_129"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6537b4e0428f44f931736d837eab84
+      internalID: -1217642997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_130"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181c8e7958ab32844a1cce2d5ffec70a
+      internalID: 1054422569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_131"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304cce16c0ee43848a1c3b9dcc4ae6a5
+      internalID: -2100765801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_132"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d62603f6966d52449b24d51ed322e05
+      internalID: -223801908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_133"
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f4d2e4e325187148b34abdd0f91f1fe
+      internalID: 102574300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_134"
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 163
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a822d6da8c1c1a498f90736a8f50ebd
+      internalID: -275291867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_135"
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 147
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894074ae93a93dc4aace6c6db171c1c8
+      internalID: -1808124704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_136"
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08494e1af8d562743986fa61fc7b3599
+      internalID: -1397009569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_137"
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6f608ffd9050e4a8b20d429e579e6b
+      internalID: 1393815954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_138"
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abbba346d042a343afa6611853d4cf6
+      internalID: 891713680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_139"
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3e17df1dff38c4eb8aab802e01f28d
+      internalID: -1491760823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_140"
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ec77deb8cc29a43abc2f7659376a62
+      internalID: -1037124175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_141"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7845c26c49258a84c8847ed28a48147f
+      internalID: 1345938795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_142"
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d41b5643d7332847900e3586cc8bcaa
+      internalID: 773873523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_143"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00ed594a4219974896c30a9948611c7
+      internalID: 1390728538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_144"
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910115cc12045334dadeb5c738cf404c
+      internalID: -1888100634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_145"
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 146
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd270d42e2bf2244998ef6836331023
+      internalID: -300711336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Sprites Nivel de F\xE1brica_146"
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 130
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96244c49edd561349823000b99854069
+      internalID: -567364777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +3200,154 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Sprites Nivel de F\xE1brica_42": 1025314643
+      "Sprites Nivel de F\xE1brica_74": -1165530804
+      "Sprites Nivel de F\xE1brica_8": 1904329749
+      "Sprites Nivel de F\xE1brica_134": -275291867
+      "Sprites Nivel de F\xE1brica_86": -324918776
+      "Sprites Nivel de F\xE1brica_71": -1485614418
+      "Sprites Nivel de F\xE1brica_0": 1736386004
+      "Sprites Nivel de F\xE1brica_116": 1321628516
+      "Sprites Nivel de F\xE1brica_110": 1549323318
+      "Sprites Nivel de F\xE1brica_135": -1808124704
+      "Sprites Nivel de F\xE1brica_120": -641339231
+      "Sprites Nivel de F\xE1brica_131": -2100765801
+      "Sprites Nivel de F\xE1brica_117": 1778062291
+      "Sprites Nivel de F\xE1brica_81": 1820313387
+      "Sprites Nivel de F\xE1brica_13": -2055642424
+      "Sprites Nivel de F\xE1brica_128": 1478058409
+      "Sprites Nivel de F\xE1brica_93": -1769346958
+      "Sprites Nivel de F\xE1brica_5": -2032780407
+      "Sprites Nivel de F\xE1brica_87": 480814224
+      "Sprites Nivel de F\xE1brica_24": -1996886877
+      "Sprites Nivel de F\xE1brica_85": 1502647827
+      "Sprites Nivel de F\xE1brica_39": -1942914755
+      "Sprites Nivel de F\xE1brica_114": 463235999
+      "Sprites Nivel de F\xE1brica_51": 247616628
+      "Sprites Nivel de F\xE1brica_111": -365644069
+      "Sprites Nivel de F\xE1brica_130": 1054422569
+      "Sprites Nivel de F\xE1brica_96": 739880591
+      "Sprites Nivel de F\xE1brica_18": 2115685483
+      "Sprites Nivel de F\xE1brica_83": 1808769679
+      "Sprites Nivel de F\xE1brica_35": 1492727134
+      "Sprites Nivel de F\xE1brica_2": -101283713
+      "Sprites Nivel de F\xE1brica_9": 1217570577
+      "Sprites Nivel de F\xE1brica_65": -883914088
+      "Sprites Nivel de F\xE1brica_20": -381657802
+      "Sprites Nivel de F\xE1brica_27": 538645194
+      "Sprites Nivel de F\xE1brica_36": -1416073364
+      "Sprites Nivel de F\xE1brica_64": -1529021704
+      "Sprites Nivel de F\xE1brica_29": -1571214248
+      "Sprites Nivel de F\xE1brica_63": 115430594
+      "Sprites Nivel de F\xE1brica_33": -1131266233
+      "Sprites Nivel de F\xE1brica_109": -1610660425
+      "Sprites Nivel de F\xE1brica_80": 564618091
+      "Sprites Nivel de F\xE1brica_143": 1390728538
+      "Sprites Nivel de F\xE1brica_123": -594829029
+      "Sprites Nivel de F\xE1brica_68": -671781774
+      "Sprites Nivel de F\xE1brica_59": -1507547857
+      "Sprites Nivel de F\xE1brica_40": 50757231
+      "Sprites Nivel de F\xE1brica_82": -1822310926
+      "Sprites Nivel de F\xE1brica_119": -2045872984
+      "Sprites Nivel de F\xE1brica_122": 1495986584
+      "Sprites Nivel de F\xE1brica_53": -1069167985
+      "Sprites Nivel de F\xE1brica_108": -808351121
+      "Sprites Nivel de F\xE1brica_88": 1231206728
+      "Sprites Nivel de F\xE1brica_142": 773873523
+      "Sprites Nivel de F\xE1brica_30": 983060354
+      "Sprites Nivel de F\xE1brica_76": -657630622
+      "Sprites Nivel de F\xE1brica_46": 712708207
+      "Sprites Nivel de F\xE1brica_58": -2080816863
+      "Sprites Nivel de F\xE1brica_52": -937182493
+      "Sprites Nivel de F\xE1brica_10": -1716325190
+      "Sprites Nivel de F\xE1brica_98": -698968948
+      "Sprites Nivel de F\xE1brica_22": -770800243
+      "Sprites Nivel de F\xE1brica_95": -1601174715
+      "Sprites Nivel de F\xE1brica_60": 75736595
+      "Sprites Nivel de F\xE1brica_38": 1429680374
+      "Sprites Nivel de F\xE1brica_67": 614747784
+      "Sprites Nivel de F\xE1brica_55": 523217825
+      "Sprites Nivel de F\xE1brica_89": -1286574035
+      "Sprites Nivel de F\xE1brica_15": -412218512
+      "Sprites Nivel de F\xE1brica_75": -1122999629
+      "Sprites Nivel de F\xE1brica_70": 131917432
+      "Sprites Nivel de F\xE1brica_69": 675869665
+      "Sprites Nivel de F\xE1brica_106": 1764998491
+      "Sprites Nivel de F\xE1brica_43": -102316511
+      "Sprites Nivel de F\xE1brica_90": -1032544506
+      "Sprites Nivel de F\xE1brica_21": 802645697
+      "Sprites Nivel de F\xE1brica_34": -749779493
+      "Sprites Nivel de F\xE1brica_126": 893079183
+      "Sprites Nivel de F\xE1brica_94": -1774539679
+      "Sprites Nivel de F\xE1brica_12": -531794245
+      "Sprites Nivel de F\xE1brica_97": 1709701789
+      "Sprites Nivel de F\xE1brica_66": -720084254
+      "Sprites Nivel de F\xE1brica_16": -43410402
+      "Sprites Nivel de F\xE1brica_121": 1539115896
+      "Sprites Nivel de F\xE1brica_7": 384958883
+      "Sprites Nivel de F\xE1brica_3": -1165356292
+      "Sprites Nivel de F\xE1brica_44": -1180772300
+      "Sprites Nivel de F\xE1brica_72": 321264987
+      "Sprites Nivel de F\xE1brica_146": -567364777
+      "Sprites Nivel de F\xE1brica_112": -1894595554
+      "Sprites Nivel de F\xE1brica_144": -1888100634
+      "Sprites Nivel de F\xE1brica_133": 102574300
+      "Sprites Nivel de F\xE1brica_138": 891713680
+      "Sprites Nivel de F\xE1brica_73": -1110948319
+      "Sprites Nivel de F\xE1brica_145": -300711336
+      "Sprites Nivel de F\xE1brica_1": -595377040
+      "Sprites Nivel de F\xE1brica_6": 224639651
+      "Sprites Nivel de F\xE1brica_124": -2066439821
+      "Sprites Nivel de F\xE1brica_48": -1529432579
+      "Sprites Nivel de F\xE1brica_57": -1080026506
+      "Sprites Nivel de F\xE1brica_113": 1383567420
+      "Sprites Nivel de F\xE1brica_61": -280824216
+      "Sprites Nivel de F\xE1brica_92": 1374617732
+      "Sprites Nivel de F\xE1brica_14": -1748370867
+      "Sprites Nivel de F\xE1brica_17": 638838883
+      "Sprites Nivel de F\xE1brica_129": -1217642997
+      "Sprites Nivel de F\xE1brica_50": -1646521418
+      "Sprites Nivel de F\xE1brica_125": 1163434275
+      "Sprites Nivel de F\xE1brica_19": -1027988539
+      "Sprites Nivel de F\xE1brica_84": 295347436
+      "Sprites Nivel de F\xE1brica_105": 625119490
+      "Sprites Nivel de F\xE1brica_47": 1932749852
+      "Sprites Nivel de F\xE1brica_140": -1037124175
+      "Sprites Nivel de F\xE1brica_23": 594620291
+      "Sprites Nivel de F\xE1brica_28": 2133018068
+      "Sprites Nivel de F\xE1brica_102": -1384612762
+      "Sprites Nivel de F\xE1brica_100": 1912479120
+      "Sprites Nivel de F\xE1brica_99": 1123125575
+      "Sprites Nivel de F\xE1brica_56": -2111217401
+      "Sprites Nivel de F\xE1brica_136": -1397009569
+      "Sprites Nivel de F\xE1brica_45": -800026529
+      "Sprites Nivel de F\xE1brica_132": -223801908
+      "Sprites Nivel de F\xE1brica_54": -2141780483
+      "Sprites Nivel de F\xE1brica_103": 590440615
+      "Sprites Nivel de F\xE1brica_115": -1995825840
+      "Sprites Nivel de F\xE1brica_104": 238982478
+      "Sprites Nivel de F\xE1brica_26": 61660710
+      "Sprites Nivel de F\xE1brica_127": -627519084
+      "Sprites Nivel de F\xE1brica_107": 1299744332
+      "Sprites Nivel de F\xE1brica_101": -962817509
+      "Sprites Nivel de F\xE1brica_137": 1393815954
+      "Sprites Nivel de F\xE1brica_25": -1195968508
+      "Sprites Nivel de F\xE1brica_118": 113710162
+      "Sprites Nivel de F\xE1brica_41": 1291848694
+      "Sprites Nivel de F\xE1brica_77": 1293548248
+      "Sprites Nivel de F\xE1brica_32": -194956066
+      "Sprites Nivel de F\xE1brica_79": 191442133
+      "Sprites Nivel de F\xE1brica_91": 368171097
+      "Sprites Nivel de F\xE1brica_31": -1857588267
+      "Sprites Nivel de F\xE1brica_139": -1491760823
+      "Sprites Nivel de F\xE1brica_78": -1653430066
+      "Sprites Nivel de F\xE1brica_62": 2711427
+      "Sprites Nivel de F\xE1brica_11": 30963795
+      "Sprites Nivel de F\xE1brica_141": 1345938795
+      "Sprites Nivel de F\xE1brica_37": -669797021
+      "Sprites Nivel de F\xE1brica_4": -605500017
+      "Sprites Nivel de F\xE1brica_49": 840220895
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
