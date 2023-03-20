@@ -221,6 +221,10 @@ GameObject:
   m_Component:
   - component: {fileID: 214609810406023376}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  - component: {fileID: 6933013124623588576}
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
 =======
   - component: {fileID: 6933013124623588576}
 >>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
@@ -250,7 +254,10 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
 --- !u!114 &6933013124623588576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,4 +274,7 @@ MonoBehaviour:
   _puntoDePartida: {fileID: 6933013124661122608}
   _puntoFinal: {fileID: 6933013123609623489}
   velocidad: 1
+<<<<<<< HEAD
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
+=======
 >>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
