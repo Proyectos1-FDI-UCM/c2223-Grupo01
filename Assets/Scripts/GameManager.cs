@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     #region parameters 
-    public float _currentTime;    //variable que controla nuestro tiempo actual.
+    public float _currentTime;                          //variable que controla nuestro tiempo actual.
     public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
     public int _currentWeapon { get; private set; }     //Variable que controla cuál es nuestra arma actual.
 

@@ -9,10 +9,12 @@ public class CheckpointInteractionComponent : MonoBehaviour
 {
     #region references
     private GameObject _player;
+    private float _playerhealth;
     #endregion
 
     #region parameters
     [SerializeField] private string _playertag;
+    [SerializeField] private float _ammounthealthres;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,13 +23,14 @@ public class CheckpointInteractionComponent : MonoBehaviour
         {
             // referencias en la colisión
             _player = collision.gameObject;
+            _playerhealth = _player.GetComponent<MightyLifeComponent>()._health;
 
             // sanación de Mighty
-            _player.GetComponent<MightyLifeComponent>()._health = 100;
-            //if (GameManager.instance._UImanager != null)
-            //{
-            //    GameManager.instance._UImanager.ActualizarInterfaz(_health);
-            //}
+            _playerhealth = _ammounthealthres;
+            if (GameManager.instance._UImanager != null)
+            {
+                GameManager.instance._UImanager.ActualizarInterfaz(_playerhealth);
+            }
         }
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5509244074755585152}
   - component: {fileID: 9203203965240588079}
   - component: {fileID: 394314307862570850}
-  - component: {fileID: 8062710851896570449}
   - component: {fileID: 7210435591445313505}
   m_Layer: 0
   m_Name: Checkpoint
@@ -103,18 +102,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
---- !u!114 &8062710851896570449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5171287290129465531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 727769d075d3be940b1b75fa2a53b6a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7210435591445313505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playertag: Player
+  _ammounthealthres: 100
