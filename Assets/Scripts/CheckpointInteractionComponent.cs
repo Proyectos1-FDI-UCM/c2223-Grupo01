@@ -9,7 +9,6 @@ public class CheckpointInteractionComponent : MonoBehaviour
 {
     #region references
     private GameObject _player;
-    private MightyLifeComponent _mightyhealth;
     #endregion
 
     #region parameters
@@ -20,19 +19,15 @@ public class CheckpointInteractionComponent : MonoBehaviour
     {
         if(collision.CompareTag(_playertag))
         {
-            // referencias de la colisión
+            // referencias en la colisión
             _player = collision.gameObject;
-            _mightyhealth = GetComponent<MightyLifeComponent>();
 
-            _mightyhealth._health = 100;
+            // sanación de Mighty
+            _player.GetComponent<MightyLifeComponent>()._health = 100;
             //if (GameManager.instance._UImanager != null)
             //{
-            //    GameManager.instance._UImanager.ActualizarInterfaz(_mightyhealth._health);
+            //    GameManager.instance._UImanager.ActualizarInterfaz(_health);
             //}
-
-
-
-
         }
     }
 }
