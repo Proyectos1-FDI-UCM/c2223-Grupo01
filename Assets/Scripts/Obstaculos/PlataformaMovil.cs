@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlataformaMovil : MonoBehaviour
 {
     #region References
-    [SerializeField] private GameObject _objetoaMover;
     [SerializeField] private Transform _puntoDePartida;
     [SerializeField] private Transform _puntoFinal;
     Rigidbody2D rb;
@@ -26,14 +25,14 @@ public class PlataformaMovil : MonoBehaviour
     private void FixedUpdate()
     {
         //Si la posición de la plataforma == posición final del recorrido...
-        if (_objetoaMover.transform.position == _puntoFinal.position)
+        if (transform.position == _puntoFinal.position)
         {
             //...se mueve hacia el punto de partida.
             rb.MovePosition(_puntoDePartida.position * Time.deltaTime * _velocidad);
         }
 
         //Lo mismo que arriba pero al revés.
-        if (_objetoaMover.transform.position == _puntoDePartida.position)
+        if (transform.position == _puntoDePartida.position)
         {
             rb.MovePosition(_puntoFinal.position * Time.deltaTime * _velocidad);  
         }

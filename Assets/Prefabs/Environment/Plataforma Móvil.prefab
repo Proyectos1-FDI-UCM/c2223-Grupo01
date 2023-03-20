@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 6933013125266088330}
   - component: {fileID: 6933013125266088333}
   - component: {fileID: 4409152037980201704}
+  - component: {fileID: 5439889691340449830}
   m_Layer: 6
   m_Name: Plataforma
   m_TagString: "PlataformaM\xF3vil"
@@ -195,6 +196,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5439889691340449830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933013125266088328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b72665c0ef02446a8ef94dd509d596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _puntoDePartida: {fileID: 6933013124661122608}
+  _puntoFinal: {fileID: 6933013123609623489}
+  _velocidad: 10
 --- !u!1 &7365059970878059402
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +220,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 214609810406023376}
-  - component: {fileID: 6155258476194175364}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  - component: {fileID: 6933013124623588576}
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
+=======
+  - component: {fileID: 6933013124623588576}
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
   m_Layer: 0
   m_Name: "Plataforma M\xF3vil"
   m_TagString: Untagged
@@ -230,7 +253,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6155258476194175364
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
+--- !u!114 &6933013124623588576
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,10 +267,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7365059970878059402}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b72665c0ef02446a8ef94dd509d596, type: 3}
+  m_Script: {fileID: 11500000, guid: 77f360315d657be498a3437a83966ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _objetoaMover: {fileID: 6933013125266088328}
   _puntoDePartida: {fileID: 6933013124661122608}
   _puntoFinal: {fileID: 6933013123609623489}
-  _velocidad: 5
+  velocidad: 1
+<<<<<<< HEAD
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
+=======
+>>>>>>> parent of f2d72a0 (Plataforma móvil (con transform))
