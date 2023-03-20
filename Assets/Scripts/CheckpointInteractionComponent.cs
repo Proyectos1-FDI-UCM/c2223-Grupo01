@@ -33,7 +33,7 @@ public class CheckpointInteractionComponent : MonoBehaviour
             }
 
             // resetep del cronometro
-            
+            GameManager.instance._currentTime = _timeRes + 1;
 
         }
     }
