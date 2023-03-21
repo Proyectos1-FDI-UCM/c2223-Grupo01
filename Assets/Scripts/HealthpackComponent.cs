@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting;
-using UnityEditor.UIElements;
 using UnityEngine;
 
-public class CheckpointInteractionComponent : MonoBehaviour
+public class HealthpackComponent : MonoBehaviour
 {
     #region references
     private GameObject _player;
@@ -13,28 +10,31 @@ public class CheckpointInteractionComponent : MonoBehaviour
     #endregion
 
     #region parameters
-    [SerializeField] private float _healthRes;
-    [SerializeField] private float _timeRes;
+    [SerializeField] private float _sanation;
+    [SerializeField] private float _maximumHealth;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             // referencias en la colision
             _player = collision.gameObject;
             _mightylifecomponet = _player.GetComponent<MightyLifeComponent>();
 
             // sanación de Mighty
-            _mightylifecomponet._health = _healthRes;
+            _mightylifecomponet._health = _mightylifecomponet._health + _sanation;
+
+            if (_mightylifecomponet._health > 100)
+            {
+                _mightylifecomponet._health = _maximumHealth;
+            }
+
             if (GameManager.instance._UImanager != null)
             {
                 GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponet._health);
             }
-
-            // reseteo del cronometro
-            GameManager.instance._currentTime = _timeRes + 1;
-
+            Destroy(gameObject);
         }
     }
 }
