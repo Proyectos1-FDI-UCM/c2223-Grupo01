@@ -9,7 +9,7 @@ public class PlataformaMovil : MonoBehaviour
     // Usar RigidBody2D, con body type = kinematic
     // ya que es para objetos que necesitan ser controlados directamente por el código
     #region References
-    [SerializeField] Rigidbody2D ObjetoAMover;
+    Rigidbody2D ObjetoAMover;
     [SerializeField] Transform punto1, punto2;
     #endregion
 
@@ -22,6 +22,7 @@ public class PlataformaMovil : MonoBehaviour
     {
         //Al comienzo se mueve hacia el punto 2
         MoverHacia = punto2.position;
+        ObjetoAMover = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
