@@ -31,19 +31,20 @@ public class PlataformaMovil : MonoBehaviour
         Vector2 direccion = MoverHacia - ObjetoAMover.position;
         
         // Movemos el objeto en la dirección calculada
-        ObjetoAMover.MovePosition(ObjetoAMover.position + direccion * velocidad * Time.fixedDeltaTime);
+        ObjetoAMover.MovePosition(ObjetoAMover.position + direccion.normalized * velocidad * Time.fixedDeltaTime);
     
         // Si el objeto llega al punto 2, cambiamos la dirección hacia el punto 1
-        if (ObjetoAMover.transform.position == punto2.position)
+        if (Vector3.Distance(ObjetoAMover.transform.position, punto2.position)<0.5f)
         {
             MoverHacia = punto1.position;
         }
     
         // Si el objeto llega al punto 1, cambiamos la dirección hacia el punto 2
-        if (ObjetoAMover.transform.position == punto1.position)
+        if (Vector3.Distance(ObjetoAMover.transform.position, punto1.position) < 0.5f)
         {
             MoverHacia = punto2.position;
         }
+
     }
 
 }
