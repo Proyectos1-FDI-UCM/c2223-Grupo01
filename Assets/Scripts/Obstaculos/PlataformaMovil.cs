@@ -8,7 +8,6 @@ public class PlataformaMovil : MonoBehaviour
 {
     #region References
     [SerializeField]private float _distancia;
-    private Vector2 _initialPosition;
     private Vector2 _Destino;
     private enum Orientacion {Horizontal, Vertical,DiagonalSuperior,DiagonalInferior};
     [SerializeField]private Orientacion _Orientation;
@@ -48,7 +47,7 @@ public class PlataformaMovil : MonoBehaviour
         rb.velocity = ((_Destino - (Vector2) transform.position).normalized * velocidad);
         if(Vector2.Distance(_Destino,(Vector2)transform.position) <0.5f)
             {
-            _Destino = -_Destino
+            _Destino = -_Destino;
             }
         
     }
