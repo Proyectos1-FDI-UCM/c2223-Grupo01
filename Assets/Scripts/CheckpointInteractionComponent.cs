@@ -19,7 +19,7 @@ public class CheckpointInteractionComponent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.gameObject == GameManager.instance._player)
         {
             // referencias en la colision
             _player = collision.gameObject;
