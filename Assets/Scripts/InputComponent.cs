@@ -33,7 +33,6 @@ public class InputComponent : MonoBehaviour
     private void FixedUpdate()
     {
         _myCharacterController.Climb(Input.GetAxis("Vertical"));
-        Debug.Log(Input.GetAxis("Vertical"));
     }
     private void Update()
     {

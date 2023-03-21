@@ -37,12 +37,11 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject _slideObject;
 
     [Header("Climb")]
-    [SerializeField] private float _climbVelocity = 10f; // velocidad de escalada
+    [SerializeField] private float _climbVelocity; // velocidad de escalada
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     private Collider2D _currentLadder;
     private float _ladderTop;
-    //[SerializeField] private float _ladderTopOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
     #endregion
 
     #region References
@@ -166,10 +165,10 @@ public class CharacterController : MonoBehaviour
             _myRigidBody2D.velocity = targetVelocity;
             _myRigidBody2D.gravityScale = 0;
             _isClimbing = true;
-            Vector2 footPosition = (Vector2)transform.position - (Vector2)GetComponent<BoxCollider2D>().bounds.extents;
 
             //check si ha llegado a la cima de la escalera
-            _ladderTop = _currentLadder.bounds.max.y; //top del colisionador de currentLadder
+            Vector2 footPosition = transform.position - GetComponent<BoxCollider2D>().bounds.extents;
+            _ladderTop = _currentLadder.bounds.max.y;
             if (footPosition.y >= _ladderTop)
             {
                 _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
@@ -275,6 +274,7 @@ public class CharacterController : MonoBehaviour
 
         // Guardo gravedad inicial.
         _initialGravity = _myRigidBody2D.gravityScale;
+        
         //desactivamos el collider del dash al principio
         _slideObject.SetActive(false);
     }
