@@ -41,8 +41,8 @@ public class CharacterController : MonoBehaviour
     private float _initialGravity; // gravedad inicial
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     private Collider2D _currentLadder;
-    // private float _ladderTop;
-    // [SerializeField] private float _ladderTopOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
+    private float _ladderTop;
+    [SerializeField] private float _ladderTopOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
     #endregion
 
     #region References
@@ -166,13 +166,18 @@ public class CharacterController : MonoBehaviour
             _myRigidBody2D.velocity = targetVelocity;
             _myRigidBody2D.gravityScale = 0;
             _isClimbing = true;
+            Vector2 footPosition = (Vector2)transform.position - (Vector2)GetComponent<BoxCollider2D>().bounds.extents;
 
-            // //check si ha llegado a la cima de la escalera
-            // _ladderTop = _currentLadder.transform.position.y + _currentLadder.bounds.extents.y;
-            // if (transform.position.y >= _ladderTop - _ladderTopOffset)
-            // {
-            //     _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
-            // }
+            //check si ha llegado a la cima de la escalera
+            _ladderTop = _currentLadder.bounds.max.y; //top del colisionador de currentLadder
+            if (footPosition.y >= _ladderTop)
+            {
+                _myRigidBody2D.velocity = new Vector2(_myRigidBody2D.velocity.x, 0);
+                if(YAxismove < 0)
+                {
+                    _myRigidBody2D.velocity = targetVelocity;
+                }
+            }
         }
         else
         // De lo contrario, se restaura la gravedad, se establece isClimbing a false
@@ -197,7 +202,6 @@ public class CharacterController : MonoBehaviour
         {
             _MovementSmoothing = 10.0f;
         }
-        
 
         //Cuando Mighty toque layer de Ralentizante (núm 11), la velocidad se reducirá al igual que la fuerza del dash
         if (collision.gameObject.layer == 11 && _isgrounded) //El isgrounded no es necesario ahora, pero puede que de cara al futuro si, PARA MAS PREGUNTAS CONSULTAR A JOSE ANTONIO EL PORQUÉ
@@ -205,7 +209,7 @@ public class CharacterController : MonoBehaviour
             _movementSpeedX = _slowSpeedX;
             _dashForce = _smallDashForce;
         }
-
+        
         //Si colisiona con la Plataforma Móvil.
         if(collision.gameObject.layer == 16)
         {   
@@ -236,6 +240,7 @@ public class CharacterController : MonoBehaviour
             _MovementSmoothing = 0.1f;
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //se comprueba si el objeto con el que el jugador ha chocado tiene la capa "Escalable"
