@@ -42,7 +42,7 @@ public class CharacterController : MonoBehaviour
     public bool _isClimbing { get; private set; } // Booleano que comprueba si estamos escalando
     private Collider2D _currentLadder;
     private float _ladderTop;
-    [SerializeField] private float _ladderTopOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
+    //[SerializeField] private float _ladderTopOffset = 0.5f; //la distancia desde la escalera donde se detendrá el jugador
     #endregion
 
     #region References
