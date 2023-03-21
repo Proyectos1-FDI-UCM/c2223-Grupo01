@@ -23,7 +23,6 @@ public class PlataformaMovil : MonoBehaviour
     private void Start()
     {
       rb = GetComponent<Rigidbody2D>();
-      _initialPosition = transform.position;
         switch (_Orientation)
         {
             case Orientacion.Horizontal:
