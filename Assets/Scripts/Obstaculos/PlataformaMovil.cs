@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class PlataformaMovil : MonoBehaviour
 {
+    // Usar RigidBody2D, con body type = kinematic
+    // ya que es para objetos que necesitan ser controlados directamente por el código
     #region References
-    [SerializeField] GameObject ObjetoaMover;
+    [SerializeField] Rigidbody2D ObjetoAMover;
     [SerializeField] Transform punto1, punto2;
     #endregion
 
     #region Parameters
     [SerializeField] float velocidad;
-    private Vector3 MoverHacia;
+    private Vector2 MoverHacia;
     #endregion
 
     private void Start()
@@ -22,19 +24,37 @@ public class PlataformaMovil : MonoBehaviour
         MoverHacia = punto2.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        //Si la posición es punto 2, se mueve a punto 1.
-        if (ObjetoaMover.transform.position == punto2.position)
+        // Calculamos la dirección hacia la que mover el objeto
+        Vector2 direccion = (MoverHacia - ObjetoAMover.position).normalized;
+        
+        // Movemos el objeto en la dirección calculada
+        ObjetoAMover.MovePosition(ObjetoAMover.position + direccion * velocidad * Time.fixedDeltaTime);
+    
+        // Si el objeto llega al punto 2, cambiamos la dirección hacia el punto 1
+        if (ObjetoAMover.transform.position == punto2.position)
         {
             MoverHacia = punto1.position;
         }
-
-        //Lo mismo que antes pero al revés.
-        if (ObjetoaMover.transform.position == punto1.position)
+    
+        // Si el objeto llega al punto 1, cambiamos la dirección hacia el punto 2
+        if (ObjetoAMover.transform.position == punto1.position)
         {
             MoverHacia = punto2.position;
         }
+
+        // //Si la posición es punto 2, se mueve a punto 1.
+        // if (ObjetoaMover.transform.position == punto2.position)
+        // {
+        //     MoverHacia = punto1.position;
+        // }
+
+        // //Lo mismo que antes pero al revés.
+        // if (ObjetoaMover.transform.position == punto1.position)
+        // {
+        //     MoverHacia = punto2.position;
+        // }
     }
 
     //Para cuando haya que hacerlo con Rigidbody, probar con método MovePosition.
