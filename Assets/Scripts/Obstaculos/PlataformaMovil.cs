@@ -27,7 +27,7 @@ public class PlataformaMovil : MonoBehaviour
     private void FixedUpdate()
     {
         // Calculamos la dirección hacia la que mover el objeto
-        Vector2 direccion = (MoverHacia - ObjetoAMover.position).normalized;
+        Vector2 direccion = MoverHacia - ObjetoAMover.position;
         
         // Movemos el objeto en la dirección calculada
         ObjetoAMover.MovePosition(ObjetoAMover.position + direccion * velocidad * Time.fixedDeltaTime);
@@ -43,21 +43,8 @@ public class PlataformaMovil : MonoBehaviour
         {
             MoverHacia = punto2.position;
         }
-
-        // //Si la posición es punto 2, se mueve a punto 1.
-        // if (ObjetoaMover.transform.position == punto2.position)
-        // {
-        //     MoverHacia = punto1.position;
-        // }
-
-        // //Lo mismo que antes pero al revés.
-        // if (ObjetoaMover.transform.position == punto1.position)
-        // {
-        //     MoverHacia = punto2.position;
-        // }
     }
 
-    //Para cuando haya que hacerlo con Rigidbody, probar con método MovePosition.
 }
     
 
