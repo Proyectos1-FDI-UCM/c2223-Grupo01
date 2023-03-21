@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9140318663064654158}
   - component: {fileID: 158693090694766206}
   - component: {fileID: 6249533309063329142}
+  - component: {fileID: 6292249636779231320}
   m_Layer: 7
   m_Name: Rueda Terrestre
   m_TagString: Untagged
@@ -128,10 +129,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 5
-  KnockbackForce: 4.5
-  KnockbackCounter: 0
-  KnockbackTotalTime: 0.2
-  KnockFromRight: 0
+  _enemydetectionSpeed: 3
+  _maxDistanceDetection: 2
+  _canturnCOUNTER: 0
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &9140318663064654158
 Rigidbody2D:
   serializedVersion: 4
@@ -166,6 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _damage: 0
+  _coolDownDeathAnim: 0
+  _hurt: {fileID: 0}
+  _dead: {fileID: 0}
 --- !u!114 &6249533309063329142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +187,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 45
   _visionDistance: 10
+  _animator: {fileID: 0}
+--- !u!114 &6292249636779231320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528fca61b81d6a14f99c37d50ca26b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tiempoCongelado: 3

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1281900313}
   - component: {fileID: 1281900306}
   - component: {fileID: 1281900305}
+  - component: {fileID: 9119236337034455425}
   m_Layer: 7
   m_Name: Pingu Volador
   m_TagString: Untagged
@@ -319,3 +320,16 @@ MonoBehaviour:
   _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
+--- !u!114 &9119236337034455425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7897470401433983102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528fca61b81d6a14f99c37d50ca26b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tiempoCongelado: 3

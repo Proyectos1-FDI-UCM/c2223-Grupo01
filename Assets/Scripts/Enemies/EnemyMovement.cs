@@ -10,7 +10,9 @@ public class EnemyMovement : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float _enemySpeed = 3f;
+    private float _enemyInitialSpeed; //para el congelado
     [SerializeField] private float _enemydetectionSpeed = 5f;
+    private float _enemyInitialDetectedSpeed; // para el congelado
     [SerializeField] private float _maxDistanceDetection = 2f;
     private float _initialSpeed;
     private float _distfromplayer; //La distancia entre enemigo y jugadoe
@@ -49,6 +51,15 @@ public class EnemyMovement : MonoBehaviour
     public void SetEnemyDetectionSpeed(float newEsnemySpeed)
     {
         _enemydetectionSpeed = newEsnemySpeed;
+    }
+    public float GetEnemyInitialSpeed()
+    {
+        return _enemyInitialSpeed;
+    }
+
+    public float GetEnemyInitialDetectedSpeed()
+    {
+        return _enemyInitialDetectedSpeed;
     }
     #endregion
 
@@ -94,6 +105,8 @@ public class EnemyMovement : MonoBehaviour
         _initialSpeed = _enemySpeed;
         _isflipped=false;
         _myCollider2D = GetComponent<Collider2D>();
+        _enemyInitialSpeed = _enemySpeed;
+        _enemyInitialDetectedSpeed = _enemydetectionSpeed;
     }
 
     void Update()
