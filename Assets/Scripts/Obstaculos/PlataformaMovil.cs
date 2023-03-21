@@ -7,34 +7,50 @@ using UnityEngine;
 public class PlataformaMovil : MonoBehaviour
 {
     #region References
-    [SerializeField] GameObject ObjetoaMover;
-    [SerializeField] Transform punto1, punto2;
+    [SerializeField]private float _distancia;
+    private Vector2 _initialPosition;
+    private Vector2 _Destino;
+    private enum Orientacion {Horizontal, Vertical,DiagonalSuperior,DiagonalInferior};
+    [SerializeField]private Orientacion _Orientation;
+    private Rigidbody2D rb;
+    [SerializeField] float velocidad;
     #endregion
 
     #region Parameters
-    [SerializeField] float velocidad;
-    private Vector3 MoverHacia;
+   
+  
     #endregion
 
     private void Start()
     {
-        //Al comienzo se mueve hacia el punto 2
-        MoverHacia = punto2.position;
+      rb = GetComponent<Rigidbody2D>();
+      _initialPosition = transform.position;
+        switch (_Orientation)
+        {
+            case Orientacion.Horizontal:
+                _Destino = new Vector2(transform.position.x + _distancia, transform.position.y);
+                break;
+            case Orientacion.Vertical:
+                _Destino = new Vector2(transform.position.x, transform.position.y + _distancia);
+                break;
+            case Orientacion.DiagonalInferior:
+                _Destino = new Vector2(transform.position.x + _distancia, transform.position.y - _distancia);
+                break;
+            case Orientacion.DiagonalSuperior:
+                _Destino = new Vector2(transform.position.x + _distancia, transform.position.y + _distancia);
+                break;
+        }
+     
     }
 
     private void Update()
     {
-        //Si la posición es punto 2, se mueve a punto 1.
-        if (ObjetoaMover.transform.position == punto2.position)
-        {
-            MoverHacia = punto1.position;
-        }
-
-        //Lo mismo que antes pero al revés.
-        if (ObjetoaMover.transform.position == punto1.position)
-        {
-            MoverHacia = punto2.position;
-        }
+        rb.velocity = ((_Destino - (Vector2) transform.position).normalized * velocidad);
+        if(Vector2.Distance(_Destino,(Vector2)transform.position) <0.5f)
+            {
+            _Destino = -_Destino
+            }
+        
     }
 
     //Para cuando haya que hacerlo con Rigidbody, probar con método MovePosition.
