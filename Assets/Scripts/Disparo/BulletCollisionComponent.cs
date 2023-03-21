@@ -17,6 +17,7 @@ public class BulletCollisionComponent : MonoBehaviour
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
     private EnemyHealth _enemyHealth;
+    private Rigidbody2D _enemyRigidBody;
     public enum typeOfDamage { Normal, Ice, Fire };
     [SerializeField]private typeOfDamage _actualDamage;
     #endregion
@@ -96,6 +97,7 @@ public class BulletCollisionComponent : MonoBehaviour
 
     private void Congelado(GameObject collision)
     {
+        collision.GetComponent<EnemyStateManager>().SetCongelado(true);
         if (collision.GetComponent<EnemyMovement>() != null)
         {
             _enemyMovement.SetEnemySpeed(0);
@@ -105,7 +107,9 @@ public class BulletCollisionComponent : MonoBehaviour
         {
             _enemyFlyingMovement.SetEnemySpeed(0);
             _enemyFlyingMovement.SetEnemyDetectedSpeed(0);
-            collision.GetComponent<Rigidbody2D>().gravityScale = 10;
+            _enemyRigidBody = collision.GetComponent<Rigidbody2D>();
+            _enemyRigidBody.bodyType = RigidbodyType2D.Dynamic;
+            _enemyRigidBody.gravityScale = 10;
         }
     }
 

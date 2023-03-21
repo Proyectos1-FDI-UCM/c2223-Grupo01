@@ -9,7 +9,9 @@ public class EnemyFlyingMovement : MonoBehaviour
     private GameObject _player;
     private EnemyFOV _myEnemyFOV;
     [SerializeField] private float _enemySpeed = 5f;
+    private float _enemyInitialSpeed; // para el congelado
     [SerializeField] private float _enemyDetectedSpeed = 7f;
+    private float _enemyInitialDetectedSpeed; // para el congelado
     private Vector3 _initialPosition;
     private Rigidbody2D _rigidbody;
     private float _knockbackCounter;
@@ -41,6 +43,15 @@ public class EnemyFlyingMovement : MonoBehaviour
     public void SetEnemyDetectedSpeed(float newEsnemySpeed)
     {
         _enemyDetectedSpeed = newEsnemySpeed;
+    }
+    public float GetEnemyInitialSpeed()
+    {
+        return _enemyInitialSpeed;
+    }
+
+    public float GetEnemyInitialDetectedSpeed()
+    {
+        return _enemyInitialDetectedSpeed;
     }
     #endregion
 
@@ -143,6 +154,9 @@ public class EnemyFlyingMovement : MonoBehaviour
         _canturn = true;
         _canturnIniCOUNTER = _canturnCOUNTER;
         _rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody.bodyType = RigidbodyType2D.Kinematic;
+        _enemyInitialSpeed = _enemySpeed;
+        _enemyInitialDetectedSpeed = _enemyDetectedSpeed;
     }
 
     void FixedUpdate()

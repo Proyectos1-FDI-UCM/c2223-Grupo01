@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7705262566188771213}
   - component: {fileID: 6662258008865498230}
   - component: {fileID: 3758571706154678328}
+  - component: {fileID: -454536740972119165}
   m_Layer: 7
   m_Name: "Mu\xF1eco de nieve Tirador"
   m_TagString: Untagged
@@ -304,6 +305,19 @@ MonoBehaviour:
   _visionAngle: 45
   _visionDistance: 5
   _animator: {fileID: 0}
+--- !u!114 &-454536740972119165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528fca61b81d6a14f99c37d50ca26b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tiempoCongelado: 3
 --- !u!1 &8362032265566184348
 GameObject:
   m_ObjectHideFlags: 0
