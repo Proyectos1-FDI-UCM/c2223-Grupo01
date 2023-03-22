@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MightyLifeComponent : MonoBehaviour
 {
     #region Parameters
-    public float _health; //La cantidad de vida del jugador.
+    private float _health; //La cantidad de vida del jugador.
     [SerializeField] private float _coolDown;
 
     [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
