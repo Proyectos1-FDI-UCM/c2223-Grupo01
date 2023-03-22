@@ -12,22 +12,20 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _fire;
     [SerializeField] private Image _ice;
     float _currentTime;
-    //[SerializeField]                                  //La cantidad de vida del jugador.
-    private float _health;                               //La vida m�xima que puede tener el jugador.
     public Image _slider;                          //La Barra de vida
     int _currentWeapon;                             //Un int que determina qu� arma estamos usando ahora.
     #endregion
 
     #region References
     public static UIManager instance;
-    private MightyLifeComponent _playerLife;
+    private MightyLifeComponent _mightyLifeComponent;
     #endregion
     #region Methods
     void UpdateTimer(float Currenttime)
     //Redondea el n�mero para sacar los minutos y segundos
     //Coge el archivo de texto del timer para cambiarlo.
     {
-        if (Currenttime > 0 && _playerLife._health > 0)
+        if (Currenttime > 0 && _mightyLifeComponent.GetHealth() > 0)
         {
             float minutes = Mathf.FloorToInt(Currenttime / 60);
             float seconds = Mathf.FloorToInt(Currenttime % 60);
@@ -75,7 +73,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         GameManager.instance.RegisterUIMManager(this);
-        _playerLife = GameManager.instance._player.GetComponent<MightyLifeComponent>();
+        _mightyLifeComponent = GameManager.instance._player.GetComponent<MightyLifeComponent>();
         _currentTime = GameManager.instance._currentTime;
         /*_maxHealth = GameManager.instance._MaxHealth;  
         SetMaxHealth(_maxHealth);*/
@@ -83,7 +81,7 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        _health = _playerLife._health;
+        _mightyLifeComponent.SetHealth(_mightyLifeComponent.GetHealth());
         _currentTime = GameManager.instance._currentTime;
         _currentWeapon = GameManager.instance._currentWeapon;
         UpdateTimer(_currentTime);

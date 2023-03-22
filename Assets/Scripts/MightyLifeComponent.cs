@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MightyLifeComponent : MonoBehaviour
 {
     #region Parameters
-    private float _health; //La cantidad de vida del jugador.
+    public float _health; //La cantidad de vida del jugador.
     [SerializeField] private float _coolDown;
 
     [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
@@ -109,7 +109,6 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(_health);
         _animator.SetBool("_isDead", _death);
 
         if (!_canBeDamaged)
@@ -123,8 +122,7 @@ public class MightyLifeComponent : MonoBehaviour
             }
             else _myInputComponent.enabled = true;
 
-            if (_coolDown <= 0)
-                _canBeDamaged = true;
+            if (_coolDown <= 0) _canBeDamaged = true;
         }
         else
         {

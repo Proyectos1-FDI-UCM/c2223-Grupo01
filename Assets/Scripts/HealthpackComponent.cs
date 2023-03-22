@@ -23,16 +23,16 @@ public class HealthpackComponent : MonoBehaviour
             _mightylifecomponent = _player.GetComponent<MightyLifeComponent>();
 
             // sanacion de Mighty
-            _mightylifecomponent._health = _mightylifecomponent._health + _sanation;
+            _mightylifecomponent.SetHealth(_mightylifecomponent.GetHealth() + _sanation);
 
-            if (_mightylifecomponent._health > 100)
+            if (_mightylifecomponent.GetHealth() > 100)
             {
-                _mightylifecomponent._health = _maximumHealth;
+                _mightylifecomponent.SetHealth(_maximumHealth);
             }
 
             if (GameManager.instance._UImanager != null)
             {
-                GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponent._health);
+                GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponent.GetHealth());
             }
             Destroy(gameObject);
         }
