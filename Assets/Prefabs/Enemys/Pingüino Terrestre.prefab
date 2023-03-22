@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 4
-  _enemydetectionSpeed: 6
+  _enemySpeed: 3
+  _enemydetectionSpeed: 5
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.5
   _groundLayer:
