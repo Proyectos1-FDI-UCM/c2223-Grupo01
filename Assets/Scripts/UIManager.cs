@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     //Redondea el n�mero para sacar los minutos y segundos
     //Coge el archivo de texto del timer para cambiarlo.
     {
-        if (Currenttime > 0 && _playerLife.GetHealth() > 0)
+        if (Currenttime > 0 && _playerLife._health > 0)
         {
             float minutes = Mathf.FloorToInt(Currenttime / 60);
             float seconds = Mathf.FloorToInt(Currenttime % 60);
@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        _health = _playerLife.GetHealth();
+        _health = _playerLife._health;
         _currentTime = GameManager.instance._currentTime;
         _currentWeapon = GameManager.instance._currentWeapon;
         UpdateTimer(_currentTime);

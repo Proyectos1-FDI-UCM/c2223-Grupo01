@@ -6,7 +6,7 @@ public class HealthpackComponent : MonoBehaviour
 {
     #region references
     private GameObject _player;
-    private MightyLifeComponent _mightylifecomponet;
+    private MightyLifeComponent _mightylifecomponent;
     #endregion
 
     #region parameters
@@ -20,19 +20,19 @@ public class HealthpackComponent : MonoBehaviour
         {
             // referencias en la colision
             _player = collision.gameObject;
-            _mightylifecomponet = _player.GetComponent<MightyLifeComponent>();
+            _mightylifecomponent = _player.GetComponent<MightyLifeComponent>();
 
             // sanacion de Mighty
-            _mightylifecomponet.SetHealth(_mightylifecomponet.GetHealth() + _sanation);
+            _mightylifecomponent._health = _mightylifecomponent._health + _sanation;
 
-            if (_mightylifecomponet.GetHealth() > 100)
+            if (_mightylifecomponent._health > 100)
             {
-                _mightylifecomponet.SetHealth(_maximumHealth);
+                _mightylifecomponent._health = _maximumHealth;
             }
 
             if (GameManager.instance._UImanager != null)
             {
-                GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponet.GetHealth());
+                GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponent._health);
             }
             Destroy(gameObject);
         }

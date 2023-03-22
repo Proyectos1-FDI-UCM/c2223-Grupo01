@@ -109,6 +109,7 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log(_health);
         _animator.SetBool("_isDead", _death);
 
         if (!_canBeDamaged)

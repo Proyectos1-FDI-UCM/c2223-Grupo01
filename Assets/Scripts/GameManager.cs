@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         _currentTime -= Time.deltaTime;
 
         // Resta progresivamente la vida al acabarse el tiempo
-        if (_currentTime <= 0 && _mightyLifeComponent.GetHealth() > 0)
+        if (_currentTime <= 0 && _mightyLifeComponent._health > 0)
         {
             _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el da�o por segundo para no tener que usar valores tan peque�os
         }
