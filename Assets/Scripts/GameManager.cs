@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     {
         _timeMusicActive = false;
         _currentWeapon = 2;
-        _currentTime = 120.0f;
+        _currentTime = 600.0f;
     }
 
     void Update()

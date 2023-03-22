@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 
 public class CharacterController : MonoBehaviour
@@ -247,6 +248,11 @@ public class CharacterController : MonoBehaviour
         if (other.gameObject.layer == 8)
         {
             _currentLadder = other;
+        }
+
+        if (other.gameObject.layer == 18)
+        {
+            SceneManager.LoadScene(3);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

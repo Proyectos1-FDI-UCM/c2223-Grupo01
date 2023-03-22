@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -3228,31 +3228,31 @@ TextureImporter:
       "Sprites Nivel de F\xE1brica_111": -365644069
       "Sprites Nivel de F\xE1brica_130": 1054422569
       "Sprites Nivel de F\xE1brica_96": 739880591
-      "Sprites Nivel de F\xE1brica_18": 2115685483
-      "Sprites Nivel de F\xE1brica_83": 1808769679
+      "Sprites Nivel de F\xE1brica_109": -1610660425
       "Sprites Nivel de F\xE1brica_35": 1492727134
-      "Sprites Nivel de F\xE1brica_2": -101283713
-      "Sprites Nivel de F\xE1brica_9": 1217570577
+      "Sprites Nivel de F\xE1brica_64": -1529021704
       "Sprites Nivel de F\xE1brica_65": -883914088
+      "Sprites Nivel de F\xE1brica_83": 1808769679
+      "Sprites Nivel de F\xE1brica_2": -101283713
       "Sprites Nivel de F\xE1brica_20": -381657802
       "Sprites Nivel de F\xE1brica_27": 538645194
       "Sprites Nivel de F\xE1brica_36": -1416073364
-      "Sprites Nivel de F\xE1brica_64": -1529021704
+      "Sprites Nivel de F\xE1brica_143": 1390728538
       "Sprites Nivel de F\xE1brica_29": -1571214248
       "Sprites Nivel de F\xE1brica_63": 115430594
       "Sprites Nivel de F\xE1brica_33": -1131266233
-      "Sprites Nivel de F\xE1brica_109": -1610660425
-      "Sprites Nivel de F\xE1brica_80": 564618091
-      "Sprites Nivel de F\xE1brica_143": 1390728538
       "Sprites Nivel de F\xE1brica_123": -594829029
-      "Sprites Nivel de F\xE1brica_68": -671781774
+      "Sprites Nivel de F\xE1brica_80": 564618091
+      "Sprites Nivel de F\xE1brica_9": 1217570577
       "Sprites Nivel de F\xE1brica_59": -1507547857
+      "Sprites Nivel de F\xE1brica_18": 2115685483
       "Sprites Nivel de F\xE1brica_40": 50757231
-      "Sprites Nivel de F\xE1brica_82": -1822310926
+      "Sprites Nivel de F\xE1brica_68": -671781774
       "Sprites Nivel de F\xE1brica_119": -2045872984
       "Sprites Nivel de F\xE1brica_122": 1495986584
       "Sprites Nivel de F\xE1brica_53": -1069167985
       "Sprites Nivel de F\xE1brica_108": -808351121
+      "Sprites Nivel de F\xE1brica_82": -1822310926
       "Sprites Nivel de F\xE1brica_88": 1231206728
       "Sprites Nivel de F\xE1brica_142": 773873523
       "Sprites Nivel de F\xE1brica_30": 983060354
@@ -3271,9 +3271,9 @@ TextureImporter:
       "Sprites Nivel de F\xE1brica_89": -1286574035
       "Sprites Nivel de F\xE1brica_15": -412218512
       "Sprites Nivel de F\xE1brica_75": -1122999629
+      "Sprites Nivel de F\xE1brica_106": 1764998491
       "Sprites Nivel de F\xE1brica_70": 131917432
       "Sprites Nivel de F\xE1brica_69": 675869665
-      "Sprites Nivel de F\xE1brica_106": 1764998491
       "Sprites Nivel de F\xE1brica_43": -102316511
       "Sprites Nivel de F\xE1brica_90": -1032544506
       "Sprites Nivel de F\xE1brica_21": 802645697
