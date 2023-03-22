@@ -49,18 +49,17 @@ public class MightyLifeComponent : MonoBehaviour
     #endregion
 
     public void OnPlayerHit(float damage)
-    //Cuando se haga hit, da�a al player
+    //Cuando se haga hit, herir al player
     {
         _animator.SetTrigger("_damaged");
         GetComponent<AudioSource>().PlayOneShot(_hurt);
-
 
         _canBeDamaged = false;
         TakeDamage(damage);
     }
 
     public void DeathTime(float damage)
-    //Cuando se acabe el tiempo, da�a al player
+    //Cuando se acabe el tiempo, herir al player
     {
         _animator.SetTrigger("_timeOut");
         TakeDamage(damage);
