@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance;
     private MightyLifeComponent _mightyLifeComponent;
     #endregion
+    
     #region Methods
     void UpdateTimer(float Currenttime)
     //Redondea el n�mero para sacar los minutos y segundos
@@ -37,8 +38,6 @@ public class UIManager : MonoBehaviour
             _timetext.color = new Color(1, 0, 0, 1);
         }
     }
-
-
 
     public void ActualizarInterfaz(float health)
     {

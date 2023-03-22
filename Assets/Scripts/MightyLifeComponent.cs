@@ -67,12 +67,12 @@ public class MightyLifeComponent : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
-        _health -= damage;
+        SetHealth(GetHealth() - damage);
         if(GameManager.instance._UImanager != null){
-            GameManager.instance._UImanager.ActualizarInterfaz(_health);
+            GameManager.instance._UImanager.ActualizarInterfaz(GetHealth());
         }
 
-        if (_health <= 0)
+        if (GetHealth() <= 0)
         {
             GetComponent<AudioSource>().PlayOneShot(_deathSFX);
             _death = true;
@@ -88,7 +88,7 @@ public class MightyLifeComponent : MonoBehaviour
         {
             _animator.SetTrigger("_damaged");
             GetComponent<AudioSource>().PlayOneShot(_hurt);
-            TakeDamage(_health);
+            TakeDamage(GetHealth());
         }
     }
 
