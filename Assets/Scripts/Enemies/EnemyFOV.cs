@@ -1,4 +1,4 @@
-//Parte del código fue obtenido del siguiente video https://www.youtube.com/watch?v=lV47ED8h61k
+//Parte del cï¿½digo fue obtenido del siguiente video https://www.youtube.com/watch?v=lV47ED8h61k
 
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +7,8 @@ using UnityEngine;
 public class EnemyFOV : MonoBehaviour
 {
     #region parameters 
-    [SerializeField][Range(0f, 360f)] private float _visionAngle = 45f; //El ángulo de visión del enemigo.
-    [SerializeField] private float _visionDistance = 10f;               //La máxima distancia de nuestro cono de visión.
+    [SerializeField][Range(0f, 360f)] private float _visionAngle = 45f; //El ï¿½ngulo de visiï¿½n del enemigo.
+    [SerializeField] private float _visionDistance = 10f;               //La mï¿½xima distancia de nuestro cono de visiï¿½n.
     private bool _detected;                        //Booleano que determina si el enemigo ha detectado al jugador
     #endregion
 
@@ -26,14 +26,14 @@ public class EnemyFOV : MonoBehaviour
 
     #region methods
     Vector3 PointforAngles(float angles, float distance)
-    //Devuelve los puntos que forman los vectoers directrores del ángulo.
+    //Devuelve los puntos que forman los vectoers directrores del ï¿½ngulo.
     {
         return transform.TransformDirection(new Vector2(Mathf.Cos(angles * Mathf.Deg2Rad), Mathf.Sin(angles * Mathf.Deg2Rad)) * distance);
     }
     
     private void OnDrawGizmos()
-    //Método para ver el cono de visión, dibujando el ángulo
-    //no se hace nada si el ángulo es menor que cero
+    //Mï¿½todo para ver el cono de visiï¿½n, dibujando el ï¿½ngulo
+    //no se hace nada si el ï¿½ngulo es menor que cero
     {
         if (_visionAngle <= 0f) return; 
         float halfVisionAngle = _visionAngle * 0.5f;
@@ -58,13 +58,13 @@ public class EnemyFOV : MonoBehaviour
 
     void Update()
     {
-        _animator.SetBool("_run", _detected);
+        //_animator.SetBool("_run", _detected); //no lo encuentra 
         //Debug.Log(_detected);
         if(_player!= null)
         {
             // El vector que indica la distancia del jugador al enemigo.
             Vector2 PlayerVector = _player.transform.position - transform.position;
-            // Comprueba si el jugador está dentro del ángulo de visión del enemigo
+            // Comprueba si el jugador estï¿½ dentro del ï¿½ngulo de visiï¿½n del enemigo
             if (Vector3.Angle(PlayerVector.normalized, transform.right) < _visionAngle * 0.5f)
             {
                 //Comprueba si estamos a una distancia que es detectable para el enemigo.
@@ -72,7 +72,7 @@ public class EnemyFOV : MonoBehaviour
                 {
                     _detected = true;
                 }
-                //Si nos salimos del cono de visión entonces el detecta volverá a ser falso.
+                //Si nos salimos del cono de visiï¿½n entonces el detecta volverï¿½ a ser falso.
                 else _detected = false;  
             }
         }    

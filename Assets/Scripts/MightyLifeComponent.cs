@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class MightyLifeComponent : MonoBehaviour
 {
     #region Parameters
-    //[SerializeField] 
     public float _health; //La cantidad de vida del jugador.
     [SerializeField] private float _coolDown;
 
@@ -38,19 +37,29 @@ public class MightyLifeComponent : MonoBehaviour
     private Renderer _renderC; //Renderiza el color del player
     #endregion
 
+    #region getters y setters
+    public float GetHealth()
+    {
+        return _health;
+    }
+    public void SetHealth(float settedHealth)
+    {
+        _health = settedHealth;
+    }
+    #endregion
+
     public void OnPlayerHit(float damage)
-    //Cuando se haga hit, da�a al player
+    //Cuando se haga hit, herir al player
     {
         _animator.SetTrigger("_damaged");
         GetComponent<AudioSource>().PlayOneShot(_hurt);
-
 
         _canBeDamaged = false;
         TakeDamage(damage);
     }
 
     public void DeathTime(float damage)
-    //Cuando se acabe el tiempo, da�a al player
+    //Cuando se acabe el tiempo, herir al player
     {
         _animator.SetTrigger("_timeOut");
         TakeDamage(damage);
@@ -113,8 +122,7 @@ public class MightyLifeComponent : MonoBehaviour
             }
             else _myInputComponent.enabled = true;
 
-            if (_coolDown <= 0)
-                _canBeDamaged = true;
+            if (_coolDown <= 0) _canBeDamaged = true;
         }
         else
         {
