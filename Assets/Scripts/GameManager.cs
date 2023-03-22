@@ -7,11 +7,11 @@ public class GameManager : MonoBehaviour
     #region parameters 
     public float _currentTime;                          //variable que controla nuestro tiempo actual.
     public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
-    public int _currentWeapon { get; private set; }     //Variable que controla cuál es nuestra arma actual.
+    public int _currentWeapon { get; private set; }     //Variable que controla cuï¿½l es nuestra arma actual.
 
-    private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte está activa o no
+    private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte estï¿½ activa o no
 
-    [SerializeField] private float _deathTimeDamage; //Daño que quita cada ciclo
+    [SerializeField] private float _deathTimeDamage; //Daï¿½o que quita cada ciclo
     #endregion
 
     #region References
@@ -63,13 +63,13 @@ public class GameManager : MonoBehaviour
         _currentTime -= Time.deltaTime;
 
         // Resta progresivamente la vida al acabarse el tiempo
-        if (_currentTime <= 0 && _mightyLifeComponent._health > 0)
+        if (_currentTime <= 0 && _mightyLifeComponent.GetHealth() > 0)
         {
-            _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el daño por segundo para no tener que usar valores tan pequeños
+            _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el daï¿½o por segundo para no tener que usar valores tan pequeï¿½os
 
         }
 
-        // Pone la música de que se acaba el tiempo y la vida se resta
+        // Pone la mï¿½sica de que se acaba el tiempo y la vida se resta
         if (_currentTime <= 0.0f && !_timeMusicActive)
         {
             GetComponent<AudioSource>().PlayOneShot(_timeOut);
