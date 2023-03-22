@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c45132ca11281042ad413689b21a220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 3
-  _enemyDetectedSpeed: 4.5
+  _enemySpeed: 4
+  _enemyDetectedSpeed: 5
   _canturnCOUNTER: 0.1
 --- !u!114 &5020723013684745517
 MonoBehaviour:
@@ -122,7 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 100
   _visionDistance: 6
-  _animator: {fileID: 0}
 --- !u!61 &8738630133945712333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,6 +165,8 @@ MonoBehaviour:
   _coolDownDeathAnim: 0
   _hurt: {fileID: 8300000, guid: 5994de12674e43949af2af55bf2b92a3, type: 3}
   _dead: {fileID: 0}
+  _spawnWhenDie: 0
+  _objectSpawn: {fileID: 0}
 --- !u!50 &1281900304
 Rigidbody2D:
   serializedVersion: 4
@@ -320,6 +321,8 @@ MonoBehaviour:
   _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
+  _spawnWhenDie: 0
+  _objectSpawn: {fileID: 0}
 --- !u!114 &9119236337034455425
 MonoBehaviour:
   m_ObjectHideFlags: 0

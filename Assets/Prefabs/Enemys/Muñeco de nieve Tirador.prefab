@@ -157,6 +157,8 @@ MonoBehaviour:
   _coolDownDeathAnim: 1
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
+  _spawnWhenDie: 0
+  _objectSpawn: {fileID: 0}
 --- !u!95 &160949013
 Animator:
   serializedVersion: 4
@@ -288,7 +290,7 @@ MonoBehaviour:
   _bullet: {fileID: 1256174170972558883, guid: 920b985323cc86f4f8aa37d0868ec45e, type: 3}
   _coolDownShoot: 1
   _bulletSpawnTransform: {fileID: 676700370213554566}
-  _patrolFlip: 1.5
+  _patrolFlip: 1
   _disparoNormal: {fileID: 0}
 --- !u!114 &3758571706154678328
 MonoBehaviour:
@@ -303,8 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 45
-  _visionDistance: 5
-  _animator: {fileID: 0}
+  _visionDistance: 7
 --- !u!114 &-454536740972119165
 MonoBehaviour:
   m_ObjectHideFlags: 0
