@@ -18,6 +18,9 @@ public class EnemyHealth : MonoBehaviour
     private int _numbalasCongelado;
 
     public bool _death { get; private set; }
+
+    [SerializeField] private bool _spawnWhenDie;
+    [SerializeField] private GameObject _objectSpawn;
     #endregion
 
     #region References
