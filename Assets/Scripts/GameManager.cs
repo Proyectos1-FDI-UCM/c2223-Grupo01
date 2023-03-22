@@ -8,9 +8,7 @@ public class GameManager : MonoBehaviour
     public float _currentTime;                          //variable que controla nuestro tiempo actual.
     public float _health = 100f;                      //Variable que controla nuestra vida de jugador.
     public int _currentWeapon { get; private set; }     //Variable que controla cu�l es nuestra arma actual.
-
     private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte est� activa o no
-
     [SerializeField] private float _deathTimeDamage; //Da�o que quita cada ciclo
     #endregion
 
@@ -19,7 +17,6 @@ public class GameManager : MonoBehaviour
     public GameObject _player;// Para usarlo en otros scripts
     public MightyLifeComponent _mightyLifeComponent { get; private set;}
     public UIManager _UImanager { get; private set;}
-
     [SerializeField] private AudioClip _timeOut;
     #endregion
 
@@ -42,7 +39,6 @@ public class GameManager : MonoBehaviour
     {
         return mele;
     }
-
     #endregion
 
     // awake para la instancia de la clase
@@ -66,7 +62,6 @@ public class GameManager : MonoBehaviour
         if (_currentTime <= 0 && _mightyLifeComponent.GetHealth() > 0)
         {
             _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el da�o por segundo para no tener que usar valores tan peque�os
-
         }
 
         // Pone la m�sica de que se acaba el tiempo y la vida se resta
