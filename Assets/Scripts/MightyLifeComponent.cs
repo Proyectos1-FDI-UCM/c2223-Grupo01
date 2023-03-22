@@ -67,7 +67,6 @@ public class MightyLifeComponent : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(_deathSFX);
             _death = true;
-            _myInputComponent.enabled = false;
             _boxColiderNormal.enabled = false;
             _myRigidBody2D.bodyType = RigidbodyType2D.Static;
             //Destroy(gameObject);
@@ -125,6 +124,7 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (_death)
         {
+            _myInputComponent.enabled = false;
             _canRepeatLevelTimer -= Time.deltaTime;
             if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1);
         }
