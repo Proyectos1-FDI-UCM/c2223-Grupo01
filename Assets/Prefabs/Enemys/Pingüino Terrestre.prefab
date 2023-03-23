@@ -172,9 +172,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _damage: 10
-  _coolDownDeathAnim: 1
+  _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
+  _spawnWhenDie: 0
+  _objectSpawn: {fileID: 0}
 --- !u!114 &6249533309063329142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +191,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 60
   _visionDistance: 5
-  _animator: {fileID: 0}
 --- !u!95 &160949013
 Animator:
   serializedVersion: 4

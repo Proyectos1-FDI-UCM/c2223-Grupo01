@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     #region parameters && references
     [SerializeField] private int _maxHealth = 100;     //Vida máxima del enemigo.
-    private int _currentHealth;                        //Vida actual del enemigo.
+    public int _currentHealth { get; private set; }                        //Vida actual del enemigo.
     [SerializeField] private float _damage;            //daño al jugador
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
@@ -110,6 +110,7 @@ public class EnemyHealth : MonoBehaviour
         if (_death)
         {
             _coolDownDeathAnim -= Time.deltaTime;
+            
             if (_coolDownDeathAnim <= 0)
             {
                 Destroy(gameObject);

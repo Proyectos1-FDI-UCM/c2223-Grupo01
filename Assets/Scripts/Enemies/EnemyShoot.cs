@@ -42,15 +42,20 @@ public class EnemyShoot : MonoBehaviour
         _initialCoolDownShoot = _coolDownShoot;
          _initialPatrolFlip = _patrolFlip;
         _animator = GetComponent<Animator>();
-}
+        _canShoot= true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (gameObject.GetComponent<EnemyFOV>().GetDetected())
+        if (gameObject.GetComponent<EnemyFOV>().GetDetected() && gameObject.GetComponent<EnemyHealth>()._currentHealth > 0)
         {
-            if (!_canShoot)
+            if (_canShoot)
+            {
+                _coolDownShoot = _initialCoolDownShoot;
+                Shoot();
+            }
+            else
             {
                 _coolDownShoot -= Time.deltaTime;
                 if (_coolDownShoot <= 0)
@@ -58,13 +63,6 @@ public class EnemyShoot : MonoBehaviour
                     _canShoot = true;
                 }
             }
-            else
-            {
-
-                _coolDownShoot = _initialCoolDownShoot;
-                Shoot();
-            }
-
             if (GameManager.instance._player.transform.position.x <= gameObject.transform.position.x)
             {
                 gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -92,5 +90,7 @@ public class EnemyShoot : MonoBehaviour
                 _patrolFlip = _initialPatrolFlip;
             }
         }
+
+        
     }
 }
