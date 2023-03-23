@@ -26,7 +26,7 @@ public class CheckpointInteractionComponent : MonoBehaviour
             _mightylifecomponet = _player.GetComponent<MightyLifeComponent>();
 
             // sanaci�n de Mighty
-            _mightylifecomponet.SetHealth(_healthRes);
+            _mightylifecomponet.TakeDamage(-_healthRes);
             if (GameManager.instance._UImanager != null)
             {
                 GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponet.GetHealth());

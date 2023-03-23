@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentTime: 120
-  _health: 100
   _deathTimeDamage: 10
   _player: {fileID: 554501027}
   _timeOut: {fileID: 8300000, guid: eac42f7d57e44ca4f82c22010e600802, type: 3}
@@ -21460,6 +21459,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 158693090694766206, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: _maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657880, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MightyLifeComponent : MonoBehaviour
 {
     #region Parameters
-    public float _health; //La cantidad de vida del jugador.
+    [SerializeField] private float _health; //La cantidad de vida del jugador.
     [SerializeField] private float _coolDown;
 
     [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
@@ -42,10 +42,6 @@ public class MightyLifeComponent : MonoBehaviour
     {
         return _health;
     }
-    public void SetHealth(float settedHealth)
-    {
-        _health = settedHealth;
-    }
     #endregion
 
     public void OnPlayerHit(float damage)
@@ -65,14 +61,15 @@ public class MightyLifeComponent : MonoBehaviour
         TakeDamage(damage);
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        SetHealth(GetHealth() - damage);
-        if(GameManager.instance._UImanager != null){
+        _health -= damage;
+        if(GameManager.instance._UImanager != null)
+        {
             GameManager.instance._UImanager.ActualizarInterfaz(GetHealth());
         }
 
-        if (GetHealth() <= 0)
+        if (_health <= 0)
         {
             GetComponent<AudioSource>().PlayOneShot(_deathSFX);
             _death = true;
@@ -113,6 +110,10 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (!_canBeDamaged)
         {
+            if(_coolDown <= 0)
+            {
+                _coolDown = _initialCoolDown;
+            }
             //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
             _coolDown -= Time.deltaTime;
             _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
@@ -127,7 +128,7 @@ public class MightyLifeComponent : MonoBehaviour
         else
         {
             _renderC.material.color = _colores[1]; //Recupera su color original tras el cool down
-            _coolDown = _initialCoolDown;
+            //_coolDown = _initialCoolDown;
         }
 
         if (_death)
