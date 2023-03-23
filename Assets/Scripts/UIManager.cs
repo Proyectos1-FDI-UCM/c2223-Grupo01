@@ -80,7 +80,6 @@ public class UIManager : MonoBehaviour
     }
     private void Update()
     {
-        _mightyLifeComponent.SetHealth(_mightyLifeComponent.GetHealth());
         _currentTime = GameManager.instance._currentTime;
         _currentWeapon = GameManager.instance._currentWeapon;
         UpdateTimer(_currentTime);

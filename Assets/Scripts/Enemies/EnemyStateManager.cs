@@ -53,6 +53,7 @@ public class EnemyStateManager : MonoBehaviour
                     _enemyFlyingMovement = GetComponent<EnemyFlyingMovement>();
                     _enemyFlyingMovement.SetEnemySpeed(_enemyFlyingMovement.GetEnemyInitialSpeed());
                     _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyInitialDetectedSpeed());
+                    _enemyFlyingMovement.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                 }
                 _congelado = !_congelado;
                 _tiempoCongelado = _tiempoCongeladoInicial;
