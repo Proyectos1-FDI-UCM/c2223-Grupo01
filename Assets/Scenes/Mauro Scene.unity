@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentTime: 120
-  _health: 100
   _deathTimeDamage: 10
   _player: {fileID: 554501027}
   _timeOut: {fileID: 8300000, guid: eac42f7d57e44ca4f82c22010e600802, type: 3}
@@ -250,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69379900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.610413, y: -0.9257604, z: -0.03634626}
+  m_LocalPosition: {x: 51.9, y: -10.4, z: -0.03634626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2213,6 +2212,10 @@ PrefabInstance:
       propertyPath: _spawnWhenDie
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 158693090694766206, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: _objectSpawnDie
+      value: 
+      objectReference: {fileID: 5332955493982685794, guid: 8fc4a3f6b1699314a8b29ff88efc9c5b, type: 3}
     - target: {fileID: 6326382012256657880, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: m_RootOrder
       value: 1
