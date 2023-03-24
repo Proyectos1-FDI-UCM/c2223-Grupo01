@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c45132ca11281042ad413689b21a220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 4
-  _enemyDetectedSpeed: 5
+  _enemySpeed: 3.5
+  _enemyDetectedSpeed: 4.5
   _canturnCOUNTER: 0.1
 --- !u!114 &5020723013684745517
 MonoBehaviour:
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0280e2ac4494544b98058e76b2926fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 80
   _damage: 10
   _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
