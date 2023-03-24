@@ -178,6 +178,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _topOfLadder
       value: 
@@ -30033,6 +30037,14 @@ PrefabInstance:
     - target: {fileID: 3783709604892461099, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
       propertyPath: m_Name
       value: Tuerca
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464655278133959561, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464655278133959561, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
