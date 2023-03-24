@@ -27,7 +27,7 @@ public class PlataformaMovil : MonoBehaviour
     {
         // Calculamos la dirección hacia la que mover el objeto
         Vector2 direccion = MoverHacia - (Vector2)transform.position;
-        
+        //Debug.Log(direccion.normalized);
         // Movemos el objeto en la dirección calculada
         transform.Translate(direccion.normalized * velocidad * Time.fixedDeltaTime);
     
