@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlataformasGiratorias : MonoBehaviour
@@ -12,6 +13,11 @@ public class PlataformasGiratorias : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private float _setTime = 3;
 
+    private bool ComparaValores(float Rotacion , float Rotacionquequiero)
+    {
+        return Math.Abs(Rotacion - Rotacionquequiero) < 0.0001f;
+    }
+
     private void Start()
     {
         _initialrotation = _DesiredRotation;
@@ -21,8 +27,12 @@ public class PlataformasGiratorias : MonoBehaviour
     {
         //El método incluye un contador que determina cada cuanto ejecuta la rotación.
         //Cuando se ejecuta la rotatación, le sumo a la rotación actual un valor y lo redondeo.
+        Debug.Log(ComparaValores(transform.rotation.eulerAngles.z, _DesiredRotation));
         Debug.Log(transform.rotation.eulerAngles.z);
-        Debug.Log(transform.rotation.eulerAngles.z + "  " + _DesiredRotation);
+        Debug.Log(_DesiredRotation);
+
+        
+
         _Timer += Time.deltaTime;
 
 
@@ -31,7 +41,7 @@ public class PlataformasGiratorias : MonoBehaviour
         {
             _rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, _DesiredRotation), _rotationSpeed * Time.deltaTime));
 
-            if (Mathf.Approximately(transform.rotation.eulerAngles.z, _DesiredRotation))
+            if (ComparaValores(transform.rotation.eulerAngles.z, _DesiredRotation))
 
             {
                 _DesiredRotation = (_DesiredRotation + _initialrotation) % 360;
