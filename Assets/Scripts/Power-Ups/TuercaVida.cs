@@ -8,7 +8,6 @@ public class TuercaVida : MonoBehaviour
 
     //La vida que le sube a Mighty.
     [SerializeField] private float _healthbonus = 15f;
-    [SerializeField] private float _vidacurada;
     #endregion
 
     //El Awake se llama antes que el Start.
@@ -19,14 +18,26 @@ public class TuercaVida : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Comprueba que la vida actual es menos que la vida máxima establecida.
-        if (_myMightyLifeComponent.GetHealth() < _myMightyLifeComponent.GetMaxHealth())
+        //Si es MIGHTY el que toca...
+        if(collision.gameObject == GameManager.instance._player)
         {
-            //Quita el objeto de curación de la escena.
-            Destroy(gameObject);
+            //Comprueba que la vida actual es menos que la vida máxima establecida.
+            if (_myMightyLifeComponent.GetHealth() <= _myMightyLifeComponent.GetMaxHealth() - _healthbonus)
+            {
+                //Hacer que se le sume a la vida actual el "healthbonus". La vida sumada hacerlo en negativo porque es "Hacer daño" pero invertido.
+                _myMightyLifeComponent.TakeDamage(-_healthbonus);
 
-            //Hacer que se le sume a la vida actual el "healthbonus". La vida sumada hacerlo en negativo porque es "Hacer daño" pero invertido.
-            /*_myMightyLifeComponent.TakeDamage()*/
+                //Quita el objeto de curación de la escena.
+                Destroy(gameObject);
+            }
+            else
+            {
+                //Con la resta de la vida máxima y la vida actual conseguimos la vida que le falta, y se le cura la resta. Se pone en negativo porque el TakeDamage negativo es curación
+                _myMightyLifeComponent.TakeDamage(-(_myMightyLifeComponent.GetMaxHealth() - _myMightyLifeComponent.GetHealth()));
+
+                //Quita el objeto de curación de la escena.
+                Destroy(gameObject);
+            }
         }
     }
 }
