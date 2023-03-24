@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -727916230240251004}
   - component: {fileID: 5020723013684745517}
   - component: {fileID: 8738630133945712333}
-  - component: {fileID: -8762152322370305807}
   - component: {fileID: 1281900304}
   - component: {fileID: 1281900313}
   - component: {fileID: 1281900306}
@@ -139,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.23, y: 0.15}
+    oldSize: {x: 0.25, y: 0.17}
     newSize: {x: 0.23, y: 0.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,25 +147,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17, y: 0.15}
   m_EdgeRadius: 0
---- !u!114 &-8762152322370305807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7897470401433983102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0280e2ac4494544b98058e76b2926fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _damage: 10
-  _coolDownDeathAnim: 0
-  _hurt: {fileID: 8300000, guid: 5994de12674e43949af2af55bf2b92a3, type: 3}
-  _dead: {fileID: 0}
-  _spawnWhenDie: 0
-  _objectSpawn: {fileID: 0}
 --- !u!50 &1281900304
 Rigidbody2D:
   serializedVersion: 4

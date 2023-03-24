@@ -107,7 +107,7 @@ TextureImporter:
       name: Topos que corren_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 11
         y: 6
         width: 16
         height: 17
@@ -128,7 +128,7 @@ TextureImporter:
       name: Topos que corren_1
       rect:
         serializedVersion: 2
-        x: 28
+        x: 31
         y: 6
         width: 16
         height: 18
@@ -149,7 +149,7 @@ TextureImporter:
       name: Topos que corren_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 52
         y: 6
         width: 16
         height: 17
