@@ -18,6 +18,7 @@ public class PlataformaMovil : MonoBehaviour
     [SerializeField] float velocidad;
     private Vector2 MoverHacia;
     #endregion
+    //El código funciona pero Mighty no se mueve con la plataforma
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer==13)
