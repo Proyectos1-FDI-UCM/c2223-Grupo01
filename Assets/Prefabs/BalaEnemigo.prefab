@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 0.0001
       objectReference: {fileID: 0}
+    - target: {fileID: 520600740136430460, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1112613604, guid: 707679c02fc4abe4eb780329d6610ba1, type: 3}
     - target: {fileID: 1592227543846742981, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
       propertyPath: m_Name
       value: BalaEnemigo
@@ -78,6 +82,10 @@ PrefabInstance:
     - target: {fileID: 4742721935114119622, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
       propertyPath: m_Offset.y
       value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742721935114119622, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5523820004789212307, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
       propertyPath: _maxLifetime

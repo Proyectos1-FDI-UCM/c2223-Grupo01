@@ -145,6 +145,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: "Enemigo mu\xF1eco de nieve lanzador (1)_2"
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 2
+        width: 14
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81510ae6ace89434a849478d42ae8ee7
+      internalID: 1112613604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -156,6 +177,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      "Enemigo mu\xF1eco de nieve lanzador (1)_2": 1112613604
       "Enemigo mu\xF1eco de nieve lanzador (1)_1": 120408612
       "Enemigo mu\xF1eco de nieve lanzador (1)_0": -836294872
   spritePackingTag: 
