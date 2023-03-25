@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     #region parameters && references
-    [SerializeField] private int _maxHealth = 100;     //Vida máxima del enemigo.
+    [SerializeField] private int _maxHealth = 100;//Vida máxima del enemigo.
+    [SerializeField] private float _currenteHealthAEliminar;
     public int _currentHealth { get; private set; }                        //Vida actual del enemigo.
     [SerializeField] private float _damage;            //daño al jugador
     private EnemyMovement _enemyMovement;
@@ -106,7 +107,7 @@ public class EnemyHealth : MonoBehaviour
     private void Update()
     {
         _animator.SetBool("_death", _death);
-
+        _currenteHealthAEliminar = _currentHealth;
         if (_death)
         {
             _coolDownDeathAnim -= Time.deltaTime;

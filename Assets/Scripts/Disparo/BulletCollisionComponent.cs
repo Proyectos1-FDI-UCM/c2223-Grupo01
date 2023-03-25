@@ -13,6 +13,8 @@ public class BulletCollisionComponent : MonoBehaviour
     [Header("Disparo de Hielo")]
     [SerializeField] private int _iceBulletDamage;
     [SerializeField] private int _ralentizado;
+    [Header("Disparo de Hielo")]
+    [SerializeField] private int _fireBulletDamage;
 
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
@@ -54,6 +56,7 @@ public class BulletCollisionComponent : MonoBehaviour
 
             case typeOfDamage.Fire:
                 {
+                    FireHit(collision.gameObject);
                     break;
                 }
         }
@@ -68,6 +71,7 @@ public class BulletCollisionComponent : MonoBehaviour
         }
     }
 
+    #region Ice
     private void IcelHit(GameObject collision)
     {
         _enemyHealth = collision.GetComponent<EnemyHealth>();
@@ -112,6 +116,19 @@ public class BulletCollisionComponent : MonoBehaviour
             _enemyRigidBody.gravityScale = 10;
         }
     }
+    #endregion
+
+    #region fire
+    private void FireHit(GameObject collision)
+    {
+        _enemyHealth = collision.GetComponent<EnemyHealth>();
+        _enemyHealth.TakeDamage(_fireBulletDamage);
+        if( Random.RandomRange(0,100)<= 25)
+        {
+            collision.gameObject.GetComponent<EnemyStateManager>().SetQuemado(true);
+        }
+    } 
+    #endregion
 
     #endregion
 

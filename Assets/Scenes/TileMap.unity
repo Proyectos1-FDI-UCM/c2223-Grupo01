@@ -21459,6 +21459,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5433541021892351409, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: "_da\xF1oPorSegQuemado"
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 158693090694766206, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _maxHealth
       value: 100

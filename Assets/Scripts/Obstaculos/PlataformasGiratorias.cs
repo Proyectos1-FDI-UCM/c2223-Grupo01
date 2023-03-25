@@ -25,14 +25,12 @@ public class PlataformasGiratorias : MonoBehaviour
         Debug.Log(transform.rotation.eulerAngles.z + "  " + _DesiredRotation);
         _Timer += Time.deltaTime;
 
-
         if (_Timer > _setTime)
 
         {
             _rigidbody.MoveRotation(Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 0, _DesiredRotation), _rotationSpeed * Time.deltaTime));
 
             if (Mathf.Approximately(transform.rotation.eulerAngles.z, _DesiredRotation))
-
             {
                 _DesiredRotation = (_DesiredRotation + _initialrotation) % 360;
                 _Timer = 0;
