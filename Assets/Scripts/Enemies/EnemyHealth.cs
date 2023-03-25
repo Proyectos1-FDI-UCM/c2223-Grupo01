@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     #region parameters && references
-    [SerializeField] private int _maxHealth = 100;//Vida máxima del enemigo.
-    [SerializeField] private float _currenteHealthAEliminar;
+    private Animator _animator;
+
+    [SerializeField] private int _maxHealth = 100;     //Vida máxima del enemigo.
     public int _currentHealth { get; private set; }                        //Vida actual del enemigo.
     [SerializeField] private float _damage;            //daño al jugador
     private EnemyMovement _enemyMovement;
@@ -20,12 +21,9 @@ public class EnemyHealth : MonoBehaviour
 
     public bool _death { get; private set; }
 
-    [SerializeField] private bool _spawnWhenDie;
-    [SerializeField] private GameObject _objectSpawn;
-    #endregion
-
-    #region References
-    private Animator _animator;
+    [SerializeField] private bool _alwaysSpawn;
+    [SerializeField] private GameObject _objectSpawnDie;
+    private Transform _whereToSpawnDie;
     #endregion
 
     #region getter && setter
@@ -76,6 +74,13 @@ public class EnemyHealth : MonoBehaviour
             _enemyFlyingMovement.enabled = false;
         }
     }
+
+    private void Spawn()
+    {
+
+
+        Instantiate(_objectSpawnDie, _whereToSpawnDie.transform);
+    }
     #endregion
 
     #region collisions methods
@@ -102,18 +107,20 @@ public class EnemyHealth : MonoBehaviour
         _death = false;
         _animator = GetComponent<Animator>();
         _numbalasCongelado = 0;
+        _whereToSpawnDie = GetComponent<Transform>();
     }
 
     private void Update()
     {
         _animator.SetBool("_death", _death);
-        _currenteHealthAEliminar = _currentHealth;
+
         if (_death)
         {
             _coolDownDeathAnim -= Time.deltaTime;
             
             if (_coolDownDeathAnim <= 0)
             {
+                Spawn();
                 Destroy(gameObject);
             }
         }
