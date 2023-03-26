@@ -21,9 +21,8 @@ public class EnemyHealth : MonoBehaviour
 
     public bool _death { get; private set; }
 
-    [SerializeField] private bool _alwaysSpawn;
-    [SerializeField] private GameObject _objectSpawnDie;
-    private Transform _whereToSpawnDie;
+    [SerializeField] private GameObject _spawneableObject;
+    [SerializeField] private int _spawnProbability;
     #endregion
 
     #region getter && setter
@@ -77,9 +76,11 @@ public class EnemyHealth : MonoBehaviour
 
     private void Spawn()
     {
+        if (Random.RandomRange(0,100) <= _spawnProbability)
+        {
+            Instantiate(_spawneableObject, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
 
-
-        Instantiate(_objectSpawnDie, _whereToSpawnDie.transform);
+        }
     }
     #endregion
 
@@ -107,7 +108,6 @@ public class EnemyHealth : MonoBehaviour
         _death = false;
         _animator = GetComponent<Animator>();
         _numbalasCongelado = 0;
-        _whereToSpawnDie = GetComponent<Transform>();
     }
 
     private void Update()
