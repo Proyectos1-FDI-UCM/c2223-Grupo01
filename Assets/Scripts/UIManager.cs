@@ -41,7 +41,7 @@ public class UIManager : MonoBehaviour
 
     public void ActualizarInterfaz(float health)
     {
-       _slider.fillAmount = health / 100;
+       _slider.fillAmount = health / GameManager.instance._player.GetComponent<MightyLifeComponent>().GetMaxHealth();
     }
 
     private void currentWeaponState( int weapon)

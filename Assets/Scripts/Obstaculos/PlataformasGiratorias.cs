@@ -29,9 +29,7 @@ public class PlataformasGiratorias : MonoBehaviour
         //Cuando se ejecuta la rotatación, le sumo a la rotación actual un valor y lo redondeo.
         Debug.Log(CompareValue(transform.rotation.eulerAngles.z, _DesiredRotation));
         Debug.Log(transform.rotation.eulerAngles.z);
-        Debug.Log(_DesiredRotation);
-
-        
+        Debug.Log(_DesiredRotation);        
 
         _Timer += Time.deltaTime;
 
