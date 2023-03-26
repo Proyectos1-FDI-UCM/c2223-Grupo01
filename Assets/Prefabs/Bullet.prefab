@@ -132,7 +132,7 @@ MonoBehaviour:
   _iceBulletDamage: 10
   _ralentizado: 2
   _fireBulletDamage: 10
-  _actualDamage: 2
+  _actualDamage: 1
 --- !u!61 &5356210953026106083
 BoxCollider2D:
   m_ObjectHideFlags: 0

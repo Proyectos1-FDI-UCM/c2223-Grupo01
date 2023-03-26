@@ -45,6 +45,22 @@ public class PlataformaMovil : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == GameManager.instance._player)
+        {
+            collision.gameObject.transform.parent = gameObject.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject == GameManager.instance._player)
+        {
+            collision.gameObject.transform.parent = null;
+        }
+    }
+
 }
     
 
