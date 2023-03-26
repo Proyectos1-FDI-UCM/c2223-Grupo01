@@ -38,18 +38,18 @@ public class InputComponent : MonoBehaviour
     {
         // Comprobamos si estamos pulsando el espacio y si podemos saltar
         // (o estamos en el suelo o no hemos gastado el doble salto)
-        if ((_myCharacterController.GetIsGrounded() && Input.GetKeyDown(KeyCode.Space)) || (_myCharacterController._doublejump && Input.GetKeyDown(KeyCode.Space)))
+        if ((_myCharacterController.GetIsGrounded()||_myCharacterController._doublejump)&& (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Joystick2Button0)))
         {
             if (_myCharacterController.GetIsGrounded()) _animator.SetTrigger("_jump");
             _myCharacterController.Jump();
         }
-        else if(_myCharacterController.GetIsGrounded() && Input.GetKeyDown(KeyCode.L)) // input del dash
+        else if(_myCharacterController.GetIsGrounded() && ( Input.GetKeyDown(KeyCode.L)||Input.GetKeyDown(KeyCode.Joystick2Button5))) // input del dash
         {
             _myCharacterController.Dash();
         }
         
         // Disparamos
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K)||Input.GetKeyDown(KeyCode.Joystick2Button2))
         {
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
@@ -57,7 +57,7 @@ public class InputComponent : MonoBehaviour
 
         // Ataca cuerpo a cuerpo
 
-        if (Input.GetKeyDown(KeyCode.M) && _myMeleeComponent.GetAttackMelee())
+        if ((Input.GetKeyDown(KeyCode.M)||Input.GetKeyDown(KeyCode.Joystick2Button3)) && _myMeleeComponent.GetAttackMelee())
         {
             if (_myCharacterController.GetIsGrounded())
             {
@@ -72,7 +72,7 @@ public class InputComponent : MonoBehaviour
         }
 
         // Reinicia el nivel tutorial. El numero es en relaci�n con el orden de escenas al hacer la build
-        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(1);
+        if (Input.GetKeyDown(KeyCode.R)||Input.GetKeyDown(KeyCode.Joystick2Button6)) SceneManager.LoadScene(1);
 
         // Movimiento
         _myCharacterController.MoveXAxis(Input.GetAxis("Horizontal"));

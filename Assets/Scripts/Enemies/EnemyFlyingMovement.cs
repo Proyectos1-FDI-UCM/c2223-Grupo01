@@ -161,8 +161,8 @@ public class EnemyFlyingMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(Mathf.Approximately(transform.position.x, _initialPosition.x) && Mathf.Approximately(transform.position.y, _initialPosition.y));
-        Debug.Log(_estado);
+        //Debug.Log(Mathf.Approximately(transform.position.x, _initialPosition.x) && Mathf.Approximately(transform.position.y, _initialPosition.y));
+        //Debug.Log(_estado);
         if (!gameObject.GetComponent<EnemyHealth>()._death)
         {
             if (_knockbackCounter <= 0)
