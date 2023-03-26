@@ -173,6 +173,8 @@ MonoBehaviour:
   _coolDownDeathAnim: 0
   _hurt: {fileID: 0}
   _dead: {fileID: 0}
+  _spawneableObject: {fileID: 3783709604892461099, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
+  _spawnProbability: 20
 --- !u!114 &6249533309063329142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 45
   _visionDistance: 10
-  _animator: {fileID: 0}
 --- !u!114 &6292249636779231320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tiempoCongelado: 3
+  _tiempoQuemado: 3
+  _contadorDeSegundos: 0
+  "_da\xF1oPorSegQuemado": 5

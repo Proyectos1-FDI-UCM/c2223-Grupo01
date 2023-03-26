@@ -157,8 +157,8 @@ MonoBehaviour:
   _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
-  _spawnWhenDie: 0
-  _objectSpawn: {fileID: 0}
+  _spawneableObject: {fileID: 3783709604892461099, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
+  _spawnProbability: 20
 --- !u!95 &160949013
 Animator:
   serializedVersion: 4
@@ -319,6 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tiempoCongelado: 3
+  _tiempoQuemado: 3
+  _contadorDeSegundos: 0
+  "_da\xF1oPorSegQuemado": 5
 --- !u!1 &8362032265566184348
 GameObject:
   m_ObjectHideFlags: 0
