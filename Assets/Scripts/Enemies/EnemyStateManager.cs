@@ -8,7 +8,7 @@ public class EnemyStateManager : MonoBehaviour
     private bool _congelado;
     private bool _quemado;
 
-    [SerializeField] private float _tiempoCongelado = 3f, _tiempoQuemado = 3; 
+    [SerializeField] private float _tiempoCongelado = 3f, _tiempoQuemado = 3, _contadorDeSegundos; 
     [SerializeField] private int _dañoPorSegQuemado= 5;
 
     private float _tiempoCongeladoInicial, _tiempoQuemadoInicial;
@@ -72,11 +72,16 @@ public class EnemyStateManager : MonoBehaviour
     private void Quemado()
     {
         _tiempoQuemado -= Time.deltaTime;
-        GetComponent<EnemyHealth>().TakeDamage(_dañoPorSegQuemado);
-        if(_tiempoQuemado <= 0)
+        if(_tiempoQuemado < _contadorDeSegundos)
+        {
+            GetComponent<EnemyHealth>().TakeDamage(_dañoPorSegQuemado);
+            _contadorDeSegundos--;
+        }
+        if (_tiempoQuemado <= 0)
         {
             _quemado = false;
             _tiempoQuemado = _tiempoQuemadoInicial;
+            _contadorDeSegundos = _tiempoQuemado - 1f;
         }
     }
     #endregion
@@ -89,6 +94,7 @@ public class EnemyStateManager : MonoBehaviour
         _tiempoCongeladoInicial = _tiempoCongelado;
         _enemyHealth = GetComponent<EnemyHealth>();
         _tiempoQuemadoInicial = _tiempoQuemado;
+        _contadorDeSegundos = _tiempoQuemado - 1f;
     }
 
     // Update is called once per frame
@@ -103,5 +109,4 @@ public class EnemyStateManager : MonoBehaviour
             Quemado();
         }
     }
-
 }
