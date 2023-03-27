@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 60
-  _visionDistance: 5
+  _visionDistance: 5.5
 --- !u!95 &160949013
 Animator:
   serializedVersion: 4
