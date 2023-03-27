@@ -5,9 +5,14 @@ using UnityEngine;
 public class ShootingComponent : MonoBehaviour
 {
     #region Parameters
-    [SerializeField] private GameObject _bullet;                //prefab de la bala
+    [SerializeField] private GameObject[] _bullet; //prefab de la bala
+    private enum tiposDeBala { _normalBullet, _iceBullet, _fireBullet}
+    private tiposDeBala _actualBullet;
     [SerializeField] private Transform _bulletSpawnTransform;   //Spawn de la bala
-    //private Vector2 _oldposition;
+    #endregion
+
+    #region Getters & Setters
+
     #endregion
 
     #region References
@@ -20,13 +25,24 @@ public class ShootingComponent : MonoBehaviour
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
         GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
-        Instantiate(_bullet, _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
+        Instantiate(_bullet[(int)_actualBullet], _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
+    }
+
+    public void ChangeBullet()
+    {
+        _actualBullet++;
+        if((int)_actualBullet == 3)
+        {
+            _actualBullet = 0;
+        }
+        GameManager.instance._UImanager.currentWeaponState((int)_actualBullet);
     }
     #endregion
 
     private void Start()
     {
         _myInputComponent= GetComponent<InputComponent>();
+        _actualBullet = tiposDeBala._normalBullet;
     }
 
     private void Update()

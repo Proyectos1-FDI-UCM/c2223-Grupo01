@@ -78,6 +78,8 @@ public class BulletCollisionComponent : MonoBehaviour
         _enemyHealth.TakeDamage(_iceBulletDamage);
         if(collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() < 3)
         {
+            collision.GetComponent<EnemyStateManager>().SetRalentizado(true);
+            collision.GetComponent<EnemyStateManager>().SetTiempoRalentizado(collision.GetComponent<EnemyStateManager>().GetTiempoRalentizadoInicial());
             _enemyHealth.SetNumBalasCongelado(_enemyHealth.GetNumBalasCongelado() + 1);
             if (collision.GetComponent<EnemyMovement>() != null)
             {
@@ -102,6 +104,8 @@ public class BulletCollisionComponent : MonoBehaviour
     private void Congelado(GameObject collision)
     {
         collision.GetComponent<EnemyStateManager>().SetCongelado(true);
+        collision.GetComponent<EnemyStateManager>().SetTiempoCongelado(collision.GetComponent<EnemyStateManager>().GetTiempoCongeladoInicial());
+        Destroy(gameObject);
         if (collision.GetComponent<EnemyMovement>() != null)
         {
             _enemyMovement.SetEnemySpeed(0);
