@@ -84,14 +84,30 @@ public class BulletCollisionComponent : MonoBehaviour
             if (collision.GetComponent<EnemyMovement>() != null)
             {
                 _enemyMovement = collision.GetComponent<EnemyMovement>();
-                _enemyMovement.SetEnemySpeed(_enemyMovement.GetEnemySpeed() - _ralentizado);
-                _enemyMovement.SetEnemyDetectionSpeed(_enemyMovement.GetEnemyDetectionSpeed() - _ralentizado);
+                if (_enemyMovement.GetEnemySpeed() - _ralentizado > 0)
+                {
+                    _enemyMovement.SetEnemySpeed(_enemyMovement.GetEnemySpeed() - _ralentizado);
+                    _enemyMovement.SetEnemyDetectionSpeed(_enemyMovement.GetEnemyDetectionSpeed() - _ralentizado);
+                }
+                else
+                {
+                    _enemyMovement.SetEnemySpeed(0);
+                    _enemyMovement.SetEnemyDetectionSpeed(0);
+                }
             }
             else if (collision.GetComponent<EnemyFlyingMovement>() != null)
             {
                 _enemyFlyingMovement = collision.GetComponent<EnemyFlyingMovement>();
-                _enemyFlyingMovement.SetEnemySpeed(_enemyFlyingMovement.GetEnemySpeed() - _ralentizado);
-                _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyDetectedSpeed() - _ralentizado);
+                if (_enemyFlyingMovement.GetEnemyDetectedSpeed() - _ralentizado > 0 )
+                {
+                    _enemyFlyingMovement.SetEnemySpeed(_enemyFlyingMovement.GetEnemySpeed() - _ralentizado);
+                    _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyDetectedSpeed() - _ralentizado);
+                }
+                else
+                {
+                    _enemyFlyingMovement.SetEnemySpeed(0);
+                    _enemyFlyingMovement.SetEnemyDetectedSpeed(0);
+                }
             }
         }
         
