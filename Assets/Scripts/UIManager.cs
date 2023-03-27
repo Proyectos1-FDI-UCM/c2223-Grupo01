@@ -8,14 +8,11 @@ public class UIManager : MonoBehaviour
 {
     #region Parameters
     [SerializeField] private TMP_Text _timetext;
-    [SerializeField] private Image _regular;        //La imagen del arma de fuego regular.
-    [SerializeField] private Image _fire;
-    [SerializeField] private Image _ice;
+    [SerializeField] private Image[] _Weapons;        //La imagen del arma de fuego regular.
     float _currentTime;
     public Image _slider;                          //La Barra de vida
     int _currentWeapon;                             //Un int que determina qu� arma estamos usando ahora.
     #endregion
-
     #region References
     public static UIManager instance;
     private MightyLifeComponent _mightyLifeComponent;
@@ -44,26 +41,26 @@ public class UIManager : MonoBehaviour
        _slider.fillAmount = health / GameManager.instance._player.GetComponent<MightyLifeComponent>().GetMaxHealth();
     }
 
-    private void currentWeaponState( int weapon)
+    public void currentWeaponState( int weapon)
     //Determina cu�l es la arma actual que muestra en la UI
     //Comprueba estado (arma) actual
     {
         switch (weapon)
         {
             case 0:
-                _regular.gameObject.SetActive(true);
-                _ice.gameObject.SetActive(false);
-                _fire.gameObject.SetActive(false);
+                _Weapons[0].gameObject.SetActive(true);
+                _Weapons[1].gameObject.SetActive(false);
+                _Weapons[2].gameObject.SetActive(false);
                 break;
             case 1:
-                _regular.gameObject.SetActive(false);
-                _ice.gameObject.SetActive(true);
-                _fire.gameObject.SetActive(false);
+                _Weapons[0].gameObject.SetActive(false);
+                _Weapons[1].gameObject.SetActive(true);
+                _Weapons[2].gameObject.SetActive(false);
                 break;
             case 2:
-                _regular.gameObject.SetActive(false);
-                _ice.gameObject.SetActive(false);
-                _fire.gameObject.SetActive(true);
+                _Weapons[0].gameObject.SetActive(false);
+                _Weapons[1].gameObject.SetActive(false);
+                _Weapons[2].gameObject.SetActive(true);
                 break;
         }
     }

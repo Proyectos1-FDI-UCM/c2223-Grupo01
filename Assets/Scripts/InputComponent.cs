@@ -36,7 +36,6 @@ public class InputComponent : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(Input.GetJoystickNames()[1]);
         // Comprobamos si estamos pulsando el espacio y si podemos saltar
         // (o estamos en el suelo o no hemos gastado el doble salto)
         if ((_myCharacterController.GetIsGrounded()||_myCharacterController._doublejump)&& (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Joystick1Button0)))
@@ -54,6 +53,10 @@ public class InputComponent : MonoBehaviour
         {
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
+        }
+        else if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.Joystick1Button4))
+        {
+            _myShootingComponent.ChangeBullet();
         }
 
         // Ataca cuerpo a cuerpo

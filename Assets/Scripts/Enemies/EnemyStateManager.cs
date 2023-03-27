@@ -7,11 +7,12 @@ public class EnemyStateManager : MonoBehaviour
     #region parameters
     private bool _congelado;
     private bool _quemado;
+    private bool _ralentizado;
 
-    [SerializeField] private float _tiempoCongelado = 3f, _tiempoQuemado = 3, _contadorDeSegundos; 
+    [SerializeField] private float _tiempoCongelado = 3, _tiempoQuemado = 3, _tiempoRalentizado = 3;
     [SerializeField] private int _dañoPorSegQuemado= 5;
 
-    private float _tiempoCongeladoInicial, _tiempoQuemadoInicial;
+    private float _tiempoCongeladoInicial, _tiempoQuemadoInicial, _contadorDeSegundos, _initialTiempoRalentizado;
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
     private EnemyHealth _enemyHealth;
@@ -42,11 +43,66 @@ public class EnemyStateManager : MonoBehaviour
     {
         _tiempoQuemado = tiempoQuemado;
     }
+
+    public void SetRalentizado(bool ralentizado)
+    {
+        _ralentizado = ralentizado;
+    }
+
+    public float GetTiempoRalentizadoInicial()
+    {
+        return _initialTiempoRalentizado;
+    }
+
+    public void SetTiempoRalentizado(float tiempoRalentizadoInicial)
+    {
+        _tiempoRalentizado = tiempoRalentizadoInicial;
+    }
+
+    public float GetTiempoCongeladoInicial()
+    {
+        return _tiempoCongeladoInicial;
+    }
+
+    public void SetTiempoCongelado(float tiempoCongeladoInicial)
+    {
+        _tiempoCongelado = tiempoCongeladoInicial;
+    }
     #endregion
 
     #region methods
+
+    private void Ralentizado()
+    {
+        _tiempoRalentizado -= Time.deltaTime;
+        if (_tiempoRalentizado <= 0)
+        {
+            _enemyHealth.SetNumBalasCongelado(0);
+            if (GetComponent<EnemyMovement>() != null)
+            {
+                _enemyMovement = GetComponent<EnemyMovement>();
+                _enemyMovement.SetEnemySpeed(_enemyMovement.GetEnemyInitialSpeed());
+                _enemyMovement.SetEnemyDetectionSpeed(_enemyMovement.GetEnemyInitialDetectedSpeed());
+            }
+            else if (GetComponent<EnemyFlyingMovement>() != null)
+            {
+                _enemyFlyingMovement = GetComponent<EnemyFlyingMovement>();
+                _enemyFlyingMovement.SetEnemySpeed(_enemyFlyingMovement.GetEnemyInitialSpeed());
+                _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyInitialDetectedSpeed());
+                _enemyFlyingMovement.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            }
+            _ralentizado = !_ralentizado;
+            _tiempoRalentizado = _initialTiempoRalentizado;
+        }
+    }
+
     private void Congelado()
     {
+        if (_ralentizado)
+        {
+            _tiempoRalentizado = _initialTiempoRalentizado;
+            _ralentizado = false;
+        }
         _tiempoCongelado -= Time.deltaTime;
         if (_tiempoCongelado <= 0)
         {
@@ -95,6 +151,7 @@ public class EnemyStateManager : MonoBehaviour
         _enemyHealth = GetComponent<EnemyHealth>();
         _tiempoQuemadoInicial = _tiempoQuemado;
         _contadorDeSegundos = _tiempoQuemado - 1f;
+        _initialTiempoRalentizado = _tiempoRalentizado;
     }
 
     // Update is called once per frame
@@ -107,6 +164,10 @@ public class EnemyStateManager : MonoBehaviour
         if (_quemado)
         {
             Quemado();
+        }
+        if(_ralentizado && !_congelado)
+        {
+            Ralentizado();
         }
     }
 }
