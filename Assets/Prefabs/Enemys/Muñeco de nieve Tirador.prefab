@@ -291,7 +291,7 @@ MonoBehaviour:
   _coolDownShoot: 1.25
   _bulletSpawnTransform: {fileID: 676700370213554566}
   _patrolFlip: 1
-  _disparoNormal: {fileID: 0}
+  _disparoNormal: {fileID: 8300000, guid: f9a9a125870933b45bd879f01b41987b, type: 3}
 --- !u!114 &3758571706154678328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tiempoCongelado: 3
   _tiempoQuemado: 3
+  _tiempoRalentizado: 3
   "_da\xF1oPorSegQuemado": 5
 --- !u!1 &8362032265566184348
 GameObject:

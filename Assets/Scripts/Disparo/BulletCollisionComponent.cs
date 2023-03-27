@@ -158,5 +158,13 @@ public class BulletCollisionComponent : MonoBehaviour
         Hit(collision.gameObject);
         Destroy(gameObject);
     }
+
+    private void OnTriggerStay2D(Collider2D collision) //Colision de la llama del lanza llamas. No dudar quitarlo si el enemigo hace mas daño de lo normal con el proyectil
+    {
+        if (collision.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
+        {
+            collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_enemysBulletDamage);
+        }
+    }
     #endregion
 }
