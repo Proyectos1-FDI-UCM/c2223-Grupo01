@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 4
-  _enemydetectionSpeed: 6
+  _enemydetectionSpeed: 5.75
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.5
   _groundLayer:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0280e2ac4494544b98058e76b2926fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 120
   _damage: 15
   _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}

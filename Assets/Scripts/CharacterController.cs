@@ -254,6 +254,11 @@ public class CharacterController : MonoBehaviour
         {
             SceneManager.LoadScene(3);
         }
+
+        if (other.gameObject.layer == 20)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
     private void OnTriggerExit2D(Collider2D other)
     {

@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenas definitivas/Nivel Hielo.unity
     guid: 9b92ee50378a94042adc0e9940b44f2d
+  - enabled: 1
+    path: "Assets/Scenes/Escenas definitivas/Nivel F\xE1brica 2.0.unity"
+    guid: d55efccda8d41a0439b59a08b3069c76
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/NivelHieloMITAD.unity
+    guid: 068d674478cf31445b8753246f9a86df
+  - enabled: 1
+    path: "Assets/Scenes/Escenas definitivas/NivelF\xE1bricaMITAD.unity"
+    guid: 2d802a3bfca1e0245b2cffaeaf4e5dbd
   m_configObjects: {}

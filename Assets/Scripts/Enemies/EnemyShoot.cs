@@ -52,8 +52,8 @@ public class EnemyShoot : MonoBehaviour
         {
             if (_canShoot)
             {
-                _coolDownShoot = _initialCoolDownShoot;
                 Shoot();
+                _coolDownShoot = _initialCoolDownShoot;
             }
             else
             {
