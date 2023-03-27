@@ -22,6 +22,8 @@ public class MightyLifeComponent : MonoBehaviour
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioClip _deathSFX;
 
+    [SerializeField] private AudioClip _cureSFX;
+
     #endregion
 
     #region References
@@ -97,6 +99,14 @@ public class MightyLifeComponent : MonoBehaviour
             _animator.SetTrigger("_damaged");
             GetComponent<AudioSource>().PlayOneShot(_hurt);
             TakeDamage(GetHealth());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 21)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_cureSFX);
         }
     }
 

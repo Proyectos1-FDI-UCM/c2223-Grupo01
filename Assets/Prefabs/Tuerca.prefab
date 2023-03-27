@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1753007905492705694}
   - component: {fileID: 7464655278133959561}
   - component: {fileID: 1115387526174031318}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Tuerca
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,5 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f5899f369b7b543b51798f76e431c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sanation: 10
-  _maximumHealth: 0
+  _sanation: 20

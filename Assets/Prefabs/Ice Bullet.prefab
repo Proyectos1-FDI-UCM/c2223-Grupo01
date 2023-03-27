@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 917914767021076569, guid: 637b8d1b92671cd4fa5a18d02044eae4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1952292119, guid: 70517ee4d02cb1c4091abf17df1051f9, type: 3}
+      objectReference: {fileID: 814682946, guid: 70517ee4d02cb1c4091abf17df1051f9, type: 3}
     - target: {fileID: 2133623756580499680, guid: 637b8d1b92671cd4fa5a18d02044eae4, type: 3}
       propertyPath: m_Name
       value: Ice Bullet

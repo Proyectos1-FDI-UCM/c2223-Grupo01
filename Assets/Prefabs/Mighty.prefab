@@ -120,7 +120,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19096659, y: 0.25}
+  m_Size: {x: 0.15, y: 0.25}
   m_EdgeRadius: 0
 --- !u!50 &3307213394870111580
 Rigidbody2D:
@@ -156,16 +156,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MovementSmoothing: 0.1
-  _movementSpeedX: 7.5
+  _movementSpeedX: 6
   _slowSpeedX: 1
   _jumpForce: 600
-  _dashForce: 700
+  _dashForce: 900
   _smallDashForce: 400
   _slideObject: {fileID: 8964612961835455326}
-  _climbVelocity: 5
+  _climbVelocity: 4
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 2240
+    m_Bits: 2752
   _aterrizaje: {fileID: 8300000, guid: 139e85cbd28b35c41a326451613fb151, type: 3}
   _dobleSalto: {fileID: 8300000, guid: 304ade939671f8d42a9b1c465af41a41, type: 3}
   _normalJump: {fileID: 8300000, guid: 15d5e5ea4e536f34d9306969ab95eaf8, type: 3}
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _melee: {fileID: 8300000, guid: 8dcb02e82393954489cfbb94afa8d016, type: 3}
   _airMelee: {fileID: 8300000, guid: 8a2d78e5140c3b0439f5944dda4f8517, type: 3}
+  _changeWeapon: {fileID: 8300000, guid: 2485faeb7bbe5064e8cecd50ba6fc2cf, type: 3}
 --- !u!114 &3307213394870111579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +224,7 @@ MonoBehaviour:
   attackRate: 240
   _coolDownMelee: 0.35
   KnockbackForce: 7
-  _KnockbackTime: 0.4
+  _KnockbackTime: 0.5
 --- !u!95 &989400450
 Animator:
   serializedVersion: 4
@@ -264,7 +265,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.8982792
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -359,6 +360,7 @@ MonoBehaviour:
   _canRepeatLevelTimer: 6
   _hurt: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
   _deathSFX: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
+  _cureSFX: {fileID: 0}
   _myRigidBody2D: {fileID: 3307213394870111580}
   _boxColiderNormal: {fileID: 3307213394870111649}
   _colores:

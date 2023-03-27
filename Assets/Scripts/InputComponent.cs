@@ -20,6 +20,7 @@ public class InputComponent : MonoBehaviour
 
     [SerializeField] private AudioClip _melee;
     [SerializeField] private AudioClip _airMelee;
+    [SerializeField] private AudioClip _changeWeapon;
     #endregion
 
     void Start()
@@ -57,6 +58,7 @@ public class InputComponent : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.Joystick1Button4))
         {
+            GetComponent<AudioSource>().PlayOneShot(_changeWeapon);
             _myShootingComponent.ChangeBullet();
         }
 
