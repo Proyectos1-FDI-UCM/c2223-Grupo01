@@ -5,13 +5,11 @@ using UnityEngine;
 public class HealthpackComponent : MonoBehaviour
 {
     #region references
-    private GameObject _player;
-    private MightyLifeComponent _mightylifecomponent;
+    private MightyLifeComponent _myMightyLifeComponent;
     #endregion
 
     #region parameters
     [SerializeField] private float _sanation;
-    [SerializeField] private float _maximumHealth;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,20 +17,27 @@ public class HealthpackComponent : MonoBehaviour
         if (collision.gameObject == GameManager.instance._player)
         {
             // referencias en la colision
-            _player = collision.gameObject;
-            _mightylifecomponent = _player.GetComponent<MightyLifeComponent>();
+            _myMightyLifeComponent =collision.gameObject.GetComponent<MightyLifeComponent>();
 
             // sanacion de Mighty
-            _mightylifecomponent.TakeDamage(- _sanation);
+            _myMightyLifeComponent.TakeDamage(- _sanation);
 
-            if (_mightylifecomponent.GetHealth() > 100)
+            //Comprueba que la vida actual es menos que la vida máxima establecida.
+            if (_myMightyLifeComponent.GetHealth() <= _myMightyLifeComponent.GetMaxHealth() - _sanation)
             {
-                _mightylifecomponent.TakeDamage(-_maximumHealth);
+                //Hacer que se le sume a la vida actual el "healthbonus". La vida sumada hacerlo en negativo porque es "Hacer daño" pero invertido.
+                _myMightyLifeComponent.TakeDamage(-_sanation);
+
+                //Quita el objeto de curación de la escena.
+                Destroy(gameObject);
             }
-
-            if (GameManager.instance._UImanager != null)
+            else
             {
-                GameManager.instance._UImanager.ActualizarInterfaz(_mightylifecomponent.GetHealth());
+                //Con la resta de la vida máxima y la vida actual conseguimos la vida que le falta, y se le cura la resta. Se pone en negativo porque el TakeDamage negativo es curación
+                _myMightyLifeComponent.TakeDamage(-(_myMightyLifeComponent.GetMaxHealth() - _myMightyLifeComponent.GetHealth()));
+
+                //Quita el objeto de curación de la escena.
+                Destroy(gameObject);
             }
             Destroy(gameObject);
         }
