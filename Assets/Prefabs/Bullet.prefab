@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 774227526970089269}
   - component: {fileID: 917914767021076569}
+  - component: {fileID: 5752858345045237472}
   - component: {fileID: -4094880350555402314}
+  - component: {fileID: 5131455522892988605}
   - component: {fileID: 5356210953026106083}
   - component: {fileID: 732577927019432130}
-  - component: {fileID: 3453811739421365958}
-  - component: {fileID: 8833432189409705588}
   m_Layer: 19
   m_Name: Bullet
   m_TagString: Untagged
@@ -89,6 +89,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5752858345045237472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133623756580499680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51838ebfdeb8d464fa2ee2dfc61f9f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1000
 --- !u!114 &-4094880350555402314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,6 +115,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxLifetime: 300
+--- !u!114 &5131455522892988605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133623756580499680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd65b93ce969514c84a9ce8567cb30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemysBulletDamage: 30
+  _normalBulletDamage: 30
+  _iceBulletDamage: 10
+  _ralentizado: 2
+  _fireBulletDamage: 10
+  _actualDamage: 1
 --- !u!61 &5356210953026106083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,34 +180,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3453811739421365958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133623756580499680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cd65b93ce969514c84a9ce8567cb30b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemysBulletDamage: 10
-  _normalBulletDamage: 30
-  _iceBulletDamage: 10
-  _ralentizado: 2
-  _fireBulletDamage: 20
-  _actualDamage: 0
---- !u!114 &8833432189409705588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2133623756580499680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51838ebfdeb8d464fa2ee2dfc61f9f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 1000
