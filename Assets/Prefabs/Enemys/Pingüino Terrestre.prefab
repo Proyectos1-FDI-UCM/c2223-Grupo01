@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 3
-  _enemydetectionSpeed: 4.5
+  _enemySpeed: 3.5
+  _enemydetectionSpeed: 5.25
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.5
   _groundLayer:
@@ -171,7 +171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 80
-  currentHealthProvisional: 0
   _damage: 10
   _coolDownDeathAnim: 0.5
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
@@ -322,4 +321,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tiempoCongelado: 3
   _tiempoQuemado: 5
+  _contadorDeSegundos: 0
   "_da\xF1oPorSegQuemado": 5
