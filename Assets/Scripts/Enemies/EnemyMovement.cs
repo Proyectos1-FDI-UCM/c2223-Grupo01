@@ -71,10 +71,10 @@ public class EnemyMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D Other)
     // Cada vez que colisione con un collider, el enemigo dará la vuelta.
     {
-        if(Other != GameManager.instance._player)
+        if(Other != GameManager.instance._player && _canturn)
         {
+            _canturn = false;
             Flip();
-
         }
     }
 
