@@ -17,6 +17,8 @@ public class CharacterController : MonoBehaviour
 
     [Header("Basic Movement")]
     [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
+    [SerializeField] private float _IceMoveSmoothing;
+    private float _originalMoveSmoothing;
     [SerializeField] private float _movementSpeedX; // velocidad con la que se moverá mighty en el eje x
     private float _initialMovementSpeedX; // velocidad inicial con la que se moverá mighty en el eje x. Util para poder reconfigurar la velocidad, cuando estas en una plataforma que ralentiza por ejemplo
     [SerializeField] private float _slowSpeedX; // velocidad con la que se moverá mighty en el eje x por las plataformas ralentizantes
@@ -200,7 +202,7 @@ public class CharacterController : MonoBehaviour
         // para dar efecto de resbalar.
         if(collision.gameObject.layer == 9)
         {
-            _MovementSmoothing = 10.0f;
+            _MovementSmoothing = _IceMoveSmoothing;
         }
 
         //Cuando Mighty toque layer de Ralentizante (núm 11), la velocidad se reducirá al igual que la fuerza del dash
@@ -237,7 +239,7 @@ public class CharacterController : MonoBehaviour
 
         if (collision.gameObject.layer == 9 || !_isgrounded)
         {
-            _MovementSmoothing = 0.1f;
+            _MovementSmoothing = _originalMoveSmoothing;
         }
     }
 
@@ -280,6 +282,7 @@ public class CharacterController : MonoBehaviour
         _myInputComponent = GetComponent<InputComponent>();
         _animator = GetComponent<Animator>();
         //Inicializo parámetros
+        _originalMoveSmoothing = _MovementSmoothing;
         _initialMovementSpeedX = _movementSpeedX;
         _initialdDashForce = _dashForce;
 

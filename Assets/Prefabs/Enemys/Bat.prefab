@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 4.5
-  _enemyDetectedSpeed: 6
+  _enemyDetectedSpeed: 5
   _canturnCOUNTER: 0.1
 --- !u!114 &5020723013684745517
 MonoBehaviour:
@@ -317,5 +317,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tiempoCongelado: 3
   _tiempoQuemado: 3
-  _contadorDeSegundos: 0
+  _tiempoRalentizado: 3
   "_da\xF1oPorSegQuemado": 5

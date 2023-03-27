@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _MovementSmoothing: 0.1
+  _IceMoveSmoothing: 8
   _movementSpeedX: 6
   _slowSpeedX: 1
   _jumpForce: 600
@@ -360,7 +361,7 @@ MonoBehaviour:
   _canRepeatLevelTimer: 6
   _hurt: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
   _deathSFX: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
-  _cureSFX: {fileID: 0}
+  _cureSFX: {fileID: 8300000, guid: f29ff22bd4841c048a2647b08c9d1bb6, type: 3}
   _myRigidBody2D: {fileID: 3307213394870111580}
   _boxColiderNormal: {fileID: 3307213394870111649}
   _colores:
