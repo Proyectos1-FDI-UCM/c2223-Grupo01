@@ -103,7 +103,8 @@ PrefabInstance:
       propertyPath: _maxLifetime
       value: 1000
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4923242723753018821, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
 --- !u!1 &1256174170972558883 stripped
 GameObject:
@@ -130,3 +131,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4308232790617567412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256174170972558883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e02aec139c5879418d09f81b8da8921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 500
