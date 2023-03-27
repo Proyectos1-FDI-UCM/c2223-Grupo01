@@ -55,6 +55,10 @@ public class InputComponent : MonoBehaviour
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
         }
+        else if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.Joystick1Button4))
+        {
+            _myShootingComponent.ChangeBullet();
+        }
 
         // Ataca cuerpo a cuerpo
 
