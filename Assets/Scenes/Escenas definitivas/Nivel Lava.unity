@@ -1252,15 +1252,43 @@ Tilemap:
   m_Enabled: 1
   m_Tiles: {}
   m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
+  m_TileAssetArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileMatrixArray:
+  - m_RefCount: 0
+    m_Data:
+      e00: 1e-45
+      e01: 0
+      e02: 1.3421789e+10
+      e03: 1.3421789e+10
+      e10: 0
+      e11: 0
+      e12: 5.06e-43
+      e13: 5.06e-43
+      e20: 1.3391177e+28
+      e21: 3e-45
+      e22: -5.087869e-29
+      e23: 1.0974453e-19
+      e30: 4.5904e-41
+      e31: 0
+      e32: 5.06e-43
+      e33: 5.1e-43
+  m_TileColorArray:
+  - m_RefCount: 0
+    m_Data: {r: 5.0775e-41, g: 5.0775e-41, b: 5.0775e-41, a: 5.0775e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
+  m_Size: {x: 32, y: 248, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
