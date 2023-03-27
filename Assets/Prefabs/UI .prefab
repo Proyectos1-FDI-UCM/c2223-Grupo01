@@ -675,9 +675,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timetext: {fileID: 8350065309596999098}
-  _regular: {fileID: 5778087075236105783}
-  _fire: {fileID: 4099565168276432387}
-  _ice: {fileID: 3173627128077574521}
+  _Weapons:
+  - {fileID: 5778087075236105783}
+  - {fileID: 3173627128077574521}
+  - {fileID: 4099565168276432387}
   _slider: {fileID: 462359978}
 --- !u!1 &8350065310244987595
 GameObject:
