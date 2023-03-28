@@ -16,6 +16,12 @@ public class ShootingComponent : MonoBehaviour
     private float _initialCoolDownShoot;
     #endregion
 
+    #region References
+    private Animator _animator;
+    [SerializeField]
+    private RuntimeAnimatorController[] _animatorControllers;
+    #endregion
+
     #region Getters & Setters
 
     public bool GetAttackShoot()
@@ -47,6 +53,7 @@ public class ShootingComponent : MonoBehaviour
             _actualBullet = 0;
         }
         GameManager.instance._UImanager.currentWeaponState((int)_actualBullet);
+        _animator.runtimeAnimatorController = _animatorControllers[(int)_actualBullet];
     }
     #endregion
 
@@ -54,6 +61,8 @@ public class ShootingComponent : MonoBehaviour
     {
         _initialCoolDownShoot = _coolDownShoot;
         _canAttackShoot = true;
+
+        _animator = GetComponent<Animator>();
 
         _myInputComponent = GetComponent<InputComponent>();
         _actualBullet = tiposDeBala._normalBullet;
