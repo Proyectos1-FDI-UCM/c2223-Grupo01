@@ -20,7 +20,8 @@ public class HealthpackComponent : MonoBehaviour
             _myMightyLifeComponent =collision.gameObject.GetComponent<MightyLifeComponent>();
 
             // sanacion de Mighty
-            _myMightyLifeComponent.TakeDamage(- _sanation);
+            // quitamos la linea de debajo, porque cura 2 veces
+            //_myMightyLifeComponent.TakeDamage(- _sanation);
 
             //Comprueba que la vida actual es menos que la vida máxima establecida.
             if (_myMightyLifeComponent.GetHealth() <= _myMightyLifeComponent.GetMaxHealth() - _sanation)
