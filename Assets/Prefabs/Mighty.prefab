@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 989400450}
   - component: {fileID: 989400458}
   - component: {fileID: 1850376258}
+  - component: {fileID: 554501038}
   m_Layer: 13
   m_Name: Mighty
   m_TagString: Player
@@ -203,6 +204,7 @@ MonoBehaviour:
   - {fileID: 1592227543846742981, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
   - {fileID: 1256174170972558883, guid: 40c69f83e64ff7643b019a1eff35d82f, type: 3}
   _bulletSpawnTransform: {fileID: 3307213394960240520}
+  _coolDownShoot: 0.1
   _disparoNormal: {fileID: 8300000, guid: 5994de12674e43949af2af55bf2b92a3, type: 3}
 --- !u!114 &5106214237236784140
 MonoBehaviour:
@@ -223,9 +225,9 @@ MonoBehaviour:
   attackRange: 1.1
   attackDamage: 40
   attackRate: 240
-  _coolDownMelee: 0.35
+  _coolDownMelee: 0.325
   KnockbackForce: 7
-  _KnockbackTime: 0.5
+  _KnockbackTime: 0.55
 --- !u!95 &989400450
 Animator:
   serializedVersion: 4
@@ -356,8 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _maxhealth: 100
-  _coolDown: 1
-  _timerInputFalseAfterHit: 0.5
+  _coolDown: 1.5
+  _timerInputFalseAfterHit: 0.1
   _canRepeatLevelTimer: 6
   _hurt: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
   _deathSFX: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
@@ -368,6 +370,14 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 0.49019608}
   - {r: 1, g: 1, b: 1, a: 1}
   _renderC: {fileID: 3307213394870111582}
+--- !u!81 &554501038
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307213394870111648}
+  m_Enabled: 1
 --- !u!1 &3307213394960240523
 GameObject:
   m_ObjectHideFlags: 0

@@ -200,7 +200,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -235,7 +235,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -291,7 +291,7 @@ MonoBehaviour:
   _coolDownShoot: 1.1
   _bulletSpawnTransform: {fileID: 676700370213554566}
   _patrolFlip: 1
-  _disparoNormal: {fileID: 0}
+  _disparoNormal: {fileID: 8300000, guid: f9a9a125870933b45bd879f01b41987b, type: 3}
 --- !u!114 &3758571706154678328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +322,11 @@ MonoBehaviour:
   _tiempoQuemado: 3
   _tiempoRalentizado: 3
   "_da\xF1oPorSegQuemado": 5
+  _colores:
+  - {r: 0.48490566, g: 0.9948966, b: 1, a: 1}
+  - {r: 1, g: 0.2584905, b: 0.2584905, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  _renderC: {fileID: 6326382012256657895}
 --- !u!1 &8362032265566184348
 GameObject:
   m_ObjectHideFlags: 0

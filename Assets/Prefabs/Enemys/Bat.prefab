@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 4.5
-  _enemyDetectedSpeed: 5
+  _enemyDetectedSpeed: 5.25
   _canturnCOUNTER: 0.1
 --- !u!114 &5020723013684745517
 MonoBehaviour:
@@ -319,3 +319,8 @@ MonoBehaviour:
   _tiempoQuemado: 3
   _tiempoRalentizado: 3
   "_da\xF1oPorSegQuemado": 5
+  _colores:
+  - {r: 0.4660377, g: 0.9192144, b: 1, a: 1}
+  - {r: 1, g: 0.2867924, b: 0.2867924, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  _renderC: {fileID: -2575931876522273343}

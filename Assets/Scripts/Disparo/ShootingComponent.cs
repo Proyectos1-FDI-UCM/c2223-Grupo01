@@ -9,9 +9,19 @@ public class ShootingComponent : MonoBehaviour
     private enum tiposDeBala { _normalBullet, _iceBullet, _fireBullet}
     private tiposDeBala _actualBullet;
     [SerializeField] private Transform _bulletSpawnTransform;   //Spawn de la bala
+
+    private bool _canAttackShoot; //Permite poder disparar
+
+    [SerializeField] private float _coolDownShoot;      //tiempo en el que se permitirá usar el disparo
+    private float _initialCoolDownShoot;
     #endregion
 
     #region Getters & Setters
+
+    public bool GetAttackShoot()
+    {
+        return _canAttackShoot;
+    }
 
     #endregion
 
@@ -26,6 +36,7 @@ public class ShootingComponent : MonoBehaviour
     {
         GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
         Instantiate(_bullet[(int)_actualBullet], _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
+        _canAttackShoot = false;
     }
 
     public void ChangeBullet()
@@ -41,12 +52,24 @@ public class ShootingComponent : MonoBehaviour
 
     private void Start()
     {
-        _myInputComponent= GetComponent<InputComponent>();
+        _initialCoolDownShoot = _coolDownShoot;
+        _canAttackShoot = true;
+
+        _myInputComponent = GetComponent<InputComponent>();
         _actualBullet = tiposDeBala._normalBullet;
     }
 
     private void Update()
     {
+        if (!_canAttackShoot)
+        {
+            _coolDownShoot -= Time.deltaTime;
+
+            if (_coolDownShoot <= 0)
+                _canAttackShoot = true;
+        }
+        else _coolDownShoot = _initialCoolDownShoot;
+
         if (_myInputComponent._lookUP && gameObject.transform.rotation.y >= 0)
         {
             Vector2 miposicion = transform.position;

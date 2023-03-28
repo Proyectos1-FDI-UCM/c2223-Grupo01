@@ -16,6 +16,12 @@ public class EnemyStateManager : MonoBehaviour
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
     private EnemyHealth _enemyHealth;
+
+    [SerializeField]
+    private Color[] _colores;   //Array de colores del player
+
+    [SerializeField]
+    private Renderer _renderC; //Renderiza el color del player
     #endregion
 
     #region getters && setters
@@ -168,6 +174,20 @@ public class EnemyStateManager : MonoBehaviour
         if(_ralentizado && !_congelado)
         {
             Ralentizado();
+        }
+        
+        //Gestión de colores cuando está ralentizado o quemado
+        if (_ralentizado)
+        {
+            _renderC.material.color = _colores[0];
+        }
+        else if (_quemado)
+        {
+            _renderC.material.color = _colores[1];
+        }
+        else
+        {
+            _renderC.material.color = _colores[2]; //color original
         }
     }
 }

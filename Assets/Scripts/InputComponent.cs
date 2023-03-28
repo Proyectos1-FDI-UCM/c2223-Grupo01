@@ -51,7 +51,7 @@ public class InputComponent : MonoBehaviour
         }
         
         // Disparamos
-        if (Input.GetKeyDown(KeyCode.K)||Input.GetKeyDown(KeyCode.Joystick1Button2))
+        if (_myShootingComponent.GetAttackShoot() && Input.GetKeyDown(KeyCode.K)||Input.GetKeyDown(KeyCode.Joystick1Button2))
         {
             _animator.SetTrigger("_shoot");
             _myShootingComponent.Shoot();
