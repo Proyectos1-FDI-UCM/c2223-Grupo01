@@ -10,6 +10,7 @@ public class MightyLifeComponent : MonoBehaviour
     [SerializeField] private float _health = 100; //La cantidad de vida del jugador.
     [SerializeField] private float _maxhealth = 100; // vida máxima
     [SerializeField] private float _coolDown;
+    [SerializeField] private float _fireDamage;
 
     [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
 
@@ -107,6 +108,11 @@ public class MightyLifeComponent : MonoBehaviour
         if (collision.gameObject.layer == 21)
         {
             GetComponent<AudioSource>().PlayOneShot(_cureSFX);
+        }
+
+        if (collision.gameObject.layer == 22 && _canBeDamaged)
+        {
+            collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_fireDamage);
         }
     }
 

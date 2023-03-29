@@ -314,7 +314,7 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_isClimbing", _isClimbing);
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
-        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && UnityEngine.Input.GetKeyDown(KeyCode.Space)) && !IsCeiling())
+        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 || (UnityEngine.Input.GetKeyDown(KeyCode.Space) || UnityEngine.Input.GetKeyDown(KeyCode.Joystick1Button0))) && !IsCeiling())
         {
             if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
             {
