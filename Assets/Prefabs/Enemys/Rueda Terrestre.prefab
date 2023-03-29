@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 158693090694766206}
   - component: {fileID: 6249533309063329142}
   - component: {fileID: 6292249636779231320}
+  - component: {fileID: -5412697719393459757}
   m_Layer: 7
   m_Name: Rueda Terrestre
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6326382012256657892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0375171, y: -2.61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 1864920154, guid: 952f8b7c877d22240b039287cd612fb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -209,4 +210,24 @@ MonoBehaviour:
   - {r: 0.37169808, g: 1, b: 0.979873, a: 1}
   - {r: 1, g: 0.2679245, b: 0.2679245, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  _renderC: {fileID: 0}
+  _renderC: {fileID: 6326382012256657895}
+--- !u!95 &-5412697719393459757
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 668776738d0bc8242a9ac9db5ddf8fd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
