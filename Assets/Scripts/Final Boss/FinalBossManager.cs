@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class FinalBossManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //El script controlará el comportamiento general, detectará la muerte de las manos y activará la cabeza.
+    
 }
