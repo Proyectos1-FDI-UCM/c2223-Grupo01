@@ -23,7 +23,6 @@ public class LavaAscendente : MonoBehaviour
         }
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +30,6 @@ public class LavaAscendente : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void FixedUpdate()
     {
         if (_player.GetComponent<MightyLifeComponent>().GetHealth() < 90) //una vez se haga el boton que lo accione, se cambiará la condición

@@ -49,13 +49,11 @@ public class LanzaLlamasShooting : MonoBehaviour
                 {
                     _canShoot = true;
                 }
-
             }
             else
             {
                 _coolDownShoot = _initialCoolDownShoot;
                 Shoot();
-            
             }
     }
 }
