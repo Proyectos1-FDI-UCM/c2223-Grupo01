@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32e5bdc229fea164abccc474432dec3f
+guid: f5d3d993658e4d945ad23f0d315b36f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,6 +69,30 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +102,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 67
+        width: 46
+        height: 24
+      alignment: 9
+      pivot: {x: 0.18478261, y: 0.5208333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f356ff04557833547b33d614c13a62ec
+      internalID: -2038339623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 67
+        width: 49
+        height: 31
+      alignment: 9
+      pivot: {x: 0.1734694, y: 0.4032258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544000d8028b79a46a695d0cc2b1e5bd
+      internalID: -1611811677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_2
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 67
+        width: 55
+        height: 32
+      alignment: 9
+      pivot: {x: 0.26363635, y: 0.390625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60d1c0e5fd1e57a4cb2025cf7a25e476
+      internalID: -1790450230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_4
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 67
+        width: 40
+        height: 31
+      alignment: 9
+      pivot: {x: 0.2375, y: 0.4032258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1fdea9f212b1c645973e5bde94db9c3
+      internalID: -1545133870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 66
+        width: 33
+        height: 30
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31e335a92b0bde4a9e2814aa5162943
+      internalID: -2074219419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_6
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 66
+        width: 25
+        height: 24
+      alignment: 9
+      pivot: {x: 0.34, y: 0.5208333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1b9f8ee747f7d4d869b4623232ea21
+      internalID: -928977226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 20
+        width: 23
+        height: 32
+      alignment: 9
+      pivot: {x: 0.36956522, y: 0.390625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49f159a4a89dbb45be9172d4f232cb8
+      internalID: 1770912957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 20
+        width: 46
+        height: 33
+      alignment: 9
+      pivot: {x: 0.18478261, y: 0.37878788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4257c76705b13447b8af54daee0f168
+      internalID: 1686042984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_10
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 19
+        width: 46
+        height: 36
+      alignment: 9
+      pivot: {x: 0.18478261, y: 0.45833334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321951f6fcac836449fb01916482f7d6
+      internalID: 1550884874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 23
+        width: 36
+        height: 22
+      alignment: 9
+      pivot: {x: 0.2361111, y: 0.5681818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83ec13db6166d3499208975180cb630
+      internalID: 1949397341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprites Melee Mighty 3.0_12
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 22
+        width: 25
+        height: 22
+      alignment: 9
+      pivot: {x: 0.34, y: 0.5681818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebff38e943a0804c9b3a44472010c45
+      internalID: 53274093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +344,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sprites Melee Mighty 3.0_10: 1550884874
+      Sprites Melee Mighty 3.0_0: -2038339623
+      Sprites Melee Mighty 3.0_4: -1545133870
+      Sprites Melee Mighty 3.0_8: 1770912957
+      Sprites Melee Mighty 3.0_1: -1611811677
+      Sprites Melee Mighty 3.0_11: 1949397341
+      Sprites Melee Mighty 3.0_6: -928977226
+      Sprites Melee Mighty 3.0_12: 53274093
+      Sprites Melee Mighty 3.0_9: 1686042984
+      Sprites Melee Mighty 3.0_2: -1790450230
+      Sprites Melee Mighty 3.0_5: -2074219419
+      Sprites Melee Mighty 3.0_3: 676419938
+      Sprites Melee Mighty 3.0_7: 1838730671
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
