@@ -56,6 +56,15 @@ public class MightyLifeComponent : MonoBehaviour
     {
         _maxhealth = MaxHealth;
     }
+
+    public bool GetDeath()
+    {
+        return _death;
+    }
+    public void SetDeath(bool dead)
+    {
+        _death = dead;
+    }
     #endregion
 
     public void OnPlayerHit(float damage)

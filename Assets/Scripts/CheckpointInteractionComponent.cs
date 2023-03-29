@@ -10,12 +10,15 @@ public class CheckpointInteractionComponent : MonoBehaviour
     #region references
     private GameObject _player;
     private MightyLifeComponent _mightyLifeComponent;
+    private CharacterController _myCharacterController;
     #endregion
 
     #region parameters
     [SerializeField] private float _healthRes;
     [SerializeField] private float _timeRes;
-    private Transform _respawn;
+    private bool _startCheckpoint;
+    private bool _midCheckpoint;
+    private Vector3 _checkpointPosition;
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +36,15 @@ public class CheckpointInteractionComponent : MonoBehaviour
                 GameManager.instance._UImanager.ActualizarInterfaz(_mightyLifeComponent.GetHealth());
             }
             //aqui se deberia guardar el ultimo checkpoint y llamarlo respawner
-            // to do
+            if(_mightyLifeComponent.GetDeath()) //si mighty muere
+            {
+                _mightyLifeComponent.SetDeath(true); //resucitamos
+                _player.transform.position = _checkpointPosition; // Lo posicionamos en el checkpoint
+                if (_startCheckpoint || _midCheckpoint) // Si el checkpoint es de inicio o de mitad de nivel
+                {
+                    _myCharacterController.SetCurrentCheckpoint(this); // Lo guardamos como el checkpoint actual del personaje
+                }
+            }
 
             // reseteo del cronometro
             GameManager.instance._currentTime = _timeRes + 1;
@@ -41,6 +52,6 @@ public class CheckpointInteractionComponent : MonoBehaviour
     }
     private void Start()
     {
-        _respawn = GetComponent<Transform>(); //tomo transform del checkpoint
+        _checkpointPosition = transform.position;
     }
 }
