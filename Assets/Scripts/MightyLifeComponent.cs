@@ -46,17 +46,14 @@ public class MightyLifeComponent : MonoBehaviour
     {
         return _health;
     }
-
     public float GetMaxHealth()
     {
         return _maxhealth;
     }
-
     public void SetMaxHealth(float MaxHealth)
     {
         _maxhealth = MaxHealth;
     }
-
     public bool GetDeath()
     {
         return _death;
