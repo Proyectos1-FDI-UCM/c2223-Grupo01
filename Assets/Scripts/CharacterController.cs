@@ -53,7 +53,6 @@ public class CharacterController : MonoBehaviour
     [Header("Layers")]
     [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
     private InputComponent _myInputComponent; // Referencia al input
-    private CheckpointInteractionComponent _currentCheckpoint;
     private Animator _animator; // Referencia al animator
 
     // Sonidos varios
@@ -68,10 +67,6 @@ public class CharacterController : MonoBehaviour
     public bool GetIsGrounded()
     {
         return _isgrounded;
-    }
-    public void SetCurrentCheckpoint(CheckpointInteractionComponent checkpoint)
-    {
-        _currentCheckpoint = checkpoint;
     }
     #endregion
 
