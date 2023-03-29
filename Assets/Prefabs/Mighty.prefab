@@ -204,7 +204,11 @@ MonoBehaviour:
   - {fileID: 1592227543846742981, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
   - {fileID: 1256174170972558883, guid: 40c69f83e64ff7643b019a1eff35d82f, type: 3}
   _bulletSpawnTransform: {fileID: 3307213394960240520}
-  _coolDownShoot: 0.1
+  _coolDownShoot: 0.15
+  _animatorControllers:
+  - {fileID: 9100000, guid: fd3e3336c8b71af4a87dc6a44290414a, type: 2}
+  - {fileID: 9100000, guid: 14efeba4bd939a241a8dad2211d33bf5, type: 2}
+  - {fileID: 9100000, guid: 7566b86e6e876bf42b7700aab6821660, type: 2}
   _disparoNormal: {fileID: 8300000, guid: 5994de12674e43949af2af55bf2b92a3, type: 3}
 --- !u!114 &5106214237236784140
 MonoBehaviour:
@@ -359,7 +363,8 @@ MonoBehaviour:
   _health: 100
   _maxhealth: 100
   _coolDown: 1.5
-  _timerInputFalseAfterHit: 0.1
+  _fireDamage: 0
+  _timerInputFalseAfterHit: 1
   _canRepeatLevelTimer: 6
   _hurt: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
   _deathSFX: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}

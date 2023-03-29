@@ -14,15 +14,6 @@ public class LavaAscendente : MonoBehaviour
     private Rigidbody2D _myRigidbody;
     #endregion
 
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject == _player && _player.GetComponent<MightyLifeComponent>()._canBeDamaged)
-        {
-            _player.GetComponent<MightyLifeComponent>().OnPlayerHit(_lavaDamage);
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {

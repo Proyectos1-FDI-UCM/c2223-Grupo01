@@ -128,13 +128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 5
-  _enemydetectionSpeed: 3
+  _enemySpeed: 4
+  _enemydetectionSpeed: 6.25
   _maxDistanceDetection: 2
-  _canturnCOUNTER: 0
+  _canturnCOUNTER: 0.2
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!50 &9140318663064654158
 Rigidbody2D:
   serializedVersion: 4
@@ -168,11 +168,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0280e2ac4494544b98058e76b2926fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _damage: 0
-  _coolDownDeathAnim: 0
-  _hurt: {fileID: 0}
-  _dead: {fileID: 0}
+  _maxHealth: 150
+  _damage: 20
+  _coolDownDeathAnim: 0.5
+  _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
+  _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
   _spawneableObject: {fileID: 3783709604892461099, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
   _spawnProbability: 20
 --- !u!114 &6249533309063329142
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visionAngle: 45
-  _visionDistance: 10
+  _visionDistance: 7
 --- !u!114 &6292249636779231320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,5 +203,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tiempoCongelado: 3
   _tiempoQuemado: 3
-  _contadorDeSegundos: 0
+  _tiempoRalentizado: 3
   "_da\xF1oPorSegQuemado": 5
+  _colores:
+  - {r: 0.37169808, g: 1, b: 0.979873, a: 1}
+  - {r: 1, g: 0.2679245, b: 0.2679245, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  _renderC: {fileID: 0}

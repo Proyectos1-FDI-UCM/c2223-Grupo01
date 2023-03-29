@@ -103,7 +103,7 @@ public class MightyLifeComponent : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 21)
         {
@@ -112,7 +112,7 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (collision.gameObject.layer == 22 && _canBeDamaged)
         {
-            collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_fireDamage);
+            OnPlayerHit(_fireDamage);
         }
     }
 
