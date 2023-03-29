@@ -162,7 +162,8 @@ public class MightyLifeComponent : MonoBehaviour
         {
             _myInputComponent.enabled = false;
             _canRepeatLevelTimer -= Time.deltaTime;
-            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1);
+            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1); //no
+            //respawn 
         }
     }
 }
