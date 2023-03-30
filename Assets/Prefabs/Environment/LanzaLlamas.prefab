@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2292029711204549516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2292029711204549519}
-  m_Layer: 0
-  m_Name: PuntoDeLLama
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2292029711204549519
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2292029711204549516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.125, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2292029711307102599}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2292029711307102619
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +12,6 @@ GameObject:
   - component: {fileID: 2292029711307102596}
   - component: {fileID: 2292029711307102597}
   - component: {fileID: 2292029711307102618}
-  - component: {fileID: 2292029711307102598}
   - component: {fileID: 2292029711307102593}
   m_Layer: 6
   m_Name: LanzaLlamas
@@ -64,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2292029711204549519}
+  - {fileID: 6011640653384840058}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -167,22 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &2292029711307102598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2292029711307102619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2c0b106a6131e74d929ac9d93cd8d0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flame: {fileID: 4009383324580284068, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
-  _coolDownShoot: 4
-  _flameSpawnTransform: {fileID: 2292029711204549519}
-  _llamaSFX: {fileID: 8300000, guid: 304ade939671f8d42a9b1c465af41a41, type: 3}
 --- !u!82 &2292029711307102593
 AudioSource:
   m_ObjectHideFlags: 0
@@ -279,3 +231,65 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &7956516720142865052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2292029711307102599}
+    m_Modifications:
+    - target: {fileID: 4009383324580284068, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_Name
+      value: Llama Grande
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.020856857
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66954494
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+--- !u!4 &6011640653384840058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4397372096278077926, guid: 25e458dbb8cabca47a47ed8800a99573, type: 3}
+  m_PrefabInstance: {fileID: 7956516720142865052}
+  m_PrefabAsset: {fileID: 0}

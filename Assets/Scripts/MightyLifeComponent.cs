@@ -116,7 +116,7 @@ public class MightyLifeComponent : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(_cureSFX);
         }
 
-        if (collision.gameObject.layer == 22 && _canBeDamaged)
+        if ((collision.gameObject.layer == 22 && _canBeDamaged && collision.gameObject.GetComponent<LanzaLlamasShooting>()._canShootFire) || collision.gameObject.layer == 23)
         {
             OnPlayerHit(_fireDamage);
         }

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1831702713837349062}
   - component: {fileID: 5854471944838318439}
   - component: {fileID: 7972975766574482685}
-  - component: {fileID: 4248454787439354390}
   - component: {fileID: 6452920435278978621}
+  - component: {fileID: -4267074763877939028}
   m_Layer: 22
   m_Name: Llama Grande
   m_TagString: Untagged
@@ -135,19 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4248454787439354390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4009383324580284068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171c49317682e1f409a329af29d2b996, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxLifetime: 300
 --- !u!95 &6452920435278978621
 Animator:
   serializedVersion: 4
@@ -168,3 +155,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4267074763877939028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4009383324580284068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c0b106a6131e74d929ac9d93cd8d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flame: {fileID: 0}
+  _coolDownShootFalse: 1
+  _coolDownShootTrue: 1
+  _flameSpawnTransform: {fileID: 0}
+  _llamaSFX: {fileID: 0}

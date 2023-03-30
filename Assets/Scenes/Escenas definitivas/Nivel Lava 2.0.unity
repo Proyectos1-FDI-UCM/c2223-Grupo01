@@ -7916,6 +7916,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _coolDownShootTrue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _coolDownShootFalse
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2292029711307102599, guid: 4f50d59e1747b5842bd73b4509414318, type: 3}
       propertyPath: m_RootOrder
       value: 13
