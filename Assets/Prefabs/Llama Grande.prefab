@@ -167,8 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c0b106a6131e74d929ac9d93cd8d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flame: {fileID: 0}
-  _coolDownShootFalse: 1
-  _coolDownShootTrue: 1
-  _flameSpawnTransform: {fileID: 0}
+  _coolDownShootFalse: 4
+  _coolDownShootTrue: 2
   _llamaSFX: {fileID: 0}

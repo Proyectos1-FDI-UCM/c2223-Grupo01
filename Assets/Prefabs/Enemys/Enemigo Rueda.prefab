@@ -15,10 +15,11 @@ GameObject:
   - component: {fileID: 9140318663064654158}
   - component: {fileID: 158693090694766206}
   - component: {fileID: 6249533309063329142}
-  - component: {fileID: 6292249636779231320}
-  - component: {fileID: -5412697719393459757}
+  - component: {fileID: 160949013}
+  - component: {fileID: 7705262566188771213}
+  - component: {fileID: -5433541021892351409}
   m_Layer: 7
-  m_Name: Rueda Terrestre
+  m_Name: Enemigo Rueda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 6326382012256657892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0375171, y: -2.61, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1864920154, guid: 952f8b7c877d22240b039287cd612fb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -104,7 +105,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0019793212, y: 0.003958583}
+  m_Offset: {x: 0.024664223, y: -0.000015769154}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -115,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22806066, y: 0.18451524}
+  m_Size: {x: 0.16922987, y: 0.16774973}
   m_EdgeRadius: 0
 --- !u!114 &6326382012256657893
 MonoBehaviour:
@@ -129,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6144d8df1a5896444b9bedc048b50691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemySpeed: 4
+  _enemySpeed: 4.5
   _enemydetectionSpeed: 6.25
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.2
@@ -147,11 +148,11 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_UseAutoMass: 1
+  m_Mass: 1.0219775
+  m_LinearDrag: 0.5
+  m_AngularDrag: 0.5
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -188,30 +189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af312661e9daad40a4595d6bc6c9822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visionAngle: 45
+  _visionAngle: 60
   _visionDistance: 7
---- !u!114 &6292249636779231320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6326382012256657892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 528fca61b81d6a14f99c37d50ca26b37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tiempoCongelado: 3
-  _tiempoQuemado: 3
-  _tiempoRalentizado: 3
-  "_da\xF1oPorSegQuemado": 5
-  _colores:
-  - {r: 0.37169808, g: 1, b: 0.979873, a: 1}
-  - {r: 1, g: 0.2679245, b: 0.2679245, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  _renderC: {fileID: 6326382012256657895}
---- !u!95 &-5412697719393459757
+--- !u!95 &160949013
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -231,3 +211,120 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &7705262566188771213
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &-5433541021892351409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6326382012256657892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 528fca61b81d6a14f99c37d50ca26b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tiempoCongelado: 3
+  _tiempoQuemado: 3
+  _tiempoRalentizado: 3
+  "_da\xF1oPorSegQuemado": 5
+  _colores:
+  - {r: 0.30566037, g: 1, b: 0.9897519, a: 1}
+  - {r: 1, g: 0.3150943, b: 0.3150943, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  _renderC: {fileID: 6326382012256657895}
