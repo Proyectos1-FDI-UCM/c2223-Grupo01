@@ -6,24 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/IntroVideoScene.unity
+    path: Assets/Scenes/Escenas definitivas/Intro/IntroVideoScene.unity
     guid: 946e433cc3b17a74b976df4ffc358241
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/IntroScene.unity
+    path: Assets/Scenes/Escenas definitivas/Intro/IntroScene.unity
     guid: ec490aeb48c4d3c42a413c891be211c8
   - enabled: 1
     path: Assets/Scenes/Escenas definitivas/Tutorial.unity
     guid: cc8466d1893707b4abf93147ab2f3cc3
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/Nivel Hielo.unity
+    path: Assets/Scenes/Escenas definitivas/Nivel de Hielo/Nivel Hielo.unity
     guid: 9b92ee50378a94042adc0e9940b44f2d
   - enabled: 1
-    path: "Assets/Scenes/Escenas definitivas/Nivel F\xE1brica 2.0.unity"
+    path: "Assets/Scenes/Escenas definitivas/Nivel de f\xE1brica/Nivel F\xE1brica
+      2.0.unity"
     guid: d55efccda8d41a0439b59a08b3069c76
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/NivelHieloMITAD.unity
+    path: Assets/Scenes/Escenas definitivas/Nivel de Hielo/NivelHieloMITAD.unity
     guid: 068d674478cf31445b8753246f9a86df
   - enabled: 1
-    path: "Assets/Scenes/Escenas definitivas/NivelF\xE1bricaMITAD.unity"
+    path: "Assets/Scenes/Escenas definitivas/Nivel de f\xE1brica/NivelF\xE1bricaMITAD.unity"
     guid: 2d802a3bfca1e0245b2cffaeaf4e5dbd
   m_configObjects: {}
