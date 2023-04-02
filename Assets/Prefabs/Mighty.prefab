@@ -207,9 +207,9 @@ MonoBehaviour:
   _bulletSpawnTransform: {fileID: 3307213394960240520}
   _coolDownShoot: 0.1
   _animatorControllers:
+  - {fileID: 9100000, guid: fd3e3336c8b71af4a87dc6a44290414a, type: 2}
   - {fileID: 9100000, guid: 14efeba4bd939a241a8dad2211d33bf5, type: 2}
   - {fileID: 9100000, guid: 7566b86e6e876bf42b7700aab6821660, type: 2}
-  - {fileID: 9100000, guid: fd3e3336c8b71af4a87dc6a44290414a, type: 2}
   _disparoNormal: {fileID: 8300000, guid: 5994de12674e43949af2af55bf2b92a3, type: 3}
 --- !u!114 &5106214237236784140
 MonoBehaviour:

@@ -25,6 +25,22 @@ public class IntroMenuCommands : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
+
+    public void ComenzarLava()
+    {
+        SceneManager.LoadScene(7);
+    }
+
+    public void ComenzarLavaCheck1()
+    {
+        SceneManager.LoadScene(8);
+    }
+
+    public void ComenzarLavaCheck2()
+    {
+        SceneManager.LoadScene(9);
+    }
+
     public void SalirDeljuego()
     {
         Application.Quit();

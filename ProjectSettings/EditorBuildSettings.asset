@@ -22,9 +22,19 @@ EditorBuildSettings:
       2.0.unity"
     guid: d55efccda8d41a0439b59a08b3069c76
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/Nivel de Hielo/NivelHieloMITAD.unity
-    guid: 068d674478cf31445b8753246f9a86df
+    path: Assets/Scenes/Escenas definitivas/Nivel de Hielo/Nivel Hielo Mitad.unity
+    guid: a08c056cd95fa9a4584a67f4234e5e54
   - enabled: 1
-    path: "Assets/Scenes/Escenas definitivas/Nivel de f\xE1brica/NivelF\xE1bricaMITAD.unity"
-    guid: 2d802a3bfca1e0245b2cffaeaf4e5dbd
+    path: "Assets/Scenes/Escenas definitivas/Nivel de f\xE1brica/Nivel F\xE1brica
+      Mitad.unity"
+    guid: 5813c071af9075d47a4d94cdf25c1e76
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Nivel de Lava/Nivel Lava 2.0.unity
+    guid: c9499f7e158987d40be9c79101d0fc1f
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Nivel de Lava/Nivel Lava check 1.unity
+    guid: 54f7c9e592964af41b943a4b74809a97
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Nivel de Lava/Nivel Lava check 2.unity
+    guid: c25d1d4b5311f0f43b66c72a864fa10d
   m_configObjects: {}
