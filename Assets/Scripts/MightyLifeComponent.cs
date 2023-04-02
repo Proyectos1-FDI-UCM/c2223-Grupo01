@@ -18,6 +18,10 @@ public class MightyLifeComponent : MonoBehaviour
     public float _initialCoolDown { get; private set; }
     public bool _canBeDamaged { get; private set; }
 
+    public bool _switchLava1Detected { get; private set; }
+    public bool _switchLava2Detected { get; private set; }
+    public bool _switchLava3Detected { get; private set; }
+
     private bool _death;
 
     [SerializeField] private AudioClip _hurt;
@@ -122,13 +126,38 @@ public class MightyLifeComponent : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 25)
+        {
+            _switchLava1Detected = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.layer == 26)
+        {
+            _switchLava2Detected = true;
+            Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.layer == 27)
+        {
+            _switchLava3Detected = true;
+            Destroy(other.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     private void Start()
     {
         _death = false;
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
-    
+
+        _switchLava1Detected = false;
+        _switchLava2Detected = false;
+        _switchLava3Detected = false;
+
         _animator = GetComponent<Animator>();
         _myInputComponent = GetComponent<InputComponent>();
         GameManager.instance.RegisterMightyComponent(this);
