@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
+using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
     private InputComponent _myInputComponent; // Referencia al input
     private Animator _animator; // Referencia al animator
-
+    private UniversalInput _newInput;
     // Sonidos varios
     [Header("Sounds")]
     [SerializeField] private AudioClip _aterrizaje;
@@ -274,6 +275,18 @@ public class CharacterController : MonoBehaviour
         }
     }
     #endregion
+    private void OnEnable()
+    {
+        _newInput.Enable();
+    }
+    private void OnDisable()
+    {
+        _newInput.Disable();
+    }
+    private void Awake()
+    {
+        _newInput = new UniversalInput();
+    }
     private void Start()
     {
         // Inicializo componentes.
@@ -314,9 +327,9 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_isClimbing", _isClimbing);
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
-        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 || _dash && (UnityEngine.Input.GetKeyDown(KeyCode.Space) || UnityEngine.Input.GetKeyDown(KeyCode.Joystick1Button0))) && !IsCeiling())
+        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && _newInput.Mighty.Jump.triggered && !IsCeiling()))
         {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+            if (_newInput.Mighty.Jump.triggered)
             {
                 Jump();
             }

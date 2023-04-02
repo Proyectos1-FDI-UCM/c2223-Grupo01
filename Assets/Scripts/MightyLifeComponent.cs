@@ -31,8 +31,8 @@ public class MightyLifeComponent : MonoBehaviour
     private Animator _animator;
     private InputComponent _myInputComponent;
 
-    [SerializeField] private Rigidbody2D _myRigidBody2D;
-    [SerializeField] private BoxCollider2D _boxColiderNormal;
+    private Rigidbody2D _myRigidBody2D;
+    private BoxCollider2D _boxColiderNormal;
 
     [SerializeField]
     private Color[] _colores;   //Array de colores del player
