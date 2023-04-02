@@ -21041,6 +21041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _coolDown
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _dashForce
       value: 850
