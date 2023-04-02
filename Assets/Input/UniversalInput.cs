@@ -315,7 +315,7 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""12258d60-aa3f-4c75-870a-b83e0737c36c"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
