@@ -115,11 +115,6 @@ public class MightyLifeComponent : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 21)
-        {
-            GetComponent<AudioSource>().PlayOneShot(_cureSFX);
-        }
-
         if ((collision.gameObject.layer == 22 && _canBeDamaged && collision.gameObject.GetComponent<LanzaLlamasShooting>()._canShootFire) || collision.gameObject.layer == 23)
         {
             OnPlayerHit(_fireDamage);
@@ -128,6 +123,11 @@ public class MightyLifeComponent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.layer == 21)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_cureSFX);
+        }
+
         if (other.gameObject.layer == 25)
         {
             _switchLava1Detected = true;

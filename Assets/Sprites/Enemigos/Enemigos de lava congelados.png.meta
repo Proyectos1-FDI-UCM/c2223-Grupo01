@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d0c6c990b142f3f4ba653c461b2c08eb
+guid: d60a21e9b15ef5b4693f113c59712081
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemigos de hielo y fabrica congelados_0
+      name: Enemigos de lava congelados_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 9
-        width: 18
-        height: 18
+        x: 2
+        y: 18
+        width: 48
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96b9ccd9ff79e6f43a7615fc76d3bb85
-      internalID: -482402966
+      spriteID: 38a9d014e47d12b4fb0001957e5861d3
+      internalID: -405455483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemigos de hielo y fabrica congelados_1
+      name: Enemigos de lava congelados_1
       rect:
         serializedVersion: 2
-        x: 20
-        y: 9
-        width: 18
+        x: 60
+        y: 22
+        width: 21
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -139,50 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77903d93ed69d9a4ba69de45552078b9
-      internalID: -1353956505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemigos de hielo y fabrica congelados_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 9
-        width: 25
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc804c58476e1d84ca80543d4c689f7c
-      internalID: -891322509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemigos de hielo y fabrica congelados_3
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 9
-        width: 34
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5849d96140726f04f8897eeb6d479171
-      internalID: 1797924064
+      spriteID: ddd040d198cf5cd49a89ca54c50ca53c
+      internalID: 551773657
       vertices: []
       indices: 
       edges: []
@@ -198,10 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemigos de hielo y fabrica congelados_0: -482402966
-      Enemigos de hielo y fabrica congelados_1: -1353956505
-      Enemigos de hielo y fabrica congelados_2: -891322509
-      Enemigos de hielo y fabrica congelados_3: 1797924064
+      Enemigos de lava congelados_1: 551773657
+      Enemigos de lava congelados_0: -405455483
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

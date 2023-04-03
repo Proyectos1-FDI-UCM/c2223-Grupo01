@@ -134,6 +134,7 @@ MonoBehaviour:
   _ralentizado: 1
   _fireBulletDamage: 10
   _actualDamage: 0
+  _colisionSFX: {fileID: 8300000, guid: b81b7d2a5b8209a498ad3412b53e791b, type: 3}
 --- !u!61 &5356210953026106083
 BoxCollider2D:
   m_ObjectHideFlags: 0

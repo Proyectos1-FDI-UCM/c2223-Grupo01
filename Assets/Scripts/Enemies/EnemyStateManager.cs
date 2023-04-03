@@ -24,6 +24,10 @@ public class EnemyStateManager : MonoBehaviour
     private Renderer _renderC; //Renderiza el color del player
     #endregion
 
+    #region references
+    private Animator _myAnimator;
+    #endregion
+
     #region getters && setters
     public bool GetCongelado()
     {
@@ -155,6 +159,7 @@ public class EnemyStateManager : MonoBehaviour
         _quemado=false;
         _tiempoCongeladoInicial = _tiempoCongelado;
         _enemyHealth = GetComponent<EnemyHealth>();
+        _myAnimator = GetComponent<Animator>();
         _tiempoQuemadoInicial = _tiempoQuemado;
         _contadorDeSegundos = _tiempoQuemado - 1f;
         _initialTiempoRalentizado = _tiempoRalentizado;
@@ -163,6 +168,8 @@ public class EnemyStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _myAnimator.SetBool("_congelado", _congelado);
+
         if (_congelado)
         {
             Congelado();
