@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 //Para gestionar la escena.
 using UnityEngine.SceneManagement;
 
@@ -9,11 +10,22 @@ public class PauseMenu : MonoBehaviour
     #region References
     [SerializeField] private GameObject botonPausa;
     [SerializeField] private GameObject menuPausa;
+    [SerializeField] private InputAction _pauseInput;
     #endregion
 
     #region Parameters
     private bool juegoPausado = false;
     #endregion
+
+
+    private void OnEnable()
+    {
+        _pauseInput.Enable();
+    }
+    private void OnDisable()
+    {
+        _pauseInput.Disable();
+    }
 
     #region Methods
     //Pausa el juego.
@@ -63,7 +75,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(_pauseInput.triggered)
         {
             if(juegoPausado)
             {
