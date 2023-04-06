@@ -50,15 +50,8 @@ public class HandsManager : MonoBehaviour
     {
         foreach (GameObject _hand in _hands)
         {
-            if (!_isflipped)
-            {
-                _hand.GetComponent<Rigidbody2D>().velocity = (Vector3.right * _enemySpeed);
-            }
-            else
-            {
-                _hand.GetComponent<Rigidbody2D>().velocity = (Vector3.left * _enemySpeed);
-            }
-            
+            PatrullajeMovement();
+
             if((Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center, 
                 _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .001f, _layerManos) ||
                 Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
@@ -76,6 +69,21 @@ public class HandsManager : MonoBehaviour
                     _canturn = true;
                     _turCoolDown = _turCoolDownInicial;
                 }
+            }
+        }
+    }
+
+    private void PatrullajeMovement()
+    {
+        foreach (GameObject _hand in _hands)
+        {
+            if (!_isflipped)
+            {
+                _hand.GetComponent<Rigidbody2D>().velocity = (Vector3.right * _enemySpeed);
+            }
+            else
+            {
+                _hand.GetComponent<Rigidbody2D>().velocity = (Vector3.left * _enemySpeed);
             }
         }
     }
