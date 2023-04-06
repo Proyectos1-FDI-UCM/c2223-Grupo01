@@ -74,7 +74,8 @@ public class PauseMenu : MonoBehaviour
         Debug.Log(_pauseInput.triggered);
         if(_pauseInput.triggered)
         {
-            Time.timeScale = 0;
+            if(!juegoPausado)
+           Pausa();
          
         }
     }
