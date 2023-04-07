@@ -15,6 +15,12 @@ public class MightyLifeComponent : MonoBehaviour
     [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
 
     [SerializeField] private float _canRepeatLevelTimer; //Contador que al llegar a 0 reinicia el nivel. Se activa al morir
+
+    //Hay dos contadores de invisible o no puesto que con uno solo con valores tan bajos como 0.05 al parpadear se queda en invisible todo el rato, por lo que es mejor dejarlo con 2 para cada estado al recibir daño que es lo que funciona
+    [SerializeField] private float _coolDownInvFalse; //Contador para poder volver a ser invisible
+    [SerializeField] private float _coolDownInvTrue; //Contador para ver cuanto tiempo puede ser invisible
+
+    private float _initialCoolDownInv; //Valor inicial del contador de invisible en TRUE y FALSE, util para reconfigurar el cooldown que se modifica en el Update
     public float _initialCoolDown { get; private set; }
     public bool _canBeDamaged { get; private set; }
 
@@ -23,6 +29,8 @@ public class MightyLifeComponent : MonoBehaviour
     public bool _switchLava3Detected { get; private set; }
 
     private bool _death;
+
+    private bool _invisible;
 
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioClip _deathSFX;
@@ -43,6 +51,9 @@ public class MightyLifeComponent : MonoBehaviour
 
     [SerializeField]
     private Renderer _renderC; //Renderiza el color del player
+
+    private SpriteRenderer _mySpriteRenderer; //Render del sprite
+
     #endregion
 
     #region getters y setters
@@ -150,19 +161,25 @@ public class MightyLifeComponent : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        _death = false;
+        _animator = GetComponent<Animator>();
+        _myInputComponent = GetComponent<InputComponent>();
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
+        _mySpriteRenderer = GetComponent<SpriteRenderer>();
+        GameManager.instance.RegisterMightyComponent(this);
+
+        _initialCoolDown = _coolDown;
+        _canBeDamaged = true;
+
+        _death = false;
 
         _switchLava1Detected = false;
         _switchLava2Detected = false;
         _switchLava3Detected = false;
 
-        _animator = GetComponent<Animator>();
-        _myInputComponent = GetComponent<InputComponent>();
-        GameManager.instance.RegisterMightyComponent(this);
-        _initialCoolDown = _coolDown;
-        _canBeDamaged = true;
+        //Parametros para el parpadeo al recibir daño
+        _invisible = false;
+        _initialCoolDownInv = _coolDownInvTrue; //Da igual si lo igualamos a true o false, ambos deben tener el mismo timing
     }
 
     // Update is called once per frame
@@ -179,6 +196,26 @@ public class MightyLifeComponent : MonoBehaviour
             //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
             _coolDown -= Time.deltaTime;
             _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
+
+            //El parpadeo que tanto queria Julian basado en el contador del lanzallamas :)
+            if (!_invisible)
+            {
+                _mySpriteRenderer.enabled = true;
+                _coolDownInvTrue = _initialCoolDownInv;
+                _coolDownInvFalse -= Time.deltaTime;
+
+                if (_coolDownInvFalse <= 0) _invisible = true;
+            }
+            else
+            {
+                _mySpriteRenderer.enabled = false;
+                _coolDownInvFalse = _initialCoolDownInv;
+                _coolDownInvTrue -= Time.deltaTime;
+
+                if (_coolDownInvTrue <= 0) _invisible = false;
+            }
+
+
             if (_coolDown > _timerInputFalseAfterHit)
             {
                 _myInputComponent.enabled = false;
@@ -190,6 +227,7 @@ public class MightyLifeComponent : MonoBehaviour
         else
         {
             _renderC.material.color = _colores[1]; //Recupera su color original tras el cool down
+            _mySpriteRenderer.enabled = true;
             //_coolDown = _initialCoolDown;
         }
 
