@@ -27,6 +27,10 @@ public class PauseMenu : MonoBehaviour
         _pauseInput.Disable();
     }
 
+    public bool GetPause()
+    {
+        return juegoPausado;
+    }
     public void Pausa()
     {
         juegoPausado = true;
