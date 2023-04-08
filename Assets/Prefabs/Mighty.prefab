@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 1850376258}
   - component: {fileID: 554501038}
   - component: {fileID: 5094544233782573761}
+  - component: {fileID: 554501039}
   m_Layer: 13
   m_Name: Mighty
   m_TagString: Player
@@ -367,6 +368,8 @@ MonoBehaviour:
   _fireDamage: 10
   _timerInputFalseAfterHit: 1
   _canRepeatLevelTimer: 6
+  _coolDownInvFalse: 0.08
+  _coolDownInvTrue: 0.08
   _hurt: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
   _deathSFX: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
   _cureSFX: {fileID: 8300000, guid: f29ff22bd4841c048a2647b08c9d1bb6, type: 3}
@@ -383,6 +386,36 @@ AudioListener:
   m_GameObject: {fileID: 3307213394870111648}
   m_Enabled: 1
 --- !u!114 &5094544233782573761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3307213394870111648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d26cab5f4d6f0804385cebfef61b8d42, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Mighty
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &554501039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
