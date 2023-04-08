@@ -9343,7 +9343,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cuerpo del jefe final
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5598198750270924847, guid: b8cc14ce0ac579f4286d3d426a9f31cd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b8cc14ce0ac579f4286d3d426a9f31cd, type: 3}
 --- !u!1001 &7594441579045251693
 PrefabInstance:
