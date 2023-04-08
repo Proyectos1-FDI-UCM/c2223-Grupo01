@@ -16,7 +16,10 @@ public class HandsManager : MonoBehaviour
     [Header("Barrido")]
     [SerializeField] private Transform[] _sweepPositions; //_leftDown, _leftTop, _rightDown, _rightUp
     [Header("Caida")]
-    public Transform[] _upPositions;
+    [SerializeField] private Transform[] _upPositions;
+    private int _vecesPasado, _tocaCaer;
+    private bool _caido;
+    [SerializeField] private float _caidaSpeed;
     //velocidad yrotación 
     private bool _isflipped; //Si el enemigo ha dado la vuelta
     [SerializeField] private float _enemySpeed = 5f;
@@ -45,13 +48,16 @@ public class HandsManager : MonoBehaviour
                 }
         }
     }
-
+    #region Patrullaje
     private void PatrullajeUpdate()
     {
         foreach (GameObject _hand in _hands)
         {
-            PatrullajeMovement();
-
+            if (!_caido)
+            {
+                PatrullajeMovement();
+            }
+            DetectordeCaida();
             if((Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center, 
                 _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .001f, _layerManos) ||
                 Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
@@ -87,6 +93,54 @@ public class HandsManager : MonoBehaviour
             }
         }
     }
+    private void DetectordeCaida()
+    {
+        /*if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
+        {
+            _vecesPasado++;
+        }
+        if(_vecesPasado == _tocaCaer)
+        {
+            caida();
+        }*/
+    }
+
+    private void caida()
+    {
+        if (_caido)
+        {
+            _tocaCaer = Random.Range(0, 6);
+            _vecesPasado = 0;
+            MovimientoCaida();
+        }
+    }
+
+    private void MovimientoCaida()
+    {
+
+            switch (Random.Range(0, 3))
+            {
+                    case 0:
+                    {
+                        _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                        break;
+                    }
+                    case 1:
+                    {
+                        _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                        break;
+                    }
+                case 2:
+                    {
+                        foreach (GameObject hand in _hands)
+                        {
+                            hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                        }
+                        break;
+                    }
+            }
+    }
+    #endregion
     #endregion
 
     // Start is called before the first frame update
@@ -95,11 +149,14 @@ public class HandsManager : MonoBehaviour
         _currenState = HandsStates.Patrullaje;
         _canturn = true;
         _turCoolDownInicial = _turCoolDown;
+        _tocaCaer = Random.Range(0, 6);
+        _vecesPasado = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateState(_currenState);
+        Debug.Log(_vecesPasado + "=" + _tocaCaer);
     }
 }

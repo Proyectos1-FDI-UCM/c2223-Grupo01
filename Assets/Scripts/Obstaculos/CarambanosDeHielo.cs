@@ -37,8 +37,6 @@ public class CarambanosDeHielo : MonoBehaviour
         //Si uno de los 2 rayos detecta al player, deja que el carambano se caiga
         if ((Physics2D.Raycast(transform.position + new Vector3(-0.45f, 0.0f, 0.0f), Vector2.down, _distancia, _player) || Physics2D.Raycast(transform.position + new Vector3(0.45f, 0.0f, 0.0f), Vector2.down, _distancia, _player)))
         {
-            Debug.DrawRay(transform.position + new Vector3(-0.45f, 0.0f, 0.0f), Vector2.down * _distancia, Color.green);
-            Debug.DrawRay(transform.position + new Vector3(0.45f, 0.0f, 0.0f), Vector2.down * _distancia, Color.green);
             //De cara al futuro sería interesante poder configurar la masa para que caiga a cierta velocidad, pero de momento no lo necesitamos
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         }
