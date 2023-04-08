@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using UnityEngine.InputSystem;
+using UnityEditor.XR;
 
 public class CharacterController : MonoBehaviour
 {
@@ -40,6 +41,10 @@ public class CharacterController : MonoBehaviour
     private bool _dash = false; // Booleano que detecta si estamos en medio de un dash
     [SerializeField] private GameObject _slideObject;
 
+    private bool _estela; // booleano que determina cuando se ve la estela de velocidad o no
+    [SerializeField] private float _estelaDuration; // Contador de cuanto dura la estela al activarse
+    private float _initialEstelaDuration;
+
     [Header("Climb")]
     [SerializeField] private float _climbVelocity; // velocidad de escalada
     private float _initialGravity; // gravedad inicial
@@ -56,6 +61,7 @@ public class CharacterController : MonoBehaviour
     private InputComponent _myInputComponent; // Referencia al input
     private Animator _animator; // Referencia al animator
     private UniversalInput _newInput;
+    private TrailRenderer _myTrailRenderer; // Referencia a la estela cuando se mueve
     // Sonidos varios
     [Header("Sounds")]
     [SerializeField] private AudioClip _aterrizaje;
@@ -154,6 +160,9 @@ public class CharacterController : MonoBehaviour
             _myRigidBody2D.AddForce(_dashForce * Vector2.left);
         }
         _dash = true;
+
+        _estela = true;
+        _estelaDuration = _initialEstelaDuration;
     }
 
     public void Climb(float YAxismove)
@@ -299,10 +308,14 @@ public class CharacterController : MonoBehaviour
         _myCollider2D = GetComponent<BoxCollider2D>();
         _myInputComponent = GetComponent<InputComponent>();
         _animator = GetComponent<Animator>();
+        _myTrailRenderer = GetComponent<TrailRenderer>();
+
         //Inicializo parámetros
         _originalMoveSmoothing = _MovementSmoothing;
         _initialMovementSpeedX = _movementSpeedX;
         _initialdDashForce = _dashForce;
+        _initialEstelaDuration = _estelaDuration;
+        _estela = false;
 
         // Guardo gravedad inicial.
         _initialGravity = _myRigidBody2D.gravityScale;
@@ -330,6 +343,17 @@ public class CharacterController : MonoBehaviour
         _animator.SetBool("_dash", _dash);
         _animator.SetBool("_isGrounded", _isgrounded);
         _animator.SetBool("_isClimbing", _isClimbing);
+
+        if (_estela)
+        {
+            _myTrailRenderer.enabled = true;
+            _estelaDuration -= Time.deltaTime;
+            if (_estelaDuration <= 0.0f)
+            {
+                _estelaDuration = _initialEstelaDuration;
+                _estela = false;
+            }
+        }else _myTrailRenderer.enabled = false;
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
         if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && _newInput.Mighty.Jump.triggered && !IsCeiling()))
