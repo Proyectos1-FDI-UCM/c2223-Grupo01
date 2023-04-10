@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7594441579907540450}
   - component: {fileID: 7594441579907540451}
   - component: {fileID: 6637133888332720986}
-  - component: {fileID: 8620794653552089472}
+  - component: {fileID: 5138058071462284821}
   m_Layer: 0
   m_Name: Mano derecha jefe final
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1651797895, guid: 56fb2931f0f6ba9428ee46a08709206e, type: 3}
+  m_Sprite: {fileID: 1960406628, guid: 56fb2931f0f6ba9428ee46a08709206e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &8620794653552089472
+--- !u!61 &5138058071462284821
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,16 +120,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.068965234}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.58, y: 0.43}
+    oldSize: {x: 0.43, y: 0.58}
     newSize: {x: 0.58, y: 0.43}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.58, y: 0.43}
+  m_Size: {x: 0.43, y: 0.44206947}
   m_EdgeRadius: 0
