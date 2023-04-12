@@ -17,6 +17,7 @@ public class HandsManager : MonoBehaviour
     [SerializeField] private Transform[] _sweepPositions; //_leftDown, _leftTop, _rightDown, _rightUp
     [Header("Caida")]
     [SerializeField] private Transform[] _upPositions;
+    [SerializeField] private LayerMask _layerPlayer;
     private int _vecesPasado, _tocaCaer;
     private bool _caido;
     [SerializeField] private float _caidaSpeed;
@@ -99,8 +100,12 @@ public class HandsManager : MonoBehaviour
         {
             _vecesPasado++;
         }
-        if(_vecesPasado >= _tocaCaer)
+        if (_vecesPasado >= _tocaCaer)
         {
+            if (!_caido)
+            {
+                _caido = true;
+            }
             caida();
         }
     }
