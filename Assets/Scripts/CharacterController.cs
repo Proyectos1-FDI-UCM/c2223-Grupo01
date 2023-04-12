@@ -253,6 +253,7 @@ public class CharacterController : MonoBehaviour
             _currentLadder = other;
         }
 
+        //CAMBIO DE ESCENAS SI TOCAMOS DOOR
         if (other.gameObject.layer == 18)
         {
             SceneManager.LoadScene(3);
