@@ -95,21 +95,21 @@ public class HandsManager : MonoBehaviour
     }
     private void DetectordeCaida()
     {
-        /*if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
+        if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
         {
             _vecesPasado++;
         }
-        if(_vecesPasado == _tocaCaer)
+        if(_vecesPasado >= _tocaCaer)
         {
             caida();
-        }*/
+        }
     }
 
     private void caida()
     {
         if (_caido)
         {
-            _tocaCaer = Random.Range(0, 6);
+            _tocaCaer = Random.Range(100, 500);
             _vecesPasado = 0;
             MovimientoCaida();
         }
@@ -149,7 +149,7 @@ public class HandsManager : MonoBehaviour
         _currenState = HandsStates.Patrullaje;
         _canturn = true;
         _turCoolDownInicial = _turCoolDown;
-        _tocaCaer = Random.Range(0, 6);
+        _tocaCaer = Random.Range(100, 500);
         _vecesPasado = 0;
     }
 
