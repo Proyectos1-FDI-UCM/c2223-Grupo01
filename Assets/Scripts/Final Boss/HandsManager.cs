@@ -30,6 +30,29 @@ public class HandsManager : MonoBehaviour
     #endregion
 
     #region Methods
+
+    private void EnterState(HandsStates currenState)
+    {
+        switch (currenState)
+        {
+            case HandsStates.Patrullaje:
+                {
+                    foreach(GameObject _hand in _hands)
+                    {
+                        _hand.GetComponent<Collider2D>().isTrigger = true;
+                    }
+                    break;
+                }
+            case HandsStates.Barrido:
+                {
+                    foreach (GameObject _hand in _hands)
+                    {
+                        _hand.GetComponent<Collider2D>().isTrigger = false;
+                    }
+                    break;
+                }
+        }
+    }
     private void UpdateState(HandsStates currenState)
     {
         switch (currenState)
