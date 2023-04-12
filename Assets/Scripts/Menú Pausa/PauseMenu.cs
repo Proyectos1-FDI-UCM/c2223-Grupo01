@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Para gestionar la escena.
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     #region References
-    [SerializeField] private GameObject botonPausa;
+    [SerializeField] private InputAction _pauseInput;
     [SerializeField] private GameObject menuPausa;
     #endregion
 
@@ -17,12 +17,25 @@ public class PauseMenu : MonoBehaviour
 
     #region Methods
     //Pausa el juego.
+
+    private void OnEnable()
+    {
+        _pauseInput.Enable();
+    }
+    private void OnDisable()
+    {
+        _pauseInput.Disable();
+    }
+
+    public bool GetPause()
+    {
+        return juegoPausado;
+    }
     public void Pausa()
     {
         juegoPausado = true;
         //Para el juego, desactiva el botón de pausa, y activa el menú de pausa.
         Time.timeScale = 0f;
-        botonPausa.SetActive(false);
         menuPausa.SetActive(true);
     }
 
@@ -32,7 +45,6 @@ public class PauseMenu : MonoBehaviour
         juegoPausado = false; 
         //Reanuda el juego, activa el botón de pausa y cierra el menú de pausa.
         Time.timeScale = 1f;
-        botonPausa.SetActive(true);
         menuPausa.SetActive(false);
     }
 
@@ -57,22 +69,18 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        menuPausa.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        Debug.Log(_pauseInput.triggered);
+        if(_pauseInput.triggered)
         {
-            if(juegoPausado)
-            {
-                Reanudar();
-            }
-            else
-            {
-                Pausa();
-            }
+            if(!juegoPausado)
+           Pausa();
+         
         }
     }
 }

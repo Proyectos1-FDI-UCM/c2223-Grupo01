@@ -17,6 +17,7 @@ public class HandsManager : MonoBehaviour
     [SerializeField] private Transform[] _sweepPositions; //_leftDown, _leftTop, _rightDown, _rightUp
     [Header("Caida")]
     [SerializeField] private Transform[] _upPositions;
+    [SerializeField] private LayerMask _layerPlayer;
     private int _vecesPasado, _tocaCaer;
     private bool _caido;
     [SerializeField] private float _caidaSpeed;
@@ -29,6 +30,29 @@ public class HandsManager : MonoBehaviour
     #endregion
 
     #region Methods
+
+    private void EnterState(HandsStates currenState)
+    {
+        switch (currenState)
+        {
+            case HandsStates.Patrullaje:
+                {
+                    foreach(GameObject _hand in _hands)
+                    {
+                        _hand.GetComponent<Collider2D>().isTrigger = true;
+                    }
+                    break;
+                }
+            case HandsStates.Barrido:
+                {
+                    foreach (GameObject _hand in _hands)
+                    {
+                        _hand.GetComponent<Collider2D>().isTrigger = false;
+                    }
+                    break;
+                }
+        }
+    }
     private void UpdateState(HandsStates currenState)
     {
         switch (currenState)
@@ -95,21 +119,25 @@ public class HandsManager : MonoBehaviour
     }
     private void DetectordeCaida()
     {
-        /*if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
+        if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
         {
             _vecesPasado++;
         }
-        if(_vecesPasado == _tocaCaer)
+        if (_vecesPasado >= _tocaCaer)
         {
+            if (!_caido)
+            {
+                _caido = true;
+            }
             caida();
-        }*/
+        }
     }
 
     private void caida()
     {
         if (_caido)
         {
-            _tocaCaer = Random.Range(0, 6);
+            _tocaCaer = Random.Range(100, 500);
             _vecesPasado = 0;
             MovimientoCaida();
         }
@@ -149,7 +177,7 @@ public class HandsManager : MonoBehaviour
         _currenState = HandsStates.Patrullaje;
         _canturn = true;
         _turCoolDownInicial = _turCoolDown;
-        _tocaCaer = Random.Range(0, 6);
+        _tocaCaer = Random.Range(100, 500);
         _vecesPasado = 0;
     }
 
