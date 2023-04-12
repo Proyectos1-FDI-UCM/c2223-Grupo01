@@ -7038,6 +7038,9 @@ MonoBehaviour:
   - {fileID: 397869435}
   - {fileID: 547343658}
   _upPositions: []
+  _layerPlayer:
+    serializedVersion: 2
+    m_Bits: 8192
   _caidaSpeed: 6
   _enemySpeed: 7
 --- !u!1 &1411639878
