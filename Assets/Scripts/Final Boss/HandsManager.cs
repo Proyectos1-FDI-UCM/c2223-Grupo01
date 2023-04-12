@@ -161,40 +161,30 @@ public class HandsManager : MonoBehaviour
             _caido = false;
         }
 
+        foreach (GameObject _hand in _hands)
+        {
+            if(Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,_hand.GetComponent<Collider2D>().bounds.size,0,Vector2.down,1f, _layerSuelo))
+            {
+                _caidaSpeed *= -1;
+            }
+        }
+
         switch (_tipoDeCaida)
         {
             case 0:
             {
-                if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[0].GetComponent<Collider2D>().bounds.center,
-                    _hands[0].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
-                {
-                    _caidaSpeed *= -1;
-                    _canturn = false;
-                }
                 _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
                 _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 break;
             }
             case 1:
             {
-                if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
-                    _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
-                {
-                    _caidaSpeed *= -1;
-                    _canturn = false;
-                }
                 _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
                 _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 break;
             }
             case 2:
             {
-                if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
-                    _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
-                {
-                    _caidaSpeed *= -1;
-                    _canturn = false;
-                }
                 foreach (GameObject hand in _hands)
                 {
                     hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
@@ -220,6 +210,6 @@ public class HandsManager : MonoBehaviour
     void Update()
     {
         UpdateState(_currenState);
-        Debug.Log(_vecesPasado + "=" + _tocaCaer);
+        //Debug.Log(_vecesPasado + "=" + _tocaCaer);
     }
 }
