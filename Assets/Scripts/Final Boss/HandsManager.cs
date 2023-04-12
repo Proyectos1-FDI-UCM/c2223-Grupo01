@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class HandsManager : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class HandsManager : MonoBehaviour
     [Header("Caida")]
     [SerializeField] private Transform[] _upPositions;
     [SerializeField] private LayerMask _layerPlayer;
+    [SerializeField] private LayerMask _layerSuelo;
+    private int _tipoDeCaida;
     [SerializeField] private int minCaida, maxCaida;
     private int _vecesPasado, _tocaCaer;
     private bool _caido;
@@ -120,14 +124,19 @@ public class HandsManager : MonoBehaviour
     }
     private void DetectordeCaida()
     {
-        if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
+        if (!_caido)
         {
-            _vecesPasado++;
+            if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2, Vector2.down, 6f, _layerPlayer))
+            {
+                _vecesPasado++;
+            }
         }
+
         if (_vecesPasado >= _tocaCaer)
         {
             if (!_caido)
             {
+                _tipoDeCaida = Random.Range(0, 3);
                 _caido = true;
             }
             caida();
@@ -146,28 +155,53 @@ public class HandsManager : MonoBehaviour
 
     private void MovimientoCaida()
     {
+        
+        if (_caidaSpeed < 0 && Mathf.Approximately(_hands[0].transform.position.y, _hands[1].transform.position.y))
+        {
+            _caido = false;
+        }
 
-            switch (Random.Range(0, 3))
-            {
-                    case 0:
+        switch (_tipoDeCaida)
+        {
+                case 0:
+                {
+                    if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[0].GetComponent<Collider2D>().bounds.center,
+                        _hands[0].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
                     {
-                        _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                        break;
+                        _caidaSpeed *= -1;
+                        _canturn = false;
                     }
-                    case 1:
+                    _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                    _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    break;
+                }
+                case 1:
+                {
+                    if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
+                        _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
                     {
-                        _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                        break;
+                        _caidaSpeed *= -1;
+                        _canturn = false;
                     }
+                    _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                    _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    break;
+                }
                 case 2:
+                {
+                    if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
+                            _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
                     {
-                        foreach (GameObject hand in _hands)
-                        {
-                            hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                        }
-                        break;
+                        _caidaSpeed *= -1;
+                        _canturn = false;
                     }
-            }
+                    foreach (GameObject hand in _hands)
+                    {
+                        hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                    }
+                    break;
+                }
+        }
     }
     #endregion
     #endregion
