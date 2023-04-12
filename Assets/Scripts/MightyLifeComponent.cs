@@ -45,6 +45,7 @@ public class MightyLifeComponent : MonoBehaviour
 
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
+    private CheckpointInteractionComponent _checkp;
 
     [SerializeField]
     private Color[] _colores;   //Array de colores del player
@@ -236,7 +237,7 @@ public class MightyLifeComponent : MonoBehaviour
             _myInputComponent.enabled = false;
             _canRepeatLevelTimer -= Time.deltaTime;
             if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1); //no
-            //respawn 
+            //_checkp.Respawn();
         }
     }
 }

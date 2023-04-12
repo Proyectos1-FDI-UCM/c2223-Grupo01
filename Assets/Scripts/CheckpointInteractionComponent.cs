@@ -18,12 +18,6 @@ public class CheckpointInteractionComponent : MonoBehaviour
     [SerializeField] private float _timeReset;
     private Transform _checkPointTransform;
     #endregion
-    #region Getter
-    public Transform GetCheckPointTransform()
-    {
-        return _checkPointTransform;
-    }
-    #endregion  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject == GameManager.instance._player)
@@ -45,10 +39,11 @@ public class CheckpointInteractionComponent : MonoBehaviour
             //GameManager.instance._currentTime = _timeReset + 1;
         }
     }
-    // private void Start()
-    // {
-    //     _checkpointPosition = transform.position;
-    // }
+
+    public void Respawn()
+    {
+        _player.transform.position = _checkPointTransform.position;
+    }
     // private void Update()
     // {
     //     _checkpointPosition = _currentRespawner.transform.position;

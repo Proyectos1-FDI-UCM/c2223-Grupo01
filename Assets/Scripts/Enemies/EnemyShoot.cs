@@ -25,14 +25,13 @@ public class EnemyShoot : MonoBehaviour
 
     #region Methods
     public void Shoot()
-    // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
+    // instanciamos la bala en la posiciï¿½n del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
         GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
         _animator.SetTrigger("_shoot");
 
         Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);
         
-        Debug.Log("dispara");
         _canShoot = false;
     }
     #endregion
