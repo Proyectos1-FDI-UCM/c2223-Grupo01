@@ -163,44 +163,44 @@ public class HandsManager : MonoBehaviour
 
         switch (_tipoDeCaida)
         {
-                case 0:
+            case 0:
+            {
+                if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[0].GetComponent<Collider2D>().bounds.center,
+                    _hands[0].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
                 {
-                    if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[0].GetComponent<Collider2D>().bounds.center,
-                        _hands[0].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
-                    {
-                        _caidaSpeed *= -1;
-                        _canturn = false;
-                    }
-                    _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                    _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    break;
+                    _caidaSpeed *= -1;
+                    _canturn = false;
                 }
-                case 1:
+                _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                break;
+            }
+            case 1:
+            {
+                if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
+                    _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
                 {
-                    if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
-                        _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
-                    {
-                        _caidaSpeed *= -1;
-                        _canturn = false;
-                    }
-                    _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                    _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                    break;
+                    _caidaSpeed *= -1;
+                    _canturn = false;
                 }
-                case 2:
+                _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                break;
+            }
+            case 2:
+            {
+                if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
+                    _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
                 {
-                    if (_caidaSpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
-                            _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .01f, _layerSuelo))
-                    {
-                        _caidaSpeed *= -1;
-                        _canturn = false;
-                    }
-                    foreach (GameObject hand in _hands)
-                    {
-                        hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                    }
-                    break;
+                    _caidaSpeed *= -1;
+                    _canturn = false;
                 }
+                foreach (GameObject hand in _hands)
+                {
+                    hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                }
+                break;
+            }
         }
     }
     #endregion
