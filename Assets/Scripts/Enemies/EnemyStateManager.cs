@@ -10,7 +10,7 @@ public class EnemyStateManager : MonoBehaviour
     private bool _ralentizado;
 
     [SerializeField] private float _tiempoCongelado = 3, _tiempoQuemado = 3, _tiempoRalentizado = 3;
-    [SerializeField] private int _dañoPorSegQuemado= 5;
+    [SerializeField] private int _danoPorSegQuemado= 5;
 
     private float _tiempoCongeladoInicial, _tiempoQuemadoInicial, _contadorDeSegundos, _initialTiempoRalentizado;
     private EnemyMovement _enemyMovement;
@@ -140,7 +140,7 @@ public class EnemyStateManager : MonoBehaviour
         _tiempoQuemado -= Time.deltaTime;
         if(_tiempoQuemado < _contadorDeSegundos)
         {
-            GetComponent<EnemyHealth>().TakeDamage(_dañoPorSegQuemado);
+            GetComponent<EnemyHealth>().TakeDamage(_danoPorSegQuemado);
             _contadorDeSegundos--;
         }
         if (_tiempoQuemado <= 0)
@@ -183,7 +183,7 @@ public class EnemyStateManager : MonoBehaviour
             Ralentizado();
         }
         
-        //Gestión de colores cuando está ralentizado o quemado
+        //Gestiï¿½n de colores cuando estï¿½ ralentizado o quemado
         if (_ralentizado)
         {
             _renderC.material.color = _colores[0];

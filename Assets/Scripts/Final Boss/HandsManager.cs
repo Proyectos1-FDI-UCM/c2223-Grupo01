@@ -17,11 +17,11 @@ public class HandsManager : MonoBehaviour
     [SerializeField] private Transform[] _sweepPositions; //_leftDown, _leftTop, _rightDown, _rightUp
     [Header("Caida")]
     public Transform[] _upPositions;
-    //velocidad yrotación 
+    //velocidad yrotaciï¿½n 
     private bool _isflipped; //Si el enemigo ha dado la vuelta
     [SerializeField] private float _enemySpeed = 5f;
     //estados de las manos 
-    private enum HandsStates {Patrullaje, Transición, Barrido }; 
+    private enum HandsStates {Patrullaje, Transicion, Barrido }; 
     private HandsStates _currenState; //estado actual
     #endregion
 
@@ -35,7 +35,7 @@ public class HandsManager : MonoBehaviour
                     PatrullajeUpdate();
                     break;
                 }
-            case HandsStates.Transición:
+            case HandsStates.Transicion:
                 {
                     break;
                 }
