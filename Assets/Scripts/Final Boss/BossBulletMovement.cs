@@ -24,6 +24,11 @@ public class BossBulletMovement : MonoBehaviour
         _direccionY = GameManager.instance._player.transform.position.y - gameObject.transform.position.y;
     }
 
+    private void Update()
+    {
+        GetComponent<Transform>().Rotate(0.0f, 0.0f, -10.0f);
+    }
+
     void FixedUpdate()
     {
         _myRigidbody.velocity = new Vector2(_speed * _direccionX * Time.deltaTime, _speed * _direccionY * Time.deltaTime);//desplazamiento de la bala
