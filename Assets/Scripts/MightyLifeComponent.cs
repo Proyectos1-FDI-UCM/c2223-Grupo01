@@ -45,7 +45,9 @@ public class MightyLifeComponent : MonoBehaviour
 
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
-    private CheckpointInteractionComponent _checkp;
+    //private CheckpointInteractionComponent _checkp;
+    private Transform _spawnPoint;
+    private Scene _scene;
 
     [SerializeField]
     private Color[] _colores;   //Array de colores del player
@@ -118,7 +120,14 @@ public class MightyLifeComponent : MonoBehaviour
             //Destroy(gameObject);
         }
     }
-
+    public void Die() //no se usa
+    {
+        _myInputComponent.enabled = false; 
+        SetHealth(50f);
+        transform.position = _spawnPoint.position;
+        _death = false;
+    }
+    #region collision methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 10)
@@ -161,8 +170,14 @@ public class MightyLifeComponent : MonoBehaviour
             _switchLava3Detected = true;
             Destroy(other.gameObject);
         }
-    }
 
+        //si tocamos checkpoint, guardamos su transform
+        if(other.gameObject.layer == 24)
+        {
+            _spawnPoint = other.transform;
+        }
+    }
+    #endregion
     // Start is called before the first frame update
     private void Start()
     {
@@ -172,6 +187,7 @@ public class MightyLifeComponent : MonoBehaviour
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         GameManager.instance.RegisterMightyComponent(this);
+        _scene = SceneManager.GetActiveScene();
 
         _initialCoolDown = _coolDown;
         _canBeDamaged = true;
@@ -238,10 +254,9 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (_death)
         {
-            _myInputComponent.enabled = false;
+            //Die();
             _canRepeatLevelTimer -= Time.deltaTime;
-            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1); //no
-            //_checkp.Respawn();
+            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(_scene.name);
         }
     }
 }
