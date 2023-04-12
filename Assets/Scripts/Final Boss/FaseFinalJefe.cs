@@ -6,7 +6,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class FaseFinalJefe : MonoBehaviour
 {
     [SerializeField] private Transform _myTransform;
-    public GameObject _player;
+    private GameObject _player;
     private int _patata = 0;
 
     [SerializeField] private LayerMask _playerLayer;
