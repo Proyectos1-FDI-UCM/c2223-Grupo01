@@ -105,6 +105,11 @@ public class HandsManager : MonoBehaviour
                     _turCoolDown = _turCoolDownInicial;
                 }
             }
+
+            if (_caido)
+            {
+                caida();
+            }
         }
     }
 
@@ -139,7 +144,6 @@ public class HandsManager : MonoBehaviour
                 _tipoDeCaida = Random.Range(0, 3);
                 _caido = true;
             }
-            caida();
         }
     }
 
@@ -152,20 +156,28 @@ public class HandsManager : MonoBehaviour
             MovimientoCaida();
         }
     }
+    public void ChangeCaidaSpeed()
+    {
+        if (_canturn)
+        {
+            _caidaSpeed *= -1;
+        }
+    }
 
     private void MovimientoCaida()
     {
-        
-        if (_caidaSpeed < 0 && Mathf.Approximately(_hands[0].transform.position.y, _hands[1].transform.position.y))
+        if (_caidaSpeed < 0 && Mathf.Approximately(_hands[0].transform.position.y, _hands[1].transform.position.y) && Mathf.Approximately(_hands[0].transform.position.y, 69.05f))
         {
+            ChangeCaidaSpeed();
             _caido = false;
         }
 
-        foreach (GameObject _hand in _hands)
+        foreach(GameObject _hand in _hands)
         {
-            if(Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,_hand.GetComponent<Collider2D>().bounds.size,0,Vector2.down,1f, _layerSuelo))
+            if (_caidaSpeed > 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
+                _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .001f, _layerSuelo))
             {
-                _caidaSpeed *= -1;
+                ChangeCaidaSpeed();
             }
         }
 
@@ -210,6 +222,6 @@ public class HandsManager : MonoBehaviour
     void Update()
     {
         UpdateState(_currenState);
-        //Debug.Log(_vecesPasado + "=" + _tocaCaer);
+        Debug.Log(_vecesPasado + "=" + _tocaCaer);
     }
 }
