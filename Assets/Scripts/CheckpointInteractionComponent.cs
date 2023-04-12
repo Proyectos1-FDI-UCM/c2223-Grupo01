@@ -26,12 +26,6 @@ public class CheckpointInteractionComponent : MonoBehaviour
             _player = collision.gameObject;
             _mightyLifeComponent = _player.GetComponent<MightyLifeComponent>();
 
-            // sanacion de Mighty
-            _mightyLifeComponent.TakeDamage(-_healthRes);
-            if (GameManager.instance._UImanager != null)
-            {
-                GameManager.instance._UImanager.ActualizarInterfaz(_mightyLifeComponent.GetHealth());
-            }
             //se guarda el transform del ultimo checkpoint tocado
             _checkPointTransform = this.transform;
 
@@ -42,16 +36,14 @@ public class CheckpointInteractionComponent : MonoBehaviour
 
     public void Respawn()
     {
+        //Actualiza transform de Mighty
         _player.transform.position = _checkPointTransform.position;
+        
+        //resetea vida de Mighty a la mitad y actualizamos interfaz
+        _mightyLifeComponent.SetHealth(_mightyLifeComponent.GetMaxHealth()/2);
+        if (GameManager.instance._UImanager != null)
+        {
+            GameManager.instance._UImanager.ActualizarInterfaz(_mightyLifeComponent.GetHealth());
+        }
     }
-    // private void Update()
-    // {
-    //     _checkpointPosition = _currentRespawner.transform.position;
-    //     if(_mightyLifeComponent.GetDeath()) //si mighty muere
-    //     {
-    //         _mightyLifeComponent.SetDeath(true); //resucitamos
-    //         _player.transform.position = _checkpointPosition; // Lo posicionamos en el checkpoint
-    //     }
-    //     Debug.Log(_currentRespawner);
-    // }
 }
