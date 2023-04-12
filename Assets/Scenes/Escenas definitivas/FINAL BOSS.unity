@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 136
       objectReference: {fileID: 0}
+    - target: {fileID: 984847726237831636, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2553629594582177312, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7041,6 +7045,8 @@ MonoBehaviour:
   _layerPlayer:
     serializedVersion: 2
     m_Bits: 8192
+  minCaida: 60
+  maxCaida: 100
   _caidaSpeed: 6
   _enemySpeed: 7
 --- !u!1 &1411639878

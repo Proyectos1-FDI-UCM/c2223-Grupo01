@@ -18,6 +18,7 @@ public class HandsManager : MonoBehaviour
     [Header("Caida")]
     [SerializeField] private Transform[] _upPositions;
     [SerializeField] private LayerMask _layerPlayer;
+    [SerializeField] private int minCaida, maxCaida;
     private int _vecesPasado, _tocaCaer;
     private bool _caido;
     [SerializeField] private float _caidaSpeed;
@@ -137,7 +138,7 @@ public class HandsManager : MonoBehaviour
     {
         if (_caido)
         {
-            _tocaCaer = Random.Range(100, 500);
+            _tocaCaer = Random.Range(minCaida, maxCaida);
             _vecesPasado = 0;
             MovimientoCaida();
         }
@@ -177,7 +178,7 @@ public class HandsManager : MonoBehaviour
         _currenState = HandsStates.Patrullaje;
         _canturn = true;
         _turCoolDownInicial = _turCoolDown;
-        _tocaCaer = Random.Range(100, 500);
+        _tocaCaer = Random.Range(minCaida, maxCaida);
         _vecesPasado = 0;
     }
 
