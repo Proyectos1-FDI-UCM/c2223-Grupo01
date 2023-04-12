@@ -7045,6 +7045,9 @@ MonoBehaviour:
   _layerPlayer:
     serializedVersion: 2
     m_Bits: 8192
+  _layerSuelo:
+    serializedVersion: 2
+    m_Bits: 1073741824
   minCaida: 60
   maxCaida: 100
   _caidaSpeed: 6
@@ -9036,7 +9039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1995547976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9050,7 +9053,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myTransform: {fileID: 1995547978}
-  _player: {fileID: 519500136}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8192
@@ -9349,6 +9351,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 302353788979498445, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292642468961246537, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2541138965809261808, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -9464,6 +9474,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5138058071462284821, guid: 73869af97607b864999158f46b880dfb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7594441579907540448, guid: 73869af97607b864999158f46b880dfb, type: 3}
       propertyPath: m_Name
       value: Mano derecha jefe final

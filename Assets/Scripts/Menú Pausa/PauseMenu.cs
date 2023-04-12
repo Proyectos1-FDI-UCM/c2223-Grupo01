@@ -75,7 +75,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_pauseInput.triggered);
+        //Debug.Log(_pauseInput.triggered);
         if(_pauseInput.triggered)
         {
             if(!juegoPausado)

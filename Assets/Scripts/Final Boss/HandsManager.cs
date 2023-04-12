@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class HandsManager : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class HandsManager : MonoBehaviour
     [Header("Caida")]
     [SerializeField] private Transform[] _upPositions;
     [SerializeField] private LayerMask _layerPlayer;
+    [SerializeField] private LayerMask _layerSuelo;
+    private int _tipoDeCaida;
     [SerializeField] private int minCaida, maxCaida;
     private int _vecesPasado, _tocaCaer;
     private bool _caido;
@@ -120,14 +124,19 @@ public class HandsManager : MonoBehaviour
     }
     private void DetectordeCaida()
     {
-        if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2,Vector2.down,6f, _layerPlayer))
+        if (!_caido)
         {
-            _vecesPasado++;
+            if (Physics2D.Raycast((_hands[0].transform.position + _hands[1].transform.position) / 2, Vector2.down, 6f, _layerPlayer))
+            {
+                _vecesPasado++;
+            }
         }
+
         if (_vecesPasado >= _tocaCaer)
         {
             if (!_caido)
             {
+                _tipoDeCaida = Random.Range(0, 3);
                 _caido = true;
             }
             caida();
@@ -146,28 +155,43 @@ public class HandsManager : MonoBehaviour
 
     private void MovimientoCaida()
     {
+        
+        if (_caidaSpeed < 0 && Mathf.Approximately(_hands[0].transform.position.y, _hands[1].transform.position.y))
+        {
+            _caido = false;
+        }
 
-            switch (Random.Range(0, 3))
+        foreach (GameObject _hand in _hands)
+        {
+            if(Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,_hand.GetComponent<Collider2D>().bounds.size,0,Vector2.down,1f, _layerSuelo))
             {
-                    case 0:
-                    {
-                        _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                        break;
-                    }
-                    case 1:
-                    {
-                        _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                        break;
-                    }
-                case 2:
-                    {
-                        foreach (GameObject hand in _hands)
-                        {
-                            hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
-                        }
-                        break;
-                    }
+                _caidaSpeed *= -1;
             }
+        }
+
+        switch (_tipoDeCaida)
+        {
+            case 0:
+            {
+                _hands[0].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                break;
+            }
+            case 1:
+            {
+                _hands[1].GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                break;
+            }
+            case 2:
+            {
+                foreach (GameObject hand in _hands)
+                {
+                    hand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+                }
+                break;
+            }
+        }
     }
     #endregion
     #endregion
@@ -186,6 +210,6 @@ public class HandsManager : MonoBehaviour
     void Update()
     {
         UpdateState(_currenState);
-        Debug.Log(_vecesPasado + "=" + _tocaCaer);
+        //Debug.Log(_vecesPasado + "=" + _tocaCaer);
     }
 }
