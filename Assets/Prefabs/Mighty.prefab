@@ -566,7 +566,23 @@ MonoBehaviour:
     m_Id: cf1543bb-8316-4e72-a68c-25eb81151a64
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4701d991-acbc-4bbc-85f9-fc6dd23bc2df
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 091fe234-dabc-4a15-bb92-366f3367d1ab
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Pause Input
+      m_Flags: 0
     m_Flags: 0
   menuPausa: {fileID: 0}
 --- !u!1 &3307213394960240523

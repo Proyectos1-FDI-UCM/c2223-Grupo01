@@ -1069,6 +1069,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 136
       objectReference: {fileID: 0}
+    - target: {fileID: 2490094572446207755, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1288372559}
+    - target: {fileID: 2490094572446207755, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reinicia
+      objectReference: {fileID: 0}
+    - target: {fileID: 2510218896980237542, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1288372559}
+    - target: {fileID: 2510218896980237542, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Salir
+      objectReference: {fileID: 0}
     - target: {fileID: 2553629594582177312, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1164,6 +1180,14 @@ PrefabInstance:
     - target: {fileID: 5133782224109191952, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 136
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279025848427513903, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1288372559}
+    - target: {fileID: 6279025848427513903, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reanudar
       objectReference: {fileID: 0}
     - target: {fileID: 8350065309726627165, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
       propertyPath: m_RootOrder
@@ -1255,6 +1279,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+--- !u!1 &154728820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 984847726237831636, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+  m_PrefabInstance: {fileID: 154728819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &154728821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 45935676039470248, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+  m_PrefabInstance: {fileID: 154728819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &159138733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6326382012256657880, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
@@ -125979,7 +126013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 154728821}
   m_sendNavigationEvents: 48
   m_DragThreshold: 423
 --- !u!4 &527751002
@@ -129622,8 +129656,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mighty
       objectReference: {fileID: 0}
+    - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: menuPausa
+      value: 
+      objectReference: {fileID: 154728820}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+--- !u!114 &1288372559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+  m_PrefabInstance: {fileID: 1288372558}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554501027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef06e4706095f654a83e2f94867e91e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1290139248
 PrefabInstance:
   m_ObjectHideFlags: 0
