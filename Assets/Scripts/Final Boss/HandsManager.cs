@@ -12,6 +12,7 @@ public class HandsManager : MonoBehaviour
     [Header("Manos")]
     [SerializeField] private GameObject[] _hands;
     [SerializeField] private LayerMask _layerManos;
+    [SerializeField] private Transform[] _initialTransforms;
     [Header("Intermedio")]
     [SerializeField] private Transform[] _enemySpawns;
     [SerializeField] private GameObject[] _enemys;
@@ -29,8 +30,8 @@ public class HandsManager : MonoBehaviour
     //velocidad yrotación 
     [SerializeField] private float _enemySpeed = 5f;
     //estados de las manos 
-    private enum HandsStates {Patrullaje, Transición, Barrido }; 
-    private HandsStates _currentState; //estado actual
+    private enum HandsStates {Patrullaje, Transición, Barrido,volviendo}; 
+    private HandsStates _currentState, _nextState; //estado actual
     [Header("Estado")]
     [SerializeField] private float _cambioDeEstado = 40; // tiempo que se tarda en cambiar de estado
     private float _cambioDeEstadoInicial;
@@ -78,6 +79,29 @@ public class HandsManager : MonoBehaviour
                 {
                     break;
                 }
+            case HandsStates.volviendo:
+                {
+                    VolviendoUpdate();
+                    break;
+                }
+        }
+    }
+
+    private void TemporalChangeState()
+    {
+        _cambioDeEstado -= Time.deltaTime;
+        if (_cambioDeEstado <= 0 && !_caido)
+        {
+            if (_currentState == HandsStates.Barrido)
+            {
+                _nextState = HandsStates.Patrullaje;
+                _currentState = HandsStates.Transición;
+            }
+            else
+            {
+                _nextState = HandsStates.Barrido;
+                _currentState = HandsStates.Transición;
+            }
         }
     }
     #region Patrullaje
@@ -199,27 +223,69 @@ public class HandsManager : MonoBehaviour
     private void TransicionUpdate()
     {
         TransicionMovement();
-        if(Mathf.Approximately(_hands[0].transform.position.x, _enemySpawns[0].position.x) && 
-            Mathf.Approximately(_hands[0].transform.position.y, _enemySpawns[0].position.y))
+        if(_hands[0].GetComponent<Rigidbody2D>().velocity == Vector2.zero && _hands[1].GetComponent<Rigidbody2D>().velocity == Vector2.zero)
+        {
+            Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[0].transform.position, _hands[0].transform.rotation);
+            Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[1].transform.position, _hands[1].transform.rotation);
+            _currentState = HandsStates.volviendo;
+        }
+    }
+
+    private void TransicionMovement()
+    {
+
+        if (Mathf.Approximately(_hands[0].transform.position.x, _enemySpawns[0].position.x) &&
+                    Mathf.Approximately(_hands[0].transform.position.y, _enemySpawns[0].position.y))
         {
             _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+            _hands[0].GetComponent<Rigidbody2D>().velocity = (_enemySpawns[0].position - _hands[0].transform.position) * 5;
         }
         if (Mathf.Approximately(_hands[1].transform.position.x, _enemySpawns[1].position.x) &&
             Mathf.Approximately(_hands[1].transform.position.y, _enemySpawns[1].position.y))
         {
             _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
-        if(_hands[0].GetComponent<Rigidbody2D>().velocity == Vector2.zero && _hands[1].GetComponent<Rigidbody2D>().velocity == Vector2.zero)
+        else
         {
-            Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[0].transform.position, _hands[0].transform.rotation);
-            Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[1].transform.position, _hands[1].transform.rotation);
+            _hands[1].GetComponent<Rigidbody2D>().velocity = (_enemySpawns[1].position - _hands[1].transform.position) * 5;
         }
     }
+    #endregion
 
-    private void TransicionMovement()
+    #region Transición
+    private void VolviendoUpdate()
     {
-        _hands[0].GetComponent<Rigidbody2D>().MovePosition(_enemySpawns[0].position);
-        _hands[1].GetComponent<Rigidbody2D>().MovePosition(_enemySpawns[1].position);
+        VolviendoMovement();
+    }
+
+    private void VolviendoMovement()
+    {
+        if (Mathf.Approximately(_hands[0].transform.position.x, _initialTransforms[0].position.x) &&
+            Mathf.Approximately(_hands[0].transform.position.y, _initialTransforms[0].position.y))
+        {
+            _hands[0].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+           _hands[0].GetComponent<Rigidbody2D>().velocity = (_initialTransforms[0].position - _hands[0].transform.position) * 5;
+        }
+        if (Mathf.Approximately(_hands[1].transform.position.x, _initialTransforms[1].position.x) &&
+            Mathf.Approximately(_hands[1].transform.position.y, _initialTransforms[1].position.y))
+        {
+           _hands[1].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+        else
+        {
+           _hands[1].GetComponent<Rigidbody2D>().velocity = (_initialTransforms[1].position - _hands[1].transform.position) * 5;
+        }
+        if (_hands[0].GetComponent<Rigidbody2D>().velocity == Vector2.zero && _hands[1].GetComponent<Rigidbody2D>().velocity == Vector2.zero)
+        {
+            _cambioDeEstado = _cambioDeEstadoInicial;
+            _currentState = HandsStates.Patrullaje;
+        }
     }
     #endregion
     #endregion
@@ -238,21 +304,9 @@ public class HandsManager : MonoBehaviour
     {
         UpdateState(_currentState);
         Debug.Log(_vecesPasado + "=" + _tocaCaer);
-        if(_currentState != HandsStates.Transición)
+        if(_currentState != HandsStates.Transición && _currentState != HandsStates.volviendo)
         {
-            _cambioDeEstado -= Time.deltaTime;
-        }
-        if(_cambioDeEstado <= 0 && !_caido)
-        {
-            if(_currentState == HandsStates.Barrido)
-            {
-                _currentState = HandsStates.Patrullaje;
-            }
-            else
-            {
-                _currentState++;
-            }
-            _cambioDeEstado = _cambioDeEstadoInicial;
+            TemporalChangeState();
         }
     }
 }
