@@ -23,7 +23,7 @@ public class FaseFinalJefe : MonoBehaviour
     public void Shoot()
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
-        Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);
+        Instantiate(_bullet, _bulletSpawnTransform.position, Quaternion.Euler(0.0f,0.0f,0.0f));
 
         Debug.Log("dispara");
         _canShoot = false;
@@ -46,7 +46,7 @@ public class FaseFinalJefe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics2D.Raycast(_myTransform.position, _player.transform.position - _myTransform.position, 100.0f, _playerLayer))
+        if(Physics2D.Raycast(_myTransform.position, _player.transform.position - _myTransform.position, 100000.0f, _playerLayer))
         {
             if (_canShoot)
             {
