@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2200848720948242301}
   - component: {fileID: 2200848720948242300}
   - component: {fileID: 2200848720948242303}
-  - component: {fileID: -6866015402995242789}
   m_Layer: 24
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -134,17 +133,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6866015402995242789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2200848720948242302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e82ed568245fae44a22552f7d6902c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthRes: 0
-  _timeRes: 0

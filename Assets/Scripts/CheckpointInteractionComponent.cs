@@ -34,16 +34,4 @@ public class CheckpointInteractionComponent : MonoBehaviour
         }
     }
 
-    public void Respawn()
-    {
-        //Actualiza transform de Mighty
-        _player.transform.position = _checkPointTransform.position;
-        
-        //resetea vida de Mighty a la mitad y actualizamos interfaz
-        _mightyLifeComponent.SetHealth(_mightyLifeComponent.GetMaxHealth()/2);
-        if (GameManager.instance._UImanager != null)
-        {
-            GameManager.instance._UImanager.ActualizarInterfaz(_mightyLifeComponent.GetHealth());
-        }
-    }
 }

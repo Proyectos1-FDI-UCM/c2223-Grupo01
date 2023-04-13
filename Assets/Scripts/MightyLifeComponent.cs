@@ -64,10 +64,6 @@ public class MightyLifeComponent : MonoBehaviour
     {
         return _health;
     }
-    public void SetHealth(float health)
-    {
-        _health = health;
-    }
     public float GetMaxHealth()
     {
         return _maxhealth;
@@ -120,12 +116,12 @@ public class MightyLifeComponent : MonoBehaviour
             //Destroy(gameObject);
         }
     }
-    public void Die() //no se usa
+    public void Respawn()
     {
-        _myInputComponent.enabled = false; 
-        SetHealth(50f);
-        transform.position = _spawnPoint.position;
         _death = false;
+        _myInputComponent.enabled = true; 
+        TakeDamage(-_maxhealth);
+        transform.position = _spawnPoint.position;
     }
     #region collision methods
     private void OnCollisionEnter2D(Collision2D collision)
@@ -254,9 +250,12 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (_death)
         {
-            //Die();
             _canRepeatLevelTimer -= Time.deltaTime;
-            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(_scene.name);
+            if (_canRepeatLevelTimer <= 0)
+            {
+                SceneManager.LoadScene(_scene.name);
+                //Respawn();
+            }
         }
     }
 }
