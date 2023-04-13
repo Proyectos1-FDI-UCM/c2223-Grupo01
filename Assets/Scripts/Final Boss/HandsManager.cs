@@ -198,6 +198,7 @@ public class HandsManager : MonoBehaviour
     #region Transición
     private void TransicionUpdate()
     {
+        TransicionMovement();
         if(Mathf.Approximately(_hands[0].transform.position.x, _enemySpawns[0].position.x) && 
             Mathf.Approximately(_hands[0].transform.position.y, _enemySpawns[0].position.y))
         {
@@ -210,17 +211,15 @@ public class HandsManager : MonoBehaviour
         }
         if(_hands[0].GetComponent<Rigidbody2D>().velocity == Vector2.zero && _hands[1].GetComponent<Rigidbody2D>().velocity == Vector2.zero)
         {
-
+            Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[0].transform.position, _hands[0].transform.rotation);
+            Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[1].transform.position, _hands[1].transform.rotation);
         }
     }
 
     private void TransicionMovement()
     {
-        _hands[0].GetComponent<Rigidbody2D>().velocity = new Vector2(_hands[0].transform.position.x - _enemySpawns[0].position.x,
-         _hands[0].transform.position.y - _enemySpawns[0].position.y).normalized;
-
-        _hands[1].GetComponent<Rigidbody2D>().velocity = new Vector2(_hands[1].transform.position.x - _enemySpawns[1].position.x,
-         _hands[1].transform.position.y - _enemySpawns[1].position.y).normalized;
+        _hands[0].GetComponent<Rigidbody2D>().MovePosition(_enemySpawns[0].position);
+        _hands[1].GetComponent<Rigidbody2D>().MovePosition(_enemySpawns[1].position);
     }
     #endregion
     #endregion
@@ -239,7 +238,10 @@ public class HandsManager : MonoBehaviour
     {
         UpdateState(_currentState);
         Debug.Log(_vecesPasado + "=" + _tocaCaer);
-        _cambioDeEstado -= Time.deltaTime;
+        if(_currentState != HandsStates.Transición)
+        {
+            _cambioDeEstado -= Time.deltaTime;
+        }
         if(_cambioDeEstado <= 0 && !_caido)
         {
             if(_currentState == HandsStates.Barrido)
@@ -250,6 +252,7 @@ public class HandsManager : MonoBehaviour
             {
                 _currentState++;
             }
+            _cambioDeEstado = _cambioDeEstadoInicial;
         }
     }
 }
