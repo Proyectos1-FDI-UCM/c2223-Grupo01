@@ -9063,7 +9063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1995547976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9078,9 +9078,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _myTransform: {fileID: 1995547978}
   _player: {fileID: 0}
-  _bullet: {fileID: 0}
-  _coolDownShoot: 0
-  _bulletSpawnTransform: {fileID: 0}
+  _bullet: {fileID: 1256174170972558883, guid: 7ed87030b975c4f4ab32a67189497e64, type: 3}
+  _coolDownShoot: 1.5
+  _bulletSpawnTransform: {fileID: 1995547978}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8192

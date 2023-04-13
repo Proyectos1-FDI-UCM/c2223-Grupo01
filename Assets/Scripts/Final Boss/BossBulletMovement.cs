@@ -26,7 +26,7 @@ public class BossBulletMovement : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<Transform>().Rotate(0.0f, 0.0f, -10.0f);
+        GetComponent<Transform>().Rotate(0.0f, 0.0f, -5.0f);
     }
 
     void FixedUpdate()
