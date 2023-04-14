@@ -61,7 +61,6 @@ public class BossBulletMovement : MonoBehaviour
         {
             _direccionX *= -1;
         }
-        
     }
 
         void FixedUpdate()
