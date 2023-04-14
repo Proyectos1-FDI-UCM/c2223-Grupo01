@@ -45,6 +45,8 @@ public class MightyLifeComponent : MonoBehaviour
 
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
+    private Transform _spawnPoint;
+    private Scene _scene;
 
     [SerializeField]
     private Color[] _colores;   //Array de colores del player
@@ -113,7 +115,15 @@ public class MightyLifeComponent : MonoBehaviour
             //Destroy(gameObject);
         }
     }
+    public void Respawn()
+    {
+        _death = false;
+        _myInputComponent.enabled = true;
+        TakeDamage(-_maxhealth);
+        transform.position = _spawnPoint.position;
+    }
 
+    #region collision methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 10)
@@ -156,7 +166,13 @@ public class MightyLifeComponent : MonoBehaviour
             _switchLava3Detected = true;
             Destroy(other.gameObject);
         }
+
+        if (other.gameObject.layer == 24)
+        {
+            _spawnPoint = other.transform;
+        }
     }
+    #endregion
 
     // Start is called before the first frame update
     private void Start()
@@ -167,6 +183,7 @@ public class MightyLifeComponent : MonoBehaviour
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         GameManager.instance.RegisterMightyComponent(this);
+        _scene = SceneManager.GetActiveScene();
 
         _initialCoolDown = _coolDown;
         _canBeDamaged = true;
@@ -233,10 +250,9 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (_death)
         {
-            _myInputComponent.enabled = false;
             _canRepeatLevelTimer -= Time.deltaTime;
-            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(1); //no
-            //respawn 
+            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(_scene.name); //no
+            //Respawn();
         }
     }
 }
