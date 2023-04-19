@@ -6,7 +6,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class FaseFinalJefe : MonoBehaviour
 {
     [SerializeField] private Transform _myTransform;
-    [SerializeField] private GameObject _player;
+    private GameObject _player;
 
     [SerializeField] private GameObject _bullet; //prefab de la bala
     [SerializeField] private float _coolDownShoot; //Contador para poder volver a disparar

@@ -6,9 +6,9 @@ public class HandsLive : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == GameManager.instance._player)
+        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
         {
-            GameManager.instance._player.GetComponent<MightyLifeComponent>().TakeDamage(40);
+            GameManager.instance._player.GetComponent<MightyLifeComponent>().OnPlayerHit(30);
         }
     }
 
