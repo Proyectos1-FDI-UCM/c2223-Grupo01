@@ -142,6 +142,23 @@ public class EnemyFlyingMovement : MonoBehaviour
             Flip();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 13)
+        {
+            _enemySpeed = 0.0f;
+            _enemyDetectedSpeed = 0.0f;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 13)
+        {
+            _enemySpeed = _enemyInitialSpeed;
+            _enemyDetectedSpeed = _enemyInitialDetectedSpeed;
+        }
+    }
     #endregion
 
     void Start()
