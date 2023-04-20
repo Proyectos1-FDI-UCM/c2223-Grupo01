@@ -24,7 +24,7 @@ public class RumbleGamePad : MonoBehaviour
 
         while(elapsedtime < _rumbleduration)
         {
-            elapsedtime+=Time.deltaTime;
+            elapsedtime+=Time.fixedDeltaTime;
             yield return null;
         }
         pad.SetMotorSpeeds(0f, 0f);
