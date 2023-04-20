@@ -42,6 +42,7 @@ public class MightyLifeComponent : MonoBehaviour
     #region References
     private Animator _animator;
     private InputComponent _myInputComponent;
+    private RumbleGamePad _myRumbleGamepad;
 
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
@@ -84,9 +85,9 @@ public class MightyLifeComponent : MonoBehaviour
     public void OnPlayerHit(float damage)
     //Cuando se haga hit, herir al player
     {
+        _myRumbleGamepad.ControllerRumble();
         _animator.SetTrigger("_damaged");
-        GetComponent<AudioSource>().PlayOneShot(_hurt);
-
+        GetComponent<AudioSource>().PlayOneShot(_hurt);       
         _canBeDamaged = false;
         TakeDamage(damage);
     }
@@ -179,6 +180,7 @@ public class MightyLifeComponent : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _myInputComponent = GetComponent<InputComponent>();
+        _myRumbleGamepad = GetComponent<RumbleGamePad>();
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _mySpriteRenderer = GetComponent<SpriteRenderer>();

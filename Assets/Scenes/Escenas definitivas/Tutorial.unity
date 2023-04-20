@@ -21150,15 +21150,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _pauseInput.m_SingletonActionBindings.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _pauseInput.m_SingletonActionBindings.Array.data[0].m_Id
       value: b3da98ff-8207-45fe-a4b9-f92825f09c42
       objectReference: {fileID: 0}
     - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _pauseInput.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 82898c39-5e7b-41a5-b068-2a5f605a1e37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _pauseInput.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _pauseInput.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Gamepad>/start
       objectReference: {fileID: 0}
     - target: {fileID: 4759122443781569758, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _pauseInput.m_SingletonActionBindings.Array.data[0].m_Action
