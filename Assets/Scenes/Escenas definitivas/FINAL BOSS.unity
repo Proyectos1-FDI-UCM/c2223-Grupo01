@@ -7586,7 +7586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1302207728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10235,7 +10235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1995547976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10636,8 +10636,12 @@ PrefabInstance:
       value: Mano izquierda jefe final
       objectReference: {fileID: 0}
     - target: {fileID: 2541138965809261810, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541138965809261810, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
@@ -10715,8 +10719,12 @@ PrefabInstance:
       value: Mano derecha jefe final
       objectReference: {fileID: 0}
     - target: {fileID: 7594441579907540448, guid: 73869af97607b864999158f46b880dfb, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7594441579907540448, guid: 73869af97607b864999158f46b880dfb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7594441579907540450, guid: 73869af97607b864999158f46b880dfb, type: 3}
       propertyPath: m_RootOrder
