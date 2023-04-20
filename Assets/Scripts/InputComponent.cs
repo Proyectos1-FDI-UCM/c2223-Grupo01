@@ -18,6 +18,7 @@ public class InputComponent : MonoBehaviour
     private MeleeComponent _myMeleeComponent;
     private Animator _animator;
     private PauseMenu _pausa;
+    private Scene _scene;
 
     private UniversalInput _newInput;
     private InputAction _movement;
@@ -52,6 +53,7 @@ public class InputComponent : MonoBehaviour
         _myShootingComponent = GetComponent<ShootingComponent>();
         _myMeleeComponent= GetComponent<MeleeComponent>();
         _animator = GetComponent<Animator>();
+        _scene = SceneManager.GetActiveScene();
     }
     private void FixedUpdate()
     {
@@ -86,7 +88,7 @@ public class InputComponent : MonoBehaviour
 
         // Ataca cuerpo a cuerpo
 
-        if (_newInput.Mighty.Melee.triggered && _myMeleeComponent.GetAttackMelee())
+        if (GameManager.instance.HandleMeleeActivation(_scene.name) && _newInput.Mighty.Melee.triggered && _myMeleeComponent.GetAttackMelee())
         {
             if (_myCharacterController.GetIsGrounded())
             {

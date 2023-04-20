@@ -189,7 +189,6 @@ public class MightyLifeComponent : MonoBehaviour
         _canBeDamaged = true;
 
         _initialCoolDown = _coolDown;
-        
 
         _death = false;
         
@@ -209,6 +208,7 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log(_scene.name);
         _animator.SetBool("_isDead", _death);
 
         if (!_canBeDamaged)
