@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int _currentWeapon { get; private set; }     //Variable que controla cu�l es nuestra arma actual.
     private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte est� activa o no
     [SerializeField] private float _deathTimeDamage; //Da�o que quita cada ciclo
+
+    static private Vector2 _checkPointPos;
     #endregion
 
     #region References
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     public MightyLifeComponent _mightyLifeComponent { get; private set;}
     public UIManager _UImanager { get; private set;}
     [SerializeField] private AudioClip _timeOut;
+    public Transform _playerSpawner { get; private set; }
     #endregion
 
     #region methods
@@ -38,6 +41,11 @@ public class GameManager : MonoBehaviour
     {
         return mele;
     }
+
+    public void CheckPointUpdatePos()
+    {
+        _checkPointPos= new Vector2(_player.transform.position.x, _player.transform.position.y);
+    }
     #endregion
 
     // awake para la instancia de la clase
@@ -48,13 +56,21 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        _playerSpawner = GetComponent<Transform>();
+
+        _playerSpawner.position = _checkPointPos;
+
+        //Actualiza la posicion por si cambia de nivel, no es totalmente necesario pq spawnea en el nivel correspondiente, pero antes de hacer cambios avisad
+        _checkPointPos = new Vector2(_player.transform.position.x, _player.transform.position.y);
+
         _timeMusicActive = false;
         _currentWeapon = 2;
         _currentTime = 600.0f;
     }
 
     void Update()
-    {    
+    {
+        Debug.Log(_checkPointPos.x);
         _currentTime -= Time.deltaTime;
 
         // Resta progresivamente la vida al acabarse el tiempo

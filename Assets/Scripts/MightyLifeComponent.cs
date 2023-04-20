@@ -46,7 +46,7 @@ public class MightyLifeComponent : MonoBehaviour
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
     //private CheckpointInteractionComponent _checkp;
-    private Transform _spawnPoint;
+    private Transform _mySpawnPoint;
     private Scene _scene;
 
     [SerializeField]
@@ -121,7 +121,7 @@ public class MightyLifeComponent : MonoBehaviour
         _death = false;
         _myInputComponent.enabled = true; 
         TakeDamage(-_maxhealth);
-        transform.position = _spawnPoint.position;
+        //transform.position = _spawnPoint.position;
     }
     #region collision methods
     private void OnCollisionEnter2D(Collision2D collision)
@@ -170,7 +170,8 @@ public class MightyLifeComponent : MonoBehaviour
         //si tocamos checkpoint, guardamos su transform
         if(other.gameObject.layer == 24)
         {
-            _spawnPoint = other.transform;
+            GameManager.instance.CheckPointUpdatePos();
+            //_spawnPoint = other.transform;
         }
     }
     #endregion
@@ -185,11 +186,13 @@ public class MightyLifeComponent : MonoBehaviour
         GameManager.instance.RegisterMightyComponent(this);
         _scene = SceneManager.GetActiveScene();
 
-        _initialCoolDown = _coolDown;
         _canBeDamaged = true;
 
-        _death = false;
+        _initialCoolDown = _coolDown;
+        
 
+        _death = false;
+        
         _switchLava1Detected = false;
         _switchLava2Detected = false;
         _switchLava3Detected = false;
@@ -197,6 +200,10 @@ public class MightyLifeComponent : MonoBehaviour
         //Parametros para el parpadeo al recibir daño
         _invisible = false;
         _initialCoolDownInv = _coolDownInvTrue; //Da igual si lo igualamos a true o false, ambos deben tener el mismo timing
+
+        //Reaparicion
+        _mySpawnPoint = GetComponent<Transform>();
+        _mySpawnPoint.position = GameManager.instance._playerSpawner.position;
     }
 
     // Update is called once per frame
