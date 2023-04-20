@@ -170,8 +170,7 @@ public class MightyLifeComponent : MonoBehaviour
         //si tocamos checkpoint, guardamos su transform
         if(other.gameObject.layer == 24)
         {
-            GameManager.instance.CheckPointUpdatePos();
-            //_spawnPoint = other.transform;
+            SpawnsManager.instance.SetRespawnPosition(gameObject.transform.position);
         }
     }
     #endregion
@@ -199,10 +198,7 @@ public class MightyLifeComponent : MonoBehaviour
         //Parametros para el parpadeo al recibir daño
         _invisible = false;
         _initialCoolDownInv = _coolDownInvTrue; //Da igual si lo igualamos a true o false, ambos deben tener el mismo timing
-
-        //Reaparicion
-        _mySpawnPoint = GetComponent<Transform>();
-        _mySpawnPoint.position = GameManager.instance._playerSpawner.position;
+        SpawnsManager.instance.Respawn(gameObject);
     }
 
     // Update is called once per frame
@@ -261,7 +257,6 @@ public class MightyLifeComponent : MonoBehaviour
             if (_canRepeatLevelTimer <= 0)
             {
                 SceneManager.LoadScene(_scene.name);
-                //Respawn();
             }
         }
     }

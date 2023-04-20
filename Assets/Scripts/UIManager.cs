@@ -10,16 +10,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _timetext;
     [SerializeField] private Image[] _Weapons;        //La imagen del arma de fuego regular.
     float _currentTime;
-    public Image _slider;                          //La Barra de vida
-    int _currentWeapon;                             //Un int que determina qu� arma estamos usando ahora.
+    [SerializeField] private Image _slider;                          //La Barra de vida
     #endregion
     #region References
-    public static UIManager instance;
     private MightyLifeComponent _mightyLifeComponent;
     #endregion
     
     #region Methods
-    void UpdateTimer(float Currenttime)
+    public void UpdateTimer(float Currenttime)
     //Redondea el n�mero para sacar los minutos y segundos
     //Coge el archivo de texto del timer para cambiarlo.
     {
@@ -71,14 +69,5 @@ public class UIManager : MonoBehaviour
         GameManager.instance.RegisterUIMManager(this);
         _mightyLifeComponent = GameManager.instance._player.GetComponent<MightyLifeComponent>();
         _currentTime = GameManager.instance._currentTime;
-        /*_maxHealth = GameManager.instance._MaxHealth;  
-        SetMaxHealth(_maxHealth);*/
-        //_health = GameManager.instance._MaxHealth;
-    }
-    private void Update()
-    {
-        _currentTime = GameManager.instance._currentTime;
-        _currentWeapon = GameManager.instance._currentWeapon;
-        UpdateTimer(_currentTime);
     }
 }

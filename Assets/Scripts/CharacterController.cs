@@ -256,16 +256,19 @@ public class CharacterController : MonoBehaviour
         //CAMBIO DE ESCENAS SI TOCAMOS DOOR
         if (other.gameObject.layer == 18)
         {
+            SpawnsManager.instance.ResetRespawnPosition();
             SceneManager.LoadScene(3);
         }
 
         if (other.gameObject.layer == 20)
         {
+            SpawnsManager.instance.ResetRespawnPosition();
             SceneManager.LoadScene(4);
         }
 
         if (other.gameObject.layer == 28)
         {
+            SpawnsManager.instance.ResetRespawnPosition();
             SceneManager.LoadScene(7);
         }
     }

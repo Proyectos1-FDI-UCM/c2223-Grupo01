@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,8 +13,6 @@ public class GameManager : MonoBehaviour
     private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte est� activa o no
     [SerializeField] private float _deathTimeDamage; //Da�o que quita cada ciclo
     public bool _canUseMelee { get; private set; }
-
-    static private Vector2 _checkPointPos;
     #endregion
 
     #region References
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
     public MightyLifeComponent _mightyLifeComponent { get; private set;}
     public UIManager _UImanager { get; private set;}
     [SerializeField] private AudioClip _timeOut;
-    public Transform _playerSpawner { get; private set; }
     #endregion
 
     #region methods
@@ -45,11 +43,6 @@ public class GameManager : MonoBehaviour
         return mele;
     }
 
-    public void CheckPointUpdatePos()
-    {
-        _checkPointPos= new Vector2(_player.transform.position.x, _player.transform.position.y);
-    }
-
     //Comprueba si se puede usar el melee o no
     public bool HandleMeleeActivation(string _escena)
     {
@@ -60,18 +53,11 @@ public class GameManager : MonoBehaviour
     // awake para la instancia de la clase
     private void Awake()     //Inicializo el Singleton
     {
-        instance = this;
+            instance = this;
     }
 
     void Start()
     {
-        _playerSpawner = GetComponent<Transform>();
-
-        _playerSpawner.position = _checkPointPos;
-
-        //Actualiza la posicion por si cambia de nivel, no es totalmente necesario pq spawnea en el nivel correspondiente, pero antes de hacer cambios avisad
-        _checkPointPos = new Vector2(_player.transform.position.x, _player.transform.position.y);
-
         _canUseMelee = false;
         _timeMusicActive = false;
         _currentWeapon = 2;
@@ -80,9 +66,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        //Debug.Log(_checkPointPos.x);
         _currentTime -= Time.deltaTime;
-
+        _UImanager.UpdateTimer(_currentTime);
         // Resta progresivamente la vida al acabarse el tiempo
         if (_currentTime <= 0 && _mightyLifeComponent.GetHealth() > 0)
         {
