@@ -250,6 +250,7 @@ public class MightyLifeComponent : MonoBehaviour
 
         if (_death)
         {
+            _myInputComponent.enabled = false; //Hay que ver donde poner esto pq en el TakeDamage NO funciona por el momento
             _canRepeatLevelTimer -= Time.deltaTime;
             if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(_scene.name); //no
             //Respawn();

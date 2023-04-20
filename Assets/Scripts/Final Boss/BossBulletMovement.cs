@@ -32,6 +32,18 @@ public class BossBulletMovement : MonoBehaviour
         {
             collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_damage);
         }
+
+        // Colision con paredes
+        if ((_direccionX < 0.0f && collision.gameObject.layer == 12) || (_direccionX > 0.0f && collision.gameObject.layer == 12))
+        {
+            _direccionX *= -1;
+        }
+
+        // Colision con techo y suelo
+        if ((_direccionY < 0.0f && collision.gameObject.layer == 6) || (_direccionY > 0.0f && collision.gameObject.layer == 6))
+        {
+            _direccionY *= -1;
+        }
     }
 
     void Start()
@@ -44,7 +56,7 @@ public class BossBulletMovement : MonoBehaviour
 
     private void Update()
     {
-        if (_direccionY > 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.up, .001f, _layerTerreno))
+        /*if (_direccionY > 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.up, .001f, _layerTerreno))
         {
             _direccionY *= -1;
         }
@@ -60,10 +72,10 @@ public class BossBulletMovement : MonoBehaviour
         else if (_direccionX > 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.right, .002f, _layerPared))
         {
             _direccionX *= -1;
-        }
+        }*/
     }
 
-        void FixedUpdate()
+    private void FixedUpdate()
     {
         _myRigidbody.velocity = new Vector2(_direccionX, _direccionY).normalized * _speed * Time.deltaTime;//desplazamiento de la bala
     }
