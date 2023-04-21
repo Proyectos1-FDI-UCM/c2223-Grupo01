@@ -7,6 +7,11 @@ public class SpawnsManager : MonoBehaviour
     public static SpawnsManager instance;
     private static Vector3 _respawnPosition;
 
+    public Vector3 getSpawnPosition()
+    {
+        return _respawnPosition;
+    }
+
     public void SetRespawnPosition(Vector3 newPosition)
     {
         _respawnPosition = newPosition;
@@ -24,7 +29,6 @@ public class SpawnsManager : MonoBehaviour
             player.transform.position = _respawnPosition;
         }
     }
-
     private void Awake()
     {
         if(instance != null)

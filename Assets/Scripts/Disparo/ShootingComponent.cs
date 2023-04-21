@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShootingComponent : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class ShootingComponent : MonoBehaviour
 
     private bool _canAttackShoot; //Permite poder disparar
 
-    [SerializeField] private float _coolDownShoot;      //tiempo en el que se permitirá usar el disparo
+    [SerializeField] private float _coolDownShoot;      //tiempo en el que se permitirï¿½ usar el disparo
     private float _initialCoolDownShoot;
     #endregion
 
@@ -20,15 +21,14 @@ public class ShootingComponent : MonoBehaviour
     private Animator _animator;
     [SerializeField]
     private RuntimeAnimatorController[] _animatorControllers;
+    private Scene _scene;
     #endregion
 
     #region Getters & Setters
-
     public bool GetAttackShoot()
     {
         return _canAttackShoot;
     }
-
     #endregion
 
     #region References
@@ -38,7 +38,7 @@ public class ShootingComponent : MonoBehaviour
 
     #region Methods
     public void Shoot()
-    // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
+    // instanciamos la bala en la posiciï¿½n del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
         GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
         Instantiate(_bullet[(int)_actualBullet], _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
@@ -48,10 +48,28 @@ public class ShootingComponent : MonoBehaviour
     public void ChangeBullet()
     {
         _actualBullet++;
-        if((int)_actualBullet == 3)
+        if(_scene.name == "Tutorial") //Si estamos en el tutorial
         {
-            _actualBullet = 0;
+            if((int)_actualBullet == 1) //que no pueda pasar de _actualBullet 0 (normal)
+            {
+                _actualBullet = 0;
+            }
         }
+        else if(_scene.name == "Nivel Hielo" || _scene.name == "Nivel Fabrica") //Si estamos en nivel hielo o fÃ¡brica
+        {
+            if((int)_actualBullet == 2) //que no pueda pasar de _actualBullet 1 (ice)
+            {
+                _actualBullet = 0;
+            }
+        }
+        else if(_scene.name == "Nivel Lava" || _scene.name == "FINAL BOSS") //Si estamos en nivel lava o final boss
+        {
+            if((int)_actualBullet == 3) //que no pueda pasar de _actualBullet 2 (fire)
+            {
+                _actualBullet = 0;
+            }
+        }
+        
         GameManager.instance._UImanager.currentWeaponState((int)_actualBullet);
         _animator.runtimeAnimatorController = _animatorControllers[(int)_actualBullet];
     }
@@ -66,6 +84,7 @@ public class ShootingComponent : MonoBehaviour
 
         _myInputComponent = GetComponent<InputComponent>();
         _actualBullet = tiposDeBala._normalBullet;
+        _scene = SceneManager.GetActiveScene(); //para ver a quÃ© armas podemos cambiar
     }
 
     private void Update()
