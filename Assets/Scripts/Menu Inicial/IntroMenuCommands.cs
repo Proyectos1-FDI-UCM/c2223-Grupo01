@@ -5,42 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class IntroMenuCommands : MonoBehaviour
 {
-    public void Comenzar()
+    int _x , _y;  
+    public void Comenzar(int escene)
     {
-        SceneManager.LoadScene(2);
-    }
-    public void ComenzarHIELO()
-    {
-        SceneManager.LoadScene(3);
-    }
-    public void ComenzarFABRICA()
-    {
-        SceneManager.LoadScene(4);
-    }
-    public void ComenzarHIELOmitad()
-    {
-        SceneManager.LoadScene(5);
-    }
-    public void ComenzarFABRICAmitad()
-    {
-        SceneManager.LoadScene(6);
+        SpawnsManager.instance.ResetRespawnPosition();
+        SceneManager.LoadScene(escene);
     }
 
-    public void ComenzarLava()
+    public void SetRespawnX( int x)
     {
-        SceneManager.LoadScene(7);
+        _x = x;
     }
-
-    public void ComenzarLavaCheck1()
+    public void SetRespawnY(int y)
     {
-        SceneManager.LoadScene(8);
+        _y = y;
     }
-
-    public void ComenzarLavaCheck2()
+    public void ComenzarMitad (int escene)
     {
-        SceneManager.LoadScene(9);
+        SpawnsManager.instance.SetRespawnPosition(new Vector3(_x,_y,0));
+        SceneManager.LoadScene(escene);
     }
-
     public void SalirDeljuego()
     {
         Application.Quit();

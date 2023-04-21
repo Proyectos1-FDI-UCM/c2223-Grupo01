@@ -269,7 +269,7 @@ public class CharacterController : MonoBehaviour
         if (other.gameObject.layer == 28)
         {
             SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(5);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
