@@ -7,9 +7,9 @@ public class EnemyHealth : MonoBehaviour
     #region parameters && references
     private Animator _animator;
 
-    [SerializeField] private int _maxHealth = 100;     //Vida máxima del enemigo.
+    [SerializeField] private int _maxHealth = 100;     //Vida mï¿½xima del enemigo.
     public int _currentHealth { get; private set; }                        //Vida actual del enemigo.
-    [SerializeField] private float _damage;            //daño al jugador
+    [SerializeField] private float _damage;            //daï¿½o al jugador
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
 
@@ -38,13 +38,13 @@ public class EnemyHealth : MonoBehaviour
 
     #region methods
     public void TakeDamage(int damage)
-    //Método para que el enemigo reciba daño.
+    //Mï¿½todo para que el enemigo reciba daï¿½o.
     //Cuando la vida quede a 0 o menos, el enemigo muere.
     {
         _currentHealth -= damage;
 
         GetComponent<AudioSource>().PlayOneShot(_hurt);
-        //Animación de recibir daño.
+        //Animaciï¿½n de recibir daï¿½o.
 
         if (_currentHealth <= 0) 
         {
@@ -53,7 +53,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     private void Die()
-    //Método para que muera el enemigo.
+    //Mï¿½todo para que muera el enemigo.
     //Desactiva el collider del enemigo al morir.
     //Desactiva el EnemyComponent.
     {
@@ -64,11 +64,11 @@ public class EnemyHealth : MonoBehaviour
 
 
         // si no va a pie vuela, no hace falta comprobar ambos
-        if (_enemyMovement != null)
+        if (_enemyMovement != null && _enemyFlyingMovement == null)
         {
             _enemyMovement.enabled = false;
         }
-        else
+        else if (_enemyMovement == null && _enemyFlyingMovement != null)
         {
             _enemyFlyingMovement.enabled = false;
         }
@@ -101,7 +101,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Start()
     {
-        //Al comienzo, el enemigo comienza con máxima vida.
+        //Al comienzo, el enemigo comienza con mï¿½xima vida.
         _currentHealth = _maxHealth;  
         _enemyMovement = GetComponent<EnemyMovement>();
         _enemyFlyingMovement = GetComponent <EnemyFlyingMovement>();

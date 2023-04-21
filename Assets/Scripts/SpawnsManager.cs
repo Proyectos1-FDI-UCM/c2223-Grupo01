@@ -24,7 +24,6 @@ public class SpawnsManager : MonoBehaviour
             player.transform.position = _respawnPosition;
         }
     }
-
     private void Awake()
     {
         if(instance != null)
