@@ -262,19 +262,23 @@ public class CharacterController : MonoBehaviour
             _currentLadder = other;
         }
 
+        //CAMBIO DE ESCENAS SI TOCAMOS DOOR
         if (other.gameObject.layer == 18)
         {
+            SpawnsManager.instance.ResetRespawnPosition();
             SceneManager.LoadScene(3);
         }
 
         if (other.gameObject.layer == 20)
         {
+            SpawnsManager.instance.ResetRespawnPosition();
             SceneManager.LoadScene(4);
         }
 
         if (other.gameObject.layer == 28)
         {
-            SceneManager.LoadScene(7);
+            SpawnsManager.instance.ResetRespawnPosition();
+            SceneManager.LoadScene(5);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

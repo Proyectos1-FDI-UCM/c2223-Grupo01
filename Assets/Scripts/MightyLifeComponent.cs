@@ -42,11 +42,11 @@ public class MightyLifeComponent : MonoBehaviour
     #region References
     private Animator _animator;
     private InputComponent _myInputComponent;
-    private RumbleGamePad _myRumbleGamepad;
 
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
-    private Transform _spawnPoint;
+    //private CheckpointInteractionComponent _checkp;
+    private Transform _mySpawnPoint;
     private Scene _scene;
 
     [SerializeField]
@@ -85,9 +85,9 @@ public class MightyLifeComponent : MonoBehaviour
     public void OnPlayerHit(float damage)
     //Cuando se haga hit, herir al player
     {
-        _myRumbleGamepad.ControllerRumble();
         _animator.SetTrigger("_damaged");
-        GetComponent<AudioSource>().PlayOneShot(_hurt);       
+        GetComponent<AudioSource>().PlayOneShot(_hurt);
+
         _canBeDamaged = false;
         TakeDamage(damage);
     }
@@ -119,11 +119,10 @@ public class MightyLifeComponent : MonoBehaviour
     public void Respawn()
     {
         _death = false;
-        _myInputComponent.enabled = true;
+        _myInputComponent.enabled = true; 
         TakeDamage(-_maxhealth);
-        transform.position = _spawnPoint.position;
+        //transform.position = _spawnPoint.position;
     }
-
     #region collision methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -168,30 +167,30 @@ public class MightyLifeComponent : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.layer == 24)
+        //si tocamos checkpoint, guardamos su transform
+        if(other.gameObject.layer == 24)
         {
-            _spawnPoint = other.transform;
+            SpawnsManager.instance.SetRespawnPosition(gameObject.transform.position);
         }
     }
     #endregion
-
     // Start is called before the first frame update
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _myInputComponent = GetComponent<InputComponent>();
-        _myRumbleGamepad = GetComponent<RumbleGamePad>();
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
         GameManager.instance.RegisterMightyComponent(this);
         _scene = SceneManager.GetActiveScene();
 
-        _initialCoolDown = _coolDown;
         _canBeDamaged = true;
 
-        _death = false;
+        _initialCoolDown = _coolDown;
 
+        _death = false;
+        
         _switchLava1Detected = false;
         _switchLava2Detected = false;
         _switchLava3Detected = false;
@@ -199,11 +198,13 @@ public class MightyLifeComponent : MonoBehaviour
         //Parametros para el parpadeo al recibir daño
         _invisible = false;
         _initialCoolDownInv = _coolDownInvTrue; //Da igual si lo igualamos a true o false, ambos deben tener el mismo timing
+        SpawnsManager.instance.Respawn(gameObject);
     }
 
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log(_scene.name);
         _animator.SetBool("_isDead", _death);
 
         if (!_canBeDamaged)
@@ -253,8 +254,10 @@ public class MightyLifeComponent : MonoBehaviour
         if (_death)
         {
             _canRepeatLevelTimer -= Time.deltaTime;
-            if (_canRepeatLevelTimer <= 0) SceneManager.LoadScene(_scene.name); //no
-            //Respawn();
+            if (_canRepeatLevelTimer <= 0)
+            {
+                SceneManager.LoadScene(_scene.name);
+            }
         }
     }
 }
