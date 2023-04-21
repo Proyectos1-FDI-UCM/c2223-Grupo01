@@ -110,25 +110,26 @@ public class HandsManager : MonoBehaviour
         foreach (GameObject _hand in _hands)
         {
             if (_enemySpeed > 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
-                _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .001f, _layerManos))
+                _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .01f, _layerManos))
             {
                 _enemySpeed *= -1;
                 PatrullajeMovement();
+                Debug.Log("derecha");
             }
             else if (_enemySpeed < 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
-                    _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, .0005f, _layerManos))
+                    _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, .01f, _layerManos))
             {
                 _enemySpeed *= -1;
                 PatrullajeMovement();
+                Debug.Log("izquierda");
             }
+
+            DetectordeCaida();
             if (!_caido)
             {
                 PatrullajeMovement();
             }
-
-            DetectordeCaida();
-
-            if (_caido)
+            else
             {
                 caida();
             }
@@ -178,13 +179,13 @@ public class HandsManager : MonoBehaviour
 
     private void MovimientoCaida()
     {
-        if (_caidaSpeed < 0 && Mathf.Approximately(_hands[0].transform.position.y, _hands[1].transform.position.y) && Mathf.Approximately(_hands[0].transform.position.y, 69.05f))
+        if (_caidaSpeed < 0 && _hands[0].transform.position.y >= 69.05f && _hands[1].transform.position.y >= 69.05f)
         {
             ChangeCaidaSpeed();
             _caido = false;
         }
 
-        foreach(GameObject _hand in _hands)
+        foreach (GameObject _hand in _hands)
         {
             if (_caidaSpeed > 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
                 _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .001f, _layerSuelo))

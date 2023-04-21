@@ -107,10 +107,10 @@ TextureImporter:
       name: Mas balas de enemigos_0
       rect:
         serializedVersion: 2
-        x: 65
-        y: 24
-        width: 16
-        height: 7
+        x: 6
+        y: 12
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: Mas balas de enemigos_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 3
-        width: 21
-        height: 21
+        x: 65
+        y: 24
+        width: 16
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,6 +149,27 @@ TextureImporter:
       name: Mas balas de enemigos_2
       rect:
         serializedVersion: 2
+        x: 31
+        y: 3
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef430a74b972db48a77b9f6f2f55fc4
+      internalID: -325092252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mas balas de enemigos_3
+      rect:
+        serializedVersion: 2
         x: 65
         y: 10
         width: 16
@@ -160,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bef430a74b972db48a77b9f6f2f55fc4
-      internalID: -325092252
+      spriteID: 0fa46407e2aa9c64598e0456c7873a2b
+      internalID: -836296949
       vertices: []
       indices: 
       edges: []
@@ -178,6 +199,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Mas balas de enemigos_2: -325092252
+      Mas balas de enemigos_3: -836296949
       Mas balas de enemigos_1: -1647519953
       Mas balas de enemigos_0: 1412897018
   spritePackingTag: 

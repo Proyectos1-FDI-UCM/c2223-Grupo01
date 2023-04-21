@@ -1211,5 +1211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef06e4706095f654a83e2f94867e91e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  botonPausa: {fileID: 374391718145211296}
+  _pauseInput:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fa384808-716f-4d2f-9027-2282227b8556
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   menuPausa: {fileID: 374391717466515026}
