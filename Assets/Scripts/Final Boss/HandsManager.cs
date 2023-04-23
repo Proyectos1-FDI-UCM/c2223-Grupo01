@@ -107,23 +107,23 @@ public class HandsManager : MonoBehaviour
     #region Patrullaje
     private void PatrullajeUpdate()
     {
+        if (_enemySpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
+                _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .01f, _layerManos))
+        {
+            _enemySpeed *= -1;
+            PatrullajeMovement();
+            Debug.Log("derecha");
+        }
+        else if (_enemySpeed < 0 && Physics2D.BoxCast(_hands[0].GetComponent<Collider2D>().bounds.center,
+                _hands[0].GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, .01f, _layerManos))
+        {
+            _enemySpeed *= -1;
+            PatrullajeMovement();
+            Debug.Log("izquierda");
+        }
+
         foreach (GameObject _hand in _hands)
         {
-            if (_enemySpeed > 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
-                _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .01f, _layerManos))
-            {
-                _enemySpeed *= -1;
-                PatrullajeMovement();
-                Debug.Log("derecha");
-            }
-            else if (_enemySpeed < 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
-                    _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, .01f, _layerManos))
-            {
-                _enemySpeed *= -1;
-                PatrullajeMovement();
-                Debug.Log("izquierda");
-            }
-
             DetectordeCaida();
             if (!_caido)
             {
