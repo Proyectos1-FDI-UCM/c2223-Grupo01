@@ -377,6 +377,7 @@ MonoBehaviour:
   _hurt: {fileID: 8300000, guid: 991e0ad0e8845d440866d6120de6cdd7, type: 3}
   _deathSFX: {fileID: 8300000, guid: d21152ae5815b854a811ff542ef51f23, type: 3}
   _cureSFX: {fileID: 8300000, guid: f29ff22bd4841c048a2647b08c9d1bb6, type: 3}
+  _lavaWarning: {fileID: 8300000, guid: 79a5fc71d4fc34a4baa2b56394c6de0f, type: 3}
   _colores:
   - {r: 1, g: 1, b: 1, a: 0.49019608}
   - {r: 1, g: 1, b: 1, a: 1}

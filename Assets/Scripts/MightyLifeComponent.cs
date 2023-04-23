@@ -34,8 +34,8 @@ public class MightyLifeComponent : MonoBehaviour
 
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioClip _deathSFX;
-
     [SerializeField] private AudioClip _cureSFX;
+    [SerializeField] private AudioClip _lavaWarning;
 
     #endregion
 
@@ -152,18 +152,21 @@ public class MightyLifeComponent : MonoBehaviour
         if (other.gameObject.layer == 25)
         {
             _switchLava1Detected = true;
+            GetComponent<AudioSource>().PlayOneShot(_lavaWarning);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.layer == 26)
         {
             _switchLava2Detected = true;
+            GetComponent<AudioSource>().PlayOneShot(_lavaWarning);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.layer == 27)
         {
             _switchLava3Detected = true;
+            GetComponent<AudioSource>().PlayOneShot(_lavaWarning);
             Destroy(other.gameObject);
         }
 

@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Escenas definitivas/Tutorial.unity
     guid: cc8466d1893707b4abf93147ab2f3cc3
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/Nivel de Hielo/Nivel Hielo.unity
+    path: Assets/Scenes/Escenas definitivas/Nivel Hielo.unity
     guid: 9b92ee50378a94042adc0e9940b44f2d
   - enabled: 1
-    path: "Assets/Scenes/Escenas definitivas/Nivel de f\xE1brica/Nivel Fabrica.unity"
+    path: Assets/Scenes/Escenas definitivas/Nivel Fabrica.unity
     guid: d55efccda8d41a0439b59a08b3069c76
   - enabled: 1
-    path: Assets/Scenes/Escenas definitivas/Nivel de Lava/Nivel Lava.unity
+    path: Assets/Scenes/Escenas definitivas/Nivel Lava.unity
     guid: c9499f7e158987d40be9c79101d0fc1f
   m_configObjects: {}
