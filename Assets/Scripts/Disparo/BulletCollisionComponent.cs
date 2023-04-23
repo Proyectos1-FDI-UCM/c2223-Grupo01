@@ -38,6 +38,30 @@ public class BulletCollisionComponent : MonoBehaviour
         }
     }
 
+    private void OnFinalBossHit(GameObject collision)
+    {
+        switch (_actualDamage)
+        {
+            case typeOfDamage.Normal:
+                {
+                    collision.GetComponent<HandsLive>().TakeDamege(_normalBulletDamage);
+                    break;
+                }
+
+            case typeOfDamage.Ice:
+                {
+                    collision.GetComponent<HandsLive>().TakeDamege(_iceBulletDamage);
+                    break;
+                }
+
+            case typeOfDamage.Fire:
+                {
+                    collision.GetComponent<HandsLive>().TakeDamege(_fireBulletDamage);
+                    break;
+                }
+        }
+    }
+
     private void OnHitEnemy(GameObject collision)
     {
         switch (_actualDamage)
@@ -157,6 +181,14 @@ public class BulletCollisionComponent : MonoBehaviour
     {
         Hit(collision.gameObject);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<HandsLive>() != null)
+        {
+            OnFinalBossHit(collision.gameObject);
+        }
     }
     #endregion
 }
