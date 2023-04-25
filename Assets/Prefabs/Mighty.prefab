@@ -231,7 +231,7 @@ MonoBehaviour:
   attackPoint: {fileID: 7454398845290798836}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2147483776
   attackRange: 1.1
   attackDamage: 40
   attackRate: 240
