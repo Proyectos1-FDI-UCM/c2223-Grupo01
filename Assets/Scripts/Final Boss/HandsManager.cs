@@ -435,7 +435,6 @@ public class HandsManager : MonoBehaviour
     void Update()
     {
         UpdateState(_currentState);
-        Debug.Log(_vecesPasado + "=" + _tocaCaer);
         if(_currentState != HandsStates.Transición && _currentState != HandsStates.Volviendo && _currentState != HandsStates.UnaSolaMano)
         {
             TemporalChangeState();

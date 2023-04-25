@@ -5,6 +5,7 @@ using UnityEngine;
 public class HandsLive : MonoBehaviour
 {
     [SerializeField] private int _vidaManos = 400, _dañoManos = 30;
+    [SerializeField] private GameObject _cuerpo;
 
     public int GetVidaManos()
     {
@@ -34,7 +35,11 @@ public class HandsLive : MonoBehaviour
     {
         if(gameObject.transform.parent.GetComponent<HandsManager>().GetNManos() < 1)
         {
-            gameObject.transform.parent.GetComponent<HandsManager>().enabled = false;
+            if(_cuerpo.GetComponent<FaseFinalJefe>() == null)
+            {
+                _cuerpo.AddComponent<FaseFinalJefe>();
+            }
+            Destroy(gameObject.transform.parent);
         }
         Destroy(gameObject);
     }

@@ -6,8 +6,8 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class BossBulletMovement : MonoBehaviour
 {
     #region parameters
-    [SerializeField] private float _speed;  // velociadad de la bala
-    [SerializeField] private float _damage;  // daño de la bala
+    [SerializeField] private float _speed, _damage;  // velociadad de la bala y daño de la bala
+    [SerializeField] private int _nRebotes;
 
     private float _direccionX; // Comprueba la dirección X hacia donde debe ir la bala
     private float _direccionY; // Comprueba la dirección Y hacia donde debe ir la bala
@@ -22,11 +22,6 @@ public class BossBulletMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        /*if(collision.gameObject.layer == 30)
-        {
-            _direccionY *= -1;
-            _direccionX *= -1;
-        }*/
 
         if (collision.gameObject.layer == 13 && collision.GetComponent<MightyLifeComponent>()._canBeDamaged)
         {
@@ -37,12 +32,18 @@ public class BossBulletMovement : MonoBehaviour
         if ((_direccionX < 0.0f && collision.gameObject.layer == 12) || (_direccionX > 0.0f && collision.gameObject.layer == 12))
         {
             _direccionX *= -1;
+            _nRebotes--;
         }
 
         // Colision con techo y suelo
         if ((_direccionY < 0.0f && collision.gameObject.layer == 6) || (_direccionY > 0.0f && collision.gameObject.layer == 6))
         {
             _direccionY *= -1;
+            _nRebotes--;
+        }
+        if(_nRebotes == 0)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -52,27 +53,6 @@ public class BossBulletMovement : MonoBehaviour
         _myRigidbody = GetComponent<Rigidbody2D>();
         _direccionX = GameManager.instance._player.transform.position.x - gameObject.transform.position.x;
         _direccionY = GameManager.instance._player.transform.position.y - gameObject.transform.position.y;
-    }
-
-    private void Update()
-    {
-        /*if (_direccionY > 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.up, .001f, _layerTerreno))
-        {
-            _direccionY *= -1;
-        }
-        else if (_direccionY < 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.down, .001f, _layerTerreno))
-        {
-            _direccionY *= -1;
-        }
-
-        if (_direccionX < 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.left, .001f, _layerPared))
-        {
-            _direccionX *= -1;
-        }
-        else if (_direccionX > 0.0f && Physics2D.BoxCast(GetComponent<Collider2D>().bounds.center, GetComponent<Collider2D>().bounds.size, 0.0f, Vector2.right, .002f, _layerPared))
-        {
-            _direccionX *= -1;
-        }*/
     }
 
     private void FixedUpdate()

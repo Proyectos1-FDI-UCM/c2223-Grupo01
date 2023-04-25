@@ -5,7 +5,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class FaseFinalJefe : MonoBehaviour
 {
-    [SerializeField] private Transform _myTransform;
+    private Transform _myTransform;
     private GameObject _player;
 
     [SerializeField] private GameObject _bullet; //prefab de la bala
@@ -16,16 +16,12 @@ public class FaseFinalJefe : MonoBehaviour
 
     private bool _canShoot; //Booleano que determina si puede disparar o no
 
-    private int _patata = 0;
-
     [SerializeField] private LayerMask _playerLayer;
 
     public void Shoot()
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
-        Instantiate(_bullet, _bulletSpawnTransform.position, Quaternion.Euler(0.0f,0.0f,0.0f));
-
-        Debug.Log("dispara");
+        Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);
         _canShoot = false;
     }
 
@@ -38,7 +34,6 @@ public class FaseFinalJefe : MonoBehaviour
     {
         _initialCoolDownShoot = _coolDownShoot;
         _canShoot = true;
-
         _myTransform = GetComponent<Transform>();
         _player = GameManager.instance._player;
     }
@@ -46,8 +41,6 @@ public class FaseFinalJefe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Physics2D.Raycast(_myTransform.position, _player.transform.position - _myTransform.position, 100000.0f, _playerLayer))
-        {
             if (_canShoot)
             {
                 _coolDownShoot = _initialCoolDownShoot;
@@ -61,9 +54,5 @@ public class FaseFinalJefe : MonoBehaviour
                     _canShoot = true;
                 }
             }
-
-            _patata++;
-            Debug.Log("debug" + _patata);
-        }
     }
 }
