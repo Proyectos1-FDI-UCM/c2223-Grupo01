@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 3.5
-  _enemydetectionSpeed: 5
+  _enemydetectionSpeed: 5.25
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.2
   _groundLayer:

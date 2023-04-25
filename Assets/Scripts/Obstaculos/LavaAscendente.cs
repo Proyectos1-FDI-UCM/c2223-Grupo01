@@ -6,8 +6,7 @@ public class LavaAscendente : MonoBehaviour
 {
     #region parameters
     [SerializeField] private float _speed;  // velociadad de la lava
-    private GameObject _player;             // referencia al player   
-    [SerializeField] private float _lavaDamage; // cuanto daño hace la lava
+    private GameObject _player;             // referencia al player
 
     //La siguiente lista de booleanos determina que en una determinada posicion alcanzada en el nivel, la lava pueda avanzar o no desde esa posicion. Al inicio no se necesita para la FASE 1
 
@@ -60,6 +59,11 @@ public class LavaAscendente : MonoBehaviour
         else if (_player.GetComponent<MightyLifeComponent>()._switchLava3Detected && _canAdvance2 == true)
         {
             _myRigidbody.velocity = new Vector2(0, _speed * 3 * Time.deltaTime);//desplazamiento de la lava
+        }
+
+        if (_player.GetComponent<MightyLifeComponent>()._stopLava)
+        {
+            _myRigidbody.velocity = new Vector2(0, 0);
         }
     }
 }
