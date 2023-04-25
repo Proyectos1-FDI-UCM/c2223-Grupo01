@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditorInternal;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class HandsManager : MonoBehaviour
     [SerializeField] private GameObject[] _hands;
     [SerializeField] private LayerMask _layerManos;
     [SerializeField] private Transform[] _initialTransforms;
+    private int _nManos;
     [Header("Intermedio")]
     [SerializeField] private Transform[] _enemySpawns;
     [SerializeField] private GameObject[] _enemys;
@@ -30,12 +32,32 @@ public class HandsManager : MonoBehaviour
     //velocidad yrotación 
     [SerializeField] private float _enemySpeed = 5f;
     //estados de las manos 
-    private enum HandsStates {Patrullaje, Transición, Barrido,volviendo}; 
+
+    [Header("Una sola mano")]
+    [SerializeField] GameObject _onlyHand;
+    private enum OneStates { Patrulla, Intermedio, Desliza, Vuelve};
+    private OneStates _estadoActual;
+    public enum HandsStates {Patrullaje, Transición, Barrido,Volviendo, UnaSolaMano}; 
     private HandsStates _currentState, _nextState; //estado actual
     [Header("Estado")]
     [SerializeField] private float _cambioDeEstado = 40; // tiempo que se tarda en cambiar de estado
     private float _cambioDeEstadoInicial;
     #endregion
+
+    public HandsStates GetCurrentState()
+    {
+        return _currentState;
+    }
+
+    public bool GetCaida()
+    {
+        return _caido;
+    }
+
+    public int GetNManos()
+    {
+        return _nManos;
+    }
 
     #region Methods
 
@@ -79,9 +101,14 @@ public class HandsManager : MonoBehaviour
                 {
                     break;
                 }
-            case HandsStates.volviendo:
+            case HandsStates.Volviendo:
                 {
                     VolviendoUpdate();
+                    break;
+                }
+            case HandsStates.UnaSolaMano:
+                {
+                    OnlyOneHandUpdate();
                     break;
                 }
         }
@@ -104,26 +131,129 @@ public class HandsManager : MonoBehaviour
             }
         }
     }
+
+    public void OnHandDie()
+    {
+        _nManos--;
+        foreach (GameObject _hand in _hands)
+        {
+            if (_hand.GetComponent<HandsLive>() != null && _hand.GetComponent<HandsLive>().GetVidaManos() > 0)
+            {
+                _onlyHand = _hand;
+                _currentState = HandsStates.UnaSolaMano;
+                _estadoActual = OneStates.Patrulla;
+            }
+        }
+    }
+
+    #region Only One Hand
+    private void OnlyOneHandUpdate()
+    {
+        UpdateOneState(_estadoActual);
+    }
+
+    private void UpdateOneState(OneStates currenState)
+    {
+        switch (currenState)
+        {
+            case OneStates.Patrulla:
+                {
+                    PatrullaUpdate();
+                    break;
+                }
+            case OneStates.Intermedio:
+                {
+                    break;
+                }
+            case OneStates.Desliza:
+                {
+                    break;
+                }
+            case OneStates.Vuelve:
+                {
+                    break;
+                }
+        } 
+    }
+
+    private void PatrullaUpdate()
+    {
+        if(!_caido)
+        {
+            DetectorCaidaMano();
+        }
+        else
+        {
+            CaidaMano();
+        }
+    }
+
+    private void PatrullajeManoMovement()
+    {
+        _onlyHand.GetComponent<Rigidbody2D>().velocity = (Vector3.right * _enemySpeed);
+    }
+
+    private void DetectorCaidaMano()
+    {  
+        if (Physics2D.Raycast(_onlyHand.transform.position, Vector2.down, 6f, _layerPlayer))
+        {
+            _vecesPasado++;
+        }
+
+        if (_vecesPasado >= _tocaCaer)
+        {
+            if (!_caido)
+            {
+                _tocaCaer = Random.Range(minCaida, maxCaida);
+                _vecesPasado = 0;
+                _caido = true;
+            }
+        }
+    }
+
+    private void CaidaMano()
+    {
+        _onlyHand.GetComponent<Rigidbody2D>().velocity = (Vector3.down * _caidaSpeed);
+
+        if (_caidaSpeed <= 0 && _caido && _onlyHand.transform.position.y >= 69.05f)
+        {
+            ChangeCaidaSpeed();
+            PatrullajeManoMovement();
+            _caido = false;
+        }
+
+        if (_caidaSpeed > 0 && Physics2D.BoxCast(_onlyHand.GetComponent<Collider2D>().bounds.center,
+                _onlyHand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.down, .001f, _layerSuelo))
+        {
+            ChangeCaidaSpeed();
+        }
+    }
+
+    public void ChangeSpeed()
+    {
+        _enemySpeed *= -1;
+        _onlyHand.GetComponent<Rigidbody2D>().velocity = (Vector3.right * _enemySpeed);
+    }
+    #endregion
+
     #region Patrullaje
     private void PatrullajeUpdate()
     {
+        if (_enemySpeed > 0 && Physics2D.BoxCast(_hands[1].GetComponent<Collider2D>().bounds.center,
+                _hands[1].GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .01f, _layerManos))
+        {
+            _enemySpeed *= -1;
+            PatrullajeMovement();
+        }
+        else if (_enemySpeed < 0 && Physics2D.BoxCast(_hands[0].GetComponent<Collider2D>().bounds.center,
+                _hands[0].GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, .01f, _layerManos))
+        {
+            _enemySpeed *= -1;
+            PatrullajeMovement();
+        }
+
         foreach (GameObject _hand in _hands)
         {
-            if (_enemySpeed > 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
-                _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, .01f, _layerManos))
-            {
-                _enemySpeed *= -1;
-                PatrullajeMovement();
-                Debug.Log("derecha");
-            }
-            else if (_enemySpeed < 0 && Physics2D.BoxCast(_hand.GetComponent<Collider2D>().bounds.center,
-                    _hand.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, .01f, _layerManos))
-            {
-                _enemySpeed *= -1;
-                PatrullajeMovement();
-                Debug.Log("izquierda");
-            }
-
             DetectordeCaida();
             if (!_caido)
             {
@@ -228,7 +358,7 @@ public class HandsManager : MonoBehaviour
         {
             Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[0].transform.position, _hands[0].transform.rotation);
             Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[1].transform.position, _hands[1].transform.rotation);
-            _currentState = HandsStates.volviendo;
+            _currentState = HandsStates.Volviendo;
         }
     }
 
@@ -256,7 +386,7 @@ public class HandsManager : MonoBehaviour
     }
     #endregion
 
-    #region Transición
+    #region Volviendo
     private void VolviendoUpdate()
     {
         VolviendoMovement();
@@ -298,6 +428,7 @@ public class HandsManager : MonoBehaviour
         _tocaCaer = Random.Range(minCaida, maxCaida);
         _vecesPasado = 0;
         _cambioDeEstadoInicial = _cambioDeEstado;
+        _nManos = 2;
     }
 
     // Update is called once per frame
@@ -305,7 +436,7 @@ public class HandsManager : MonoBehaviour
     {
         UpdateState(_currentState);
         Debug.Log(_vecesPasado + "=" + _tocaCaer);
-        if(_currentState != HandsStates.Transición && _currentState != HandsStates.volviendo)
+        if(_currentState != HandsStates.Transición && _currentState != HandsStates.Volviendo && _currentState != HandsStates.UnaSolaMano)
         {
             TemporalChangeState();
         }
