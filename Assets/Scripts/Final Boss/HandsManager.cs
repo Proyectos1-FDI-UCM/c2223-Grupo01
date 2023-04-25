@@ -135,13 +135,16 @@ public class HandsManager : MonoBehaviour
     public void OnHandDie()
     {
         _nManos--;
-        foreach (GameObject _hand in _hands)
+        if(_nManos > 0)
         {
-            if (_hand.GetComponent<HandsLive>() != null && _hand.GetComponent<HandsLive>().GetVidaManos() > 0)
+            foreach (GameObject _hand in _hands)
             {
-                _onlyHand = _hand;
-                _currentState = HandsStates.UnaSolaMano;
-                _estadoActual = OneStates.Patrulla;
+                if (_hand.GetComponent<HandsLive>() != null && _hand.GetComponent<HandsLive>().GetVidaManos() > 0)
+                {
+                    _onlyHand = _hand;
+                    _currentState = HandsStates.UnaSolaMano;
+                    _estadoActual = OneStates.Patrulla;
+                }
             }
         }
     }

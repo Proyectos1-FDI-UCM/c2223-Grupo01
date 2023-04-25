@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandsLive : MonoBehaviour
 {
     [SerializeField] private int _vidaManos = 400, _dañoManos = 30;
-    [SerializeField] private GameObject _cuerpo;
+    [SerializeField] private FaseFinalJefe _cuerpo;
 
     public int GetVidaManos()
     {
@@ -22,10 +22,7 @@ public class HandsLive : MonoBehaviour
             _vidaManos -= damage;
             if (_vidaManos < 0)
             {
-                if(gameObject.transform.parent.GetComponent<HandsManager>().GetNManos() == 2)
-                {
-                    gameObject.transform.parent.GetComponent<HandsManager>().OnHandDie();
-                }
+                gameObject.transform.parent.GetComponent<HandsManager>().OnHandDie();
                 Die();
             }
         }
@@ -35,11 +32,8 @@ public class HandsLive : MonoBehaviour
     {
         if(gameObject.transform.parent.GetComponent<HandsManager>().GetNManos() < 1)
         {
-            if(_cuerpo.GetComponent<FaseFinalJefe>() == null)
-            {
-                _cuerpo.AddComponent<FaseFinalJefe>();
-            }
-            Destroy(gameObject.transform.parent);
+            _cuerpo.Enable();
+            Destroy(gameObject.transform.parent.gameObject);
         }
         Destroy(gameObject);
     }

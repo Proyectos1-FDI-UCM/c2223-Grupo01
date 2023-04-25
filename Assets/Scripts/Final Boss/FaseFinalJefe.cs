@@ -18,11 +18,16 @@ public class FaseFinalJefe : MonoBehaviour
 
     [SerializeField] private LayerMask _playerLayer;
 
-    public void Shoot()
+    private void Shoot()
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
         Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);
         _canShoot = false;
+    }
+
+    public void Enable()
+    {
+        enabled = true;
     }
 
     private void OnDrawGizmos()
@@ -36,6 +41,7 @@ public class FaseFinalJefe : MonoBehaviour
         _canShoot = true;
         _myTransform = GetComponent<Transform>();
         _player = GameManager.instance._player;
+        enabled = false;
     }
 
     // Update is called once per frame

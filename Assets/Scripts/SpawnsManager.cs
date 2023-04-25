@@ -6,7 +6,17 @@ public class SpawnsManager : MonoBehaviour
 {
     public static SpawnsManager instance;
     private static Vector3 _respawnPosition;
+    private static float _finishedGame = 0;
 
+    public void SetfinishedGame(float finished)
+    {
+        _finishedGame = finished;
+    }
+
+    public float GetIsFinishedGame()
+    {
+        return _finishedGame;
+    }
     public Vector3 getSpawnPosition()
     {
         return _respawnPosition;
