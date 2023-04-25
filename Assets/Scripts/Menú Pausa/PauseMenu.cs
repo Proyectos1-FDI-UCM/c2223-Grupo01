@@ -78,8 +78,10 @@ public class PauseMenu : MonoBehaviour
         //Debug.Log(_pauseInput.triggered);
         if(_pauseInput.triggered)
         {
-            if(!juegoPausado)
-           Pausa();
+            if (!juegoPausado)
+                Pausa();
+            else
+                Reanudar();
          
         }
     }
