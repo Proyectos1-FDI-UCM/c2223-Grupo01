@@ -104,7 +104,7 @@ public class MeleeComponent : MonoBehaviour
                 }
                 else
                 {
-                    enemy.GetComponent<HandsLive>().TakeDamege(attackDamage);
+                    enemy.GetComponent<HandsLive>().TakeDamage(attackDamage);
                 }
 
             }

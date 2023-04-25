@@ -44,19 +44,19 @@ public class BulletCollisionComponent : MonoBehaviour
         {
             case typeOfDamage.Normal:
                 {
-                    collision.GetComponent<HandsLive>().TakeDamege(_normalBulletDamage);
+                    collision.GetComponent<HandsLive>().TakeDamage(_normalBulletDamage);
                     break;
                 }
 
             case typeOfDamage.Ice:
                 {
-                    collision.GetComponent<HandsLive>().TakeDamege(_iceBulletDamage);
+                    collision.GetComponent<HandsLive>().TakeDamage(_iceBulletDamage);
                     break;
                 }
 
             case typeOfDamage.Fire:
                 {
-                    collision.GetComponent<HandsLive>().TakeDamege(_fireBulletDamage);
+                    collision.GetComponent<HandsLive>().TakeDamage(_fireBulletDamage);
                     break;
                 }
         }
