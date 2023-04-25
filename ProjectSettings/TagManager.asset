@@ -12,7 +12,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ExitToBoss
   - Water
   - UI
   - Ground
@@ -38,7 +38,7 @@ TagManager:
   - DetectorLava2
   - DetectorLava3
   - Exit to lava
-  - BossFire
+  - LavaPalancaFinal
   - Sierra
   - Manos
   m_SortingLayers:
