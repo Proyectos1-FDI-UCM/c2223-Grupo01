@@ -15,13 +15,6 @@ public class ShootingComponent : MonoBehaviour
 
     [SerializeField] private float _coolDownShoot;      //tiempo en el que se permitir� usar el disparo
     private float _initialCoolDownShoot;
-
-    //Indices de escenas del juego para el cambio de arma
-    [SerializeField] private int _intTuto;
-    [SerializeField] private int _intHielo;
-    [SerializeField] private int _intFact;
-    [SerializeField] private int _intLava;
-    [SerializeField] private int _intBoss;
     #endregion
 
     #region References
@@ -69,7 +62,7 @@ public class ShootingComponent : MonoBehaviour
                 _actualBullet = 0;
             }
         }
-        else if(_scene.buildIndex == 5 || _scene.buildIndex == 6) //Si estamos en nivel lava o final boss
+        else if(_scene.buildIndex == 5 || _scene.buildIndex == 6 || _scene.buildIndex == 7) //Si estamos en nivel lava o final boss
         {
             if((int)_actualBullet == 3) //que no pueda pasar de _actualBullet 2 (fire)
             {
