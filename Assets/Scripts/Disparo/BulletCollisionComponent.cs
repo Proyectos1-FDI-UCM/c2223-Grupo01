@@ -13,8 +13,9 @@ public class BulletCollisionComponent : MonoBehaviour
     [Header("Disparo de Hielo")]
     [SerializeField] private int _iceBulletDamage;
     [SerializeField] private int _ralentizado;
-    [Header("Disparo de Hielo")]
+    [Header("Disparo de Fuego")]
     [SerializeField] private int _fireBulletDamage;
+    [SerializeField] private int _quemadoProbabilidad;
 
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
@@ -143,7 +144,7 @@ public class BulletCollisionComponent : MonoBehaviour
     {
         _enemyHealth = collision.GetComponent<EnemyHealth>();
         _enemyHealth.TakeDamage(_fireBulletDamage);
-        if( Random.RandomRange(0,100)<= 25)
+        if( Random.RandomRange(0,100)<= _quemadoProbabilidad)
         {
             collision.gameObject.GetComponent<EnemyStateManager>().SetQuemado(true);
         }

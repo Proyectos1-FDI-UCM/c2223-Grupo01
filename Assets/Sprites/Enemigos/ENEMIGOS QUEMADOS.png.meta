@@ -1,0 +1,782 @@
+fileFormatVersion: 2
+guid: f9ff0086e6cc2c648bd44a6960e159ef
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 236
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d9160ab06d03d049b2f0aec02029e63
+      internalID: 1644702633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 236
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9658d21dbad3844b915acc4900b6039
+      internalID: 1925106144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 236
+        width: 25
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 133d305133a4268438ca465cbf3083f4
+      internalID: 952060170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_3
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 236
+        width: 25
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e18b8e02465b04d9e4003d6554e911
+      internalID: -994103757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 236
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069e9f1ef4a76d84eb0b8b438594e91f
+      internalID: -995959327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 236
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9930f69be2f1d4e8735d018c9aedfd
+      internalID: 1443693566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 236
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2674152f1e18796438edc80b8e76302b
+      internalID: 1724117828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_7
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 236
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d922b4dbf8dc243aa4a887a0386fdd
+      internalID: 1037104163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 204
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e1e9af6cd136a942b58e82a9d53a5ce
+      internalID: 523092140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_9
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 204
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314ddaff91aef2b4bb90bdb25bb0f73a
+      internalID: 1307721340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 204
+        width: 34
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c4afb6d32f72a4090c80f033eccabb
+      internalID: -667685990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_11
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 204
+        width: 34
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4eaba2955f5d8d4fb46db016ddd59f0
+      internalID: 875885919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_12
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 201
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.34615386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726473d2220d6d74aa7d4e4bdd66495f
+      internalID: 1742436542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_13
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 201
+        width: 28
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.34615386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f5ea9ed98c6064c80cdede50043314
+      internalID: 1971536776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_14
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 204
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f842d27074ee84642a3064805a6e83b7
+      internalID: -891918149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_15
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 204
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc2e8efb96478e408057a69add3736d
+      internalID: -1066075529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 204
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29ff0e8dccf5fd4aa2352aec198d30e
+      internalID: 205139408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_17
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 204
+        width: 18
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81636bf7b9ccd8b4a931e4d23e445244
+      internalID: 1314826458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 172
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d18ea46c58d06ca4aaa7133698b23731
+      internalID: -2121737177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 172
+        width: 23
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876bd3bd073aca746a50b7776677f8ab
+      internalID: -195132048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_20
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 173
+        width: 22
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349931a57220b6f40bba69bb273648ac
+      internalID: 1872335554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_21
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 173
+        width: 23
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.35416666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad81b307b290e94d83fb0cb332b9eff
+      internalID: -2039254433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_22
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 161
+        width: 22
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8545e5b4eb56c6a4a858067d5426e960
+      internalID: 363059185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 161
+        width: 22
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec74e0d019457841bc45b9415c0fe18
+      internalID: 1699214074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_24
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 161
+        width: 23
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5ca4b757579a84eab71a98a4c4f3f1
+      internalID: 1057475652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_25
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 161
+        width: 23
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c191c1c260f63c0499630957d9a9eb26
+      internalID: 1082755234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_26
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 161
+        width: 48
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d94d65113221eb459024acb0ef32c39
+      internalID: 398197137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_27
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 161
+        width: 48
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cf105ae2f03b249a9d6963fd28bf26
+      internalID: -1015931799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_28
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 161
+        width: 44
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32352942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e842e233ad81d419ddc4731dfcdcf4
+      internalID: 871171327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ENEMIGOS QUEMADOS_29
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 161
+        width: 44
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32352942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647568ed97086a44c8c809a53af5048c
+      internalID: 923771128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ENEMIGOS QUEMADOS_19: -195132048
+      ENEMIGOS QUEMADOS_0: 1644702633
+      ENEMIGOS QUEMADOS_4: -995959327
+      ENEMIGOS QUEMADOS_1: 1925106144
+      ENEMIGOS QUEMADOS_2: 952060170
+      ENEMIGOS QUEMADOS_5: 1443693566
+      ENEMIGOS QUEMADOS_6: 1724117828
+      ENEMIGOS QUEMADOS_15: -1066075529
+      ENEMIGOS QUEMADOS_29: 923771128
+      ENEMIGOS QUEMADOS_8: 523092140
+      ENEMIGOS QUEMADOS_3: -994103757
+      ENEMIGOS QUEMADOS_17: 1314826458
+      ENEMIGOS QUEMADOS_23: 1699214074
+      ENEMIGOS QUEMADOS_26: 398197137
+      ENEMIGOS QUEMADOS_11: 875885919
+      ENEMIGOS QUEMADOS_21: -2039254433
+      ENEMIGOS QUEMADOS_25: 1082755234
+      ENEMIGOS QUEMADOS_10: -667685990
+      ENEMIGOS QUEMADOS_13: 1971536776
+      ENEMIGOS QUEMADOS_18: -2121737177
+      ENEMIGOS QUEMADOS_9: 1307721340
+      ENEMIGOS QUEMADOS_16: 205139408
+      ENEMIGOS QUEMADOS_7: 1037104163
+      ENEMIGOS QUEMADOS_14: -891918149
+      ENEMIGOS QUEMADOS_27: -1015931799
+      ENEMIGOS QUEMADOS_22: 363059185
+      ENEMIGOS QUEMADOS_28: 871171327
+      ENEMIGOS QUEMADOS_24: 1057475652
+      ENEMIGOS QUEMADOS_12: 1742436542
+      ENEMIGOS QUEMADOS_20: 1872335554
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

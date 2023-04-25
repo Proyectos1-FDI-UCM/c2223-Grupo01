@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 45
   _visionDistance: 8.5
+  _detectSFX: {fileID: 0}
 --- !u!114 &-454536740972119165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,7 +322,7 @@ MonoBehaviour:
   _tiempoCongelado: 3
   _tiempoQuemado: 3
   _tiempoRalentizado: 3
-  "_da\xF1oPorSegQuemado": 5
+  _danoPorSegQuemado: 20
   _colores:
   - {r: 0.48490566, g: 0.9948966, b: 1, a: 1}
   - {r: 1, g: 0.2584905, b: 0.2584905, a: 1}

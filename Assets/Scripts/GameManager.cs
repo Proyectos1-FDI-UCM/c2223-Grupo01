@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
     }
 
     //Comprueba si se puede usar el melee o no
-    public bool HandleMeleeActivation(string _escena)
+    public bool HandleMeleeActivation(int _escena)
     {
-        return _escena != "Nivel Hielo"; //Se le puede comparar sin necesidad de poner el nombre de la escena? No lo se
+        return (_escena != 2 && _escena != 3); //Se le puede comparar sin necesidad de poner el nombre de la escena? No lo se
     }
     #endregion
 

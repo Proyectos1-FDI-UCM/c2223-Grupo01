@@ -88,7 +88,7 @@ public class InputComponent : MonoBehaviour
 
         // Ataca cuerpo a cuerpo
 
-        if (GameManager.instance.HandleMeleeActivation(_scene.name) && _newInput.Mighty.Melee.triggered && _myMeleeComponent.GetAttackMelee())
+        if (GameManager.instance.HandleMeleeActivation(_scene.buildIndex) && _newInput.Mighty.Melee.triggered && _myMeleeComponent.GetAttackMelee())
         {
             if (_myCharacterController.GetIsGrounded())
             {
