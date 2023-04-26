@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenas definitivas/FINAL BOSS.unity
     guid: b38ea40787150ec49a727a8bf5500a9e
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Tutorial 2 (PRUEBAS).unity
+    guid: 9d90c16b384d3f243a42d7a5b4be35e6
   m_configObjects: {}
