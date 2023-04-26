@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using UnityEngine.InputSystem;
-using UnityEditor.XR;
 
 public class CharacterController : MonoBehaviour
 {

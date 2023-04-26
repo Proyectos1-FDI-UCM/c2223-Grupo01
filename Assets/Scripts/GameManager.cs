@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
