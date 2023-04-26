@@ -9,7 +9,6 @@ public class PauseMenu : MonoBehaviour
     #region References
     [SerializeField] private InputAction _pauseInput;
     [SerializeField] private GameObject menuPausa;
-    private SaveSystem _saveSystem;
     #endregion
 
     #region Parameters
@@ -40,11 +39,6 @@ public class PauseMenu : MonoBehaviour
         menuPausa.SetActive(true);
     }
 
-    public void Save()
-    {
-        _saveSystem.Save();
-    }
-
     //Reanuda el juego.
     public void Reanudar()
     {
@@ -66,8 +60,6 @@ public class PauseMenu : MonoBehaviour
     //Cierra el juego.
     public void Salir()
     {
-        //Quita la aplicación.
-        Debug.Log("Se ha cerrado el juego");
         Application.Quit();
     }
 
@@ -76,7 +68,6 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         menuPausa.SetActive(false);
-        _saveSystem = SaveSystem.instance;
     }
 
     // Update is called once per frame

@@ -1449,8 +1449,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1752989351904958294}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
         m_Arguments:
@@ -1817,6 +1817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8350065309726627165}
   - component: {fileID: 8350065309726627166}
+  - component: {fileID: 1752989351904958294}
   m_Layer: 0
   m_Name: 'UI '
   m_TagString: Untagged
@@ -1861,6 +1862,18 @@ MonoBehaviour:
   - {fileID: 3173627128077574521}
   - {fileID: 4099565168276432387}
   _slider: {fileID: 462359978}
+--- !u!114 &1752989351904958294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350065309726627167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbcab94aef859147ab05c3f36b8c34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8350065310244987595
 GameObject:
   m_ObjectHideFlags: 0
