@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletCollisionComponent : MonoBehaviour
@@ -45,19 +46,43 @@ public class BulletCollisionComponent : MonoBehaviour
         {
             case typeOfDamage.Normal:
                 {
-                    collision.GetComponent<HandsLive>().TakeDamage(_normalBulletDamage);
+                    if(collision.GetComponent<HandsLive>() != null)
+                    {
+                        collision.GetComponent<HandsLive>().TakeDamage(_normalBulletDamage);
+                    }
+                    else if(collision.GetComponent<HeadHealth>() != null)
+                    {
+                        collision.GetComponent<HeadHealth>().TakeDamage(_normalBulletDamage);
+                    }
+                    Destroy(gameObject);
                     break;
                 }
 
             case typeOfDamage.Ice:
                 {
-                    collision.GetComponent<HandsLive>().TakeDamage(_iceBulletDamage);
+                    if (collision.GetComponent<HandsLive>() != null)
+                    {
+                        collision.GetComponent<HandsLive>().TakeDamage(_iceBulletDamage);
+                    }
+                    else if (collision.GetComponent<HeadHealth>() != null)
+                    {
+                        collision.GetComponent<HeadHealth>().TakeDamage(_iceBulletDamage);
+                    }
+                    Destroy(gameObject);
                     break;
                 }
 
             case typeOfDamage.Fire:
                 {
-                    collision.GetComponent<HandsLive>().TakeDamage(_fireBulletDamage);
+                    if (collision.GetComponent<HandsLive>() != null)
+                    {
+                        collision.GetComponent<HandsLive>().TakeDamage(_fireBulletDamage);
+                    }
+                    else if (collision.GetComponent<HeadHealth>() != null)
+                    {
+                        collision.GetComponent<HeadHealth>().TakeDamage(_fireBulletDamage);
+                    }
+                    Destroy(gameObject);
                     break;
                 }
         }
@@ -186,7 +211,7 @@ public class BulletCollisionComponent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<HandsLive>() != null)
+        if (collision.GetComponent<HandsLive>() != null || collision.GetComponent<HeadHealth>() != null)
         {
             OnFinalBossHit(collision.gameObject);
         }

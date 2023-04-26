@@ -5,7 +5,6 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class FaseFinalJefe : MonoBehaviour
 {
-    private Transform _myTransform;
     private GameObject _player;
 
     [SerializeField] private GameObject _bullet; //prefab de la bala
@@ -30,17 +29,11 @@ public class FaseFinalJefe : MonoBehaviour
         enabled = true;
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawRay(_myTransform.position, _player.transform.position - _myTransform.position);
-    }
     // Start is called before the first frame update
     void Start()
     {
         _initialCoolDownShoot = _coolDownShoot;
         _canShoot = true;
-        _myTransform = GetComponent<Transform>();
-        _player = GameManager.instance._player;
         enabled = false;
     }
 
