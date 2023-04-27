@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletCollisionComponent : MonoBehaviour
@@ -13,8 +14,9 @@ public class BulletCollisionComponent : MonoBehaviour
     [Header("Disparo de Hielo")]
     [SerializeField] private int _iceBulletDamage;
     [SerializeField] private int _ralentizado;
-    [Header("Disparo de Hielo")]
+    [Header("Disparo de Fuego")]
     [SerializeField] private int _fireBulletDamage;
+    [SerializeField] private int _quemadoProbabilidad;
 
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
@@ -35,6 +37,54 @@ public class BulletCollisionComponent : MonoBehaviour
         else if (collision.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
         {
             collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_enemysBulletDamage);
+        }
+    }
+
+    private void OnFinalBossHit(GameObject collision)
+    {
+        switch (_actualDamage)
+        {
+            case typeOfDamage.Normal:
+                {
+                    if(collision.GetComponent<HandsLive>() != null)
+                    {
+                        collision.GetComponent<HandsLive>().TakeDamage(_normalBulletDamage);
+                    }
+                    else if(collision.GetComponent<HeadHealth>() != null)
+                    {
+                        collision.GetComponent<HeadHealth>().TakeDamage(_normalBulletDamage);
+                    }
+                    Destroy(gameObject);
+                    break;
+                }
+
+            case typeOfDamage.Ice:
+                {
+                    if (collision.GetComponent<HandsLive>() != null)
+                    {
+                        collision.GetComponent<HandsLive>().TakeDamage(_iceBulletDamage);
+                    }
+                    else if (collision.GetComponent<HeadHealth>() != null)
+                    {
+                        collision.GetComponent<HeadHealth>().TakeDamage(_iceBulletDamage);
+                    }
+                    Destroy(gameObject);
+                    break;
+                }
+
+            case typeOfDamage.Fire:
+                {
+                    if (collision.GetComponent<HandsLive>() != null)
+                    {
+                        collision.GetComponent<HandsLive>().TakeDamage(_fireBulletDamage);
+                    }
+                    else if (collision.GetComponent<HeadHealth>() != null)
+                    {
+                        collision.GetComponent<HeadHealth>().TakeDamage(_fireBulletDamage);
+                    }
+                    Destroy(gameObject);
+                    break;
+                }
         }
     }
 
@@ -143,7 +193,7 @@ public class BulletCollisionComponent : MonoBehaviour
     {
         _enemyHealth = collision.GetComponent<EnemyHealth>();
         _enemyHealth.TakeDamage(_fireBulletDamage);
-        if( Random.RandomRange(0,100)<= 25)
+        if( Random.RandomRange(0,100)<= _quemadoProbabilidad)
         {
             collision.gameObject.GetComponent<EnemyStateManager>().SetQuemado(true);
         }
@@ -157,6 +207,14 @@ public class BulletCollisionComponent : MonoBehaviour
     {
         Hit(collision.gameObject);
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<HandsLive>() != null || collision.GetComponent<HeadHealth>() != null)
+        {
+            OnFinalBossHit(collision.gameObject);
+        }
     }
     #endregion
 }

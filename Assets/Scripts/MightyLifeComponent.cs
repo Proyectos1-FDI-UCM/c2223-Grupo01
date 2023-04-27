@@ -27,6 +27,7 @@ public class MightyLifeComponent : MonoBehaviour
     public bool _switchLava1Detected { get; private set; }
     public bool _switchLava2Detected { get; private set; }
     public bool _switchLava3Detected { get; private set; }
+    public bool _stopLava { get; private set; }
 
     private bool _death;
 
@@ -170,6 +171,12 @@ public class MightyLifeComponent : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(_lavaWarning);
             Destroy(other.gameObject);
         }
+        if (other.gameObject.layer == 29)
+        {
+            _stopLava = true;
+            Destroy(other.gameObject);
+        }
+
 
         //si tocamos checkpoint, guardamos su transform
         if (other.gameObject.layer == 24)
@@ -200,6 +207,8 @@ public class MightyLifeComponent : MonoBehaviour
         _switchLava2Detected = false;
         _switchLava3Detected = false;
 
+        _stopLava = false;
+
         //Parametros para el parpadeo al recibir daño
         _invisible = false;
         _initialCoolDownInv = _coolDownInvTrue; //Da igual si lo igualamos a true o false, ambos deben tener el mismo timing
@@ -209,7 +218,6 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(_scene.name);
         _animator.SetBool("_isDead", _death);
      
         

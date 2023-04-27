@@ -48,21 +48,21 @@ public class ShootingComponent : MonoBehaviour
     public void ChangeBullet()
     {
         _actualBullet++;
-        if(_scene.name == "Tutorial") //Si estamos en el tutorial
+        if(_scene.buildIndex == 2) //Si estamos en el tutorial
         {
             if((int)_actualBullet == 1) //que no pueda pasar de _actualBullet 0 (normal)
             {
                 _actualBullet = 0;
             }
         }
-        else if(_scene.name == "Nivel Hielo" || _scene.name == "Nivel Fabrica") //Si estamos en nivel hielo o fábrica
+        else if(_scene.buildIndex == 3 || _scene.buildIndex == 4) //Si estamos en nivel hielo o fábrica
         {
             if((int)_actualBullet == 2) //que no pueda pasar de _actualBullet 1 (ice)
             {
                 _actualBullet = 0;
             }
         }
-        else if(_scene.name == "Nivel Lava" || _scene.name == "FINAL BOSS") //Si estamos en nivel lava o final boss
+        else if(_scene.buildIndex == 5 || _scene.buildIndex == 6 || _scene.buildIndex == 7) //Si estamos en nivel lava o final boss
         {
             if((int)_actualBullet == 3) //que no pueda pasar de _actualBullet 2 (fire)
             {

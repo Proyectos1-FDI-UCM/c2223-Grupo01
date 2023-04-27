@@ -60,8 +60,6 @@ public class PauseMenu : MonoBehaviour
     //Cierra el juego.
     public void Salir()
     {
-        //Quita la aplicación.
-        Debug.Log("Se ha cerrado el juego");
         Application.Quit();
     }
 
@@ -79,10 +77,13 @@ public class PauseMenu : MonoBehaviour
         if(_pauseInput.triggered)
         {
             if (!juegoPausado)
+            {
                 Pausa();
+            }
             else
+            {
                 Reanudar();
-         
+            }
         }
     }
 }

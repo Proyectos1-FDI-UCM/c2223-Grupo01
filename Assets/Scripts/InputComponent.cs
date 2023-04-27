@@ -14,7 +14,6 @@ public class InputComponent : MonoBehaviour
 
     #region References
     private CharacterController _myCharacterController;
-    private PauseMenu _pauseMenu;
     private ShootingComponent _myShootingComponent;
     private MeleeComponent _myMeleeComponent;
     private Animator _animator;
@@ -32,14 +31,14 @@ public class InputComponent : MonoBehaviour
     private void OnEnable()
     {
         _newInput.Enable();
-        _movement = _newInput.Mighty.Movement;
+        _movement = _newInput.Mighty.Movement; 
         _movement.Enable();
     }
 
     private void OnDisable()
     {
         _newInput.Disable();
-        _movement.Disable();
+        _movement.Disable();    
     }
 
     private void Awake()
@@ -52,8 +51,7 @@ public class InputComponent : MonoBehaviour
     {
         _myCharacterController = GetComponent<CharacterController>();
         _myShootingComponent = GetComponent<ShootingComponent>();
-        _pauseMenu = GetComponent<PauseMenu>();
-        _myMeleeComponent = GetComponent<MeleeComponent>();
+        _myMeleeComponent= GetComponent<MeleeComponent>();
         _animator = GetComponent<Animator>();
         _scene = SceneManager.GetActiveScene();
     }
@@ -63,66 +61,62 @@ public class InputComponent : MonoBehaviour
     }
     private void Update()
     {
-        if (!_pauseMenu.GetPause())
+       
+        // Comprobamos si estamos pulsando el espacio y si podemos saltar
+        // (o estamos en el suelo o no hemos gastado el doble salto)
+        if ((_myCharacterController.GetIsGrounded()||_myCharacterController._doublejump)&& _newInput.Mighty.Jump.triggered)
         {
-
-
-            // Comprobamos si estamos pulsando el espacio y si podemos saltar
-            // (o estamos en el suelo o no hemos gastado el doble salto)
-            if ((_myCharacterController.GetIsGrounded() || _myCharacterController._doublejump) && _newInput.Mighty.Jump.triggered)
-            {
-                if (_myCharacterController.GetIsGrounded()) _animator.SetTrigger("_jump");
-                _myCharacterController.Jump();
-            }
-            else if (_myCharacterController.GetIsGrounded() && _newInput.Mighty.Dash.triggered) // input del dash
-            {
-                _myCharacterController.Dash();
-            }
-
-            // Disparamos
-            if (_myShootingComponent.GetAttackShoot() && _newInput.Mighty.Shoot.triggered)
-            {
-                _animator.SetTrigger("_shoot");
-                _myShootingComponent.Shoot();
-            }
-            else if (_newInput.Mighty.Change.triggered)
-            {
-                GetComponent<AudioSource>().PlayOneShot(_changeWeapon);
-                _myShootingComponent.ChangeBullet();
-            }
-
-            // Ataca cuerpo a cuerpo
-
-            if (GameManager.instance.HandleMeleeActivation(_scene.name) && _newInput.Mighty.Melee.triggered && _myMeleeComponent.GetAttackMelee())
-            {
-                if (_myCharacterController.GetIsGrounded())
-                {
-                    GetComponent<AudioSource>().PlayOneShot(_melee);
-                }
-                else
-                {
-                    GetComponent<AudioSource>().PlayOneShot(_airMelee);
-                }
-                _animator.SetTrigger("_melee");
-                _myMeleeComponent.Attack();
-            }
-
-            // Reinicia el nivel tutorial. El numero es en relaci�n con el orden de escenas al hacer la build
-            if (_newInput.Mighty.Reset.triggered)
-            {
-                SpawnsManager.instance.ResetRespawnPosition();
-                SceneManager.LoadScene(1);
-            }
-            // Movimiento
-            _myCharacterController.MoveXAxis(_movement.ReadValue<Vector2>().x);
-
-            // Animaciones
-            _animator.SetBool("_isRunning", _movement.ReadValue<Vector2>().x != 0);
-            _lookUP = _movement.ReadValue<Vector2>().y > 0;
-            _lookDOWN = _movement.ReadValue<Vector2>().y < 0;
-            _animator.SetBool("_isLookUp", _lookUP);//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
-            _animator.SetBool("_isLookDown", _lookDOWN);
+            if (_myCharacterController.GetIsGrounded()) _animator.SetTrigger("_jump");
+            _myCharacterController.Jump();
+        }
+        else if(_myCharacterController.GetIsGrounded() && _newInput.Mighty.Dash.triggered) // input del dash
+        {
+            _myCharacterController.Dash();
+        }
+        
+        // Disparamos
+        if (_myShootingComponent.GetAttackShoot() && _newInput.Mighty.Shoot.triggered)
+        {
+            _animator.SetTrigger("_shoot");
+            _myShootingComponent.Shoot();
+        }
+        else if (_newInput.Mighty.Change.triggered)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_changeWeapon);
+            _myShootingComponent.ChangeBullet();
         }
 
+        // Ataca cuerpo a cuerpo
+
+        if (GameManager.instance.HandleMeleeActivation(_scene.buildIndex) && _newInput.Mighty.Melee.triggered && _myMeleeComponent.GetAttackMelee())
+        {
+            if (_myCharacterController.GetIsGrounded())
+            {
+                GetComponent<AudioSource>().PlayOneShot(_melee);
+            }
+            else
+            {
+                GetComponent<AudioSource>().PlayOneShot(_airMelee);
+            }
+            _animator.SetTrigger("_melee");
+            _myMeleeComponent.Attack();
+        }
+
+        // Reinicia el nivel tutorial. El numero es en relaci�n con el orden de escenas al hacer la build
+        if (_newInput.Mighty.Reset.triggered)
+        {
+            SpawnsManager.instance.ResetRespawnPosition();
+            SceneManager.LoadScene(1);
+        }
+        // Movimiento
+        _myCharacterController.MoveXAxis(_movement.ReadValue<Vector2>().x);
+       
+        // Animaciones
+        _animator.SetBool("_isRunning", _movement.ReadValue<Vector2>().x != 0);
+        _lookUP = _movement.ReadValue<Vector2>().y > 0;
+        _lookDOWN = _movement.ReadValue<Vector2>().y < 0;
+        _animator.SetBool("_isLookUp", _lookUP);//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
+        _animator.SetBool("_isLookDown", _lookDOWN);
     }
+
 }

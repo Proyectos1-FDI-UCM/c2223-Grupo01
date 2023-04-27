@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
 using UnityEngine.InputSystem;
-using UnityEditor.XR;
 
 public class CharacterController : MonoBehaviour
 {
@@ -279,6 +278,12 @@ public class CharacterController : MonoBehaviour
         {
             SpawnsManager.instance.ResetRespawnPosition();
             SceneManager.LoadScene(5);
+        }
+
+        if (other.gameObject.layer == 3)
+        {
+            SpawnsManager.instance.ResetRespawnPosition();
+            SceneManager.LoadScene(6);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

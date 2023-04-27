@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpeed: 3.5
-  _enemydetectionSpeed: 5
+  _enemydetectionSpeed: 5.25
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.2
   _groundLayer:
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 60
   _visionDistance: 5.5
+  _detectSFX: {fileID: 0}
 --- !u!95 &160949013
 Animator:
   serializedVersion: 4
@@ -322,7 +323,7 @@ MonoBehaviour:
   _tiempoCongelado: 3
   _tiempoQuemado: 5
   _tiempoRalentizado: 3
-  _danoPorSegQuemado: 5
+  _danoPorSegQuemado: 20
   _colores:
   - {r: 0.2867924, g: 1, b: 0.92882025, a: 1}
   - {r: 1, g: 0.1830188, b: 0.1830188, a: 1}

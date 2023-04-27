@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visionAngle: 100
   _visionDistance: 7
+  _detectSFX: {fileID: 0}
 --- !u!61 &8738630133945712333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ MonoBehaviour:
   _tiempoCongelado: 3
   _tiempoQuemado: 3
   _tiempoRalentizado: 3
-  "_da\xF1oPorSegQuemado": 5
+  _danoPorSegQuemado: 20
   _colores:
   - {r: 0.4660377, g: 0.9192144, b: 1, a: 1}
   - {r: 1, g: 0.2867924, b: 0.2867924, a: 1}

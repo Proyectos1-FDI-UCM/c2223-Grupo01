@@ -169,6 +169,7 @@ public class EnemyStateManager : MonoBehaviour
     void Update()
     {
         _myAnimator.SetBool("_congelado", _congelado);
+        _myAnimator.SetBool("_burned", _quemado);
 
         if (_congelado)
         {
@@ -190,7 +191,7 @@ public class EnemyStateManager : MonoBehaviour
         }
         else if (_quemado)
         {
-            _renderC.material.color = _colores[1];
+            _renderC.material.color = _colores[2];
         }
         else
         {
