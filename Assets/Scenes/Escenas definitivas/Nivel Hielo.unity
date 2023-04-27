@@ -766,7 +766,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: f664a19eb1c6a3647ab552b45a616886, type: 3}
 --- !u!114 &85101243 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1081170831488370217, guid: f664a19eb1c6a3647ab552b45a616886, type: 3}
+  m_CorrespondingSourceObject: {fileID: -8762691708592928294, guid: f664a19eb1c6a3647ab552b45a616886, type: 3}
   m_PrefabInstance: {fileID: 85101242}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1026,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 85101243}
+    - target: {fileID: 5425587827189488048, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Save
+      objectReference: {fileID: 0}
     - target: {fileID: 6279025848427513903, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -129485,7 +129489,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1055190644
 PolygonCollider2D:
