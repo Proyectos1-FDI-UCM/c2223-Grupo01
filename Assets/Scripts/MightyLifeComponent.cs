@@ -42,6 +42,7 @@ public class MightyLifeComponent : MonoBehaviour
     #region References
     private Animator _animator;
     private InputComponent _myInputComponent;
+   
 
     private Rigidbody2D _myRigidBody2D;
     private BoxCollider2D _boxColiderNormal;
@@ -102,7 +103,7 @@ public class MightyLifeComponent : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _health -= damage;
-        if(GameManager.instance._UImanager != null)
+        if (GameManager.instance._UImanager != null)
         {
             GameManager.instance._UImanager.ActualizarInterfaz(GetHealth());
         }
@@ -119,14 +120,14 @@ public class MightyLifeComponent : MonoBehaviour
     public void Respawn()
     {
         _death = false;
-        _myInputComponent.enabled = true; 
+        _myInputComponent.enabled = true;
         TakeDamage(-_maxhealth);
         //transform.position = _spawnPoint.position;
     }
     #region collision methods
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == 10)
         {
             _animator.SetTrigger("_damaged");
             GetComponent<AudioSource>().PlayOneShot(_hurt);
@@ -171,7 +172,7 @@ public class MightyLifeComponent : MonoBehaviour
         }
 
         //si tocamos checkpoint, guardamos su transform
-        if(other.gameObject.layer == 24)
+        if (other.gameObject.layer == 24)
         {
             SpawnsManager.instance.SetRespawnPosition(gameObject.transform.position);
         }
@@ -182,6 +183,7 @@ public class MightyLifeComponent : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _myInputComponent = GetComponent<InputComponent>();
+       
         _boxColiderNormal = GetComponent<BoxCollider2D>();
         _myRigidBody2D = GetComponent<Rigidbody2D>();
         _mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -193,7 +195,7 @@ public class MightyLifeComponent : MonoBehaviour
         _initialCoolDown = _coolDown;
 
         _death = false;
-        
+
         _switchLava1Detected = false;
         _switchLava2Detected = false;
         _switchLava3Detected = false;
@@ -209,59 +211,61 @@ public class MightyLifeComponent : MonoBehaviour
     {
         Debug.Log(_scene.name);
         _animator.SetBool("_isDead", _death);
-
-        if (!_canBeDamaged)
-        {
-            if(_coolDown <= 0)
+     
+        
+            if (!_canBeDamaged)
             {
-                _coolDown = _initialCoolDown;
-            }
-            //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
-            _coolDown -= Time.deltaTime;
-            _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
+                if (_coolDown <= 0)
+                {
+                    _coolDown = _initialCoolDown;
+                }
+                //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
+                _coolDown -= Time.deltaTime;
+                _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
 
-            //El parpadeo que tanto queria Julian basado en el contador del lanzallamas :)
-            if (!_invisible)
-            {
-                _mySpriteRenderer.enabled = true;
-                _coolDownInvTrue = _initialCoolDownInv;
-                _coolDownInvFalse -= Time.deltaTime;
+                //El parpadeo que tanto queria Julian basado en el contador del lanzallamas :)
+                if (!_invisible)
+                {
+                    _mySpriteRenderer.enabled = true;
+                    _coolDownInvTrue = _initialCoolDownInv;
+                    _coolDownInvFalse -= Time.deltaTime;
 
-                if (_coolDownInvFalse <= 0) _invisible = true;
+                    if (_coolDownInvFalse <= 0) _invisible = true;
+                }
+                else
+                {
+                    _mySpriteRenderer.enabled = false;
+                    _coolDownInvFalse = _initialCoolDownInv;
+                    _coolDownInvTrue -= Time.deltaTime;
+
+                    if (_coolDownInvTrue <= 0) _invisible = false;
+                }
+
+
+                if (_coolDown > _timerInputFalseAfterHit)
+                {
+                    _myInputComponent.enabled = false;
+                }
+                else _myInputComponent.enabled = true;
+
+                if (_coolDown <= 0) _canBeDamaged = true;
             }
             else
             {
-                _mySpriteRenderer.enabled = false;
-                _coolDownInvFalse = _initialCoolDownInv;
-                _coolDownInvTrue -= Time.deltaTime;
-
-                if (_coolDownInvTrue <= 0) _invisible = false;
+                _renderC.material.color = _colores[1]; //Recupera su color original tras el cool down
+                _mySpriteRenderer.enabled = true;
+                //_coolDown = _initialCoolDown;
             }
 
-
-            if (_coolDown > _timerInputFalseAfterHit)
+            if (_death)
             {
-                _myInputComponent.enabled = false;
-            }
-            else _myInputComponent.enabled = true;
-
-            if (_coolDown <= 0) _canBeDamaged = true;
-        }
-        else
-        {
-            _renderC.material.color = _colores[1]; //Recupera su color original tras el cool down
-            _mySpriteRenderer.enabled = true;
-            //_coolDown = _initialCoolDown;
-        }
-
-        if (_death)
-        {
-            _myInputComponent.enabled = false; //Hay que ver donde poner esto pq en el TakeDamage NO funciona por el momento
-            _canRepeatLevelTimer -= Time.deltaTime;
-            if (_canRepeatLevelTimer <= 0)
-            {
-                SceneManager.LoadScene(_scene.name);
+                _myInputComponent.enabled = false; //Hay que ver donde poner esto pq en el TakeDamage NO funciona por el momento
+                _canRepeatLevelTimer -= Time.deltaTime;
+                if (_canRepeatLevelTimer <= 0)
+                {
+                    SceneManager.LoadScene(_scene.name);
+                }
             }
         }
     }
-}
+

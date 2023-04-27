@@ -14,7 +14,7 @@ public class SaveSystem : MonoBehaviour
         PlayerPrefs.SetFloat("X", SpawnsManager.instance.getSpawnPosition().x);
         PlayerPrefs.SetFloat("Y", SpawnsManager.instance.getSpawnPosition().y);
         PlayerPrefs.Save();
-        Debug.Log(PlayerPrefs.GetFloat("X"));
+        Debug.Log(PlayerPrefs.GetInt("SCENE"));
     }
     public void Load()
     {
