@@ -118,5 +118,4 @@ public class InputComponent : MonoBehaviour
         _animator.SetBool("_isLookUp", _lookUP);//esto hay que arreglarlo, se para el personaje mientras se pulsa la W o flecha arriba, pero no con otra tecla
         _animator.SetBool("_isLookDown", _lookDOWN);
     }
-
 }
