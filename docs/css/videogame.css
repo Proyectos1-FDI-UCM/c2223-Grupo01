@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "MiFuentePersonalizada";
-    src: url("fonts/PixeloidSans.ttf") format("truetype");
+    src: url("./fonts/PixeloidSans.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
