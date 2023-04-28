@@ -2,13 +2,20 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-html,body {
-  font-size: 18px;
+@font-face {
+    font-family: "MiFuentePersonalizada";
+    src: url("fonts/PixeloidSans.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
+
 body {
+    font-family: "MiFuentePersonalizada", sans-serif;
+    font-size: 18px;
     padding-bottom: 1rem;
-    color: #ffffff;
+    color: #ffffff; /*color de texto: blanco*/
 }
+
 
 
 
