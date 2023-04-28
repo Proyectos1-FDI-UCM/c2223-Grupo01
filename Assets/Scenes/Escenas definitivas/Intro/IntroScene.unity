@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 1132055874}
+    m_SelectOnUp: {fileID: 1523031669}
     m_SelectOnDown: {fileID: 1215035855}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 1829337497}
@@ -782,6 +782,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f664a19eb1c6a3647ab552b45a616886, type: 3}
+--- !u!114 &354323058 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8762691708592928294, guid: f664a19eb1c6a3647ab552b45a616886, type: 3}
+  m_PrefabInstance: {fileID: 354323057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbcab94aef859147ab05c3f36b8c34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &406393867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1648,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1170047309}
+      - m_Target: {fileID: 354323058}
         m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1
@@ -2847,17 +2858,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132055872}
   m_CullTransparentMesh: 1
---- !u!114 &1170047309 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2948008898699207899, guid: f664a19eb1c6a3647ab552b45a616886, type: 3}
-  m_PrefabInstance: {fileID: 354323057}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbcab94aef859147ab05c3f36b8c34c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1189264294
 GameObject:
   m_ObjectHideFlags: 0

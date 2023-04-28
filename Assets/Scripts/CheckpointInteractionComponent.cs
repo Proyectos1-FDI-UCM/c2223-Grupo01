@@ -33,5 +33,4 @@ public class CheckpointInteractionComponent : MonoBehaviour
             //GameManager.instance._currentTime = _timeReset + 1;
         }
     }
-
 }
