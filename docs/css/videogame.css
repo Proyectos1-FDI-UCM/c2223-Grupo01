@@ -23,9 +23,14 @@ body {
 /* CUSTOMIZE THE HEADER
 -------------------------------------------------- */
 
-img.img-header {
-  max-height: 500px;
+header {
+    background-color: transparent;
 }
+
+img.img-header {
+    max-height: 500px;
+}
+
 
 
 /* MARKETING CONTENT
