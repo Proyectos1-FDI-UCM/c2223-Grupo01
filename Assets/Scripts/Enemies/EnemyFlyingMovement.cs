@@ -101,7 +101,7 @@ public class EnemyFlyingMovement : MonoBehaviour
 
             case Estados.perseguir:
                 FlyingChase();
-                if (!_myEnemyFOV.GetDetected())
+                if (!_myEnemyFOV.GetDetected() || GameManager.instance._mightyLifeComponent.GetDeath())
                 {
                     _estado = Estados.regresar;
                 }
@@ -179,8 +179,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Debug.Log(Mathf.Approximately(transform.position.x, _initialPosition.x) && Mathf.Approximately(transform.position.y, _initialPosition.y));
-        //Debug.Log(_estado);
-        if (!gameObject.GetComponent<EnemyHealth>()._death)
+        Debug.Log(GameManager.instance._mightyLifeComponent.GetDeath());
         {
             if (_knockbackCounter <= 0)
             {
