@@ -112,6 +112,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(_currentHealth);
         _animator.SetBool("_death", _death);
 
         if (_death)
