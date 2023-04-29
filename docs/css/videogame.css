@@ -25,6 +25,7 @@ body {
 
 header {
     background-color: transparent;
+    height: 500px;
 }
 
 img.img-header {
