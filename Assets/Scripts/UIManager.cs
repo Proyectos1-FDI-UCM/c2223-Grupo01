@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     #region Parameters
     [SerializeField] private TMP_Text _timetext;
     [SerializeField] private Image[] _Weapons;        //La imagen del arma de fuego regular.
+    [SerializeField] private Image _Melee;
     float _currentTime;
     [SerializeField] private Image _slider;                          //La Barra de vida
     #endregion
@@ -37,6 +38,11 @@ public class UIManager : MonoBehaviour
     public void ActualizarInterfaz(float health)
     {
        _slider.fillAmount = health / GameManager.instance._player.GetComponent<MightyLifeComponent>().GetMaxHealth();
+    }
+
+    public void SetMelee(bool _canusemelee)
+    {
+        _Melee.gameObject.SetActive(_canusemelee);
     }
 
     public void currentWeaponState( int weapon)

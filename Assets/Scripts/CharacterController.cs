@@ -92,7 +92,7 @@ public class CharacterController : MonoBehaviour
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
-        return Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 0f, Vector2.up, 0.05f, _groundLayer);
+        return Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.up, 1f, _groundLayer);
     }
 
     public void MoveXAxis(float XAxismove)
@@ -365,27 +365,28 @@ public class CharacterController : MonoBehaviour
         }else _myTrailRenderer.enabled = false;
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
-        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && _newInput.Mighty.Jump.triggered && !IsCeiling()))
+        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && _newInput.Mighty.Jump.triggered) && !IsCeiling())
         {
             if (_newInput.Mighty.Jump.triggered)
             {
+                _doublejump = false;
                 Jump();
             }
 
-            _myInputComponent.enabled = true;
             _slideObject.SetActive(false);
             _myCollider2D.isTrigger = false;
+            _myInputComponent.enabled = true;
             _dash = false;
         }
         else if(_myRigidBody2D.velocity.x == 0 && _dash && IsCeiling())
         {
             if (_facingRight)
             {
-                transform.position += new Vector3(0.1f, 0, 0);
+                transform.position += new Vector3(0.2f, 0, 0);
             }
             else
             {
-                transform.position += new Vector3(- 0.1f, 0, 0);
+                transform.position += new Vector3(- 0.2f, 0, 0);
             }
         }
     }

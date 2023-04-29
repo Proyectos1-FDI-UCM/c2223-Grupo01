@@ -81,7 +81,7 @@ public class EnemyFOV : MonoBehaviour
             if (Vector3.Angle(PlayerVector.normalized, transform.right) < _visionAngle * 0.5f)
             {
                 //Comprueba si estamos a una distancia que es detectable para el enemigo.
-                if (PlayerVector.magnitude < _visionDistance)
+                if (PlayerVector.magnitude < _visionDistance && !GameManager.instance._mightyLifeComponent.GetDeath())
                 {
                     _detected = true;
                 }
