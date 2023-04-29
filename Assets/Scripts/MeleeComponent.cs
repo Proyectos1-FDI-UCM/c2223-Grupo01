@@ -132,6 +132,7 @@ public class MeleeComponent : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(attackDamage);
         //Cooldown programado para poder usar el arma a melee o no
         if (!_canAttackMelee)
         {
