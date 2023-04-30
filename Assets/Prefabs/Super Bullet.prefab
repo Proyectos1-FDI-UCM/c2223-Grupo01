@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 732577927019432130}
   - component: {fileID: 1202296089800443624}
   m_Layer: 19
-  m_Name: Bullet
+  m_Name: Super Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 814682946, guid: 70517ee4d02cb1c4091abf17df1051f9, type: 3}
+  m_Sprite: {fileID: 1656822263, guid: 70517ee4d02cb1c4091abf17df1051f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd65b93ce969514c84a9ce8567cb30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemysBulletDamage: 30
+  _enemysBulletDamage: 50
   _normalBulletDamage: 30
   _iceBulletDamage: 10
   _ralentizado: 3
@@ -151,8 +151,8 @@ BoxCollider2D:
   m_Offset: {x: 0.024935227, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.14, y: 0.06}
+    pivot: {x: 0.64705884, y: 0.5}
+    oldSize: {x: 0.17, y: 0.08}
     newSize: {x: 0.04, y: 0.04}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

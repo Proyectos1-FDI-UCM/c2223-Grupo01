@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 70517ee4d02cb1c4091abf17df1051f9
+guid: 2802f1e7fe357fb42a383406f3afa143
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,148 +104,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Balas jugador (1)_2
+      name: Sprite Mighty 2 Jump & Melee_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 27
-        width: 14
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 9
+        y: 12
+        width: 18
+        height: 35
+      alignment: 9
+      pivot: {x: 0.6111111, y: 0.42857143}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3eccbf662e510a4f836165171adef83
-      internalID: 1542190613
+      spriteID: 9a3b447d249dd6b4ab6acef10bce3439
+      internalID: 1416938797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Balas jugador (1)_3
+      name: Sprite Mighty 2 Jump & Melee_1
       rect:
         serializedVersion: 2
-        x: 2
+        x: 37
+        y: 13
+        width: 46
+        height: 36
+      alignment: 9
+      pivot: {x: 0.18478261, y: 0.4027778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bb644cac708974fbb3f9ae46514c3f
+      internalID: -374280111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Mighty 2 Jump & Melee_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 12
+        width: 46
+        height: 36
+      alignment: 9
+      pivot: {x: 0.18478261, y: 0.4027778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef155a36306c0b4d94a9fa87942be7d
+      internalID: -1270354162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Mighty 2 Jump & Melee_3
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 11
+        width: 43
+        height: 30
+      alignment: 9
+      pivot: {x: 0.19767442, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f60bd6b3ae71c41a3fd5cddc915612
+      internalID: -815792222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Mighty 2 Jump & Melee_5
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 11
+        width: 25
+        height: 30
+      alignment: 9
+      pivot: {x: 0.34, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94e5e48a1ab9fd49b041daccbf2c913
+      internalID: -272708825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Mighty 2 Jump & Melee_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 11
+        width: 23
+        height: 30
+      alignment: 9
+      pivot: {x: 0.3652174, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ecc2f00714974419c07bdc3581bc4a
+      internalID: -633419869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite Mighty 2 Jump & Melee_7
+      rect:
+        serializedVersion: 2
+        x: 254
         y: 10
-        width: 17
-        height: 8
+        width: 20
+        height: 30
       alignment: 9
-      pivot: {x: 0.64705884, y: 0.5}
+      pivot: {x: 0.425, y: 0.48333332}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4124e93a55ecc04fb69f17cc20804c1
-      internalID: 1656822263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Balas jugador (1)_1
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 27
-        width: 14
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab6297df55acfbf408630ff664ec912d
-      internalID: -1656676999
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Balas jugador (1)_0
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 23
-        width: 14
-        height: 6
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb9892e42a90bf741b6f0430e320585f
-      internalID: 814682946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Balas jugador (1)_4
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 13
-        width: 14
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4955af32fa76fdf44b381afa6373f8e5
-      internalID: -1952292119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Balas jugador (1)_5
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 13
-        width: 14
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cb522a1681632f499528412fd8859ec
-      internalID: -1621150104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Balas jugador (1)_6
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1
-        width: 17
-        height: 8
-      alignment: 9
-      pivot: {x: 0.64705884, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82e937b13dd9beb4883a8e0148f23b69
-      internalID: -761148113
+      spriteID: 8ba76487a8c23eb4882b2c3e4a8fba95
+      internalID: -908238306
       vertices: []
       indices: 
       edges: []
@@ -261,13 +261,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Balas jugador (1)_2: 1542190613
-      Balas jugador (1)_3: 1656822263
-      Balas jugador (1)_1: -1656676999
-      Balas jugador (1)_5: -1621150104
-      Balas jugador (1)_0: 814682946
-      Balas jugador (1)_6: -761148113
-      Balas jugador (1)_4: -1952292119
+      Sprite Mighty 2 Jump & Melee_4: -36003502
+      Sprite Mighty 2 Jump & Melee_3: -815792222
+      Sprite Mighty 2 Jump & Melee_0: 1416938797
+      Sprite Mighty 2 Jump & Melee_5: -272708825
+      Sprite Mighty 2 Jump & Melee_2: -1270354162
+      Sprite Mighty 2 Jump & Melee_6: -633419869
+      Sprite Mighty 2 Jump & Melee_1: -374280111
+      Sprite Mighty 2 Jump & Melee_7: -908238306
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
