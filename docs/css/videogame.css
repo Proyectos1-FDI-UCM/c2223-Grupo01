@@ -45,16 +45,15 @@ img.img-header {
 
 /* Center align the text within the three columns below the carousel */
 .marketing {
-    font-family: "MiFuentePersonalizada", sans-serif;
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-    .marketing h2 {
-        font-family: "MiFuentePersonalizada", sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        margin: 1rem 0;
-    }
+.marketing h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+
+}
 
 .media-item {
   margin: 1rem;
