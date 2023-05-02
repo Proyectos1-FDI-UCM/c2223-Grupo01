@@ -2,7 +2,7 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-@font-face {
+p {
     font-family: "MiFuentePersonalizada";
     src: url("./fonts/PixeloidSans.ttf") format("truetype");
     font-weight: normal;
