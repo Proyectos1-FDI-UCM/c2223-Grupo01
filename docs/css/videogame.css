@@ -36,14 +36,6 @@ header {
     background: 0%;
 }
 
-video {
-    margin: 0;
-    width: 900px;
-    position: center;
-    border-radius: 20px;
-    ;
-}
-
 img {
     border: 0;
 }
@@ -86,13 +78,12 @@ img {
     margin: 1rem;
 }
 
-.caja {
+.box {
     width: 900px;
     margin: 0;
     padding: 2rem 1rem 5rem 1rem;
     border-radius: 20px;
-    ;
-    background-color: #822258;
+    background-color: rgb(54 110 151 / 40%);
 }
 
 .btn {
