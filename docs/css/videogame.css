@@ -2,40 +2,56 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-@font-face {
-    font-family: "MiFuentePersonalizada";
-    src: url("./fonts/PixeloidSans.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-p {
-    font-family: "MiFuentePersonalizada", sans-serif;
-    font-size: 18px;
-    padding-bottom: 1rem;
-    color: #ffffff; /*color de texto: blanco*/
-}
+html,
 body {
-    font-family: "MiFuentePersonalizada", sans-serif;
-    font-size: 18px;
-    padding-bottom: 1rem;
-    color: #ffffff; /*color de texto: blanco*/
+    font-size: 15;
+    font-family: "Lucida Console";
+    color: blueviolet;
+    background-color: rgb(43, 15, 84);
+    background-image: url("bg.jpg");
+    ;
+    background-repeat: repeat-x repeat-y;
+    background-size: contain;
 }
 
+body {
+    padding-bottom: 2rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
 
-
+.margen {
+    text-indent: 40px;
+}
 
 
 /* CUSTOMIZE THE HEADER
 -------------------------------------------------- */
 
 header {
-    background-color: transparent;
-    height: 500px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: 0%;
 }
 
-img.img-header {
-    max-height: 1000px;
+video {
+    margin: 0;
+    width: 900px;
+    position: center;
+    border-radius: 20px;
+    ;
+}
+
+a {
+    color: #54d0f9;
+    border: none;
+    font: bold;
+}
+
+img {
+    border: 0;
 }
 
 
@@ -45,18 +61,51 @@ img.img-header {
 
 /* Center align the text within the three columns below the carousel */
 .marketing {
-  margin-top: 1rem;
+    margin-top: -1rem;
 }
 
-.marketing h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 1rem 0;
+    .marketing h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 1rem 0;
+        color: #f4b93a;
+        font-family: "Courier New" bold;
+    }
 
+.media-item {
+    width: 100%;
+    border: none;
+}
+
+#left {
+    padding: 20px 20px 0 40px;
+    margin: 0;
+    float: left;
+}
+
+#right {
+    padding: 40px 30px 0 0;
+    float: right;
 }
 
 .media-item {
-  margin: 1rem;
+    margin: 1rem;
+}
+
+.caja {
+    width: 900px;
+    margin: 0;
+    padding: 2rem 1rem 5rem 1rem;
+    border-radius: 20px;
+    ;
+    background-color: #822258;
+}
+
+.btn {
+    background-color: #12a2d2;
+    border-color: #27a0c9;
+    margin-left: 3rem;
+    font-style: bold;
 }
 
 
