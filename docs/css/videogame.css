@@ -6,10 +6,6 @@ html,
 body {
     font-size: 15;
     font-family: "Lucida Console";
-    color: blueviolet;
-    background-color: #000000;
-    background-image: url("GameBackground.jpg");
-    background-size: contain;
 }
 
 body {
