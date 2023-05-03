@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce90b5e1ad10ab841bbf13d0baebce90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: 1256174170972558883, guid: 980529e565920fa41acfc449a0ad2262, type: 3}
+  _bullet: {fileID: 1256174170972558883, guid: 74f3c7e5f9626ff4d8dc624bf9e89094, type: 3}
   _coolDownShoot: 1
   _bulletSpawnTransform: {fileID: 676700370213554566}
   _patrolFlip: 1

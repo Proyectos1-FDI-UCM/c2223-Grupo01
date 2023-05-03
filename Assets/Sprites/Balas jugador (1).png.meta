@@ -104,11 +104,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Balas jugador (1)_0
+      name: Balas jugador (1)_2
       rect:
         serializedVersion: 2
-        x: 5
-        y: 23
+        x: 70
+        y: 27
         width: 14
         height: 6
       alignment: 0
@@ -120,6 +120,27 @@ TextureImporter:
       bones: []
       spriteID: b3eccbf662e510a4f836165171adef83
       internalID: 1542190613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balas jugador (1)_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 10
+        width: 17
+        height: 8
+      alignment: 9
+      pivot: {x: 0.64705884, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4124e93a55ecc04fb69f17cc20804c1
+      internalID: 1656822263
       vertices: []
       indices: 
       edges: []
@@ -139,27 +160,6 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4124e93a55ecc04fb69f17cc20804c1
-      internalID: 1656822263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Balas jugador (1)_2
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 27
-        width: 14
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
       spriteID: ab6297df55acfbf408630ff664ec912d
       internalID: -1656676999
       vertices: []
@@ -167,15 +167,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Balas jugador (1)_3
+      name: Balas jugador (1)_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 13
+        x: 5
+        y: 23
         width: 14
         height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,7 +191,7 @@ TextureImporter:
       name: Balas jugador (1)_4
       rect:
         serializedVersion: 2
-        x: 70
+        x: 37
         y: 13
         width: 14
         height: 6
@@ -208,6 +208,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Balas jugador (1)_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 13
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb522a1681632f499528412fd8859ec
+      internalID: -1621150104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Balas jugador (1)_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 17
+        height: 8
+      alignment: 9
+      pivot: {x: 0.64705884, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e937b13dd9beb4883a8e0148f23b69
+      internalID: -761148113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -219,10 +261,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Balas jugador (1)_2: -1656676999
-      Balas jugador (1)_3: 814682946
-      Balas jugador (1)_1: 1656822263
-      Balas jugador (1)_0: 1542190613
+      Balas jugador (1)_2: 1542190613
+      Balas jugador (1)_3: 1656822263
+      Balas jugador (1)_1: -1656676999
+      Balas jugador (1)_5: -1621150104
+      Balas jugador (1)_0: 814682946
+      Balas jugador (1)_6: -761148113
       Balas jugador (1)_4: -1952292119
   spritePackingTag: 
   pSDRemoveMatte: 0

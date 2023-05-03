@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 520600740136430460, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1952292119, guid: 70517ee4d02cb1c4091abf17df1051f9, type: 3}
+      objectReference: {fileID: -1621150104, guid: 70517ee4d02cb1c4091abf17df1051f9, type: 3}
     - target: {fileID: 1592227543846742981, guid: bc20f549fe6014149b8a3cde4d357571, type: 3}
       propertyPath: m_Name
       value: Fire Bullet
