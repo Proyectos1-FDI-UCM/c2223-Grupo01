@@ -7,10 +7,8 @@ body {
     font-size: 15;
     font-family: "Lucida Console";
     color: blueviolet;
-    background-color: rgb(43, 15, 84);
-    background-image: url("bg.jpg");
-    ;
-    background-repeat: repeat-x repeat-y;
+    background-color: #000000;
+    background-image: url("GameBackground.jpg");
     background-size: contain;
 }
 
