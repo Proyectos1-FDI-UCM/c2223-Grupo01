@@ -7692,6 +7692,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3307213394870111579, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _bullet.Array.data[0]
+      value: 
+      objectReference: {fileID: 2133623756580499680, guid: c04b195d03264e14ba783fae9705e34b, type: 3}
+    - target: {fileID: 3307213394870111579, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _animatorControllers.Array.data[0]
+      value: 
+      objectReference: {fileID: 9100000, guid: f8ee370cb5e18f94dbd43b0cece8d448, type: 2}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
       value: 1
