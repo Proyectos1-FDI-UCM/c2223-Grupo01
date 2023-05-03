@@ -4,11 +4,7 @@
 
 html,
 body {
-    font-size: 15;
     font-family: "Lucida Console";
-}
-
-body {
     padding-bottom: 2rem;
     color: #ffffff;
     display: flex;
@@ -48,7 +44,7 @@ img {
         font-size: 2rem;
         font-weight: 700;
         margin: 1rem 0;
-        color: #f4b93a;
+        color: #fbf236;
         font-family: "Courier New" bold;
     }
 
@@ -75,9 +71,9 @@ img {
 .box {
     width: 900px;
     margin: 0;
-    padding: 2rem 1rem 5rem 1rem;
-    border-radius: 20px;
-    background-color: rgb(54 110 151 / 40%);
+    padding: 2rem 1rem 5rem 3rem;
+    border-radius: 30px;
+    background-color: #000000a3;
 }
 
 
