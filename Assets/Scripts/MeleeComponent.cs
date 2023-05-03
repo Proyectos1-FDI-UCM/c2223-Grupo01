@@ -67,16 +67,6 @@ public class MeleeComponent : MonoBehaviour
                     }
                     enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
 
-                    if (enemy.transform.position.x <= transform.position.x)
-                    {
-                        KnockFromRight = true;
-                    }
-                    if (enemy.transform.position.x >= transform.position.x)
-                    {
-                        KnockFromRight = false;
-                    }
-                    enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
-
                     Rigidbody2D _rigidbody = enemy.GetComponent<Rigidbody2D>();
                     //Si golpea por la derecha...
                     if (KnockFromRight)

@@ -25,6 +25,11 @@ public class EnemyFOV : MonoBehaviour
     {
         return _detected;
     }
+
+    public void SetDetected(bool detected)
+    {
+        _detected = detected;
+    }
     #endregion
 
     #region methods

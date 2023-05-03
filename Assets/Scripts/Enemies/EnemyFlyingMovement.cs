@@ -19,8 +19,12 @@ public class EnemyFlyingMovement : MonoBehaviour
     private bool _canturn;
     [SerializeField] private float _canturnCOUNTER;
     private float _canturnIniCOUNTER;
-    private enum Estados { patrullaje, perseguir, regresar };
+    private enum Estados { patrullaje, perseguir, regresar, picotazo};
     private Estados _estado;
+    [SerializeField] private float _picoKnockBack = 0.3f;
+    private float _picoKnockInitial;
+    [SerializeField] LayerMask _returnMask;
+    private Collider2D _myCollider2D;
     #endregion
 
     #region getter && setter
@@ -87,6 +91,12 @@ public class EnemyFlyingMovement : MonoBehaviour
         _isflipped = !_isflipped;
     }
 
+    private void PicotazoMovement()
+    {
+        Vector2 _enemydirection = _player.transform.position - transform.position;
+        _rigidbody.velocity = (- _enemydirection.normalized * _enemyDetectedSpeed);
+    }
+
     private void UpdateEnemyState(Estados estado) //Método que cambia los distintos estados del enemigo
     {
         switch (estado)
@@ -101,11 +111,27 @@ public class EnemyFlyingMovement : MonoBehaviour
 
             case Estados.perseguir:
                 FlyingChase();
-                if (!_myEnemyFOV.GetDetected())
+                if (!_myEnemyFOV.GetDetected() || _player.GetComponent<MightyLifeComponent>().GetDeath())
                 {
                     _estado = Estados.regresar;
                 }
+
+                if (Physics2D.BoxCast(_myCollider2D.bounds.center, _myCollider2D.bounds.size, 360,Vector2.down,0.1f,_returnMask))
+                {
+                    _myEnemyFOV.SetDetected(false);
+                    _estado = Estados.regresar;
+                }
                 break;
+
+            case Estados.picotazo:
+                PicotazoMovement();
+                _picoKnockBack -= Time.deltaTime;
+                if (_picoKnockBack <= 0)
+                {
+                    _estado = Estados.perseguir;
+                    _picoKnockBack = _picoKnockInitial;
+                }
+            break;
 
             case Estados.regresar:
                 ReturnPosition();
@@ -147,16 +173,7 @@ public class EnemyFlyingMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == 13)
         {
-            _enemySpeed = 0.0f;
-            _enemyDetectedSpeed = 0.0f;
-        }
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 13)
-        {
-            _enemySpeed = _enemyInitialSpeed;
-            _enemyDetectedSpeed = _enemyInitialDetectedSpeed;
+            _estado = Estados.picotazo;
         }
     }
     #endregion
@@ -174,6 +191,8 @@ public class EnemyFlyingMovement : MonoBehaviour
         _rigidbody.bodyType = RigidbodyType2D.Kinematic;
         _enemyInitialSpeed = _enemySpeed;
         _enemyInitialDetectedSpeed = _enemyDetectedSpeed;
+        _picoKnockInitial = _picoKnockBack;
+        _myCollider2D = GetComponent<Collider2D>();
     }
 
     void FixedUpdate()

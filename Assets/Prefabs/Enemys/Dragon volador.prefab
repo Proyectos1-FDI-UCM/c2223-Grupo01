@@ -107,6 +107,10 @@ MonoBehaviour:
   _enemySpeed: 5
   _enemyDetectedSpeed: 5.25
   _canturnCOUNTER: 0.1
+  _picoKnockBack: 0.3
+  _returnMask:
+    serializedVersion: 2
+    m_Bits: 4160
 --- !u!114 &5020723013684745517
 MonoBehaviour:
   m_ObjectHideFlags: 0
