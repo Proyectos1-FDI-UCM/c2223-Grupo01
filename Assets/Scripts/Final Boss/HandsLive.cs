@@ -37,6 +37,15 @@ public class HandsLive : MonoBehaviour
         }
         Destroy(gameObject);
     }
+     //Animaciones
+    public void CerrarMano()
+    {
+        GetComponent<Animator>().SetTrigger("Spawn");
+    }
+    public void AbrirMano()
+    {
+        GetComponent<Animator>().SetTrigger("AbrirMano");
+    }
 
     #endregion
     private void OnTriggerEnter2D(Collider2D collision)
