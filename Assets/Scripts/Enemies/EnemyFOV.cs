@@ -38,12 +38,12 @@ public class EnemyFOV : MonoBehaviour
     {
         return transform.TransformDirection(new Vector2(Mathf.Cos(angles * Mathf.Deg2Rad), Mathf.Sin(angles * Mathf.Deg2Rad)) * distance);
     }
-    
+
     private void OnDrawGizmos()
     //M�todo para ver el cono de visi�n, dibujando el �ngulo
     //no se hace nada si el �ngulo es menor que cero
     {
-        if (_visionAngle <= 0f) return; 
+        if (_visionAngle <= 0f) return;
         float halfVisionAngle = _visionAngle * 0.5f;
         Vector2 p1, p2;
         p1 = PointforAngles(halfVisionAngle, _visionDistance);
@@ -71,14 +71,15 @@ public class EnemyFOV : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(_detectSFX);
             _detectedSFX = false;
-        } else if (!_detected)
+        }
+        else if (!_detected)
         {
             _detectedSFX = true;
         }
 
         _animator.SetBool("_run", _detected); //no lo encuentra. Si lo encuentra, no lo toques 
         //Debug.Log(_detected);
-        if(_player!= null)
+        if (_player != null)
         {
             // El vector que indica la distancia del jugador al enemigo.
             Vector2 PlayerVector = _player.transform.position - transform.position;
@@ -86,7 +87,7 @@ public class EnemyFOV : MonoBehaviour
             if (Vector3.Angle(PlayerVector.normalized, transform.right) < _visionAngle * 0.5f)
             {
                 //Comprueba si estamos a una distancia que es detectable para el enemigo.
-                if (PlayerVector.magnitude < _visionDistance && !GameManager.instance._mightyLifeComponent.GetDeath())
+                if (PlayerVector.magnitude < _visionDistance)
                 {
                     _detected = true;
                 }
@@ -96,6 +97,6 @@ public class EnemyFOV : MonoBehaviour
                     _detected = false;
                 }
             }
-        }    
+        }
     }
 }
