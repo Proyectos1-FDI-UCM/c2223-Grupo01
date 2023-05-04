@@ -21112,8 +21112,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _health
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _coolDown
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _maxhealth
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _canRepeatLevelTimer
