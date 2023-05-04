@@ -41,6 +41,8 @@ public class HandsManager : MonoBehaviour
     [Header("Estado")]
     [SerializeField] private float _cambioDeEstado = 40; // tiempo que se tarda en cambiar de estado
     private float _cambioDeEstadoInicial;
+
+    private Animator _animator;
     #endregion
 
     public HandsStates GetCurrentState()
@@ -355,9 +357,11 @@ public class HandsManager : MonoBehaviour
     #region Transición
     private void TransicionUpdate()
     {
+        _animator.SetTrigger("Puño");
         TransicionMovement();
         if(_hands[0].GetComponent<Rigidbody2D>().velocity == Vector2.zero && _hands[1].GetComponent<Rigidbody2D>().velocity == Vector2.zero)
         {
+            _animator.SetTrigger("AbrirMano");
             Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[0].transform.position, _hands[0].transform.rotation);
             Instantiate(_enemys[Random.Range(0, _enemys.Length)], _hands[1].transform.position, _hands[1].transform.rotation);
             _currentState = HandsStates.Volviendo;
@@ -426,6 +430,7 @@ public class HandsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _currentState = HandsStates.Patrullaje;
         _tocaCaer = Random.Range(minCaida, maxCaida);
         _vecesPasado = 0;

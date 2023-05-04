@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: a1975710b10f0a745866301ae94581bd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fases jefe_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 314
+        width: 94
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46835443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b355bec5e535c594f8ed0803db6ed3c7
+      internalID: 53769607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 313
+        width: 94
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a957550a343ae924ca0cb5cd1a1328ad
+      internalID: 2094078620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_13
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 210
+        width: 94
+        height: 79
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46835443}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b9582e8979768428911bd518172a3e
+      internalID: -360325538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_16
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 211
+        width: 94
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4679487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a76feebbc5e6ec4ba3920456e8ad578
+      internalID: 1967913790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_25
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 115
+        width: 94
+        height: 76
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4868421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bc8b0b864f8b3499587852d34a86a2
+      internalID: 1507907223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_28
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 115
+        width: 94
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48701298}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2acf225de7153324480c87814ed0036c
+      internalID: -1741356332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_37
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 12
+        width: 94
+        height: 76
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4868421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02eeccceb630cac4696ff5a957cbc5e2
+      internalID: 1647165040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fases jefe_40
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 13
+        width: 94
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48666668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d834d067a315dc40ac1020b6e2e9c89
+      internalID: -1979542991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Fases jefe_23: -782699146
+      Fases jefe_22: -1011733740
+      Fases jefe_40: -1979542991
+      Fases jefe_15: 1816907964
+      Fases jefe_4: 2094078620
+      Fases jefe_7: 846697253
+      Fases jefe_21: -178891786
+      Fases jefe_29: -1453236099
+      Fases jefe_47: 1977484843
+      Fases jefe_8: 1666616679
+      Fases jefe_41: 431803931
+      Fases jefe_2: -1692598339
+      Fases jefe_17: -104090265
+      Fases jefe_32: -1686944558
+      Fases jefe_36: -413095807
+      Fases jefe_16: 1967913790
+      Fases jefe_13: -360325538
+      Fases jefe_33: -1656512506
+      Fases jefe_12: 962845170
+      Fases jefe_30: -569404650
+      Fases jefe_24: -143506114
+      Fases jefe_18: -826374700
+      Fases jefe_5: 1959452886
+      Fases jefe_0: 1069725083
+      Fases jefe_10: -1538283124
+      Fases jefe_3: -7335168
+      Fases jefe_27: 347455968
+      Fases jefe_28: -1741356332
+      Fases jefe_6: 862507363
+      Fases jefe_45: -669858871
+      Fases jefe_31: 826864336
+      Fases jefe_44: 496576975
+      Fases jefe_34: -1398790631
+      Fases jefe_35: -1754645646
+      Fases jefe_42: 346254624
+      Fases jefe_38: -1144914514
+      Fases jefe_1: 53769607
+      Fases jefe_25: 1507907223
+      Fases jefe_37: 1647165040
+      Fases jefe_20: -601711602
+      Fases jefe_46: 863016711
+      Fases jefe_14: 1658175338
+      Fases jefe_11: -1120954534
+      Fases jefe_19: 182664248
+      Fases jefe_43: -1820750487
+      Fases jefe_9: -1621498837
+      Fases jefe_39: -752450777
+      Fases jefe_26: 118727352
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
