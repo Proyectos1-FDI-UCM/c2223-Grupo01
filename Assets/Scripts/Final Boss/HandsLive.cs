@@ -33,6 +33,7 @@ public class HandsLive : MonoBehaviour
         if(gameObject.transform.parent.GetComponent<HandsManager>().GetNManos() < 1)
         {
             _cuerpo.Enable();
+            _cuerpo.ChangeState();
             Destroy(gameObject.transform.parent.gameObject);
         }
         Destroy(gameObject);

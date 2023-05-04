@@ -265,25 +265,25 @@ public class CharacterController : MonoBehaviour
         if (other.gameObject.layer == 18)
         {
             SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(7);
         }
 
         if (other.gameObject.layer == 20)
         {
             SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(8);
         }
 
         if (other.gameObject.layer == 28)
         {
             SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(9);
         }
 
         if (other.gameObject.layer == 3)
         {
             SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(10);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
