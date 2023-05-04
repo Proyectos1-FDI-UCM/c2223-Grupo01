@@ -62,7 +62,7 @@ public class ShootingComponent : MonoBehaviour
                 _actualBullet = 0;
             }
         }
-        else if(_scene.buildIndex == 5 || _scene.buildIndex == 6 || _scene.buildIndex == 7) //Si estamos en nivel lava o final boss
+        else if(_scene.buildIndex == 5 || _scene.buildIndex == 6) //Si estamos en nivel lava o final boss
         {
             if((int)_actualBullet == 3) //que no pueda pasar de _actualBullet 2 (fire)
             {

@@ -7692,6 +7692,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _health
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _maxhealth
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111579, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _bullet.Array.data[0]
+      value: 
+      objectReference: {fileID: 2133623756580499680, guid: c04b195d03264e14ba783fae9705e34b, type: 3}
+    - target: {fileID: 3307213394870111579, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _animatorControllers.Array.data[0]
+      value: 
+      objectReference: {fileID: 9100000, guid: f8ee370cb5e18f94dbd43b0cece8d448, type: 2}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7839,10 +7855,10 @@ MonoBehaviour:
   _layerSuelo:
     serializedVersion: 2
     m_Bits: 64
-  minCaida: 60
+  minCaida: 50
   maxCaida: 100
   _caidaSpeed: 6
-  _enemySpeed: 6
+  _enemySpeed: 8
   _onlyHand: {fileID: 0}
   _cambioDeEstado: 10
 --- !u!1 &1411639878
