@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -40,11 +41,6 @@ public class UIManager : MonoBehaviour
        _slider.fillAmount = health / GameManager.instance._player.GetComponent<MightyLifeComponent>().GetMaxHealth();
     }
 
-    public void SetMelee(bool _canusemelee)
-    {
-        _Melee.gameObject.SetActive(_canusemelee);
-    }
-
     public void currentWeaponState( int weapon)
     //Determina cu�l es la arma actual que muestra en la UI
     //Comprueba estado (arma) actual
@@ -73,6 +69,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         GameManager.instance.RegisterUIMManager(this);
+        _Melee.gameObject.SetActive(GameManager.instance.HandleMeleeActivation(SceneManager.GetActiveScene().buildIndex));
         _mightyLifeComponent = GameManager.instance._player.GetComponent<MightyLifeComponent>();
         _currentTime = GameManager.instance._currentTime;
     }
