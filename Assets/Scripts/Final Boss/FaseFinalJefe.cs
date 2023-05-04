@@ -28,6 +28,11 @@ public class FaseFinalJefe : MonoBehaviour
         enabled = true;
     }
 
+    public void ChangeState()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

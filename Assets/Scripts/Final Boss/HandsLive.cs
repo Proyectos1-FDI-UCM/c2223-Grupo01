@@ -37,7 +37,7 @@ public class HandsLive : MonoBehaviour
         }
         Destroy(gameObject);
     }
-     //Animaciones
+     //Animaciones manos
     public void CerrarMano()
     {
         GetComponent<Animator>().SetTrigger("Spawn");
