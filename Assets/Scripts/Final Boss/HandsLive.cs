@@ -5,12 +5,20 @@ using UnityEngine;
 public class HandsLive : MonoBehaviour
 {
     [SerializeField] private int _vidaManos = 400, _dañoManos = 30;
+    private int _initialVidaManos;
     [SerializeField] private FaseFinalJefe _cuerpo;
+    [SerializeField] private BossUI _bossUI;
 
     public int GetVidaManos()
     {
         return _vidaManos;
-    }    
+    }
+
+    public int GetVidaManosInicial()
+    {
+        return _initialVidaManos;
+    }
+
     #region methods
     public void TakeDamage(int damage)
     {
@@ -20,6 +28,7 @@ public class HandsLive : MonoBehaviour
             && !gameObject.transform.parent.GetComponent<HandsManager>().GetCaida()) 
         {
             _vidaManos -= damage;
+            _bossUI.ActualizarInterfazManos();
             if (_vidaManos < 0)
             {
                 gameObject.transform.parent.GetComponent<HandsManager>().OnHandDie();
@@ -35,6 +44,7 @@ public class HandsLive : MonoBehaviour
             _cuerpo.Enable();
             _cuerpo.ChangeState();
             Destroy(gameObject.transform.parent.gameObject);
+            _bossUI.ActualizarUI();
         }
         Destroy(gameObject);
     }
@@ -60,5 +70,10 @@ public class HandsLive : MonoBehaviour
         {
             gameObject.transform.parent.GetComponent<HandsManager>().ChangeSpeed();
         }
+    }
+
+    private void Start()
+    {
+        _initialVidaManos = _vidaManos;
     }
 }

@@ -300,6 +300,7 @@ public class CharacterController : MonoBehaviour
         }
     }
     #endregion
+
     private void OnEnable()
     {
         _newInput.Enable();
@@ -364,10 +365,14 @@ public class CharacterController : MonoBehaviour
                 _estelaDuration = _initialEstelaDuration;
                 _estela = false;
             }
-        }else _myTrailRenderer.enabled = false;
+        }
+        else
+        {
+            _myTrailRenderer.enabled = false;
+        }
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
-        if ((_dash && !_isgrounded || _dash && _myRigidBody2D.velocity.x == 0 ||_dash && _newInput.Mighty.Jump.triggered) && !IsCeiling())
+        if (_dash && (!_isgrounded || _myRigidBody2D.velocity.x == 0 ||_newInput.Mighty.Jump.triggered) && !IsCeiling())
         {
             if (_newInput.Mighty.Jump.triggered)
             {

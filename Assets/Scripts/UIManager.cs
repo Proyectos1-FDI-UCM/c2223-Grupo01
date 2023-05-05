@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     float _currentTime;
     [SerializeField] private Image _slider;                          //La Barra de vida
     #endregion
+
     #region References
     private MightyLifeComponent _mightyLifeComponent;
     #endregion
