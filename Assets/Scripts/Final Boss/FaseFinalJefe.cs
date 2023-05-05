@@ -19,6 +19,7 @@ public class FaseFinalJefe : MonoBehaviour
     private void Shoot()
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
+        GetComponent<Animator>().SetTrigger("_attack");
         Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);
         _canShoot = false;
     }
@@ -30,7 +31,7 @@ public class FaseFinalJefe : MonoBehaviour
 
     public void ChangeState()
     {
-
+        GetComponent<Animator>().SetBool("_change", enabled);
     }
 
     // Start is called before the first frame update

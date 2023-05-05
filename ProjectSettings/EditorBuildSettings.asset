@@ -26,7 +26,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenas definitivas/FINAL BOSS.unity
     guid: b38ea40787150ec49a727a8bf5500a9e
-  - enabled: 0
-    path: Assets/Scenes/Tutorial 2 (PRUEBAS).unity
-    guid: 9d90c16b384d3f243a42d7a5b4be35e6
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA TUTO-HIELO.unity
+    guid: f8e9f20705f5df846a5375227756cdcd
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA HIELO-FABRICA.unity
+    guid: 03307ca9276840a499cc53377ec07654
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA FABRICA-FUNDICION.unity
+    guid: b29f61a8d68984f4abe5e1c4992ea11f
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA FUNDICION - BOSS.unity
+    guid: 24ad9ece92911c145a2409b843efc238
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA PREBOSS.unity
+    guid: 16458fd7fe1e5a94e9cc121a0c55cb82
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA FINAL.unity
+    guid: e7bb5d06556203845a6b42eb0862e9ee
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA INICIAL.unity
+    guid: 3eb26f7e5fd49444bb5c30da6fc4a3b1
   m_configObjects: {}
