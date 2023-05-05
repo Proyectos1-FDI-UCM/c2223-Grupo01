@@ -92,7 +92,9 @@ public class CharacterController : MonoBehaviour
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
-        return Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.up, 1f, _groundLayer);
+        return Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.up, 1f, _groundLayer) 
+            && !Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, 0.1f, 12) 
+            && !Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, 0.1f, 12);
     }
 
     public void MoveXAxis(float XAxismove)
@@ -378,7 +380,7 @@ public class CharacterController : MonoBehaviour
             _myInputComponent.enabled = true;
             _dash = false;
         }
-        else if(_myRigidBody2D.velocity.x == 0 && _dash && IsCeiling())
+        else if(_dash && _myRigidBody2D.velocity.x == 0 && IsCeiling())
         {
             if (_facingRight)
             {
