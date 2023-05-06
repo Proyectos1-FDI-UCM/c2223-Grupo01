@@ -74,6 +74,11 @@ public class CharacterController : MonoBehaviour
     {
         return _isgrounded;
     }
+
+    public bool GetDash()
+    {
+        return _dash;
+    }
     #endregion
 
     #region Methods
@@ -376,7 +381,6 @@ public class CharacterController : MonoBehaviour
         {
             if (_newInput.Mighty.Jump.triggered)
             {
-                _doublejump = false;
                 Jump();
             }
 
