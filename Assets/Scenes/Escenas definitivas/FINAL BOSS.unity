@@ -11548,6 +11548,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3672484257546130165, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
+      propertyPath: _hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
+    - target: {fileID: 3672484257546130165, guid: ca9704f95f91d6b4798245310fbeed52, type: 3}
       propertyPath: _bossUI
       value: 
       objectReference: {fileID: 1276438765}
@@ -11617,6 +11621,10 @@ PrefabInstance:
       value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 7860541914553992905, guid: b8cc14ce0ac579f4286d3d426a9f31cd, type: 3}
+      propertyPath: _hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
+    - target: {fileID: 7860541914553992905, guid: b8cc14ce0ac579f4286d3d426a9f31cd, type: 3}
       propertyPath: _bossUI
       value: 
       objectReference: {fileID: 1276438765}
@@ -11629,6 +11637,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1302207729}
     m_Modifications:
+    - target: {fileID: 1854967706576875697, guid: 73869af97607b864999158f46b880dfb, type: 3}
+      propertyPath: _hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
     - target: {fileID: 1854967706576875697, guid: 73869af97607b864999158f46b880dfb, type: 3}
       propertyPath: _bossUI
       value: 
