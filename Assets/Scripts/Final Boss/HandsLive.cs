@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HandsLive : MonoBehaviour
 {
-    [SerializeField] private int _vidaManos = 400, _dañoManos = 30;
-    private int _initialVidaManos;
+    [SerializeField] private float _vidaManos = 400, _dañoManos = 30;
+    private float _initialVidaManos;
     [SerializeField] private FaseFinalJefe _cuerpo;
     [SerializeField] private BossUI _bossUI;
-
+    [SerializeField] private AudioClip _hurt;
     public float GetVidaManos()
     {
         return _vidaManos;
@@ -27,6 +27,7 @@ public class HandsLive : MonoBehaviour
             && gameObject.transform.parent.GetComponent<HandsManager>().GetCurrentState() != HandsManager.HandsStates.Volviendo 
             && !gameObject.transform.parent.GetComponent<HandsManager>().GetCaida()) 
         {
+            GetComponent<AudioSource>().PlayOneShot(_hurt);
             _vidaManos -= damage;
             if (_vidaManos < 0)
             {
