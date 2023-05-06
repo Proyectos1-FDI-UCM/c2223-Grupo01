@@ -16,6 +16,11 @@ public class FaseFinalJefe : MonoBehaviour
 
     [SerializeField] private LayerMask _playerLayer;
 
+    public bool IsEnable()
+    {
+        return enabled;
+    }
+
     private void Shoot()
     // instanciamos la bala en la posición del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
