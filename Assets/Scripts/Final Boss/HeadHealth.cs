@@ -8,6 +8,7 @@ public class HeadHealth : MonoBehaviour
     [SerializeField] private float _vidaCabeza = 700;
     private float _vidaCabezaInicial;
     [SerializeField] private BossUI _bossUI;
+    [SerializeField] private AudioClip _hurt;
 
     #region Getters
     public float GetVidaCabeza()
@@ -26,6 +27,7 @@ public class HeadHealth : MonoBehaviour
     {
         if (GetComponent<FaseFinalJefe>().enabled)
         {
+            GetComponent<AudioSource>().PlayOneShot(_hurt);
             _vidaCabeza -= damage;
             if (_vidaCabeza < 0)
             {
