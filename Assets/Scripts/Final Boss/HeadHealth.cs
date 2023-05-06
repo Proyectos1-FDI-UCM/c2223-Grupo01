@@ -25,11 +25,11 @@ public class HeadHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _vidaCabeza -= damage;
-        _bossUI.ActualizaVidaCabeza();
         if (_vidaCabeza < 0)
         {
             Die();
         }
+        _bossUI.ActualizaVidaCabeza();
     }
 
     private void Die()

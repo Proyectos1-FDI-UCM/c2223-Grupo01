@@ -9,12 +9,12 @@ public class HandsLive : MonoBehaviour
     [SerializeField] private FaseFinalJefe _cuerpo;
     [SerializeField] private BossUI _bossUI;
 
-    public int GetVidaManos()
+    public float GetVidaManos()
     {
         return _vidaManos;
     }
 
-    public int GetVidaManosInicial()
+    public float GetVidaManosInicial()
     {
         return _initialVidaManos;
     }
@@ -28,12 +28,12 @@ public class HandsLive : MonoBehaviour
             && !gameObject.transform.parent.GetComponent<HandsManager>().GetCaida()) 
         {
             _vidaManos -= damage;
-            _bossUI.ActualizarInterfazManos();
             if (_vidaManos < 0)
             {
                 gameObject.transform.parent.GetComponent<HandsManager>().OnHandDie();
                 Die();
             }
+            _bossUI.ActualizarInterfazManos();
         }
     }
 

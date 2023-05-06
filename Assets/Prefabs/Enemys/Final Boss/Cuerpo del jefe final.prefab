@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5598198750270924847}
   - component: {fileID: 2011026737}
   - component: {fileID: 7608043322988027732}
+  - component: {fileID: 7860541914553992905}
   m_Layer: 0
   m_Name: Cuerpo del jefe final
   m_TagString: Untagged
@@ -174,6 +175,20 @@ MonoBehaviour:
   _playerLayer:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!114 &7860541914553992905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561216547431062295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259a803e3080f9748a2b305b0e769e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vidaCabeza: 700
+  _bossUI: {fileID: 0}
 --- !u!1 &8552533193422356564
 GameObject:
   m_ObjectHideFlags: 0
