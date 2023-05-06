@@ -46,20 +46,21 @@ public class BulletCollisionComponent : MonoBehaviour
         {
             case typeOfDamage.Normal:
                 {
-                    if(collision.GetComponent<HandsLive>() != null)
+                    Destroy(gameObject);
+                    if (collision.GetComponent<HandsLive>() != null)
                     {
                         collision.GetComponent<HandsLive>().TakeDamage(_normalBulletDamage);
                     }
                     else if(collision.GetComponent<HeadHealth>() != null)
                     {
                         collision.GetComponent<HeadHealth>().TakeDamage(_normalBulletDamage);
-                    }
-                    Destroy(gameObject);
+                    }    
                     break;
                 }
 
             case typeOfDamage.Ice:
                 {
+                    Destroy(gameObject);
                     if (collision.GetComponent<HandsLive>() != null)
                     {
                         collision.GetComponent<HandsLive>().TakeDamage(_iceBulletDamage);
@@ -68,12 +69,12 @@ public class BulletCollisionComponent : MonoBehaviour
                     {
                         collision.GetComponent<HeadHealth>().TakeDamage(_iceBulletDamage);
                     }
-                    Destroy(gameObject);
                     break;
                 }
 
             case typeOfDamage.Fire:
                 {
+                    Destroy(gameObject);
                     if (collision.GetComponent<HandsLive>() != null)
                     {
                         collision.GetComponent<HandsLive>().TakeDamage(_fireBulletDamage);
@@ -82,7 +83,6 @@ public class BulletCollisionComponent : MonoBehaviour
                     {
                         collision.GetComponent<HeadHealth>().TakeDamage(_fireBulletDamage);
                     }
-                    Destroy(gameObject);
                     break;
                 }
         }
