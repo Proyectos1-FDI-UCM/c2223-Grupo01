@@ -254,9 +254,12 @@ public class MightyLifeComponent : MonoBehaviour
                 {
                     _myInputComponent.enabled = false;
                 }
-                else _myInputComponent.enabled = true;
+                else if(GetComponent<CharacterController>() != null && !GetComponent<CharacterController>().GetDash())
+                {
+                    _myInputComponent.enabled = true;
+                }
 
-                if (_coolDown <= 0) _canBeDamaged = true;
+            if (_coolDown <= 0) _canBeDamaged = true;
             }
             else
             {
