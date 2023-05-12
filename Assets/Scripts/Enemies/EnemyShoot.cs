@@ -12,10 +12,23 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private float _patrolFlip;
     private float _initialPatrolFlip;
     private int _patrullaje;
+    private bool _congelado;
 
-    private float _initialCoolDownShoot; //Valor inicial del contador de disparo, util para reconfigurar el cooldown que se modifica en el Update
+    [SerializeField] private float _initialCoolDownShoot, _trueInitialCoolDownShoot; //Valor inicial del contador de disparo, util para reconfigurar el cooldown que se modifica en el Update
 
     private bool _canShoot; //Booleano que determina si puede disparar o no
+    #endregion
+
+    #region Getters y setters
+    public float GetInitialCoolDownShoot()
+    {
+        return _initialCoolDownShoot;
+    }
+
+    public float GetCoolDownShoort()
+    {
+        return _coolDownShoot;
+    }
     #endregion
 
     #region References
@@ -34,6 +47,22 @@ public class EnemyShoot : MonoBehaviour
         
         _canShoot = false;
     }
+
+    public void DisparoRalentizado(float ralentización)
+    {
+       _initialCoolDownShoot += ralentización;
+    }
+
+    public void DisparoCongelado()
+    {
+        _congelado = true;
+    }
+
+    public void CooldownReset()
+    {
+        _congelado = false;
+        _initialCoolDownShoot = _trueInitialCoolDownShoot;
+    }
     #endregion
 
     private void Start()
@@ -42,6 +71,7 @@ public class EnemyShoot : MonoBehaviour
          _initialPatrolFlip = _patrolFlip;
         _animator = GetComponent<Animator>();
         _canShoot= true;
+        _trueInitialCoolDownShoot = _coolDownShoot;
     }
 
     // Update is called once per frame
@@ -56,7 +86,10 @@ public class EnemyShoot : MonoBehaviour
             }
             else
             {
-                _coolDownShoot -= Time.deltaTime;
+                if (!_congelado)
+                {
+                    _coolDownShoot -= Time.deltaTime;
+                }
                 if (_coolDownShoot <= 0)
                 {
                     _canShoot = true;

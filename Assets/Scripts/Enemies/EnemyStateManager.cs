@@ -16,6 +16,7 @@ public class EnemyStateManager : MonoBehaviour
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
     private EnemyHealth _enemyHealth;
+    private EnemyShoot _enemyShoot;
 
     [SerializeField]
     private Color[] _colores;   //Array de colores del player
@@ -101,6 +102,11 @@ public class EnemyStateManager : MonoBehaviour
                 _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyInitialDetectedSpeed());
                 _enemyFlyingMovement.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             }
+            else if(GetComponent<EnemyShoot>() != null)
+            {
+                _enemyShoot = GetComponent<EnemyShoot>();
+                _enemyShoot.CooldownReset();
+            }
             _ralentizado = !_ralentizado;
             _tiempoRalentizado = _initialTiempoRalentizado;
         }
@@ -129,6 +135,11 @@ public class EnemyStateManager : MonoBehaviour
                 _enemyFlyingMovement.SetEnemySpeed(_enemyFlyingMovement.GetEnemyInitialSpeed());
                 _enemyFlyingMovement.SetEnemyDetectedSpeed(_enemyFlyingMovement.GetEnemyInitialDetectedSpeed());
                 _enemyFlyingMovement.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+            }
+            else if(GetComponent<EnemyShoot>() != null)
+            {
+                _enemyShoot = GetComponent<EnemyShoot>();
+                _enemyShoot.CooldownReset();
             }
             _congelado = !_congelado;
             _tiempoCongelado = _tiempoCongeladoInicial;

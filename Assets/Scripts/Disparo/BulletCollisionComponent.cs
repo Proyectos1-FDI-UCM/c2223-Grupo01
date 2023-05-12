@@ -14,6 +14,7 @@ public class BulletCollisionComponent : MonoBehaviour
     [Header("Disparo de Hielo")]
     [SerializeField] private int _iceBulletDamage;
     [SerializeField] private int _ralentizado;
+    [SerializeField] private float _ralentizaciónDelShoot;
     [Header("Disparo de Fuego")]
     [SerializeField] private int _fireBulletDamage;
     [SerializeField] private int _quemadoProbabilidad;
@@ -159,6 +160,10 @@ public class BulletCollisionComponent : MonoBehaviour
                     _enemyFlyingMovement.SetEnemyDetectedSpeed(0);
                 }
             }
+            else if( collision.GetComponent<EnemyShoot>() != null)
+            {
+                collision.gameObject.GetComponent<EnemyShoot>().DisparoRalentizado(_ralentizaciónDelShoot);
+            }
         }
         
         if (collision.GetComponent<EnemyHealth>().GetNumBalasCongelado() == 3)
@@ -184,6 +189,10 @@ public class BulletCollisionComponent : MonoBehaviour
             _enemyRigidBody = collision.GetComponent<Rigidbody2D>();
             _enemyRigidBody.bodyType = RigidbodyType2D.Dynamic;
             _enemyRigidBody.gravityScale = 10;
+        }
+        else if (collision.GetComponent<EnemyShoot>() != null)
+        {
+            collision.gameObject.GetComponent<EnemyShoot>().DisparoCongelado();
         }
     }
     #endregion
