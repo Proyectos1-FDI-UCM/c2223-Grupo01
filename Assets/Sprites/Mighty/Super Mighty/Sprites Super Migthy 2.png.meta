@@ -109,10 +109,10 @@ TextureImporter:
         serializedVersion: 2
         x: 14
         y: 472
-        width: 25
+        width: 26
         height: 12
       alignment: 9
-      pivot: {x: 0.52, y: 1.0416666}
+      pivot: {x: 0.5, y: 1.0416666}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1296,7 +1296,7 @@ TextureImporter:
       Sprites Mighty 2_49: 1296056562
       Sprites Mighty 2_51: -1717868943
       Sprites Mighty 2_52: -950917207
-      Sprites Mighty 2_50: -899906121
+      Sprites Mighty 2_20: 70030050
       Sprites Mighty 2_22: 1269819565
       Sprites Mighty 2_27: 1767599934
       Sprites Mighty 2_7: 1905604397
@@ -1306,7 +1306,7 @@ TextureImporter:
       Sprites Mighty 2_12: -608058569
       Sprites Mighty 2_47: -1878678349
       Sprites Mighty 2_26: 1425300886
-      Sprites Mighty 2_20: 70030050
+      Sprites Mighty 2_50: -899906121
       Sprites Mighty 2_5: 1298747193
       Sprites Mighty 2_48: 191683028
       Sprites Mighty 2_35: -714827083
