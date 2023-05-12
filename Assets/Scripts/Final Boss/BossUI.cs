@@ -17,7 +17,7 @@ public class BossUI : MonoBehaviour
     #region Methods
     public void ActualizarInterfazManos()
     {
-        if (_hands[0].GetComponent<HandsLive>() != null)
+        if (_hands[0].gameObject != null)
         {
             _slider[0].fillAmount = _hands[0].GetComponent<HandsLive>().GetVidaManos() / _hands[0].GetComponent<HandsLive>().GetVidaManosInicial();
         }
@@ -26,7 +26,7 @@ public class BossUI : MonoBehaviour
             _slider[0].fillAmount = 0.0f;
         }
         
-        if (_hands[1].GetComponent<HandsLive>() != null)
+        if (_hands[1].gameObject != null)
         {
             _slider[1].fillAmount = _hands[1].GetComponent<HandsLive>().GetVidaManos() / _hands[1].GetComponent<HandsLive>().GetVidaManosInicial();
         }
