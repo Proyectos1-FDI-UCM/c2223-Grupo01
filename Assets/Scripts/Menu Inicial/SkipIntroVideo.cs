@@ -8,7 +8,6 @@ public class SkipIntroVideo : MonoBehaviour
     private float _timer = 0.0f;
     [SerializeField] private float _maxTimer;
     [SerializeField] private int _sceneIndex;
-    private UniversalInput _newInput;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class SkipIntroVideo : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer > _maxTimer || _newInput.Mighty.Jump.triggered)
+        if (_timer > _maxTimer)
         {
             SceneManager.LoadScene(_sceneIndex);
         }
