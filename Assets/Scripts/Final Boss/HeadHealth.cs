@@ -40,7 +40,7 @@ public class HeadHealth : MonoBehaviour
     private void Die()
     {
         SpawnsManager.instance.SetfinishedGame(1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(12);
         Destroy(gameObject);
     }
     #endregion

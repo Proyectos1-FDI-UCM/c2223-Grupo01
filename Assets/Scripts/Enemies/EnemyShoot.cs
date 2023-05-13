@@ -14,7 +14,7 @@ public class EnemyShoot : MonoBehaviour
     private int _patrullaje;
     private bool _congelado;
 
-    [SerializeField] private float _initialCoolDownShoot, _trueInitialCoolDownShoot; //Valor inicial del contador de disparo, util para reconfigurar el cooldown que se modifica en el Update
+    private float _initialCoolDownShoot, _trueInitialCoolDownShoot; //Valor inicial del contador de disparo, util para reconfigurar el cooldown que se modifica en el Update
 
     private bool _canShoot; //Booleano que determina si puede disparar o no
     #endregion
