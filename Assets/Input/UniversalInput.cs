@@ -80,15 +80,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Reset"",
-                    ""type"": ""Button"",
-                    ""id"": ""709733ab-ff70-4c5b-8362-8699bb15a717"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -366,28 +357,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                     ""action"": ""Change"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""19e9052f-9ae5-43f5-bf88-bdaddece4905"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reset"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dcd92d20-073d-4a45-a6db-2f1bf969477e"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Reset"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -402,7 +371,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
         m_Mighty_Melee = m_Mighty.FindAction("Melee", throwIfNotFound: true);
         m_Mighty_Jump = m_Mighty.FindAction("Jump", throwIfNotFound: true);
         m_Mighty_Change = m_Mighty.FindAction("Change", throwIfNotFound: true);
-        m_Mighty_Reset = m_Mighty.FindAction("Reset", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -468,7 +436,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Mighty_Melee;
     private readonly InputAction m_Mighty_Jump;
     private readonly InputAction m_Mighty_Change;
-    private readonly InputAction m_Mighty_Reset;
     public struct MightyActions
     {
         private @UniversalInput m_Wrapper;
@@ -479,7 +446,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
         public InputAction @Melee => m_Wrapper.m_Mighty_Melee;
         public InputAction @Jump => m_Wrapper.m_Mighty_Jump;
         public InputAction @Change => m_Wrapper.m_Mighty_Change;
-        public InputAction @Reset => m_Wrapper.m_Mighty_Reset;
         public InputActionMap Get() { return m_Wrapper.m_Mighty; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -507,9 +473,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                 @Change.started -= m_Wrapper.m_MightyActionsCallbackInterface.OnChange;
                 @Change.performed -= m_Wrapper.m_MightyActionsCallbackInterface.OnChange;
                 @Change.canceled -= m_Wrapper.m_MightyActionsCallbackInterface.OnChange;
-                @Reset.started -= m_Wrapper.m_MightyActionsCallbackInterface.OnReset;
-                @Reset.performed -= m_Wrapper.m_MightyActionsCallbackInterface.OnReset;
-                @Reset.canceled -= m_Wrapper.m_MightyActionsCallbackInterface.OnReset;
             }
             m_Wrapper.m_MightyActionsCallbackInterface = instance;
             if (instance != null)
@@ -532,9 +495,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                 @Change.started += instance.OnChange;
                 @Change.performed += instance.OnChange;
                 @Change.canceled += instance.OnChange;
-                @Reset.started += instance.OnReset;
-                @Reset.performed += instance.OnReset;
-                @Reset.canceled += instance.OnReset;
             }
         }
     }
@@ -547,6 +507,5 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
         void OnMelee(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnChange(InputAction.CallbackContext context);
-        void OnReset(InputAction.CallbackContext context);
     }
 }

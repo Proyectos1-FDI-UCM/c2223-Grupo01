@@ -18,6 +18,13 @@ public class LimitedTimeLife : MonoBehaviour
 
     void Start()
     {
-        Invoke("SelfDestroy", _maxLifetime * Time.deltaTime);
+        _maxLifetime -= Time.deltaTime;
+
+        if (_maxLifetime <= 0)
+        {
+            SelfDestroy();
+        }
+
+        //Invoke("SelfDestroy", _maxLifetime * Time.deltaTime);
     }
 }

@@ -82,6 +82,10 @@ public class MightyLifeComponent : MonoBehaviour
     {
         _death = dead;
     }
+    public float GetRepTimer()
+    {
+        return _canRepeatLevelTimer;
+    }
     #endregion
 
     public void OnPlayerHit(float damage)

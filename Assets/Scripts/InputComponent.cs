@@ -105,12 +105,6 @@ public class InputComponent : MonoBehaviour
                 _myMeleeComponent.Attack();
             }
 
-            // Reinicia el nivel tutorial. El numero es en relaci�n con el orden de escenas al hacer la build
-            if (_newInput.Mighty.Reset.triggered)
-            {
-                SpawnsManager.instance.ResetRespawnPosition();
-                SceneManager.LoadScene(1);
-            }
             // Movimiento
             _myCharacterController.MoveXAxis(_movement.ReadValue<Vector2>().x);
 

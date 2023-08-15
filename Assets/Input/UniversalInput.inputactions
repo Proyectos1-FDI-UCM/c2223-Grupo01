@@ -58,15 +58,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Reset",
-                    "type": "Button",
-                    "id": "709733ab-ff70-4c5b-8362-8699bb15a717",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -342,28 +333,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Change",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "19e9052f-9ae5-43f5-bf88-bdaddece4905",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dcd92d20-073d-4a45-a6db-2f1bf969477e",
-                    "path": "<Gamepad>/select",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

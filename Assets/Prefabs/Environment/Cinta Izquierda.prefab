@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4020998571074495152}
   - component: {fileID: 5024881371300523469}
   - component: {fileID: 3057457818053789808}
+  - component: {fileID: 6556301404228551431}
   m_Layer: 6
   m_Name: Cinta Izquierda
   m_TagString: Untagged
@@ -148,3 +149,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.16}
   m_EdgeRadius: 0
+--- !u!95 &6556301404228551431
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559520550697192926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bf0ea9078eef344db95ce4825e614c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

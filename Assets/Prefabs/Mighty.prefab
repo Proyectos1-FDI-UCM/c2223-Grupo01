@@ -565,12 +565,12 @@ MonoBehaviour:
     m_Name: Pause Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: cf1543bb-8316-4e72-a68c-25eb81151a64
+    m_Id: 83a66d5a-feaf-4ce4-ab50-184f6e5be830
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 4701d991-acbc-4bbc-85f9-fc6dd23bc2df
+      m_Id: b3da98ff-8207-45fe-a4b9-f92825f09c42
       m_Path: <Keyboard>/escape
       m_Interactions: 
       m_Processors: 
@@ -578,7 +578,7 @@ MonoBehaviour:
       m_Action: Pause Input
       m_Flags: 0
     - m_Name: 
-      m_Id: 091fe234-dabc-4a15-bb92-366f3367d1ab
+      m_Id: 82898c39-5e7b-41a5-b068-2a5f605a1e37
       m_Path: <Gamepad>/start
       m_Interactions: 
       m_Processors: 
@@ -586,7 +586,99 @@ MonoBehaviour:
       m_Action: Pause Input
       m_Flags: 0
     m_Flags: 0
+  _arrowsInput:
+    m_Name: Arrows Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 34cdb156-2e1f-48e7-b76e-9ac7a09470ac
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 40531e9a-8b51-46b1-b6f0-bd390d808957
+      m_Path: <Gamepad>/dpad
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 678841b2-b072-49e2-b56b-ceb3aab369a6
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 4629f6d2-4b82-4d69-bcfb-833b0012c7fb
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 7be0d043-fc58-42bd-a5c1-503c1e4924ad
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 03b11f29-01ab-4007-b82a-9240e8edcc9e
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Arrows Input
+      m_Flags: 0
+    m_Flags: 0
+  _selectInput:
+    m_Name: Select Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c2c2cd41-b6ac-409c-a785-b9cbd740e218
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: c77e7396-31bc-4e7f-b2dd-9e5131e5a8ba
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: b0a0ddf8-620c-4e70-92d4-09a84d17d68e
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 19184306-7d97-4754-845d-2f3c43c4b323
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 592d448d-f0d2-4753-b67d-fadad012a6bb
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Select Input
+      m_Flags: 0
+    m_Flags: 0
   menuPausa: {fileID: 0}
+  _selectingSFX: {fileID: 8300000, guid: 2485faeb7bbe5064e8cecd50ba6fc2cf, type: 3}
+  _okSFX: {fileID: 8300000, guid: edb69878a00d41548bf8358ce29bae28, type: 3}
 --- !u!114 &4833193327630455760
 MonoBehaviour:
   m_ObjectHideFlags: 0

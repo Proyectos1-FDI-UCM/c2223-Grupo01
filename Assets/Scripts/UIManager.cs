@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
 
     #region References
     private MightyLifeComponent _mightyLifeComponent;
+    private CharacterController _characterController;
     #endregion
     
     #region Methods
@@ -24,7 +25,7 @@ public class UIManager : MonoBehaviour
     //Redondea el n�mero para sacar los minutos y segundos
     //Coge el archivo de texto del timer para cambiarlo.
     {
-        if (Currenttime > 0 && _mightyLifeComponent.GetHealth() > 0)
+        if (Currenttime > 0 && _mightyLifeComponent.GetHealth() > 0 && !_characterController._doorTouched)
         {
             float minutes = Mathf.FloorToInt(Currenttime / 60);
             float seconds = Mathf.FloorToInt(Currenttime % 60);
@@ -72,6 +73,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.RegisterUIMManager(this);
         _Melee.gameObject.SetActive(GameManager.instance.HandleMeleeActivation(SceneManager.GetActiveScene().buildIndex));
         _mightyLifeComponent = GameManager.instance._player.GetComponent<MightyLifeComponent>();
+        _characterController = GameManager.instance._player.GetComponent<CharacterController>();
         _currentTime = GameManager.instance._currentTime;
     }
 }

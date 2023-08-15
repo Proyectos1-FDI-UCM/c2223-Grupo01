@@ -15,17 +15,34 @@ public class GameManager : MonoBehaviour
     #region References
     public static GameManager instance; // Singleton inicializado en el Awake
     public GameObject _player;// Para usarlo en otros scripts
+    public GameObject _fade;
+    [SerializeField] private GameObject[] _UIs;
     public MightyLifeComponent _mightyLifeComponent { get; private set;}
+    public CharacterController _characterController { get; private set; }
+    public PuertaFinalNivel _puertaFinalNivel { get; private set; }
     public UIManager _UImanager { get; private set;}
     [SerializeField] private AudioClip _timeOut;
     #endregion
 
     #region methods
-    // Registramos la clase de Mighty Component.
+    // Registramos la clase de Mighty Component y Character Controller.
     public MightyLifeComponent RegisterMightyComponent(MightyLifeComponent mightyLifeComponent)
     {
         _mightyLifeComponent = mightyLifeComponent;
         return _mightyLifeComponent;
+    }
+
+    public CharacterController RegisterCharacterController(CharacterController characterController)
+    {
+        _characterController = characterController;
+        return _characterController;
+    }
+    //Registramos otra clase que es la de las puertas de final de nivel
+
+    public PuertaFinalNivel RegisterPuertaFinalNivel(PuertaFinalNivel puertaFinalNivel)
+    {
+        _puertaFinalNivel = puertaFinalNivel;
+        return _puertaFinalNivel;
     }
 
     // Registramos la clase del UI Manager
@@ -66,7 +83,7 @@ public class GameManager : MonoBehaviour
         _currentTime -= Time.deltaTime;
         _UImanager.UpdateTimer(_currentTime);
         // Resta progresivamente la vida al acabarse el tiempo
-        if (_currentTime <= 0 && _mightyLifeComponent.GetHealth() > 0)
+        if (_currentTime <= 0 && _mightyLifeComponent.GetHealth() > 0 && !_characterController._doorTouched)
         {
             _mightyLifeComponent.DeathTime(_deathTimeDamage * Time.deltaTime); //El deltaTime es para tener mas controlado el da�o por segundo para no tener que usar valores tan peque�os
         }
@@ -76,6 +93,20 @@ public class GameManager : MonoBehaviour
         {
             GetComponent<AudioSource>().PlayOneShot(_timeOut);
             _timeMusicActive = true;
+        }
+
+        if (_mightyLifeComponent.GetHealth() <= 0.0f || _characterController._doorTouched)
+        {
+            _player.GetComponent<PauseMenu>().enabled = false;
+        }
+
+        if (_mightyLifeComponent.GetRepTimer() <= 2.5f || _puertaFinalNivel.GetOpenCounter() <= 2.0f)
+        {
+            for (int i = 0; i < _UIs.Length; i++)
+            {
+                _UIs[i].SetActive(false);
+            }
+            _fade.GetComponent<Animator>().SetTrigger("OUT");
         }
     }
 }

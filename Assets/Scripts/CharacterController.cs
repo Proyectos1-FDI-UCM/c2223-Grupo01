@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     private bool _isgrounded;
     public bool _doublejump {get; private set;}
     public bool _isOnIce {get; private set;}
+    public bool _doorTouched { get; private set; }
 
     [Header("Basic Movement")]
     [SerializeField] private float _MovementSmoothing; // fluidez con la que se moverá mighty
@@ -271,26 +272,11 @@ public class CharacterController : MonoBehaviour
         //CAMBIO DE ESCENAS SI TOCAMOS DOOR
         if (other.gameObject.layer == 18)
         {
+            _doorTouched = true;
+            _myInputComponent.enabled = false;
+            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
+            _myCollider2D.enabled = false;
             SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(7);
-        }
-
-        if (other.gameObject.layer == 20)
-        {
-            SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(8);
-        }
-
-        if (other.gameObject.layer == 28)
-        {
-            SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(9);
-        }
-
-        if (other.gameObject.layer == 3)
-        {
-            SpawnsManager.instance.ResetRespawnPosition();
-            SceneManager.LoadScene(10);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -326,12 +312,14 @@ public class CharacterController : MonoBehaviour
         _myInputComponent = GetComponent<InputComponent>();
         _animator = GetComponent<Animator>();
         _myTrailRenderer = GetComponent<TrailRenderer>();
+        GameManager.instance.RegisterCharacterController(this);
 
         //Inicializo parámetros
         _originalMoveSmoothing = _MovementSmoothing;
         _initialMovementSpeedX = _movementSpeedX;
         _initialdDashForce = _dashForce;
         _initialEstelaDuration = _estelaDuration;
+        _doorTouched = false;
         _estela = false;
 
         // Guardo gravedad inicial.
@@ -344,6 +332,12 @@ public class CharacterController : MonoBehaviour
     private void Update()
     {
         _isgrounded = IsGrounded();
+
+        if (_doorTouched)
+        {
+            _isgrounded = true;
+            _animator.SetBool("_isRunning", false);
+        }
 
         if (!_aterrizado && _isgrounded) // si estamos atterizando en el suelo se produce un sonido, si no está en el suelo aterrizado es false
         {

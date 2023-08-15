@@ -1,0 +1,1354 @@
+fileFormatVersion: 2
+guid: 322fba97c59e80b46ad84842d5cbbf87
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sorites checkpoint_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b424c267d491004192eba1d6fb4aded
+      internalID: 1016276265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25b13e389e67ee64dad0be5440a15949
+      internalID: 1746182726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_2
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4272e3d5c52c08d43935f479ef331a65
+      internalID: -1839273919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_3
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9fec1d3bf2d2249a15d85ae8031e07
+      internalID: 785308918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_4
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94697473fa90fe14f88a06cafea23cf5
+      internalID: 1567112918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_5
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75e2b12bbc80924c9e928e39c88f058
+      internalID: -2017990035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_6
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbedd11d88d16c249ae3fa7e982a6437
+      internalID: -1956400681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_7
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 348
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d69c5967f71138d44a880c2a77f0f85c
+      internalID: -1050474523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d7e8f9d1f99f3408f090ea07c65dbf
+      internalID: -1188949171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_9
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86be79955e3b89e44807eaa920a89177
+      internalID: -89354517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_10
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5230b6e1f1ebc418e693deeb9cd773
+      internalID: 519390982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_11
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68822e7599534c442bfc066b577ad1fb
+      internalID: 1460480624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_12
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb53c32fed249142956d75a74288e14
+      internalID: 897519281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_13
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b36999e315b934b81bd725c45ec242
+      internalID: 1997141500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_14
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896ea6fea6330ad4f9fba63a87cf5ced
+      internalID: 1045968457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_15
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 296
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba0c5d79eb83fae41a6ef3e80f7b9cbf
+      internalID: 1061800124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372b9527126ffbd4d890d8beaa6ec9a1
+      internalID: 1219955197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_17
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 925abaccef166494c8d577039ffd0cdf
+      internalID: 1215472510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_18
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb6967f116c7c54f8a931df8ddb25fd
+      internalID: 952977365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_19
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ac90e6e58e68143a520604d8f21b27
+      internalID: -1126598591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_20
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c44984d38fa0e24e9bf1e4adc62e1e8
+      internalID: 1659050856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_21
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2bc4df1b6907544ba58402eb1cae9a1
+      internalID: 1436524872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_22
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6623a3569a5df3448cdfdcf48ce3b87
+      internalID: -578408988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_23
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 244
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b2d43da8b315fa46bb9e1dc5b49486a
+      internalID: -1398857945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb9590a09eea0a4291c31f26e02cb28
+      internalID: 709223822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_25
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a185850082aa34db4f595383156de9
+      internalID: -295248811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_26
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a453026629e63ff428b2cff015242a5f
+      internalID: -77161925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_27
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6085f09c370304d9859ed3aec26887
+      internalID: -636273017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_28
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e57d32026bc5c947b734fb961f8388f
+      internalID: -1052274446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_29
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0710502e88a0343bd3ce40f502383d
+      internalID: 790378929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_30
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6eea9a6c1b18144da032dc396058e91
+      internalID: -2004582043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_31
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 192
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6002bc19a126d644099442e3e2f1fe37
+      internalID: -1360420886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bc3e038894ec4428b2692822e1067b
+      internalID: -1232144990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_33
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0729cef8a33c2a46ab29bd9ca50bde9
+      internalID: -268240509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_34
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e043ed6431bf7f34f90a23bde1d6882b
+      internalID: -1866955400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_35
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9e2756aa62a5c4a9736d5a41c56c31
+      internalID: 660648469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_36
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df906c5a43dc687428817c6ff57563af
+      internalID: 413512656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_37
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a66b63f220ce4649bc1197fe33c4ed3
+      internalID: 161747871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_38
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274b58d1578a6f04d982483c376ce199
+      internalID: -703037531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_39
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 140
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0685e77b2dd2898488915a18eec3667f
+      internalID: -1306609932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed932118202d4f439579c160048e7c5
+      internalID: 2090930461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_41
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecaddd01854139f4999c38af8f41a89f
+      internalID: -400008453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_42
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccf86846db47cf4c87537d0b5c76da4
+      internalID: -1165620943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_43
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f6b4016cebd534688064539ffe21f2
+      internalID: -1172421947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_44
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60f15582f0fdb04d9b7cbb370fe5c47
+      internalID: -1726313746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_45
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416a542a4ecd4b04180baed36c362ee6
+      internalID: 405628715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_46
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376aa029cfbe49d4aab511f517e7887b
+      internalID: -1399485648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_47
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 88
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b70a95e44297242a7964fa8262b87b
+      internalID: -433593236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c13dad997edb7642888cccf40b109e2
+      internalID: 652143938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_49
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ce8dedbcd3773419c35354dc71aceb
+      internalID: 576507856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_50
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e729642dcb245da49bb933c90ac39217
+      internalID: -741006449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_51
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af5e4041d985a34f9b884a65685e2ae
+      internalID: -1563881078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_52
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafde14595299e948a417fb0aaabbdcd
+      internalID: 565798900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_53
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e4a39ed2db10d4d93ad8e90c261f75
+      internalID: -807430968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_54
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2421fb11700be3c49bfb98cfb015e53c
+      internalID: -1668933493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sorites checkpoint_55
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 36
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0319c2ce9c11d64db9f45c593eaf54d
+      internalID: -700707448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sorites checkpoint_35: 660648469
+      Sorites checkpoint_0: 1016276265
+      Sorites checkpoint_1: 1746182726
+      Sorites checkpoint_47: -433593236
+      Sorites checkpoint_14: 1045968457
+      Sorites checkpoint_16: 1219955197
+      Sorites checkpoint_9: -89354517
+      Sorites checkpoint_25: -295248811
+      Sorites checkpoint_22: -578408988
+      Sorites checkpoint_24: 709223822
+      Sorites checkpoint_53: -807430968
+      Sorites checkpoint_30: -2004582043
+      Sorites checkpoint_32: -1232144990
+      Sorites checkpoint_28: -1052274446
+      Sorites checkpoint_8: -1188949171
+      Sorites checkpoint_27: -636273017
+      Sorites checkpoint_54: -1668933493
+      Sorites checkpoint_2: -1839273919
+      Sorites checkpoint_41: -400008453
+      Sorites checkpoint_18: 952977365
+      Sorites checkpoint_34: -1866955400
+      Sorites checkpoint_31: -1360420886
+      Sorites checkpoint_4: 1567112918
+      Sorites checkpoint_19: -1126598591
+      Sorites checkpoint_50: -741006449
+      Sorites checkpoint_20: 1659050856
+      Sorites checkpoint_5: -2017990035
+      Sorites checkpoint_37: 161747871
+      Sorites checkpoint_55: -700707448
+      Sorites checkpoint_49: 576507856
+      Sorites checkpoint_15: 1061800124
+      Sorites checkpoint_48: 652143938
+      Sorites checkpoint_26: -77161925
+      Sorites checkpoint_51: -1563881078
+      Sorites checkpoint_6: -1956400681
+      Sorites checkpoint_12: 897519281
+      Sorites checkpoint_13: 1997141500
+      Sorites checkpoint_46: -1399485648
+      Sorites checkpoint_40: 2090930461
+      Sorites checkpoint_45: 405628715
+      Sorites checkpoint_39: -1306609932
+      Sorites checkpoint_10: 519390982
+      Sorites checkpoint_7: -1050474523
+      Sorites checkpoint_33: -268240509
+      Sorites checkpoint_11: 1460480624
+      Sorites checkpoint_42: -1165620943
+      Sorites checkpoint_52: 565798900
+      Sorites checkpoint_36: 413512656
+      Sorites checkpoint_29: 790378929
+      Sorites checkpoint_43: -1172421947
+      Sorites checkpoint_23: -1398857945
+      Sorites checkpoint_38: -703037531
+      Sorites checkpoint_3: 785308918
+      Sorites checkpoint_17: 1215472510
+      Sorites checkpoint_44: -1726313746
+      Sorites checkpoint_21: 1436524872
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

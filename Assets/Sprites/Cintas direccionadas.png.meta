@@ -107,8 +107,8 @@ TextureImporter:
       name: Cintas direccionadas_0
       rect:
         serializedVersion: 2
-        x: 18
-        y: 45
+        x: 1
+        y: 53
         width: 48
         height: 16
       alignment: 0
@@ -128,8 +128,8 @@ TextureImporter:
       name: Cintas direccionadas_1
       rect:
         serializedVersion: 2
-        x: 94
-        y: 45
+        x: 50
+        y: 53
         width: 48
         height: 16
       alignment: 0
@@ -149,8 +149,8 @@ TextureImporter:
       name: Cintas direccionadas_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 28
+        x: 99
+        y: 53
         width: 48
         height: 16
       alignment: 0
@@ -170,8 +170,8 @@ TextureImporter:
       name: Cintas direccionadas_3
       rect:
         serializedVersion: 2
-        x: 94
-        y: 28
+        x: 148
+        y: 53
         width: 48
         height: 16
       alignment: 0
@@ -191,8 +191,8 @@ TextureImporter:
       name: Cintas direccionadas_4
       rect:
         serializedVersion: 2
-        x: 18
-        y: 11
+        x: 1
+        y: 36
         width: 48
         height: 16
       alignment: 0
@@ -212,8 +212,8 @@ TextureImporter:
       name: Cintas direccionadas_5
       rect:
         serializedVersion: 2
-        x: 94
-        y: 11
+        x: 50
+        y: 36
         width: 48
         height: 16
       alignment: 0
@@ -229,6 +229,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 36
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56fe87d4a94bb0642be99fca9b285eae
+      internalID: -43080880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 36
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68417b2d1b87bf4295481cb86fb6786
+      internalID: 1638574668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 19
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 704537531aff1cb45a9f39d1ac8d0745
+      internalID: -1286108703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_9
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 19
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d30bc6d985b9d4469361218a1dcab90
+      internalID: -506374461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 19
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0573a8e02a2cf534c948bdddb39afa72
+      internalID: -1811796827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_11
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 19
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e030450d366ac14d85467c5fe58557e
+      internalID: -1850727422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad1a306d29a1f04b905f6419782e5f1
+      internalID: 1586508400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f4b849cd0adf046a7ae42d3fa2f476
+      internalID: -613462443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_14
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 2
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d26e7b25619d3f4897f4bb70555dd81
+      internalID: -1259536944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cintas direccionadas_15
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 2
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff9254ffdf37d84e83ee226a5ab0d15
+      internalID: -310270389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -240,12 +450,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Cintas direccionadas_11: -1850727422
+      Cintas direccionadas_14: -1259536944
+      Cintas direccionadas_12: 1586508400
       Cintas direccionadas_0: -50981459
+      Cintas direccionadas_8: -1286108703
       Cintas direccionadas_5: 37972509
       Cintas direccionadas_2: -1040392690
+      Cintas direccionadas_6: -43080880
       Cintas direccionadas_3: -2074651306
       Cintas direccionadas_4: 608977363
+      Cintas direccionadas_9: -506374461
       Cintas direccionadas_1: -554499802
+      Cintas direccionadas_7: 1638574668
+      Cintas direccionadas_13: -613462443
+      Cintas direccionadas_15: -310270389
+      Cintas direccionadas_10: -1811796827
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
