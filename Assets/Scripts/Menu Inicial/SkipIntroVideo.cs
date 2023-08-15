@@ -10,7 +10,6 @@ public class SkipIntroVideo : MonoBehaviour
     #region References
     [SerializeField] private InputAction _pauseInput;
     [SerializeField] private InputAction _arrowsInput;
-    [SerializeField] private InputAction _selectInput;
     [SerializeField] private GameObject menuPausa;
 
     [SerializeField] private AudioClip _selectingSFX;
@@ -20,7 +19,6 @@ public class SkipIntroVideo : MonoBehaviour
 
     #region Parameters
     private bool juegoPausado;
-    private bool selected;
     [SerializeField] private float _timer = 0.0f;
     [SerializeField] private float _maxTimer;
     [SerializeField] private int _sceneIndex;
@@ -33,13 +31,11 @@ public class SkipIntroVideo : MonoBehaviour
     {
         _pauseInput.Enable();
         _arrowsInput.Enable();
-        _selectInput.Enable();
     }
     private void OnDisable()
     {
         _pauseInput.Disable();
         _arrowsInput.Disable();
-        _selectInput.Disable();
     }
 
     public bool GetPause()
@@ -48,8 +44,8 @@ public class SkipIntroVideo : MonoBehaviour
     }
     public void Pausa()
     {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
         juegoPausado = true;
-        selected = false;
         //Para el juego, desactiva el botón de pausa, y activa el menú de pausa.
         video.Pause();
         menuPausa.SetActive(true);
@@ -58,6 +54,7 @@ public class SkipIntroVideo : MonoBehaviour
     //Reanuda el juego.
     public void Reanudar()
     {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
         juegoPausado = false;
         //Reanuda el juego, activa el botón de pausa y cierra el menú de pausa.
         video.Play();
@@ -67,18 +64,35 @@ public class SkipIntroVideo : MonoBehaviour
     //Reinicia el juego.
     public void Reinicia()
     {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
         juegoPausado = false;
         //Carga la escena desde el principio (recarga el nivel).
+        Invoke("ReiniciaR",1);
+    }
+
+    private void ReiniciaR()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     //Cierra el juego.
     public void Salir()
     {
-        Application.Quit();
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        Invoke("SalirR", 1);
     }
 
+    private void SalirR()
+    {
+        Application.Quit();
+    }
     public void Skip()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        Invoke("SkipR", 0.4f);
+    }
+
+    private void SkipR()
     {
         SceneManager.LoadScene(_sceneIndex);
     }
@@ -87,7 +101,6 @@ public class SkipIntroVideo : MonoBehaviour
     void Start()
     {
         _timer = 0.0f;
-        selected = true;
         juegoPausado = false;
         menuPausa.SetActive(false);
     }
@@ -95,16 +108,6 @@ public class SkipIntroVideo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_selectInput.triggered && !selected)
-        {
-            GetComponent<AudioSource>().PlayOneShot(_okSFX);
-            selected = true;
-            if (juegoPausado)
-            {
-                selected = false;
-            }
-        }
-        //Debug.Log(_pauseInput.triggered);
         if (_pauseInput.triggered)
         {
             if (!juegoPausado)
@@ -125,7 +128,6 @@ public class SkipIntroVideo : MonoBehaviour
 
         if (!juegoPausado)
         {
-            selected = true;
             _timer += Time.deltaTime;
             if (_timer > _maxTimer)
             {

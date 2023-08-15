@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PuertaFinalNivel : MonoBehaviour
@@ -16,9 +17,10 @@ public class PuertaFinalNivel : MonoBehaviour
     {
         return _openCounter;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (other.gameObject.GetComponent<MightyLifeComponent>() != null)
+        if (collision.gameObject.GetComponent<CharacterController>() != null && collision.gameObject.GetComponent<CharacterController>()._doorTouched && !_isOpened)
         {
             _isOpened = true;
             GetComponent<AudioSource>().PlayOneShot(_openedSFX);

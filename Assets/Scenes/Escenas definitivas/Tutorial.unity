@@ -21238,6 +21238,10 @@ PrefabInstance:
       value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: _ghostingDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3307213394870111581, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _groundLayer.m_Bits
       value: 2752
       objectReference: {fileID: 0}
@@ -21247,11 +21251,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1
+      value: -6.01
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.23
+      value: -1.66
       objectReference: {fileID: 0}
     - target: {fileID: 3307213394870111583, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21297,7 +21301,8 @@ PrefabInstance:
       propertyPath: _KnockbackTime
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 554501028, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
 --- !u!114 &1352697529 stripped
 MonoBehaviour:

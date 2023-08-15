@@ -108,5 +108,6 @@ public class GameManager : MonoBehaviour
             }
             _fade.GetComponent<Animator>().SetTrigger("OUT");
         }
+
     }
 }

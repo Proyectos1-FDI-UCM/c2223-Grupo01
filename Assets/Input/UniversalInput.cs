@@ -80,6 +80,15 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""fefe2092-fb8c-4582-8e49-4397d6d4577c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -131,6 +140,61 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                     ""name"": ""right"",
                     ""id"": ""515b27a8-d9d3-49dd-a209-d0a5401dd3c7"",
                     ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""093a493c-412a-41f1-9665-3913394fa6e8"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8d651d90-96e1-4e92-a2cc-29bd616ba616"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""2b53a75f-d6dc-4f02-ac00-e7030255854b"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""fec22e66-a66e-467b-a623-fab0ca700bd8"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""27ef82d8-5b16-4ddf-82c7-540814e1dcfa"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -357,6 +421,28 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                     ""action"": ""Change"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0835a42d-d7ca-4fb0-87e9-76b57cccbc9b"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""790ccfd8-9381-45d5-94f1-13696b438d81"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -371,6 +457,7 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
         m_Mighty_Melee = m_Mighty.FindAction("Melee", throwIfNotFound: true);
         m_Mighty_Jump = m_Mighty.FindAction("Jump", throwIfNotFound: true);
         m_Mighty_Change = m_Mighty.FindAction("Change", throwIfNotFound: true);
+        m_Mighty_Interact = m_Mighty.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -436,6 +523,7 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Mighty_Melee;
     private readonly InputAction m_Mighty_Jump;
     private readonly InputAction m_Mighty_Change;
+    private readonly InputAction m_Mighty_Interact;
     public struct MightyActions
     {
         private @UniversalInput m_Wrapper;
@@ -446,6 +534,7 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
         public InputAction @Melee => m_Wrapper.m_Mighty_Melee;
         public InputAction @Jump => m_Wrapper.m_Mighty_Jump;
         public InputAction @Change => m_Wrapper.m_Mighty_Change;
+        public InputAction @Interact => m_Wrapper.m_Mighty_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Mighty; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -473,6 +562,9 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                 @Change.started -= m_Wrapper.m_MightyActionsCallbackInterface.OnChange;
                 @Change.performed -= m_Wrapper.m_MightyActionsCallbackInterface.OnChange;
                 @Change.canceled -= m_Wrapper.m_MightyActionsCallbackInterface.OnChange;
+                @Interact.started -= m_Wrapper.m_MightyActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_MightyActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_MightyActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_MightyActionsCallbackInterface = instance;
             if (instance != null)
@@ -495,6 +587,9 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
                 @Change.started += instance.OnChange;
                 @Change.performed += instance.OnChange;
                 @Change.canceled += instance.OnChange;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -507,5 +602,6 @@ public partial class @UniversalInput : IInputActionCollection2, IDisposable
         void OnMelee(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnChange(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

@@ -29,7 +29,7 @@ TagManager:
   - confiner
   - Exit
   - Bala
-  - ExitToFact
+  - SliderPlayer
   - Curacion
   - "FuegoDa\xF1ino"
   - "Da\xF1oLAVA"
@@ -44,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2902152669
     locked: 0

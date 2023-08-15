@@ -42,8 +42,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject _slideObject;
 
     private bool _estela; // booleano que determina cuando se ve la estela de velocidad o no
-    [SerializeField] private float _estelaDuration; // Contador de cuanto dura la estela al activarse
-    private float _initialEstelaDuration;
+    [SerializeField] private float _ghostingDuration; // Contador de cuanto dura la estela al activarse
+    private float _initialGhostingDuration;
 
     [Header("Climb")]
     [SerializeField] private float _climbVelocity; // velocidad de escalada
@@ -61,7 +61,7 @@ public class CharacterController : MonoBehaviour
     private InputComponent _myInputComponent; // Referencia al input
     private Animator _animator; // Referencia al animator
     private UniversalInput _newInput;
-    private TrailRenderer _myTrailRenderer; // Referencia a la estela cuando se mueve
+    private GhostingDash _myGhostingDash; // Referencia a la estela cuando se mueve
     // Sonidos varios
     [Header("Sounds")]
     [SerializeField] private AudioClip _aterrizaje;
@@ -79,6 +79,11 @@ public class CharacterController : MonoBehaviour
     public bool GetDash()
     {
         return _dash;
+    }
+
+    public bool GetGhosting()
+    {
+        return _estela;
     }
     #endregion
 
@@ -169,7 +174,7 @@ public class CharacterController : MonoBehaviour
         _dash = true;
 
         _estela = true;
-        _estelaDuration = _initialEstelaDuration;
+        _ghostingDuration = _initialGhostingDuration;
     }
 
     public void Climb(float YAxismove)
@@ -209,6 +214,14 @@ public class CharacterController : MonoBehaviour
             }
             _isClimbing = false;
         }
+    }
+
+    public void QUIETO()
+    {
+        _myInputComponent.enabled = false;
+        _myRigidBody2D.bodyType = RigidbodyType2D.Static;
+        
+        _myCollider2D.enabled = false;
     }
     #endregion
 
@@ -268,14 +281,15 @@ public class CharacterController : MonoBehaviour
         {
             _currentLadder = other;
         }
+        
+    }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         //CAMBIO DE ESCENAS SI TOCAMOS DOOR
-        if (other.gameObject.layer == 18)
+        if (collision.gameObject.layer == 18 && _isgrounded && !_dash)
         {
             _doorTouched = true;
-            _myInputComponent.enabled = false;
-            _myRigidBody2D.bodyType = RigidbodyType2D.Static;
-            _myCollider2D.enabled = false;
             SpawnsManager.instance.ResetRespawnPosition();
         }
     }
@@ -311,14 +325,14 @@ public class CharacterController : MonoBehaviour
         _myCollider2D = GetComponent<BoxCollider2D>();
         _myInputComponent = GetComponent<InputComponent>();
         _animator = GetComponent<Animator>();
-        _myTrailRenderer = GetComponent<TrailRenderer>();
+        _myGhostingDash = GetComponent<GhostingDash>();
         GameManager.instance.RegisterCharacterController(this);
 
         //Inicializo parámetros
         _originalMoveSmoothing = _MovementSmoothing;
         _initialMovementSpeedX = _movementSpeedX;
         _initialdDashForce = _dashForce;
-        _initialEstelaDuration = _estelaDuration;
+        _initialGhostingDuration = _ghostingDuration;
         _doorTouched = false;
         _estela = false;
 
@@ -337,6 +351,7 @@ public class CharacterController : MonoBehaviour
         {
             _isgrounded = true;
             _animator.SetBool("_isRunning", false);
+            QUIETO();
         }
 
         if (!_aterrizado && _isgrounded) // si estamos atterizando en el suelo se produce un sonido, si no está en el suelo aterrizado es false
@@ -357,17 +372,17 @@ public class CharacterController : MonoBehaviour
 
         if (_estela)
         {
-            _myTrailRenderer.enabled = true;
-            _estelaDuration -= Time.deltaTime;
-            if (_estelaDuration <= 0.0f)
+            _myGhostingDash.enabled = true;
+            _ghostingDuration -= Time.deltaTime;
+            if (_ghostingDuration <= 0.0f)
             {
-                _estelaDuration = _initialEstelaDuration;
+                _ghostingDuration = _initialGhostingDuration;
                 _estela = false;
             }
         }
         else
         {
-            _myTrailRenderer.enabled = false;
+            _myGhostingDash.enabled = false;
         }
 
         //Comprueba si el dash ha acabado y devuelve al player a la normalidad
