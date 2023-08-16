@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenas definitivas/Cutscenes/CINEMATICA INICIAL.unity
     guid: 3eb26f7e5fd49444bb5c30da6fc4a3b1
+  - enabled: 1
+    path: Assets/Scenes/Escenas definitivas/Intro/SelectorScene.unity
+    guid: d71af10db26549846ac47351891a3d78
   m_configObjects: {}

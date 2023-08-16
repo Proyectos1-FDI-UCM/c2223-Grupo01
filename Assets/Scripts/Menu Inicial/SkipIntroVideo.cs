@@ -8,6 +8,8 @@ using UnityEngine.Video;
 public class SkipIntroVideo : MonoBehaviour
 {
     #region References
+    private Scene _scene;
+
     [SerializeField] private InputAction _pauseInput;
     [SerializeField] private InputAction _arrowsInput;
     [SerializeField] private GameObject menuPausa;
@@ -100,6 +102,12 @@ public class SkipIntroVideo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _scene = SceneManager.GetActiveScene();
+        if (_scene.buildIndex == 12)
+        {
+            PlayerPrefs.SetInt("LEVELSELECT", 1);
+            PlayerPrefs.Save();
+        }
         _timer = 0.0f;
         juegoPausado = false;
         menuPausa.SetActive(false);

@@ -1179,6 +1179,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'UI '
       objectReference: {fileID: 0}
+    - target: {fileID: 9103935520489477689, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 554501029}
+    - target: {fileID: 9103935520489477689, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SalirAlMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c57690ad25b5ec4a812f06a9e1d0a14, type: 3}
 --- !u!114 &154728820 stripped
@@ -147310,7 +147318,7 @@ RectTransform:
   m_GameObject: {fileID: 2095244893}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 2.3999999}
+  m_LocalScale: {x: 25.41635, y: 25.41635, z: 20.33308}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 105988362}

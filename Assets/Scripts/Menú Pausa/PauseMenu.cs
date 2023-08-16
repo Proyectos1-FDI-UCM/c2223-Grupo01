@@ -70,11 +70,15 @@ public class PauseMenu : MonoBehaviour
     public void Salir()
     {
         GetComponent<AudioSource>().PlayOneShot(_okSFX);
-        Invoke("SalirR", 1);
-    }
-    private void SalirR()
-    {
         Application.Quit();
+    }
+    public void SalirAlMenu()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        juegoPausado = false;
+        Time.timeScale = 1f;
+        menuPausa.SetActive(false);
+        SceneManager.LoadScene(1);
     }
     #endregion
     // Start is called before the first frame update

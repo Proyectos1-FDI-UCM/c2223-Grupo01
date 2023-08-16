@@ -21,11 +21,11 @@ public class SaveSystem : MonoBehaviour
     public void Load()
     {
         GetComponent<AudioSource>().PlayOneShot(_okSFX);
-        _fade.GetComponent<Animator>().SetTrigger("OUT");
         for (int i = 0; i < menu.Length; i++)
         {
             menu[i].SetActive(false);
         }
+        _fade.GetComponent<Animator>().SetTrigger("OUT");
         Invoke("LoadR", 2f);
     }
 
