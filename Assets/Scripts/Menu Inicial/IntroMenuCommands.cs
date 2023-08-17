@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
+//using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -12,6 +12,7 @@ public class IntroMenuCommands : MonoBehaviour
     [SerializeField] private GameObject menu;
     [SerializeField] private GameObject _fade;
     [SerializeField] private GameObject botonSelectorDeNiveles;
+    [SerializeField] private GameObject fondoSelectorNiveles;
 
     private int _escena;
     private int _escenaSelectorDeNiveles;
@@ -35,26 +36,13 @@ public class IntroMenuCommands : MonoBehaviour
         _escena = escene;
         _fade.GetComponent<Animator>().SetTrigger("OUT");
         menu.SetActive(false);
+        fondoSelectorNiveles.SetActive(false);
         Invoke("ComenzarR", 2);
     }
     private void ComenzarR()
     {
         SpawnsManager.instance.ResetRespawnPosition();
         SceneManager.LoadScene(_escena);
-    }
-
-    public void GoToLevelSelect(int escene)
-    {
-        GetComponent<AudioSource>().PlayOneShot(_okSFX);
-        _escenaSelectorDeNiveles = escene;
-        _fade.GetComponent<Animator>().SetTrigger("OUT");
-        menu.SetActive(false);
-        Invoke("GoToLevelSelectR", 2);
-    }
-    private void GoToLevelSelectR()
-    {
-        SpawnsManager.instance.ResetRespawnPosition();
-        SceneManager.LoadScene(_escenaSelectorDeNiveles);
     }
     public void SetRespawnX( int x)
     {

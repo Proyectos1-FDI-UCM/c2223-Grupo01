@@ -195,6 +195,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &918489546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 918489547}
+  - component: {fileID: 918489549}
+  - component: {fileID: 918489548}
+  m_Layer: 5
+  m_Name: "Texto Cinem\xE1ticas"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &918489547
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918489546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.058599, y: 0.5066966, z: 0.5066966}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1342541507}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -203}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &918489548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918489546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 5f12a5f3bd6e87b4482763e10ad30b2e, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &918489549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918489546}
+  m_CullTransparentMesh: 1
 --- !u!1 &1128576255
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +345,107 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1342541503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1342541507}
+  - component: {fileID: 1342541506}
+  - component: {fileID: 1342541505}
+  - component: {fileID: 1342541504}
+  m_Layer: 5
+  m_Name: "UI texto cinem\xE1ticas"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1342541504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342541503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1342541505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342541503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1342541506
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342541503}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1342541507
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342541503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 918489547}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1632812005
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,48 +634,137 @@ MonoBehaviour:
       m_Action: Arrows Input
       m_Flags: 0
     m_Flags: 0
-  _selectInput:
-    m_Name: Select Input
+  _textBoxInput:
+    m_Name: Text Box Input
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 71978486-0585-43a7-881b-6b749cc1e0c2
+    m_Id: b9030d5e-7da4-4a7d-8b65-8b5dc22c5bdf
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f81b1e5c-5d49-43e8-9b07-2ed4dbaebcde
-      m_Path: <Gamepad>/start
+      m_Id: 661cf486-51d7-4554-baf6-4737e59fac48
+      m_Path: <Keyboard>/anyKey
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Select Input
+      m_Action: Text Box Input
       m_Flags: 0
     - m_Name: 
-      m_Id: 59e0ce3c-c1fb-4395-af6a-47c1c6d1014b
+      m_Id: 16a21928-71d7-4594-a4e4-b6dfd4384830
+      m_Path: <Gamepad>/buttonEast
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: f9517d9a-2522-4c10-a78e-9cd6f9267461
+      m_Path: <Gamepad>/buttonNorth
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 2b70f17b-d020-4183-a527-1a523b682f8a
       m_Path: <Gamepad>/buttonSouth
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Select Input
+      m_Action: Text Box Input
       m_Flags: 0
     - m_Name: 
-      m_Id: abf3edd7-a286-439e-ac36-81df97edfc99
-      m_Path: <Keyboard>/escape
+      m_Id: d1943f24-c6e1-4f01-95bb-6b9f1dd87332
+      m_Path: <Gamepad>/buttonWest
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Select Input
+      m_Action: Text Box Input
       m_Flags: 0
     - m_Name: 
-      m_Id: 89f542cd-58a7-4401-92b5-77928dca51b8
-      m_Path: <Keyboard>/enter
+      m_Id: 7a1a1a75-7cdd-44fa-822b-760a1c4fdb92
+      m_Path: <Gamepad>/dpad
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Select Input
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: fbc545b0-bed3-4b85-8a31-7505efbc27bc
+      m_Path: <Gamepad>/leftShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d4f557b1-1656-4fcd-b6f8-74468a652929
+      m_Path: <Gamepad>/leftStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d84d7884-8082-4814-818e-e4fd03a9eda0
+      m_Path: <Gamepad>/leftStickPress
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 561d688f-b7e9-4c18-8a4b-f47a04bf8787
+      m_Path: <Gamepad>/leftTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 2a5eb42e-66a3-4fd0-b3b8-349d6c7ed14b
+      m_Path: <Gamepad>/rightShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 177d6dac-7255-4c5e-83a0-93b21b541f77
+      m_Path: <Gamepad>/rightStick
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: f78b86b8-683e-4fa2-ab39-b283755f3af9
+      m_Path: <Gamepad>/rightStickPress
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 703cc495-e62b-4d97-9ba2-a27f2472f7d8
+      m_Path: <Gamepad>/rightTrigger
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 9891ba1a-a038-492c-a68d-256459b5725f
+      m_Path: <Gamepad>/select
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Text Box Input
       m_Flags: 0
     m_Flags: 0
   menuPausa: {fileID: 228570687}
+  textBox: {fileID: 918489546}
   _selectingSFX: {fileID: 8300000, guid: 2485faeb7bbe5064e8cecd50ba6fc2cf, type: 3}
   _okSFX: {fileID: 8300000, guid: edb69878a00d41548bf8358ce29bae28, type: 3}
   video: {fileID: 882101854}

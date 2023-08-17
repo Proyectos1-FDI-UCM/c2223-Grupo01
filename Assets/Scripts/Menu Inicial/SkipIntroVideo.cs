@@ -12,7 +12,10 @@ public class SkipIntroVideo : MonoBehaviour
 
     [SerializeField] private InputAction _pauseInput;
     [SerializeField] private InputAction _arrowsInput;
+    [SerializeField] private InputAction _textBoxInput;
     [SerializeField] private GameObject menuPausa;
+
+    [SerializeField] private GameObject textBox;
 
     [SerializeField] private AudioClip _selectingSFX;
     [SerializeField] private AudioClip _okSFX;
@@ -21,6 +24,7 @@ public class SkipIntroVideo : MonoBehaviour
 
     #region Parameters
     private bool juegoPausado;
+    private bool textBoxVisible;
     [SerializeField] private float _timer = 0.0f;
     [SerializeField] private float _maxTimer;
     [SerializeField] private int _sceneIndex;
@@ -33,11 +37,13 @@ public class SkipIntroVideo : MonoBehaviour
     {
         _pauseInput.Enable();
         _arrowsInput.Enable();
+        _textBoxInput.Enable();
     }
     private void OnDisable()
     {
         _pauseInput.Disable();
         _arrowsInput.Disable();
+        _textBoxInput.Disable();
     }
 
     public bool GetPause()
@@ -48,6 +54,8 @@ public class SkipIntroVideo : MonoBehaviour
     {
         GetComponent<AudioSource>().PlayOneShot(_okSFX);
         juegoPausado = true;
+        textBoxVisible = false;
+        textBox.SetActive(false);
         //Para el juego, desactiva el botón de pausa, y activa el menú de pausa.
         video.Pause();
         menuPausa.SetActive(true);
@@ -57,7 +65,9 @@ public class SkipIntroVideo : MonoBehaviour
     public void Reanudar()
     {
         GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        _textBoxInput.Reset();
         juegoPausado = false;
+        textBoxVisible = false;
         //Reanuda el juego, activa el botón de pausa y cierra el menú de pausa.
         video.Play();
         menuPausa.SetActive(false);
@@ -67,7 +77,9 @@ public class SkipIntroVideo : MonoBehaviour
     public void Reinicia()
     {
         GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        _textBoxInput.Reset();
         juegoPausado = false;
+        textBoxVisible = false;
         //Carga la escena desde el principio (recarga el nivel).
         Invoke("ReiniciaR",1);
     }
@@ -110,7 +122,9 @@ public class SkipIntroVideo : MonoBehaviour
         }
         _timer = 0.0f;
         juegoPausado = false;
+        textBoxVisible = false;
         menuPausa.SetActive(false);
+        textBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -132,6 +146,27 @@ public class SkipIntroVideo : MonoBehaviour
         if (_arrowsInput.triggered && juegoPausado)
         {
             GetComponent<AudioSource>().PlayOneShot(_selectingSFX);
+        }
+
+        if (_textBoxInput.triggered && !juegoPausado)
+        {
+            if (!textBoxVisible)
+            {
+                textBoxVisible = true;
+            }
+            else
+            {
+                textBoxVisible = false;
+            }
+        }
+
+        if (!textBoxVisible)
+        {
+            textBox.SetActive(false);
+        }
+        else
+        {
+            textBox.SetActive(true);
         }
 
         if (!juegoPausado)

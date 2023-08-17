@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private bool _timeMusicActive; //Variable que determina si la musica de tiempo de muerte est� activa o no
     [SerializeField] private float _deathTimeDamage; //Da�o que quita cada ciclo
     public bool _canUseMelee { get; private set; }
+    public bool _canExitLevel { get; private set; }
     #endregion
 
     #region References
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
     {
         _canUseMelee = false;
         _timeMusicActive = false;
+        _canExitLevel = false;
         _currentWeapon = 2;
         _currentTime = 600.0f;
     }
@@ -98,6 +100,11 @@ public class GameManager : MonoBehaviour
         if (_mightyLifeComponent.GetHealth() <= 0.0f || _characterController._doorTouched)
         {
             _player.GetComponent<PauseMenu>().enabled = false;
+            if (_characterController._doorTouched)
+            {
+                _canExitLevel = true;
+            }
+
         }
 
         if (_mightyLifeComponent.GetRepTimer() <= 2.5f || _puertaFinalNivel.GetOpenCounter() <= 2.0f)
