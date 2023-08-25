@@ -40,7 +40,10 @@ public class EnemyShoot : MonoBehaviour
     public void Shoot()
     // instanciamos la bala en la posici�n del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
-        GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
+        if (GetComponent<EnemyFOV>().GetAttackSFX())
+        {
+            GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
+        }
         _animator.SetTrigger("_shoot");
 
         Instantiate(_bullet, _bulletSpawnTransform.position, _bulletSpawnTransform.rotation);

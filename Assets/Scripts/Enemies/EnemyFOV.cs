@@ -11,6 +11,7 @@ public class EnemyFOV : MonoBehaviour
     [SerializeField] private float _visionDistance = 10f;               //La m�xima distancia de nuestro cono de visi�n.
     private bool _detected;                        //Booleano que determina si el enemigo ha detectado al jugador
     private bool _detectedSFX;                        //Booleano que determina si el enemigo ha detectado al jugador (SONIDO)
+    private bool _attackSFX;
     #endregion
 
     #region references
@@ -29,6 +30,10 @@ public class EnemyFOV : MonoBehaviour
     public void SetDetected(bool detected)
     {
         _detected = detected;
+    }
+    public bool GetAttackSFX()
+    {
+        return _attackSFX;
     }
     #endregion
 
@@ -63,6 +68,7 @@ public class EnemyFOV : MonoBehaviour
         _player = GameManager.instance._player;
         _detected = false;
         _detectedSFX = true;
+        _attackSFX = false;
     }
 
     void Update()
@@ -89,6 +95,7 @@ public class EnemyFOV : MonoBehaviour
                 //Comprueba si estamos a una distancia que es detectable para el enemigo.
                 if (PlayerVector.magnitude < _visionDistance)
                 {
+                    _attackSFX = true;
                     _detected = true;
                 }
                 //Si nos salimos del cono de visi�n entonces el detecta volver� a ser falso.
@@ -96,6 +103,10 @@ public class EnemyFOV : MonoBehaviour
                 {
                     _detected = false;
                 }
+            }
+            else if (Vector3.Angle(PlayerVector.normalized, transform.right) > _visionAngle)
+            {
+                _attackSFX = false;
             }
         }
     }

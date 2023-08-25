@@ -12,6 +12,8 @@ public class MightyLifeComponent : MonoBehaviour
     [SerializeField] private float _coolDown;
     [SerializeField] private float _fireDamage;
 
+    private float _healthPercent;
+
     [SerializeField] private float _timerInputFalseAfterHit; //Diferencia de tiempo en la que se configurará cuando volver a poder usar el input tras el hit. El mayor valor del timer es 0.
 
     [SerializeField] private float _canRepeatLevelTimer; //Contador que al llegar a 0 reinicia el nivel. Se activa al morir
@@ -22,6 +24,8 @@ public class MightyLifeComponent : MonoBehaviour
 
     private float _initialCoolDownInv; //Valor inicial del contador de invisible en TRUE y FALSE, util para reconfigurar el cooldown que se modifica en el Update
     public float _initialCoolDown { get; private set; }
+
+    private int _voiceHurtValue;
     public bool _canBeDamaged { get; private set; }
 
     public bool _switchLava1Detected { get; private set; }
@@ -33,7 +37,12 @@ public class MightyLifeComponent : MonoBehaviour
 
     private bool _invisible;
 
+    private bool _talk;
+
     [SerializeField] private AudioClip _hurt;
+    [SerializeField] private AudioClip _talkVoice;
+    [SerializeField] private AudioClip _voiceHurt1;
+    [SerializeField] private AudioClip _voiceHurt2;
     [SerializeField] private AudioClip _deathSFX;
     [SerializeField] private AudioClip _cureSFX;
     [SerializeField] private AudioClip _lavaWarning;
@@ -93,6 +102,15 @@ public class MightyLifeComponent : MonoBehaviour
     {
         _animator.SetTrigger("_damaged");
         GetComponent<AudioSource>().PlayOneShot(_hurt);
+        _voiceHurtValue = Random.Range(0, 2);
+        if (_voiceHurtValue == 0)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_voiceHurt1);
+        }
+        else
+        {
+            GetComponent<AudioSource>().PlayOneShot(_voiceHurt2);
+        }
 
         _canBeDamaged = false;
         TakeDamage(damage);
@@ -205,6 +223,10 @@ public class MightyLifeComponent : MonoBehaviour
 
         _initialCoolDown = _coolDown;
 
+        _voiceHurtValue = 0;
+
+        _talk = true;
+
         _death = false;
 
         _switchLava1Detected = false;
@@ -222,6 +244,19 @@ public class MightyLifeComponent : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        _healthPercent = (_health / _maxhealth) * 100;
+
+        if (_healthPercent > 20.0f)
+        {
+            _talk = true;
+        }
+
+        if (_healthPercent <= 20.0f && _talk && !_death)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_talkVoice);
+            _talk = false;
+        }
+
         _animator.SetBool("_isDead", _death);
      
         

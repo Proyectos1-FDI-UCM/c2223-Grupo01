@@ -329,3 +329,7 @@ MonoBehaviour:
   - {r: 1, g: 0.1830188, b: 0.1830188, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   _renderC: {fileID: 6326382012256657895}
+  _congeladoSFX: {fileID: 8300000, guid: a2f880882d848384ba032b1253a33fa2, type: 3}
+  _descongeladoSFX: {fileID: 8300000, guid: 6a8558a48c299f8468d99777d615d7a9, type: 3}
+  _quemadoSFX: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
+  _impactoQuemadoSFX: {fileID: 8300000, guid: 4c08083f3a0a9874cbcd003fb98c082c, type: 3}

@@ -43,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
     {
         _currentHealth -= damage;
 
-        GetComponent<AudioSource>().PlayOneShot(_hurt);
+        //GetComponent<AudioSource>().PlayOneShot(_hurt);
         //Animaci�n de recibir da�o.
 
         if (_currentHealth <= 0) 
@@ -95,6 +95,14 @@ public class EnemyHealth : MonoBehaviour
         if (collision.gameObject.layer == 10)
         {
             Die();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<BulletCollisionComponent>() != null && collision.gameObject.GetComponent<BulletCollisionComponent>()._normalBulletValue != 0)
+        {
+            GetComponent<AudioSource>().PlayOneShot(_hurt);
         }
     }
     #endregion

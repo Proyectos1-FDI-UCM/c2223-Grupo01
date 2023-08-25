@@ -9,6 +9,9 @@ public class EnemyStateManager : MonoBehaviour
     private bool _quemado;
     private bool _ralentizado;
 
+    private bool _enableCongeladoSFX;
+    private bool _enableImpactoQuemadoSFX;
+
     [SerializeField] private float _tiempoCongelado = 3, _tiempoQuemado = 3, _tiempoRalentizado = 3;
     [SerializeField] private int _danoPorSegQuemado= 5;
 
@@ -23,6 +26,12 @@ public class EnemyStateManager : MonoBehaviour
 
     [SerializeField]
     private Renderer _renderC; //Renderiza el color del player
+
+    [SerializeField] private AudioClip _congeladoSFX;
+    [SerializeField] private AudioClip _descongeladoSFX;
+
+    [SerializeField] private AudioClip _quemadoSFX;
+    [SerializeField] private AudioClip _impactoQuemadoSFX;
     #endregion
 
     #region references
@@ -122,6 +131,7 @@ public class EnemyStateManager : MonoBehaviour
         _tiempoCongelado -= Time.deltaTime;
         if (_tiempoCongelado <= 0)
         {
+            GetComponent<AudioSource>().PlayOneShot(_descongeladoSFX);
             _enemyHealth.SetNumBalasCongelado(0);
             if (GetComponent<EnemyMovement>() != null)
             {
@@ -151,8 +161,9 @@ public class EnemyStateManager : MonoBehaviour
         _tiempoQuemado -= Time.deltaTime;
         if(_tiempoQuemado < _contadorDeSegundos)
         {
+            GetComponent<AudioSource>().PlayOneShot(_quemadoSFX);
             GetComponent<EnemyHealth>().TakeDamage(_danoPorSegQuemado);
-            _contadorDeSegundos--;
+            _contadorDeSegundos = _contadorDeSegundos - 0.5f;
         }
         if (_tiempoQuemado <= 0)
         {
@@ -167,12 +178,14 @@ public class EnemyStateManager : MonoBehaviour
     void Start()
     {
         _congelado = false;
-        _quemado=false;
+        _quemado =false;
+        _enableCongeladoSFX = true;
+        _enableImpactoQuemadoSFX = true;
         _tiempoCongeladoInicial = _tiempoCongelado;
         _enemyHealth = GetComponent<EnemyHealth>();
         _myAnimator = GetComponent<Animator>();
         _tiempoQuemadoInicial = _tiempoQuemado;
-        _contadorDeSegundos = _tiempoQuemado - 1f;
+        _contadorDeSegundos = _tiempoQuemado - 0.5f;
         _initialTiempoRalentizado = _tiempoRalentizado;
     }
 
@@ -184,11 +197,30 @@ public class EnemyStateManager : MonoBehaviour
 
         if (_congelado)
         {
+            if (_enableCongeladoSFX)
+            {
+                GetComponent<AudioSource>().PlayOneShot(_congeladoSFX);
+                _enableCongeladoSFX = false;
+            }
             Congelado();
         }
+        else
+        {
+            _enableCongeladoSFX = true;
+        }
+
         if (_quemado)
         {
+            if (_enableImpactoQuemadoSFX)
+            {
+                GetComponent<AudioSource>().PlayOneShot(_impactoQuemadoSFX);
+                _enableImpactoQuemadoSFX = false;
+            }
             Quemado();
+        }
+        else
+        {
+            _enableImpactoQuemadoSFX = true;
         }
         if(_ralentizado && !_congelado)
         {

@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd65b93ce969514c84a9ce8567cb30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemysBulletDamage: 50
-  _normalBulletDamage: 30
+  _enemysBulletDamage: 0
+  _normalBulletDamage: 50
   _iceBulletDamage: 10
   _ralentizado: 3
   "_ralentizaci\xF3nDelShoot": 0

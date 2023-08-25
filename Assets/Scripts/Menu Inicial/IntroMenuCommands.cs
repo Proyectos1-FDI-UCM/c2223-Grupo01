@@ -10,6 +10,11 @@ public class IntroMenuCommands : MonoBehaviour
     [SerializeField] private InputAction _arrowsInput;
 
     [SerializeField] private GameObject menu;
+    [SerializeField] private GameObject menuBorrarP;
+    [SerializeField] private GameObject menuNewG;
+    [SerializeField] private GameObject eventSystem1;
+    [SerializeField] private GameObject eventSystem2;
+    [SerializeField] private GameObject eventSystem3;
     [SerializeField] private GameObject _fade;
     [SerializeField] private GameObject botonSelectorDeNiveles;
     [SerializeField] private GameObject fondoSelectorNiveles;
@@ -43,6 +48,23 @@ public class IntroMenuCommands : MonoBehaviour
     {
         SpawnsManager.instance.ResetRespawnPosition();
         SceneManager.LoadScene(_escena);
+    }
+
+    public void ComenzarNewG(int escene)
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        PlayerPrefs.SetInt("SCENE", 0);
+        PlayerPrefs.SetFloat("X", 0);
+        PlayerPrefs.SetFloat("Y", 0);
+        PlayerPrefs.SetFloat("F", 0);
+        PlayerPrefs.SetInt("LEVELSELECT", 0);
+        PlayerPrefs.Save();
+        menuNewG.SetActive(false);
+        eventSystem3.SetActive(false);
+        _escena = escene;
+        _fade.GetComponent<Animator>().SetTrigger("OUT");
+        menu.SetActive(false);
+        Invoke("ComenzarR", 2);
     }
     public void SetRespawnX( int x)
     {
@@ -78,6 +100,46 @@ public class IntroMenuCommands : MonoBehaviour
         PlayerPrefs.SetFloat("F", 0);
         PlayerPrefs.SetInt("LEVELSELECT", 0);
         PlayerPrefs.Save();
+        menu.SetActive(true);
+        menuBorrarP.SetActive(false);
+        eventSystem1.SetActive(true);
+        eventSystem2.SetActive(false);
+    }
+
+    public void OpenBorrarPMenu()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        menu.SetActive(false);
+        menuBorrarP.SetActive(true);
+        eventSystem1.SetActive(false);
+        eventSystem2.SetActive(true);
+    }
+
+    public void OpenNewGMenu()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        menu.SetActive(false);
+        menuNewG.SetActive(true);
+        eventSystem1.SetActive(false);
+        eventSystem3.SetActive(true);
+    }
+
+    public void CloseBorrarPMenu()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        menu.SetActive(true);
+        menuBorrarP.SetActive(false);
+        eventSystem1.SetActive(true);
+        eventSystem2.SetActive(false);
+    }
+
+    public void CloseNewGMenu()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_okSFX);
+        menu.SetActive(true);
+        menuNewG.SetActive(false);
+        eventSystem1.SetActive(true);
+        eventSystem3.SetActive(false);
     }
 
     void Start()
@@ -85,6 +147,11 @@ public class IntroMenuCommands : MonoBehaviour
         _selectorDeNiveles = PlayerPrefs.GetInt("LEVELSELECT");
         _escena = 0;
         menu.SetActive(true);
+        menuBorrarP.SetActive(false);
+        menuNewG.SetActive(false);
+        eventSystem1.SetActive(true);
+        eventSystem2.SetActive(false);
+        eventSystem3.SetActive(false);
     }
 
     void Update()

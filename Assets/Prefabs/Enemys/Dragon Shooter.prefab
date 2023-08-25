@@ -291,7 +291,7 @@ MonoBehaviour:
   _coolDownShoot: 1
   _bulletSpawnTransform: {fileID: 676700370213554566}
   _patrolFlip: 1
-  _disparoNormal: {fileID: 0}
+  _disparoNormal: {fileID: 8300000, guid: f9a9a125870933b45bd879f01b41987b, type: 3}
 --- !u!114 &3758571706154678328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +328,10 @@ MonoBehaviour:
   - {r: 1, g: 0.2584905, b: 0.2584905, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   _renderC: {fileID: 6326382012256657895}
+  _congeladoSFX: {fileID: 8300000, guid: a2f880882d848384ba032b1253a33fa2, type: 3}
+  _descongeladoSFX: {fileID: 8300000, guid: 6a8558a48c299f8468d99777d615d7a9, type: 3}
+  _quemadoSFX: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
+  _impactoQuemadoSFX: {fileID: 8300000, guid: 4c08083f3a0a9874cbcd003fb98c082c, type: 3}
 --- !u!1 &8362032265566184348
 GameObject:
   m_ObjectHideFlags: 0

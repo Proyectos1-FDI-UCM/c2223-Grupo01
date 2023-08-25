@@ -19,6 +19,9 @@ public class MeleeComponent : MonoBehaviour
     [SerializeField] private float _KnockbackTime;                      //Cooldown del knockback.
     private bool KnockFromRight;
     private bool _canAttackMelee;//condici�n en la que se permitir� usar el arma a melee
+
+
+    [SerializeField] private AudioClip _hurtEnemy;
     #endregion
 
     #region getters && setters
@@ -65,6 +68,7 @@ public class MeleeComponent : MonoBehaviour
                     {
                         KnockFromRight = false;
                     }
+                    GetComponent<AudioSource>().PlayOneShot(_hurtEnemy);
                     enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
 
                     Rigidbody2D _rigidbody = enemy.GetComponent<Rigidbody2D>();

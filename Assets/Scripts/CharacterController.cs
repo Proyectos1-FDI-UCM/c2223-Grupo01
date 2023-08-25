@@ -58,6 +58,7 @@ public class CharacterController : MonoBehaviour
     private BoxCollider2D _myCollider2D; // Referencia al Colider del player
     [Header("Layers")]
     [SerializeField] private LayerMask _groundLayer; // Layers que tomamos como suelo
+    [SerializeField] private LayerMask _techoLayer; // Layers que tomamos como techo
     private InputComponent _myInputComponent; // Referencia al input
     private Animator _animator; // Referencia al animator
     private UniversalInput _newInput;
@@ -67,6 +68,7 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private AudioClip _aterrizaje;
     [SerializeField] private AudioClip _dobleSalto;
     [SerializeField] private AudioClip _normalJump;
+    [SerializeField] private AudioClip _voicedJump;
     [SerializeField] private AudioClip _slide;
     #endregion
 
@@ -103,8 +105,9 @@ public class CharacterController : MonoBehaviour
     // cada vez que tocamos el suelo reactivamos el doble salto
     // y detecto si estoy en el suelo
     {
-        return Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.up, 1f, _groundLayer) 
-            && !Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, 0.1f, 12) 
+        return Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.up, 1f, _groundLayer)
+            && Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.up, 1f, _techoLayer)
+            && !Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.left, 0.1f, 12)
             && !Physics2D.BoxCast(_slideObject.GetComponent<Collider2D>().bounds.center, _slideObject.GetComponent<Collider2D>().bounds.size, 0f, Vector2.right, 0.1f, 12);
     }
 
@@ -131,7 +134,10 @@ public class CharacterController : MonoBehaviour
     // Si no hemos saltado se desactiva el isgrounded.
     {
         if (_doublejump && _isgrounded)
-        GetComponent<AudioSource>().PlayOneShot(_normalJump);
+        {
+            GetComponent<AudioSource>().PlayOneShot(_normalJump);
+            GetComponent<AudioSource>().PlayOneShot(_voicedJump);
+        }
 
         if (!_isgrounded)
         {
@@ -398,15 +404,15 @@ public class CharacterController : MonoBehaviour
             _myInputComponent.enabled = true;
             _dash = false;
         }
-        else if(_dash && _myRigidBody2D.velocity.x == 0 && IsCeiling())
+        else if(_dash && _myRigidBody2D.velocity.x <= 0.5f && IsCeiling())
         {
             if (_facingRight)
             {
-                transform.position += new Vector3(0.2f, 0, 0);
+                transform.position += new Vector3(0.005f, 0, 0);
             }
             else
             {
-                transform.position += new Vector3(- 0.2f, 0, 0);
+                transform.position += new Vector3(- 0.005f, 0, 0);
             }
         }
     }

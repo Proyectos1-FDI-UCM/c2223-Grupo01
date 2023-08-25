@@ -19,6 +19,8 @@ public class BulletCollisionComponent : MonoBehaviour
     [SerializeField] private int _fireBulletDamage;
     [SerializeField] private int _quemadoProbabilidad;
 
+    public int _normalBulletValue { get; private set; }
+
     private EnemyMovement _enemyMovement;
     private EnemyFlyingMovement _enemyFlyingMovement;
     private EnemyHealth _enemyHealth;
@@ -90,7 +92,7 @@ public class BulletCollisionComponent : MonoBehaviour
     }
 
     private void OnHitEnemy(GameObject collision)
-    {
+    {   
         switch (_actualDamage)
         {
             case typeOfDamage.Normal:
@@ -226,4 +228,9 @@ public class BulletCollisionComponent : MonoBehaviour
         }
     }
     #endregion
+
+    private void Start()
+    {
+        _normalBulletValue = _normalBulletDamage;
+    }
 }

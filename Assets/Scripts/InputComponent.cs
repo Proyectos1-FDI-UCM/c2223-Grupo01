@@ -10,6 +10,12 @@ public class InputComponent : MonoBehaviour
     #region Parameters
     public bool _lookUP { get; private set; }  //condici�n para mirar a arriba
     public bool _lookDOWN { get; private set; }  //condici�n para mirar a abajo (escaleras)
+
+    private int _animMeleeValue;
+
+    private int _sfxMeleeValue;
+
+    private int _sfxMeleeVoiceValue;
     #endregion
 
     #region References
@@ -23,7 +29,12 @@ public class InputComponent : MonoBehaviour
     private UniversalInput _newInput;
     private InputAction _movement;
 
-    [SerializeField] private AudioClip _melee;
+    [SerializeField] private AudioClip _melee1;
+    [SerializeField] private AudioClip _melee2;
+    [SerializeField] private AudioClip _meleeVoice1;
+    [SerializeField] private AudioClip _meleeVoice2;
+    [SerializeField] private AudioClip _meleeVoice3;
+    [SerializeField] private AudioClip _meleeVoice4;
     [SerializeField] private AudioClip _airMelee;
     [SerializeField] private AudioClip _changeWeapon;
     #endregion
@@ -55,7 +66,10 @@ public class InputComponent : MonoBehaviour
         _myMeleeComponent = GetComponent<MeleeComponent>();
         _animator = GetComponent<Animator>();
         _scene = SceneManager.GetActiveScene();
-    }
+        _animMeleeValue = 0;
+        _sfxMeleeValue = 0;
+        _sfxMeleeVoiceValue = 0;
+}
     private void FixedUpdate()
     {
         _myCharacterController.Climb(_movement.ReadValue<Vector2>().y);
@@ -95,13 +109,44 @@ public class InputComponent : MonoBehaviour
             {
                 if (_myCharacterController.GetIsGrounded())
                 {
-                    GetComponent<AudioSource>().PlayOneShot(_melee);
+                    _sfxMeleeValue = Random.Range(0, 2);
+                    if (_sfxMeleeValue == 0)
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(_melee1);
+                    }
+                    else
+                    {
+                        GetComponent<AudioSource>().PlayOneShot(_melee2);
+                    }
+                    
                 }
                 else
                 {
                     GetComponent<AudioSource>().PlayOneShot(_airMelee);
                 }
+
+                _sfxMeleeVoiceValue = Random.Range(0, 4);
+
+                if (_sfxMeleeVoiceValue == 0)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(_meleeVoice1);
+                }
+                else if (_sfxMeleeVoiceValue == 1)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(_meleeVoice2);
+                }
+                else if (_sfxMeleeVoiceValue == 2)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(_meleeVoice3);
+                }
+                else if (_sfxMeleeVoiceValue == 3)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(_meleeVoice4);
+                }
+
                 _animator.SetTrigger("_melee");
+                _animMeleeValue = Random.Range(0, 4);
+                _animator.SetInteger("_animMelee", _animMeleeValue);
                 _myMeleeComponent.Attack();
             }
 
