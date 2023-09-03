@@ -598,24 +598,8 @@ MonoBehaviour:
       m_Action: Text Box Input
       m_Flags: 0
     - m_Name: 
-      m_Id: d4f557b1-1656-4fcd-b6f8-74468a652929
-      m_Path: <Gamepad>/leftStick
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Text Box Input
-      m_Flags: 0
-    - m_Name: 
       m_Id: d84d7884-8082-4814-818e-e4fd03a9eda0
       m_Path: <Gamepad>/leftStickPress
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Text Box Input
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 561d688f-b7e9-4c18-8a4b-f47a04bf8787
-      m_Path: <Gamepad>/leftTrigger
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -630,24 +614,8 @@ MonoBehaviour:
       m_Action: Text Box Input
       m_Flags: 0
     - m_Name: 
-      m_Id: 177d6dac-7255-4c5e-83a0-93b21b541f77
-      m_Path: <Gamepad>/rightStick
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Text Box Input
-      m_Flags: 0
-    - m_Name: 
       m_Id: f78b86b8-683e-4fa2-ab39-b283755f3af9
       m_Path: <Gamepad>/rightStickPress
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Text Box Input
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 703cc495-e62b-4d97-9ba2-a27f2472f7d8
-      m_Path: <Gamepad>/rightTrigger
       m_Interactions: 
       m_Processors: 
       m_Groups: 

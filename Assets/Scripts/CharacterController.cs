@@ -353,6 +353,11 @@ public class CharacterController : MonoBehaviour
     {
         _isgrounded = IsGrounded();
 
+        if (_isClimbing)
+        {
+            _isgrounded = false;
+        }
+
         if (_doorTouched)
         {
             _isgrounded = true;

@@ -37,7 +37,7 @@ public class BulletCollisionComponent : MonoBehaviour
         {
             OnHitEnemy(collision);
         }
-        else if (collision.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
+        else if (collision.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged && _enemysBulletDamage != 0)
         {
             collision.GetComponent<MightyLifeComponent>().OnPlayerHit(_enemysBulletDamage);
         }
