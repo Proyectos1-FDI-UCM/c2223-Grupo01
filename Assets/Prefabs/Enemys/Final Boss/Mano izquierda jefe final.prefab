@@ -151,6 +151,12 @@ MonoBehaviour:
   "_da\xF1oManos": 30
   _cuerpo: {fileID: 0}
   _bossUI: {fileID: 0}
+  _hurt: {fileID: 0}
+  _cooldownDamagedColor: 0.15
+  _colores:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  _renderC: {fileID: 2541138965809261809}
 --- !u!114 &2062694454744653832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +175,7 @@ MonoBehaviour:
   _danoPorSegQuemado: 5
   _colores: []
   _renderC: {fileID: 0}
+  _congeladoSFX: {fileID: 0}
+  _descongeladoSFX: {fileID: 0}
+  _quemadoSFX: {fileID: 0}
+  _impactoQuemadoSFX: {fileID: 0}

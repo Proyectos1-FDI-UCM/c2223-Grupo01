@@ -15,11 +15,16 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private float _coolDownDeathAnim;
 
+    [SerializeField] private float _cooldownDamagedColor;
+
+    private float _initialCooldownDamagedColor;
+
     [SerializeField] private AudioClip _hurt;
     [SerializeField] private AudioClip _dead;
     private int _numbalasCongelado;
 
     public bool _death { get; private set; }
+    private bool _damagedC; //Variable que gestiona cuando se puede activar el color de dañado en el EnemyStateManager
 
     [SerializeField] private GameObject _spawneableObject;
     [SerializeField] private int _spawnProbability;
@@ -34,6 +39,11 @@ public class EnemyHealth : MonoBehaviour
     {
         _numbalasCongelado = numBalas;
     }
+
+    public bool GetDañadoC()
+    {
+        return _damagedC;
+    }
     #endregion
 
     #region methods
@@ -42,6 +52,7 @@ public class EnemyHealth : MonoBehaviour
     //Cuando la vida quede a 0 o menos, el enemigo muere.
     {
         _currentHealth -= damage;
+        _damagedC = true;
 
         //GetComponent<AudioSource>().PlayOneShot(_hurt);
         //Animaci�n de recibir da�o.
@@ -88,7 +99,7 @@ public class EnemyHealth : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     // Colisiones del jugador con los enemigos
     {
-        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged)
+        if (collision.gameObject.GetComponent<MightyLifeComponent>() != null && collision.gameObject.GetComponent<MightyLifeComponent>()._canBeDamaged && !GetComponent<EnemyStateManager>().GetCongelado())
         {
             collision.gameObject.GetComponent<MightyLifeComponent>().OnPlayerHit(_damage);
         }
@@ -114,8 +125,10 @@ public class EnemyHealth : MonoBehaviour
         _enemyMovement = GetComponent<EnemyMovement>();
         _enemyFlyingMovement = GetComponent <EnemyFlyingMovement>();
         _death = false;
+        _damagedC = false;
         _animator = GetComponent<Animator>();
         _numbalasCongelado = 0;
+        _initialCooldownDamagedColor = _cooldownDamagedColor;
     }
 
     private void Update()
@@ -123,6 +136,19 @@ public class EnemyHealth : MonoBehaviour
         //Debug.Log(_currentHealth);
         _animator.SetBool("_death", _death);
 
+        if (_damagedC)
+        {
+            _cooldownDamagedColor -= Time.deltaTime;
+            if (_cooldownDamagedColor <= 0)
+            {
+                _damagedC = false;
+            }
+        }
+        else
+        {
+            _cooldownDamagedColor = _initialCooldownDamagedColor;
+        }
+        
         if (_death)
         {
             _coolDownDeathAnim -= Time.deltaTime;

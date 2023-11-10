@@ -173,6 +173,7 @@ MonoBehaviour:
   _maxHealth: 80
   _damage: 10
   _coolDownDeathAnim: 0.5
+  _cooldownDamagedColor: 0.15
   _hurt: {fileID: 8300000, guid: cca17ae835c083047bbd9f326666b7b6, type: 3}
   _dead: {fileID: 8300000, guid: aaf3beccc333fc849b9a18c1235141ee, type: 3}
   _spawneableObject: {fileID: 3783709604892461099, guid: fb9a9a3ca981aa94c9039befff2d1876, type: 3}
@@ -326,7 +327,7 @@ MonoBehaviour:
   _danoPorSegQuemado: 20
   _colores:
   - {r: 0.2867924, g: 1, b: 0.92882025, a: 1}
-  - {r: 1, g: 0.1830188, b: 0.1830188, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   _renderC: {fileID: 6326382012256657895}
   _congeladoSFX: {fileID: 8300000, guid: a2f880882d848384ba032b1253a33fa2, type: 3}

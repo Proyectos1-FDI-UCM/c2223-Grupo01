@@ -9,6 +9,19 @@ public class HandsLive : MonoBehaviour
     [SerializeField] private FaseFinalJefe _cuerpo;
     [SerializeField] private BossUI _bossUI;
     [SerializeField] private AudioClip _hurt;
+
+    [SerializeField] private float _cooldownDamagedColor;
+
+    private float _initialCooldownDamagedColor;
+
+    private bool _damagedC;
+
+    [SerializeField]
+    private Color[] _colores;   //Colores del enemigo
+
+    [SerializeField]
+    private Renderer _renderC; //Renderiza el color del enemigo
+
     public float GetVidaManos()
     {
         return _vidaManos;
@@ -35,6 +48,7 @@ public class HandsLive : MonoBehaviour
                 Die();
             }
             _bossUI.ActualizarInterfazManos();
+            _damagedC = true;
         }
     }
 
@@ -76,5 +90,25 @@ public class HandsLive : MonoBehaviour
     private void Start()
     {
         _initialVidaManos = _vidaManos;
+        _damagedC = false;
+        _initialCooldownDamagedColor = _cooldownDamagedColor;
+    }
+
+    private void Update()
+    {
+        if (_damagedC)
+        {
+            _renderC.material.color = _colores[1];
+            _cooldownDamagedColor -= Time.deltaTime;
+            if (_cooldownDamagedColor <= 0)
+            {
+                _damagedC = false;
+            }
+        }
+        else
+        {
+            _cooldownDamagedColor = _initialCooldownDamagedColor;
+            _renderC.material.color = _colores[0];
+        }
     }
 }

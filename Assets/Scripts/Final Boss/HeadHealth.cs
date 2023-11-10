@@ -10,6 +10,18 @@ public class HeadHealth : MonoBehaviour
     [SerializeField] private BossUI _bossUI;
     [SerializeField] private AudioClip _hurt;
 
+    [SerializeField] private float _cooldownDamagedColor;
+
+    private float _initialCooldownDamagedColor;
+
+    private bool _damagedC;
+
+    [SerializeField]
+    private Color[] _colores;   //Colores del enemigo
+
+    [SerializeField]
+    private Renderer _renderC; //Renderiza el color del enemigo
+
     #region Getters
     public float GetVidaCabeza()
     {
@@ -34,6 +46,7 @@ public class HeadHealth : MonoBehaviour
                 Die();
             }
             _bossUI.ActualizaVidaCabeza();
+            _damagedC = true;
         }
     }
 
@@ -47,5 +60,24 @@ public class HeadHealth : MonoBehaviour
     private void Start()
     {
         _vidaCabezaInicial = _vidaCabeza;
+        _damagedC = false;
+        _initialCooldownDamagedColor = _cooldownDamagedColor;
+    }
+    private void Update()
+    {
+        if (_damagedC)
+        {
+            _renderC.material.color = _colores[1];
+            _cooldownDamagedColor -= Time.deltaTime;
+            if (_cooldownDamagedColor <= 0)
+            {
+                _damagedC = false;
+            }
+        }
+        else
+        {
+            _cooldownDamagedColor = _initialCooldownDamagedColor;
+            _renderC.material.color = _colores[0];
+        }
     }
 }

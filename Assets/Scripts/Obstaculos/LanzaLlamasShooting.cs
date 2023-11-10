@@ -19,6 +19,7 @@ public class LanzaLlamasShooting : MonoBehaviour
 
     #region References
     [SerializeField] private AudioClip _llamaSFX;
+    [SerializeField] private GameObject _llamaPequeña;
     private SpriteRenderer _mySpriteRenderer;
     #endregion
 
@@ -28,6 +29,7 @@ public class LanzaLlamasShooting : MonoBehaviour
         _initialCoolDownShootFalse = _coolDownShootFalse;
         _initialCoolDownShootTrue = _coolDownShootTrue;
         _canShootFire = false;
+        _llamaPequeña.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,6 +41,10 @@ public class LanzaLlamasShooting : MonoBehaviour
             _mySpriteRenderer.enabled = false;
             _coolDownShootTrue = _initialCoolDownShootTrue;
             _coolDownShootFalse -= Time.deltaTime;
+            if (_coolDownShootFalse < 1.0f)
+            {
+                _llamaPequeña.SetActive(true);
+            }
             if (_coolDownShootFalse <= 0)
             {
                 _canShootFire = true;
@@ -46,6 +52,7 @@ public class LanzaLlamasShooting : MonoBehaviour
         }
         else
         {
+            _llamaPequeña.SetActive(false);
             GetComponent<AudioSource>().PlayOneShot(_llamaSFX);
             _mySpriteRenderer.enabled = true;
             _coolDownShootFalse = _initialCoolDownShootFalse;

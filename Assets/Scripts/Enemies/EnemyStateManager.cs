@@ -228,13 +228,13 @@ public class EnemyStateManager : MonoBehaviour
         }
         
         //Gesti�n de colores cuando est� ralentizado o quemado
-        if (_ralentizado)
+        if (_ralentizado && !_enemyHealth.GetDañadoC())
         {
             _renderC.material.color = _colores[0];
         }
-        else if (_quemado)
+        else if (_enemyHealth.GetDañadoC() || _ralentizado && _enemyHealth.GetDañadoC() || _enemyHealth.GetDañadoC() && _congelado)
         {
-            _renderC.material.color = _colores[2];
+            _renderC.material.color = _colores[1]; //Color de cuando el enemigo es golpeado (feedback visual)
         }
         else
         {
