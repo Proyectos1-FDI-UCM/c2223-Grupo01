@@ -22110,6 +22110,10 @@ PrefabInstance:
       value: Pinguino Terrestre
       objectReference: {fileID: 0}
     - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
+      propertyPath: _driftCOUNTER
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326382012256657893, guid: b961d886e818b314fbbafb6cfe836f7d, type: 3}
       propertyPath: _ground.m_Bits
       value: 64
       objectReference: {fileID: 0}

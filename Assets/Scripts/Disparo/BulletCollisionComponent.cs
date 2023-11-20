@@ -33,7 +33,7 @@ public class BulletCollisionComponent : MonoBehaviour
 
     private void Hit(GameObject collision)
     {
-        if (collision.GetComponent<EnemyHealth>() != null)
+        if (collision.GetComponent<EnemyHealth>() != null && _enemysBulletDamage == 0)
         {
             OnHitEnemy(collision);
         }

@@ -21,6 +21,9 @@ public class EnemyMovement : MonoBehaviour
     private bool _canturn;
     [SerializeField] private float _canturnCOUNTER;
     private float _canturnIniCOUNTER;
+
+    [SerializeField] private float _driftCOUNTER;
+    private float _driftIniCOUNTER;
     #endregion
 
     #region references
@@ -107,6 +110,7 @@ public class EnemyMovement : MonoBehaviour
         _myCollider2D = GetComponent<Collider2D>();
         _enemyInitialSpeed = _enemySpeed;
         _enemyInitialDetectedSpeed = _enemydetectionSpeed;
+        _driftIniCOUNTER = _driftCOUNTER;
     }
 
     void Update()
@@ -128,12 +132,26 @@ public class EnemyMovement : MonoBehaviour
                 {
                     //la dirección a la que nuestro enemigo se moverá.
                     if(Mathf.Abs(_distfromplayer)> _maxDistanceDetection)
-                      {
+                    {
                         if (_distfromplayer > 0 && _isflipped)
-                            Flip();
+                        {
+                            _driftCOUNTER -= Time.deltaTime;
+                            if (_driftCOUNTER <= 0)
+                            {
+                                Flip();
+                                _driftCOUNTER = _driftIniCOUNTER;
+                            }
+                        }
                         else if (_distfromplayer < 0 && !_isflipped)
-                            Flip();
-                       }
+                        {
+                            _driftCOUNTER -= Time.deltaTime;
+                            if (_driftCOUNTER <= 0)
+                            {
+                                Flip();
+                                _driftCOUNTER = _driftIniCOUNTER;
+                            }
+                        }
+                    }
                     _rigidbody.velocity = (transform.right * _enemydetectionSpeed);
 
                 }

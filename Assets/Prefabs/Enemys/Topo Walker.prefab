@@ -134,6 +134,7 @@ MonoBehaviour:
   _enemydetectionSpeed: 5.75
   _maxDistanceDetection: 2
   _canturnCOUNTER: 0.2
+  _driftCOUNTER: 0.05
   _groundLayer:
     serializedVersion: 2
     m_Bits: 2112
