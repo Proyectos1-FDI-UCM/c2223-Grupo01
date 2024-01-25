@@ -131513,6 +131513,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 989400450, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a5472f5307bc8494188fa96d54648073, type: 2}
     - target: {fileID: 1850376258, guid: 7c097781000d5e5468d3230132c23d97, type: 3}
       propertyPath: _canRepeatLevelTimer
       value: 5
