@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a01186e0a81b3b440a6b9e44f7356212
+guid: 2d5962d8e7a9cfe4aa5296efa9e0c04e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,6 +69,42 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -78,7 +114,910 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_0"
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 297
+        width: 44
+        height: 26
+      alignment: 9
+      pivot: {x: 0.17045455, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98c380a4c866d7746b41f574501e6107
+      internalID: 192853746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_1"
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 297
+        width: 45
+        height: 32
+      alignment: 9
+      pivot: {x: 0.12222222, y: 0.40625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310f06b5f2a201746bc805800759f4e6
+      internalID: -1728456954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_2"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 297
+        width: 52
+        height: 32
+      alignment: 9
+      pivot: {x: 0.24038461, y: 0.40625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4090c04abcab6cc4f89ed94939a9eb9c
+      internalID: 2074515807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_4"
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 297
+        width: 42
+        height: 31
+      alignment: 9
+      pivot: {x: 0.32142857, y: 0.41935483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d12f2dafdf19dd44786f0670e94ce59d
+      internalID: 924328969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_5"
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 297
+        width: 29
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c060f4e03e7dd304195ef0bd664b0c63
+      internalID: 394415516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_6"
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 297
+        width: 21
+        height: 26
+      alignment: 9
+      pivot: {x: 0.30952382, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e79f3a1ad70e074a9e04cd4d890767e
+      internalID: -865374659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_8"
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 249
+        width: 25
+        height: 26
+      alignment: 9
+      pivot: {x: 0.46, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5269b98bd42b72d4f81b1e2092c806c0
+      internalID: -828582466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_9"
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 249
+        width: 45
+        height: 33
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.3939394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d89b7a527d48a6499d2227be66f7aa3
+      internalID: 524004913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_10"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 245
+        width: 45
+        height: 36
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b1918f0c807764a890e654c62552cf
+      internalID: 1416824544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_11"
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 242
+        width: 23
+        height: 32
+      alignment: 9
+      pivot: {x: 0.32608697, y: 0.625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69207176dacdc74ca6bdc62a4a858ad
+      internalID: -908956234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_12"
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 249
+        width: 28
+        height: 29
+      alignment: 9
+      pivot: {x: 0.44285712, y: 0.44827586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386c728d4e7bd604d8da6d862de2f983
+      internalID: 1611075888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_13"
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 249
+        width: 23
+        height: 25
+      alignment: 9
+      pivot: {x: 0.32608697, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cc3fb77403c6b4cbc7eaf5b07f9652
+      internalID: -691779961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_14"
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 201
+        width: 44
+        height: 26
+      alignment: 9
+      pivot: {x: 0.17045455, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f706b94925cfc94fa91a6119b0a999d
+      internalID: -200751576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_15"
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 201
+        width: 46
+        height: 31
+      alignment: 9
+      pivot: {x: 0.11956522, y: 0.41935483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d353522e375517409fd02105318ac8a
+      internalID: -657156258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_16"
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 201
+        width: 53
+        height: 32
+      alignment: 9
+      pivot: {x: 0.23584905, y: 0.40625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918b5def0561f074fa0cbd91bd28de7b
+      internalID: -774222979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_18"
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 201
+        width: 44
+        height: 31
+      alignment: 9
+      pivot: {x: 0.3068182, y: 0.41935483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7823532b811149f428307271f7ea180c
+      internalID: 1430458590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_19"
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 201
+        width: 33
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4090909, y: 0.43333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303f9b470d13e43458fc5c0c7d8745ac
+      internalID: -1414881695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_20"
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 201
+        width: 21
+        height: 26
+      alignment: 9
+      pivot: {x: 0.26190478, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857f2a7a797c89c4da0fd5e6d3637cef
+      internalID: -449669749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_22"
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 153
+        width: 24
+        height: 26
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ba87ba3f19e1f43a9ad7c3708eb9c2
+      internalID: -1811630755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_23"
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 153
+        width: 45
+        height: 33
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.3939394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a97ed4b46b38f140bedd87536457028
+      internalID: 1565711592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_24"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 149
+        width: 45
+        height: 36
+      alignment: 9
+      pivot: {x: 0.16666667, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 172b88908d0b09c448c41a40d0e59c7b
+      internalID: 596336108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_25"
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 149
+        width: 37
+        height: 29
+      alignment: 9
+      pivot: {x: 0.2027027, y: 0.5862069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f584fde502725364d981b790f5fad186
+      internalID: 297412637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_26"
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 150
+        width: 30
+        height: 28
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800be8a3c7bacbf48bdf44298cf586ef
+      internalID: -1624149692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_27"
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 153
+        width: 24
+        height: 25
+      alignment: 9
+      pivot: {x: 0.3125, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9bedcc90ec89de4e83f6fcea1afcc76
+      internalID: 1655184131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_28"
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 105
+        width: 15
+        height: 34
+      alignment: 9
+      pivot: {x: 0.6333333, y: 0.3970588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fcb488b7c2f3047bf65ece29489189
+      internalID: 713057103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_29"
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 105
+        width: 49
+        height: 36
+      alignment: 9
+      pivot: {x: 0.2755102, y: 0.4027778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c183f1436d535a4d99f38cd2e478e63
+      internalID: -547502075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_30"
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 105
+        width: 49
+        height: 36
+      alignment: 9
+      pivot: {x: 0.2755102, y: 0.4027778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b9ccd2544943d4db4b2165a48738a5
+      internalID: 1677336569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_31"
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 105
+        width: 46
+        height: 28
+      alignment: 9
+      pivot: {x: 0.29347825, y: 0.51785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69304430b32fa6b4c877d028879a7d2a
+      internalID: 644064625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_33"
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 105
+        width: 31
+        height: 28
+      alignment: 9
+      pivot: {x: 0.43548387, y: 0.51785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b851dbca8d43c346be167d0ba1fb70c
+      internalID: -22984629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_34"
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 105
+        width: 30
+        height: 28
+      alignment: 9
+      pivot: {x: 0.45, y: 0.51785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb7f2e95ea99034e81dcc049bb254d0
+      internalID: 1808152346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_35"
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 105
+        width: 24
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.51785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c685f2d5bd9efc5419a8678b7528473f
+      internalID: -1890343883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_36"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 57
+        width: 18
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6111111, y: 0.3918919}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5abe3b2d4c2c3d4aa4669fb0ec80a3f
+      internalID: 223459067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_37"
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 57
+        width: 48
+        height: 32
+      alignment: 9
+      pivot: {x: 0.22916667, y: 0.453125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3618543d04a57a547b806b959fd99919
+      internalID: 990720453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_38"
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 57
+        width: 48
+        height: 31
+      alignment: 9
+      pivot: {x: 0.22916667, y: 0.46774194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e13394c3425ae34b91dd83420827806
+      internalID: 109498661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_39"
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 57
+        width: 52
+        height: 30
+      alignment: 9
+      pivot: {x: 0.21153846, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5359d83c7a9dd0945a4898420aaf74c8
+      internalID: 361257951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_40"
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 57
+        width: 32
+        height: 30
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697a098731eb3834c8d1989b2416de5b
+      internalID: -160395741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_41"
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 57
+        width: 27
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4074074, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688871a5adf3c6d49b5337b2eefc4998
+      internalID: 1716543735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_42"
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 57
+        width: 22
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859f3babc83925d4f96e14bee5fc9d5a
+      internalID: 955440225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_43"
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 9
+        width: 19
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5a934c6875b964da252283b28e0262
+      internalID: 567252687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_44"
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 9
+        width: 61
+        height: 30
+      alignment: 9
+      pivot: {x: 0.352459, y: 0.43333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16501dcbecaf21a44abe8e0a5220f7f0
+      internalID: -159289950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_45"
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 9
+        width: 59
+        height: 29
+      alignment: 9
+      pivot: {x: 0.34745762, y: 0.44827586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ce76b2d97b4f44cb5b991718b0151c
+      internalID: -468274396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_47"
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 9
+        width: 30
+        height: 25
+      alignment: 9
+      pivot: {x: 0.65, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72bd89fb964ea041b85f318e31a7a8b
+      internalID: -985338324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MIGHTY REDISE\xD1O MELEE_48"
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 9
+        width: 21
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c273761f215ad4eb9f489937284b0a
+      internalID: -794299649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -89,7 +1028,56 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "MIGHTY REDISE\xD1O MELEE_12": 1611075888
+      "MIGHTY REDISE\xD1O MELEE_0": 192853746
+      "MIGHTY REDISE\xD1O MELEE_39": 361257951
+      "MIGHTY REDISE\xD1O MELEE_41": 1716543735
+      "MIGHTY REDISE\xD1O MELEE_45": -468274396
+      "MIGHTY REDISE\xD1O MELEE_9": 524004913
+      "MIGHTY REDISE\xD1O MELEE_31": 644064625
+      "MIGHTY REDISE\xD1O MELEE_27": 1655184131
+      "MIGHTY REDISE\xD1O MELEE_2": 2074515807
+      "MIGHTY REDISE\xD1O MELEE_5": 394415516
+      "MIGHTY REDISE\xD1O MELEE_21": -2037602691
+      "MIGHTY REDISE\xD1O MELEE_48": -794299649
+      "MIGHTY REDISE\xD1O MELEE_23": 1565711592
+      "MIGHTY REDISE\xD1O MELEE_15": -657156258
+      "MIGHTY REDISE\xD1O MELEE_47": -985338324
+      "MIGHTY REDISE\xD1O MELEE_25": 297412637
+      "MIGHTY REDISE\xD1O MELEE_44": -159289950
+      "MIGHTY REDISE\xD1O MELEE_35": -1890343883
+      "MIGHTY REDISE\xD1O MELEE_6": -865374659
+      "MIGHTY REDISE\xD1O MELEE_40": -160395741
+      "MIGHTY REDISE\xD1O MELEE_29": -547502075
+      "MIGHTY REDISE\xD1O MELEE_11": -908956234
+      "MIGHTY REDISE\xD1O MELEE_13": -691779961
+      "MIGHTY REDISE\xD1O MELEE_8": -828582466
+      "MIGHTY REDISE\xD1O MELEE_16": -774222979
+      "MIGHTY REDISE\xD1O MELEE_18": 1430458590
+      "MIGHTY REDISE\xD1O MELEE_36": 223459067
+      "MIGHTY REDISE\xD1O MELEE_32": -248388786
+      "MIGHTY REDISE\xD1O MELEE_19": -1414881695
+      "MIGHTY REDISE\xD1O MELEE_38": 109498661
+      "MIGHTY REDISE\xD1O MELEE_24": 596336108
+      "MIGHTY REDISE\xD1O MELEE_14": -200751576
+      "MIGHTY REDISE\xD1O MELEE_17": -254976807
+      "MIGHTY REDISE\xD1O MELEE_26": -1624149692
+      "MIGHTY REDISE\xD1O MELEE_33": -22984629
+      "MIGHTY REDISE\xD1O MELEE_20": -449669749
+      "MIGHTY REDISE\xD1O MELEE_46": -341898203
+      "MIGHTY REDISE\xD1O MELEE_7": -234186165
+      "MIGHTY REDISE\xD1O MELEE_22": -1811630755
+      "MIGHTY REDISE\xD1O MELEE_10": 1416824544
+      "MIGHTY REDISE\xD1O MELEE_28": 713057103
+      "MIGHTY REDISE\xD1O MELEE_37": 990720453
+      "MIGHTY REDISE\xD1O MELEE_34": 1808152346
+      "MIGHTY REDISE\xD1O MELEE_30": 1677336569
+      "MIGHTY REDISE\xD1O MELEE_42": 955440225
+      "MIGHTY REDISE\xD1O MELEE_3": -1001131359
+      "MIGHTY REDISE\xD1O MELEE_43": 567252687
+      "MIGHTY REDISE\xD1O MELEE_1": -1728456954
+      "MIGHTY REDISE\xD1O MELEE_4": 924328969
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

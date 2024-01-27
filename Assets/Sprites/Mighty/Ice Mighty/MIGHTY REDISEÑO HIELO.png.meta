@@ -821,12 +821,12 @@ TextureImporter:
       name: "MIGHTY REDISE\xD1O_41"
       rect:
         serializedVersion: 2
-        x: 12
+        x: 10
         y: 80
-        width: 26
+        width: 28
         height: 29
       alignment: 9
-      pivot: {x: 0.34615386, y: 0.5}
+      pivot: {x: 0.39285713, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -842,12 +842,12 @@ TextureImporter:
       name: "MIGHTY REDISE\xD1O_42"
       rect:
         serializedVersion: 2
-        x: 42
+        x: 40
         y: 80
-        width: 25
+        width: 27
         height: 29
       alignment: 9
-      pivot: {x: 0.36, y: 0.5}
+      pivot: {x: 0.4074074, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1024,10 +1024,10 @@ TextureImporter:
       "MIGHTY REDISE\xD1O_3": -130570807
       "MIGHTY REDISE\xD1O_45": 2113288049
       "MIGHTY REDISE\xD1O_22": 136744971
-      "MIGHTY REDISE\xD1O_2": -1188381220
+      "MIGHTY REDISE\xD1O_25": -592815202
       "MIGHTY REDISE\xD1O_30": 1594145598
       "MIGHTY REDISE\xD1O_39": -848202914
-      "MIGHTY REDISE\xD1O_25": -592815202
+      "MIGHTY REDISE\xD1O_2": -1188381220
       "MIGHTY REDISE\xD1O_35": 1030467411
       "MIGHTY REDISE\xD1O_19": 1340922065
       "MIGHTY REDISE\xD1O_4": -192693990
