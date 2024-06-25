@@ -147,11 +147,26 @@ public class IntroMenuCommands : MonoBehaviour
         _selectorDeNiveles = PlayerPrefs.GetInt("LEVELSELECT");
         _escena = 0;
         menu.SetActive(true);
-        menuBorrarP.SetActive(false);
-        menuNewG.SetActive(false);
-        eventSystem1.SetActive(true);
-        eventSystem2.SetActive(false);
-        eventSystem3.SetActive(false);
+        if (menuBorrarP != null)
+        {
+            menuBorrarP.SetActive(false);
+        }
+        if (menuNewG != null)
+        {
+            menuNewG.SetActive(false);
+        }
+        if (eventSystem1!= null)
+        {
+            eventSystem1.SetActive(true);
+        }
+        if (eventSystem2!= null)
+        {
+            eventSystem2.SetActive(false);
+        }
+        if (eventSystem3!= null)
+        {
+            eventSystem3.SetActive(false);
+        }
     }
 
     void Update()
@@ -165,10 +180,12 @@ public class IntroMenuCommands : MonoBehaviour
 
         if (_selectorDeNiveles == 1)
         {
+            if (botonSelectorDeNiveles != null)
             botonSelectorDeNiveles.SetActive(true);
         }
         else
         {
+            if (botonSelectorDeNiveles != null)
             botonSelectorDeNiveles.SetActive(false);
         }
     }

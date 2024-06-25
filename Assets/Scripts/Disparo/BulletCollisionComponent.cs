@@ -179,15 +179,21 @@ public class BulletCollisionComponent : MonoBehaviour
         collision.GetComponent<EnemyStateManager>().SetCongelado(true);
         collision.GetComponent<EnemyStateManager>().SetTiempoCongelado(collision.GetComponent<EnemyStateManager>().GetTiempoCongeladoInicial());
         Destroy(gameObject);
+
         if (collision.GetComponent<EnemyMovement>() != null)
         {
+            _enemyMovement = collision.GetComponent<EnemyMovement>();
+
             _enemyMovement.SetEnemySpeed(0);
             _enemyMovement.SetEnemyDetectionSpeed(0);
         }
         else if (collision.GetComponent<EnemyFlyingMovement>() != null)
         {
+            _enemyFlyingMovement = collision.GetComponent<EnemyFlyingMovement>();
+
             _enemyFlyingMovement.SetEnemySpeed(0);
             _enemyFlyingMovement.SetEnemyDetectedSpeed(0);
+
             _enemyRigidBody = collision.GetComponent<Rigidbody2D>();
             _enemyRigidBody.bodyType = RigidbodyType2D.Dynamic;
             _enemyRigidBody.gravityScale = 10;

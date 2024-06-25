@@ -107,13 +107,23 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if (_mightyLifeComponent.GetRepTimer() <= 2.5f || _puertaFinalNivel.GetOpenCounter() <= 2.0f)
+        if (_mightyLifeComponent.GetRepTimer() <= 2.5f)
         {
             for (int i = 0; i < _UIs.Length; i++)
             {
                 _UIs[i].SetActive(false);
             }
             _fade.GetComponent<Animator>().SetTrigger("OUT");
+        }
+
+        if (_puertaFinalNivel != null && _puertaFinalNivel.GetOpenCounter() <= 2.0f)
+        {
+            for (int i = 0; i < _UIs.Length; i++)
+            {
+                _UIs[i].SetActive(false);
+            }
+            _fade.GetComponent<Animator>().SetTrigger("OUT");
+
         }
 
     }
