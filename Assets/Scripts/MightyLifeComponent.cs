@@ -262,13 +262,14 @@ public class MightyLifeComponent : MonoBehaviour
         
             if (!_canBeDamaged)
             {
-                if (_coolDown <= 0)
-                {
-                    _coolDown = _initialCoolDown;
-                }
+                //if (_coolDown <= 0)
+                //{
+                //    _coolDown = _initialCoolDown;
+                //}
                 //_renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
-                _coolDown -= Time.deltaTime;
-                _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
+                _coolDown -= Time.deltaTime; //Se va descontando el coolDown en funcion del tiempo real,
+                                             //hasta que llegue a 0 tras unos segundos o milesimas de segundos (depende de cuantos segundos le pongamos) 
+            _renderC.material.color = _colores[0]; //Se vuelve transparente el sprite durante un tiempo
 
                 //El parpadeo que tanto queria Julian basado en el contador del lanzallamas :)
                 if (!_invisible)
@@ -298,7 +299,11 @@ public class MightyLifeComponent : MonoBehaviour
                     _myInputComponent.enabled = true;
                 }
 
-            if (_coolDown <= 0) _canBeDamaged = true;
+            if (_coolDown <= 0)
+                {
+                    _canBeDamaged = true;
+                    _coolDown = _initialCoolDown;
+                }
             }
             else
             {

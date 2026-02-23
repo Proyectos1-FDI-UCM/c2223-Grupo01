@@ -13,6 +13,10 @@ public class ShootingComponent : MonoBehaviour
 
     private bool _canAttackShoot; //Permite poder disparar
 
+    [SerializeField] private bool _armaHielo_Desbloqueada;      //Determina si el arma de Hielo esta desbloqueada o no.
+    [SerializeField] private bool _armaFuego_Desbloqueada;      //Determina si el arma de Fuego esta desbloqueada o no.
+    //[SerializeField] private bool _armaSuperDisparo_Desbloqueada;      //Determina si el arma de SuperDisparo esta desbloqueada o no.
+
     [SerializeField] private float _coolDownShoot;      //tiempo en el que se permitir� usar el disparo
     private float _initialCoolDownShoot;
     #endregion
@@ -41,38 +45,59 @@ public class ShootingComponent : MonoBehaviour
     // instanciamos la bala en la posici�n del spawn (cuidado no es hija suya, no confundir con la sobrecarga del transform del parent)
     {
         GetComponent<AudioSource>().PlayOneShot(_disparoNormal);
+        //Crea un tipo de Bala en base a actualBullet, y su direccion se deermina mediante la rotacion y posicion de _bulletSpawnTransform
         Instantiate(_bullet[(int)_actualBullet], _bulletSpawnTransform.transform.position, _bulletSpawnTransform.rotation);
-        _canAttackShoot = false;
+        _canAttackShoot = false; //Dice que es false para activar el tiempo del cooldown en el metodo Update de abajo, y asi no poder disparar hasta que el tiempo pase
     }
-
     public void ChangeBullet()
     {
         _actualBullet++;
-        if(_scene.buildIndex == 2) //Si estamos en el tutorial
+        if (!_armaHielo_Desbloqueada && (int)_actualBullet == 1) //Si no se ha desbloqueado el hielo, se salta al siguiente
         {
-            if((int)_actualBullet == 1) //que no pueda pasar de _actualBullet 0 (normal)
-            {
-                _actualBullet = 0;
-            }
+            _actualBullet++;
         }
-        else if(_scene.buildIndex == 3 || _scene.buildIndex == 4) //Si estamos en nivel hielo o fábrica
+        else if (!_armaFuego_Desbloqueada && (int)_actualBullet == 2) //Si no se ha desbloqueado el fuegoo, se salta al siguiente
         {
-            if((int)_actualBullet == 2) //que no pueda pasar de _actualBullet 1 (ice)
-            {
-                _actualBullet = 0;
-            }
+            _actualBullet++;
         }
-        else if(_scene.buildIndex == 5 || _scene.buildIndex == 6) //Si estamos en nivel lava o final boss
+
+        if ((!_armaFuego_Desbloqueada && !_armaHielo_Desbloqueada) || (int)_actualBullet >= 3)
         {
-            if((int)_actualBullet == 3) //que no pueda pasar de _actualBullet 2 (fire)
-            {
-                _actualBullet = 0;
-            }
+            _actualBullet = 0;
         }
-        
-        GameManager.instance._UImanager.currentWeaponState((int)_actualBullet);
-        _animator.runtimeAnimatorController = _animatorControllers[(int)_actualBullet];
+
+        GameManager.instance._UImanager.currentWeaponState((int)_actualBullet); //Cambia el icono de abajo en la interfaz para determinar que arma se usara ahora
+        _animator.runtimeAnimatorController = _animatorControllers[(int)_actualBullet]; //Se cambia de aspecto del Jugador para que sea acorde al poder que usa, queda wapo
     }
+
+    //public void ChangeBullet()
+    //{
+    //    _actualBullet++;
+    //    if(_scene.buildIndex == 2) //Si estamos en el tutorial
+    //    {
+    //        if((int)_actualBullet == 1) //que no pueda pasar de _actualBullet 0 (normal)
+    //        {
+    //            _actualBullet = 0;
+    //        }
+    //    }
+    //    else if(_scene.buildIndex == 3 || _scene.buildIndex == 4) //Si estamos en nivel hielo o fábrica
+    //    {
+    //        if((int)_actualBullet == 2) //que no pueda pasar de _actualBullet 1 (ice)
+    //        {
+    //            _actualBullet = 0;
+    //        }
+    //    }
+    //    else if(_scene.buildIndex == 5 || _scene.buildIndex == 6) //Si estamos en nivel lava o final boss
+    //    {
+    //        if((int)_actualBullet == 3) //que no pueda pasar de _actualBullet 2 (fire)
+    //        {
+    //            _actualBullet = 0;
+    //        }
+    //    }
+
+    //    GameManager.instance._UImanager.currentWeaponState((int)_actualBullet);
+    //    _animator.runtimeAnimatorController = _animatorControllers[(int)_actualBullet];
+    //}
     #endregion
 
     private void Start()
